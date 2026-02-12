@@ -1,0 +1,22 @@
+{% extends 'product/base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h2>Product Detail</h2>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Name:</strong> {{ product.name }}</li>
+            <li class="list-group-item"><strong>Price:</strong> {{ product.price }}</li>
+            <li class="list-group-item"><strong>Created:</strong> {{ product.created_at|date:"d/m/Y H:i" }}</li>
+            <li class="list-group-item"><strong>Updated:</strong> {{ product.updated_at|date:"d/m/Y H:i" }}</li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'product:update' product.pk %}" class="btn btn-warning">Update</a>
+        <a href="{% url 'product:delete' product.pk %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'product:home' %}" class="btn btn-secondary">Back to list</a>
+    </div>
+</div>
+{% endblock %}
