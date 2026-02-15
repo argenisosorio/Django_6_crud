@@ -46,6 +46,8 @@ $ python manage.py makemigrations person
 
 $ python manage.py migrate
 
+$ python manage.py loaddata person.json
+
 $ python manage.py runserver
 ```
 
