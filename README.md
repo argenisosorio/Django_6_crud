@@ -1,13 +1,22 @@
-# Django 6 CRUD Example + Bootstrap 5
+# Django 6 CRUD Example + Bootstrap 5 + Django Ninja
 
 The following is an example of CRUD (Create, Read, Update, Delete) in Django 6.
 
-There are 2 CRUD applications, one uses function-based views (FBV) and the other
-uses class-based views (CBV).
+In this project you can test:
+
+Function-Based Views (FBV): The traditional approach using standard Python
+functions.
+
+Class-Based Views (CBV): A more structured, object-oriented approach using
+Django's built-in generic views.
+
+Django Ninja: A fast, modern way to build APIs using Python type hints and
+automatic OpenAPI documentation.
 
 ## Requirements:
 ```
 Django==6.0.2
+django-ninja==1.5.3
 Python>=3.12
 ```
 
@@ -44,6 +53,8 @@ $ python manage.py makemigrations person product
 
 $ python manage.py migrate
 
+$ python manage.py loaddata person.json
+
 $ python manage.py runserver
 ```
 
@@ -52,12 +63,18 @@ $ python manage.py runserver
 Open your browser to http://127.0.0.1:8000 and you'll see the Django 6 CRUD
 application for managing people records.
 
-## Image
+## Test the API of Django Ninja:
 
-![1.png](1.png "1.png")
+Open your browser to: http://127.0.0.1:8000/api/docs/
 
-![2.png](2.png "2.png")
+From that interface (Swagger), you can:
 
-![3.png](3.png "3.png")
+- View all your endpoints.
 
-![4.png](4.png "4.png")
+- Click "Test it" and test all the methods.
+
+- Send a JSON object to create a person and see the response in real time.
+
+- List people http://127.0.0.1:8000/api/person/
+
+- Get people http://127.0.0.1:8000/api/person/{person_id}
