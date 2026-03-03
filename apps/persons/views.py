@@ -17,7 +17,7 @@ def home(request):
         'people': people,
         'message': '¡Hello Django 6 Person CRUD!',
     }
-    return render(request, 'person/home.html', context)
+    return render(request, 'persons/home.html', context)
 
 def create_person(request):
     """
@@ -41,7 +41,7 @@ def create_person(request):
         form = PersonForm()
     
     context = {'form': form}
-    return render(request, 'person/create.html', context)
+    return render(request, 'persons/create.html', context)
 
 def detail_person(request, pk):
     """
@@ -56,7 +56,7 @@ def detail_person(request, pk):
     """
     person = get_object_or_404(Person, pk=pk)
     context = {'person': person}
-    return render(request, 'person/detail.html', context)
+    return render(request, 'persons/detail.html', context)
 
 def update_person(request, pk):
     """
@@ -82,7 +82,7 @@ def update_person(request, pk):
         form = PersonForm(instance=person)
     
     context = {'form': form, 'person': person}
-    return render(request, 'person/update.html', context)
+    return render(request, 'persons/update.html', context)
 
 def delete_person(request, pk):
     """
@@ -104,4 +104,4 @@ def delete_person(request, pk):
         return redirect('person:home')
     
     context = {'person': person}
-    return render(request, 'person/delete.html', context)
+    return render(request, 'persons/delete.html', context)

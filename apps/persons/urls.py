@@ -3,7 +3,7 @@ from . import views
 
 # Define the application namespace for URL reversing
 # This helps distinguish URLs between different apps when using 'url' template tag
-app_name = 'person'
+app_name = 'persons'
 
 # URL patterns for the Person CRUD (Create, Read, Update, Delete) operations
 urlpatterns = [
