@@ -83,12 +83,12 @@ def get_all_persons() -> list[Person]:
 
 def get_person(person_id: int) -> Person:
     """
-    Retrieve a specific person by ID.
-    
-    Args:
-        person_id: ID of the person to retrieve
-        
-    Returns:
-        Person: The requested person instance
+    Recuperar una persona específica por ID.
+
+    Argumentos:
+        person_id: ID de la persona a recuperar
+
+    Devuelve:
+        La instancia de la persona solicitada
     """
     return get_object_or_404(Person, id=person_id)
