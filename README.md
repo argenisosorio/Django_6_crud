@@ -61,3 +61,43 @@ application for managing people records.
 ![3.png](3.png "3.png")
 
 ![4.png](4.png "4.png")
+
+## Declarar relaciones entre modelos (Comparación entre Django y Laravel)
+
+Mientras que en Laravel se declaran las relaciones en el modelo con el siguiente formato:
+
+```php
+// Se declara la relación en el modelo de Personas
+public function product()
+{
+    return $this->belongsTo(Product::class);
+}
+
+// Se declara la llave foránea aparte en la migración
+$table->foreignId('product_id')
+        ->nullable()
+        ->constrained('products')
+        ->nullOnDelete();
+
+// Se declara la relación en el modelo de Productos
+public function people()
+{
+    return $this->hasMany(Person::class);
+}
+```
+
+En Django se declara tanto la llave foránea como las relaciones en el modelo con el siguiente formato:
+
+```python
+# Se declara la llave foránea y la relación en el modelo de Personas
+product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True, related_name='people')
+```
+La principal diferencia radica en que los modelos en Django son más completos y versátiles que en Laravel, no dependen de migraciones aparte para crear relaciones entre modelos, ya que se declaran en el mismo modelo; lo que facilita el desarrollo y mantenimiento de las aplicaciones.
+
+Otra diferencia es que en Laravel se utilizan métodos como `belongsTo`, `hasMany`, `hasOne`, `belongsToMany` para declarar el tipo de relación, mientras que en Django se utilizan tipos de campo como `ForeignKey`, `OneToOneField`, `ManyToManyField`.
+
+Lo interesante aquí es que para poder relacionar de manera simétrica una relación de 1:N | N:1, no es necesario declarar una relación inversa de manera explícita, basta con declararla en uno de ellos y que especifiques el parámetro `related_name`.
+
+¿Por qué sucede esto? Así como Laravel funciona con un método llamado getRelationType(), Django obtiene la relación inversa gracias a los flags que tienen asignados cada tipo de campo.
+
+Cuando por ejemplo definimos el related_name='people', Django crea un objeto virtual en el modelo Product. Ese objeto virtual tendrá el flag one_to_many = True. Así es como Django sabe que product.people.all() debe devolver una lista y no un solo objeto.

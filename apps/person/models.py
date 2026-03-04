@@ -1,4 +1,5 @@
 from django.db import models
+from apps.product.models import Product
 
 class Person(models.Model):
     """
@@ -12,6 +13,11 @@ class Person(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     age = models.PositiveIntegerField()
+    
+    # Relationship: Many-to-One
+    # Una persona puede estar relacionada a 1 producto y un producto puede estar relacionado a muchas personas.
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True, related_name='people')
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
