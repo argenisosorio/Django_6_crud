@@ -3,6 +3,8 @@ from .models import Person
 from .forms import PersonForm
 from django.core.mail import send_mail
 from django.conf import settings
+from django.utils.html import strip_tags
+from django.template.loader import render_to_string
 
 
 def home(request):
@@ -29,13 +31,21 @@ def create_person(request):
             # 1. Guardamos el objeto y lo asignamos a una variable
             person = form.save()
 
-            # 2. Enviamos el correo
+            # 2. Definir el contexto y renderizar el HTML
+            context = {'person': person}
+            html_message = render_to_string('emails/welcome_email.html', context)
+
+            # 3. Crear una versión en texto plano (para clientes que no soportan HTML)
+            plain_message = strip_tags(html_message)
+
+            # 4. Enviar el correo
             send_mail(
                 subject="¡Bienvenido a nuestro sistema!",
-                message=f"Hola {person.name}, tu registro ha sido exitoso.",
+                message=plain_message, # Versión texto plano
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[person.email],
-                fail_silently=False, # Ponlo en True en producción si no quieres que la web falle si el mail falla
+                html_message=html_message, # Versión HTML
+                fail_silently=False,
             )
             return redirect('person:home')
     else:
