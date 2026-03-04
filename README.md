@@ -14,65 +14,65 @@ y escalar a medida que crece.
 
 ## Las capas
 
-Controladores ( controllers/):
+### Controladores ( controllers/):
 
--Actúa como punto de entrada para solicitudes HTTP
+- Actúa como punto de entrada para solicitudes HTTP
 (reemplazando las vistas tradicionales de Django). Responsable únicamente de
 manejar solicitudes HTTP, validar la entrada, llamar al Servicio apropiado y
 devolver una respuesta HTTP (representando una plantilla o redirigiendo).
 
--No contienen ninguna lógica empresarial .
+- No contienen ninguna lógica empresarial.
 
-Solicitudes ( requests/) :
+### Solicitudes ( requests/):
 
--Manejar la validación de datos HTTP entrantes (por ejemplo, datos POST).
+- Manejar la validación de datos HTTP entrantes (por ejemplo, datos POST).
 
--Generalmente se implementa mediante formularios Django para garantizar que los
+- Generalmente se implementa mediante formularios Django para garantizar que los
 datos estén limpios y válidos antes de que lleguen a la capa de lógica
 empresarial.
 
-DTO - Objetos de transferencia de datos ( dtos/) :
+### DTO - Objetos de transferencia de datos ( dtos/):
 
--Estructuras de datos simples (a menudo Python) dataclasses o clases estándar
+- Estructuras de datos simples (a menudo Python) dataclasses o clases estándar
 que se utilizan para pasar datos entre la capa del controlador y la capa de
 servicio.
 
--Se aseguran de que la capa de Servicio no dependa de objetos específicos de
+- Se aseguran de que la capa de Servicio no dependa de objetos específicos de
 HTTP como request.POST o formularios Django.
 
-Servicios ( services/) :
+### Servicios ( services/):
 
--El corazón de la aplicación. Esta capa contiene toda la lógica de negocio y los
+- El corazón de la aplicación. Esta capa contiene toda la lógica de negocio y los
 casos de uso.
 
--Los servicios toman DTO como entrada, realizan las operaciones necesarias (como
+- Los servicios toman DTO como entrada, realizan las operaciones necesarias (como
 crear un empleado, enviar correos electrónicos, calcular salarios) e interactúan
 con la base de datos a través de modelos o selectores.
 
-Selectores ( selectors/) :
+### Selectores ( selectors/):
 
--Dedicado a consultas de bases de datos complejas y obtención de datos
+- Dedicado a consultas de bases de datos complejas y obtención de datos
 (operaciones de lectura).
 
--Si bien las consultas simples pueden residir en los Servicios, los Selectores
+- Si bien las consultas simples pueden residir en los Servicios, los Selectores
 mantienen limpia la capa de Servicio abstrayendo búsquedas ORM complejas.
 
-Modelos ( models/) :
+### Modelos ( models/):
 
--Modelos ORM estándar de Django.
+- Modelos ORM estándar de Django.
 
--Representan las tablas y relaciones de la base de datos, pero se mantienen
+- Representan las tablas y relaciones de la base de datos, pero se mantienen
 "simples" (desprovistas de lógica empresarial compleja).
 
 ## ¿Por qué este patrón?
 
--Separación de preocupaciones: la lógica HTTP está separada de la lógica
+- Separación de preocupaciones: la lógica HTTP está separada de la lógica
 empresarial.
 
--Capacidad de prueba: puede probar servicios y DTO de forma aislada sin
+- Capacidad de prueba: puede probar servicios y DTO de forma aislada sin
 necesidad de una solicitud HTTP simulada o un servidor web.
 
--Reutilización: la lógica de negocios en los servicios se puede llamar desde
+- Reutilización: la lógica de negocios en los servicios se puede llamar desde
 cualquier lugar (controladores, tareas de Celery, comandos de administración,
 API) sin duplicar código.
 
@@ -135,6 +135,6 @@ $ python manage.py runserver
 Abra su navegador en http://127.0.0.1:8000 y verá la aplicación CRUD de Django 6
 para administrar registros de personas.
 
-## Imágen
+## Imagen
 
 ![1.png](1.png "1.png")
