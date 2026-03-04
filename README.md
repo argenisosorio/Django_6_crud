@@ -1,63 +1,140 @@
 # Django 6 CRUD Example + Bootstrap 5
 
-The following is an example of CRUD (Create, Read, Update, Delete) in Django 6.
+El siguiente es un ejemplo de CRUD (Crear, Leer, Actualizar, Eliminar) en
+Django 6.
 
-There are 2 CRUD applications, one uses function-based views (FBV) and the other
-uses class-based views (CBV).
+## Patrón de Arquitectura
 
-## Requirements:
+Este proyecto se desvía del patrón estándar de Django MVT. En su lugar,
+implementa una Arquitectura en Capas.
+
+Este enfoque desacopla la lógica empresarial central del marco HTTP (Django), lo
+que hace que la aplicación sea significativamente más fácil de probar, mantener
+y escalar a medida que crece.
+
+## Las capas
+
+Controladores ( controllers/):
+
+-Actúa como punto de entrada para solicitudes HTTP
+(reemplazando las vistas tradicionales de Django). Responsable únicamente de
+manejar solicitudes HTTP, validar la entrada, llamar al Servicio apropiado y
+devolver una respuesta HTTP (representando una plantilla o redirigiendo).
+
+-No contienen ninguna lógica empresarial .
+
+Solicitudes ( requests/) :
+
+-Manejar la validación de datos HTTP entrantes (por ejemplo, datos POST).
+
+-Generalmente se implementa mediante formularios Django para garantizar que los
+datos estén limpios y válidos antes de que lleguen a la capa de lógica
+empresarial.
+
+DTO - Objetos de transferencia de datos ( dtos/) :
+
+-Estructuras de datos simples (a menudo Python) dataclasses o clases estándar
+que se utilizan para pasar datos entre la capa del controlador y la capa de
+servicio.
+
+-Se aseguran de que la capa de Servicio no dependa de objetos específicos de
+HTTP como request.POST o formularios Django.
+
+Servicios ( services/) :
+
+-El corazón de la aplicación. Esta capa contiene toda la lógica de negocio y los
+casos de uso.
+
+-Los servicios toman DTO como entrada, realizan las operaciones necesarias (como
+crear un empleado, enviar correos electrónicos, calcular salarios) e interactúan
+con la base de datos a través de modelos o selectores.
+
+Selectores ( selectors/) :
+
+-Dedicado a consultas de bases de datos complejas y obtención de datos
+(operaciones de lectura).
+
+-Si bien las consultas simples pueden residir en los Servicios, los Selectores
+mantienen limpia la capa de Servicio abstrayendo búsquedas ORM complejas.
+
+Modelos ( models/) :
+
+-Modelos ORM estándar de Django.
+
+-Representan las tablas y relaciones de la base de datos, pero se mantienen
+"simples" (desprovistas de lógica empresarial compleja).
+
+## ¿Por qué este patrón?
+
+-Separación de preocupaciones: la lógica HTTP está separada de la lógica
+empresarial.
+
+-Capacidad de prueba: puede probar servicios y DTO de forma aislada sin
+necesidad de una solicitud HTTP simulada o un servidor web.
+
+-Reutilización: la lógica de negocios en los servicios se puede llamar desde
+cualquier lugar (controladores, tareas de Celery, comandos de administración,
+API) sin duplicar código.
+
+## Estructura del proyecto
+
+```
+├── Django_6_crud                     # Configuración del proyecto Django (configuraciones, URL raíz)
+│   ├── settings.py
+│   ├── urls.py
+├── manage.py
+├── README.md
+├── requirements.txt
+├── static                            # Archivos estátidos del proeycto como hojas de estilos, imágenes, entre otros.
+├── apps                              # Directorio de aplicaciones
+│   ├── persons                       # Aplicación principal
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── controllers               # Controladores de solicitudes HTTP (Vistas)
+│   │   │   ├── person_controller.py
+│   │   ├── dtos                      # Objetos de transferencia de datos
+│   │   │   ├── person_dto.py
+│   │   ├── models                    # Esquemas de base de datos (Django ORM)
+│   │   │   ├── person.py
+│   │   ├── requests                  # Validación de entrada (Formularios)
+│   │   │   ├── create_person.py
+│   │   │   └── update_person.py
+│   │   ├── selectors                 # Operaciones de lectura de base de datos
+│   │   ├── services                  # Lógica empresarial central (operaciones de escritura)
+│   │   │   ├── person_service.py
+│   │   ├── templates                 # Plantillas HTML para la interfaz de usuario
+│   │   │   ├── persons
+│   │   │   │   ├── create_person.html
+│   │   │   │   ├── index.html
+│   │   │   │   └── update.html
+│   │   └── urls.py
+```
+
+## Requirimientos
 ```
 Django==6.0.2
 Python>=3.12
 ```
 
-## Run the following commands in sequence to deploy the project to a development environment:
-
-```bash
-Creating a Python 3 virtual environment:
-
-1. Update the package list:
-
-$ sudo apt update
-
-2. Install python3-venv
-
-$ sudo apt install python3-venv
-
-3. Create the virtual environment:
-
-$ python3 -m venv my_environment
-
-4. Activate the environment:
-
-$ source my_environment/bin/activate
-```
-
-Now install de Requirements
+## Instalación de requerimientos
 
 ```bash
 $ pip install -r requirements.txt
 
 $ cp Django_6_crud/settings.py_example Django_6_crud/settings.py
 
-$ python manage.py makemigrations person product
+$ python manage.py makemigrations persons product
 
 $ python manage.py migrate
 
 $ python manage.py runserver
 ```
 
-## Test the project:
+## Prueba el proyecto
 
-Open your browser to http://127.0.0.1:8000 and you'll see the Django 6 CRUD
-application for managing people records.
+Abra su navegador en http://127.0.0.1:8000 y verá la aplicación CRUD de Django 6
+para administrar registros de personas.
 
-## Image
+## Imágen
 
 ![1.png](1.png "1.png")
-
-![2.png](2.png "2.png")
-
-![3.png](3.png "3.png")
-
-![4.png](4.png "4.png")

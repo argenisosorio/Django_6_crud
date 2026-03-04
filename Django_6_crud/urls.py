@@ -7,7 +7,4 @@ urlpatterns = [
 
     # Include the URLs from persons app.
     path('', include('apps.persons.urls')),
-
-    # Include the URLs from product app.
-    path('products/', include('apps.product.urls')),
 ]
