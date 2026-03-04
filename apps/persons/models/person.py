@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Person(models.Model):
     """
     Represents a person in the system.
@@ -22,4 +23,5 @@ class Person(models.Model):
         Returns:
             str: The person's name for easy identification in admin and queries.
         """
-        return self.name
+        def __str__(self) -> str:
+            return self.name

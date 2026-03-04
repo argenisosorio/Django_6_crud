@@ -1,4 +1,4 @@
-{% extends 'person/base.html' %}
+{% extends 'persons/base.html' %}
 
 {% block content %}
 <div class="alert alert-danger" role="alert">
@@ -8,7 +8,7 @@
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Confirmar eliminación</button>
-        <a href="{% url 'person:home' %}" class="btn btn-secondary">Cancelar</a>
+        <a href="{% url 'persons:home' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 {% endblock %}

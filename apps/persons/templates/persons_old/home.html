@@ -1,8 +1,8 @@
-{% extends 'person/base.html' %}
+{% extends 'persons/base.html' %}
 
 {% block content %}
 <h1>{{ message }}</h1>
-<a href="{% url 'person:create' %}" class="btn btn-primary mb-3">Add Person</a>
+<a href="{% url 'persons:create' %}" class="btn btn-primary mb-3">Add Person</a>
 
 <table class="table">
     <thead>
@@ -20,9 +20,8 @@
             <td>{{ person.email }}</td>
             <td>{{ person.age }}</td>
             <td>
-                <a href="{% url 'person:detail' person.pk %}" class="btn btn-info">View</a>
-                <a href="{% url 'person:update' person.pk %}" class="btn btn-warning">Edit</a>
-                <a href="{% url 'person:delete' person.pk %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'persons:edit' person.pk %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'persons:delete' person.pk %}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         {% endfor %}

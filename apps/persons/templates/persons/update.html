@@ -1,10 +1,31 @@
-{% extends 'person/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Person</title>
+</head>
+<body>
+    <main>
+        <h1>Update Person: {{ person.user.username }}</h1>
+        
+        <form action="{% url 'persons:update' person.id %}" method="POST">
+            {% csrf_token %}
 
-{% block content %}
-<h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Person</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Save</button>
-</form>
-{% endblock %}
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ person.name }}">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" value="{{ person.email }}">
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" value="{{ person.age }}">
+            </div>
+            <button type="submit">Update Person</button>
+            <a href="{% url 'persons:index' %}">Cancel</a>
+        </form>
+    </main>
+</body>
+</html>
