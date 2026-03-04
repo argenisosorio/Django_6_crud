@@ -6,7 +6,7 @@
 </head>
 <body>
     <main>
-        <h1>Update Person: {{ person.user.username }}</h1>
+        <h1>Update Person: {{ person.name }}</h1>
         
         <form action="{% url 'persons:update' person.id %}" method="POST">
             {% csrf_token %}

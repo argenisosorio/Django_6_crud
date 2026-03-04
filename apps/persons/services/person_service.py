@@ -15,13 +15,14 @@ datos.
 @transaction.atomic
 def create_person(person_dto: PersonDTO) -> Person:
     """
-    Create a new person in the system.
-    
-    Args:
-        person_dto: Data transfer object with person information
-        
-    Returns:
-        Person: The created person instance
+    Crear una nueva persona en el sistema.
+
+    Argumentos:
+        person_dto: Objeto de transferencia de datos con información de la
+        persona.
+
+    Devuelve:
+        La instancia de la persona creada.
     """
     person = Person.objects.create(
         name=person_dto.name,
@@ -34,18 +35,19 @@ def create_person(person_dto: PersonDTO) -> Person:
 @transaction.atomic
 def update_person(person_id: int, person_dto: UpdatePersonDTO) -> Person:
     """
-    Update an existing person's information.
-    
-    Args:
-        person_id: ID of the person to update
-        person_dto: Data transfer object with updated information
-        
-    Returns:
-        Person: The updated person instance
+    Actualizar la información de una persona existente.
+
+    Argumentos:
+        person_id: ID de la persona que se va a actualizar
+        person_dto: Objeto de transferencia de datos con la información
+        actualizada
+
+    Devuelve:
+        La instancia de la persona actualizada
     """
     person = get_object_or_404(Person, id=person_id)
     
-    # List of fields that can be updated
+    # Lisa de campos que se pueden actualizar
     person_fields = ["name", "email", "age"]
     
     for field in person_fields:
@@ -60,10 +62,10 @@ def update_person(person_id: int, person_dto: UpdatePersonDTO) -> Person:
 
 def delete_person(person_id: int) -> None:
     """
-    Delete a person from the system.
-    
+    Eliminar una persona del sistema.
+
     Args:
-        person_id: ID of the person to delete
+        person_id: ID de la persona a eliminar
     """
     person = get_object_or_404(Person, id=person_id)
     person.delete()

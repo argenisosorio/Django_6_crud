@@ -1,7 +1,12 @@
 from django import forms
 from django.core.validators import MinLengthValidator, EmailValidator, MinValueValidator, MaxValueValidator
-
 from apps.persons.models.person import Person
+
+"""
+Formulario para validar los datos de entrada al crear una nueva persona. Este
+formulario utiliza los campos definidos en el modelo Person y agrega
+validaciones específicas
+"""
 
 
 class CreatePersonRequest(forms.Form):
@@ -15,7 +20,7 @@ class CreatePersonRequest(forms.Form):
             'min_length': 'El nombre debe tener al menos 2 caracteres'
         }
     )
-    
+
     email = forms.EmailField(
         required=True,
         validators=[EmailValidator()],
@@ -24,7 +29,7 @@ class CreatePersonRequest(forms.Form):
             'invalid': 'Ingrese un correo electrónico válido'
         }
     )
-    
+
     age = forms.IntegerField(
         required=True,
         validators=[
@@ -37,20 +42,9 @@ class CreatePersonRequest(forms.Form):
         }
     )
 
-    def clean_email(self):
-        """
-        Validate that the email is unique in the system.
-        """
-        email = self.cleaned_data.get("email")
-        
-        if Person.objects.filter(email=email).exists():
-            raise forms.ValidationError("Ya existe una persona con este correo electrónico.")
-        
-        return email
-    
     def clean_name(self):
         """
-        Validate that the name doesn't contain invalid characters.
+        Validar que el nombre solo contenga letras y espacios.
         """
         name = self.cleaned_data.get("name")
         
@@ -59,3 +53,14 @@ class CreatePersonRequest(forms.Form):
             raise forms.ValidationError("El nombre solo puede contener letras y espacios.")
         
         return name.strip()
+
+    def clean_email(self):
+        """
+        Validar que el correo electrónico sea único.
+        """
+        email = self.cleaned_data.get("email")
+
+        if Person.objects.filter(email=email).exists():
+            raise forms.ValidationError("Ya existe una persona con este correo electrónico.")
+
+        return email

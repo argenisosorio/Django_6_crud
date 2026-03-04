@@ -51,11 +51,17 @@ y, si son válidos, crea la persona utilizando el servicio correspondiente.
 """
 @require_POST
 def store(request: HttpRequest) -> HttpResponse:
+    # Formulario para validar los datos de entrada y crear un DTO para el servicio
     form = CreatePersonRequest(request.POST)
 
+    # Si los datos no son válidos, devolver un error con los mensajes de validación
     if not form.is_valid():
         return HttpResponse(f"Invalid data: {form.errors}", status=400)
 
+    """
+    Crear un DTO a partir de los datos validados y llamar al servicio para crear
+    la persona
+    """
     person_dto = PersonDTO(**form.cleaned_data)
     person_service.create_person(person_dto)
     return redirect(reverse("persons:index"))
