@@ -14,6 +14,13 @@ Controlador para manejar las operaciones CRUD relacionadas con la entidad Person
 Este controlador se encarga de recibir las solicitudes HTTP, interactuar con el
 servicio de personas y devolver las respuestas adecuadas.
 """
+
+
+"""
+Vista para mostrar la lista de personas, recupera todas las personas
+utilizando el servicio correspondiente y las pasa al template para su
+renderizado.
+"""
 def index(request):
     persons = person_service.get_all_persons()
     context = {"persons": persons}

@@ -16,10 +16,10 @@ y escalar a medida que crece.
 
 ### Controladores ( controllers/):
 
-- Actúa como punto de entrada para solicitudes HTTP
-(reemplazando las vistas tradicionales de Django). Responsable únicamente de
-manejar solicitudes HTTP, validar la entrada, llamar al Servicio apropiado y
-devolver una respuesta HTTP (representando una plantilla o redirigiendo).
+- Actúa como punto de entrada para solicitudes HTTP (reemplazando las vistas
+tradicionales de Django). Responsable únicamente de manejar solicitudes HTTP,
+validar la entrada, llamar al Servicio apropiado y devolver una respuesta HTTP
+(representando una plantilla o redirigiendo).
 
 - No contienen ninguna lógica empresarial.
 
@@ -42,8 +42,8 @@ HTTP como request.POST o formularios Django.
 
 ### Servicios ( services/):
 
-- El corazón de la aplicación. Esta capa contiene toda la lógica de negocio y los
-casos de uso.
+- El corazón de la aplicación. Esta capa contiene toda la lógica de negocio y
+los casos de uso.
 
 - Los servicios toman DTO como entrada, realizan las operaciones necesarias (como
 crear un empleado, enviar correos electrónicos, calcular salarios) e interactúan
@@ -109,6 +109,18 @@ API) sin duplicar código.
 │   │   │   │   └── update.html
 │   │   └── urls.py
 ```
+
+## Flujo de la apliación
+
+### Index
+
+1- Al entrar al proyecto se carga la url "" que apunta a la aplicación Persons,
+esta url apunta al método index definido en controllers.person_controller el
+cuál es una vista para mostrar la lista de personas, esta vista recupera todas
+las personas utilizando el servicio get_all_persons de services/person_service
+y las pasa al template para su renderizado. El servicio get_all_persons se
+encarga de hacer la consulta de todas las personas usando el modelo Person
+declarado en models/person.py.
 
 ## Requirimientos
 ```

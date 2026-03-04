@@ -1,9 +1,15 @@
 from django.contrib.auth import get_user_model
 from django.db import transaction
 from django.shortcuts import get_object_or_404
-
 from apps.persons.dtos.person_dto import PersonDTO, UpdatePersonDTO
 from apps.persons.models.person import Person
+
+"""
+Servicio para manejar la lógica de negocio relacionada con la entidad Person.
+Este servicio se encarga de realizar las operaciones CRUD utilizando los modelos
+de Django y los DTOs para transferir datos entre el controlador y la capa de
+datos.
+"""
 
 
 @transaction.atomic
@@ -65,10 +71,10 @@ def delete_person(person_id: int) -> None:
 
 def get_all_persons() -> list[Person]:
     """
-    Retrieve all persons from the database.
-    
-    Returns:
-        list[Person]: List of all persons
+    Recuperar todas las personas de la base de datos.
+
+    Retorna: list[Person]: Lista de todas las personas ordenadas por fecha de
+    creación descendente.
     """
     return Person.objects.all().order_by('-created_at')
 
