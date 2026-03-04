@@ -70,6 +70,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Django_6_crud.wsgi.application'
 
+# Send email from app
+# CLI variables
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#DEFAULT_FROM_EMAIL = 'webmaster@tuapp.com'
+
+# Use Gmail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'tu-correo@gmail.com'
+EMAIL_HOST_PASSWORD = 'tu-password-de-aplicacion' # No es tu clave normal
+DEFAULT_FROM_EMAIL = 'Tu App <tu-correo@gmail.com>'
+
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases

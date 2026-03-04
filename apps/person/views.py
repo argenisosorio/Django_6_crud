@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
 from .forms import PersonForm
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 def home(request):
     """
@@ -20,26 +23,24 @@ def home(request):
     return render(request, 'person/home.html', context)
 
 def create_person(request):
-    """
-    Handle Person creation through a form.
-    
-    GET: Displays an empty form for creating a new Person
-    POST: Processes the submitted form and creates a new Person
-    
-    Args:
-        request (HttpRequest): The incoming HTTP request
-        
-    Returns:
-        HttpResponse: Rendered form template (GET) or redirect to home (POST)
-    """
     if request.method == 'POST':
         form = PersonForm(request.POST)
         if form.is_valid():
-            form.save()
+            # 1. Guardamos el objeto y lo asignamos a una variable
+            person = form.save()
+
+            # 2. Enviamos el correo
+            send_mail(
+                subject="¡Bienvenido a nuestro sistema!",
+                message=f"Hola {person.name}, tu registro ha sido exitoso.",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[person.email],
+                fail_silently=False, # Ponlo en True en producción si no quieres que la web falle si el mail falla
+            )
             return redirect('person:home')
     else:
         form = PersonForm()
-    
+
     context = {'form': form}
     return render(request, 'person/create.html', context)
 
