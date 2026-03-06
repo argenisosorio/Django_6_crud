@@ -40,7 +40,7 @@ $ pip install -r requirements.txt
 
 $ cp Django_6_crud/settings.py_example Django_6_crud/settings.py
 
-$ python manage.py makemigrations person product
+$ python manage.py makemigrations person product users
 
 $ python manage.py migrate
 

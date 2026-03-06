@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if object %}Edit{% else %}Create{% endif %} User</title>
+</head>
+<body>
+    <header>
+        <h2>{% if object %}Edit User: {{ object.username }}{% else %}Create New User{% endif %}</h2>
+    </header>
+
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save User</button>
+            <a href="{% url 'users:user_list' %}">Cancel</a>
+        </form>
+    </main>
+</body>
+</html>

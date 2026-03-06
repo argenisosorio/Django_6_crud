@@ -14,8 +14,9 @@
 </head>
 <body>
     <div class="container mt-4">
-        <a href="{% url 'person:home' %}" class="btn btn-secondary">Person CRUD</a>
-        <a href="{% url 'product:home' %}" class="btn btn-secondary">Product CRUD</a>
+        <a href="{% url 'users:user_list' %}" class="btn btn-secondary">Users CRUD</a>
+        <a href="{% url 'person:home' %}" class="btn btn-secondary">Persons CRUD</a>
+        <a href="{% url 'product:home' %}" class="btn btn-secondary">Products CRUD</a>
         <br>
         <br>
         {% block content %}{% endblock %}
