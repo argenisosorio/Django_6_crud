@@ -11,7 +11,13 @@
 
     <main>
         <nav aria-label="User actions">
-            <a href="{% url 'users:user_create' %}">Add New User</a>
+            <a href="{% url 'users:user_create' %}">Add New User</a> |
+            {% if user.is_authenticated %}
+                ¡Hola! {{ user.username }} ({{ user.email }}) |
+                <a href="{% url 'users:logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'users:login' %}">Login</a>
+            {% endif %}
         </nav>
 
         <section aria-labelledby="users-table-title">
