@@ -13,6 +13,7 @@ from django.views.generic import (
     View,
 )
 from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 """
@@ -52,38 +53,33 @@ class LogoutView(View):
 
 # ==================== VISTAS CRUD DE USUARIOS ====================
 
-@method_decorator(login_required, name='dispatch')
-class UserListView(ListView):
+class UserListView(LoginRequiredMixin, ListView):
     model = get_user_model()
     template_name = "users/user_list.html"
     context_object_name = "users"
 
 
-@method_decorator(login_required, name='dispatch')
-class UserDetailView(DetailView):
+class UserDetailView(LoginRequiredMixin, DetailView):
     model = get_user_model()
     template_name = "users/user_detail.html"
     context_object_name = "user"
 
 
-@method_decorator(login_required, name='dispatch')
-class UserCreateView(CreateView):
+class UserCreateView(LoginRequiredMixin, CreateView):
     model = get_user_model()
     template_name = "users/user_form.html"
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("users:user_list")
 
 
-@method_decorator(login_required, name='dispatch')
-class UserUpdateView(UpdateView):
+class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     template_name = "users/user_form.html"
     form_class = CustomUserChangeForm
     success_url = reverse_lazy("users:user_list")
 
 
-@method_decorator(login_required, name='dispatch')
-class UserDeleteView(DeleteView):
+class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = get_user_model()
     template_name = "users/user_confirm_delete.html"
     success_url = reverse_lazy("users:user_list")
