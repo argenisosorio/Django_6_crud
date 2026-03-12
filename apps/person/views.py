@@ -32,8 +32,8 @@ def create_person(request):
     Returns:
         HttpResponse: Rendered form template (GET) or redirect to home (POST)
     """
-    if request.method == 'POST':
-        form = PersonForm(request.POST)
+    if request.method == 'POST' and request.FILES['document'] and request.FILES['dni_file']:
+        form = PersonForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('person:home')

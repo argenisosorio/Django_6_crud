@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,9 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -70,10 +69,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Django_6_crud.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,6 +78,18 @@ DATABASES = {
     }
 }
 
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_6_crud',     # La base de datos que creaste
+        'USER': 'admin',  # Por defecto suele ser 'postgres'
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',           # O 'localhost'
+        'PORT': '5432',                # Puerto por defecto de Postgres
+    }
+}
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -100,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
@@ -111,7 +119,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -124,3 +131,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"    # For production environment (collects
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media files (PDF, ODT, DOCX, XLS, etc)
+MEDIA_URL = 'storage/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'storage')

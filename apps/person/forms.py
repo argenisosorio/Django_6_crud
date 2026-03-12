@@ -24,8 +24,4 @@ class PersonForm(forms.ModelForm):
         """
         model = Person
 
-        fields = [
-            'name',
-            'email',
-            'age'
-        ]
+        fields = '__all__'
