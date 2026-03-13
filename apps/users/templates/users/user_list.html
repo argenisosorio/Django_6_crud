@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-        <h2>User Management</h2>
+        <h2>Users List</h2>
     </header>
 
     <main>
@@ -14,14 +14,16 @@
             <a href="{% url 'users:user_create' %}">Add New User</a> |
             {% if user.is_authenticated %}
                 ¡Hola! {{ user.username }} ({{ user.email }}) |
+                <a href="{% url 'users:password_change' %}">Change Password</a> |
                 <a href="{% url 'users:logout' %}">Logout</a>
             {% else %}
                 <a href="{% url 'users:login' %}">Login</a>
             {% endif %}
         </nav>
 
+        <br />
+
         <section aria-labelledby="users-table-title">
-            <h3 id="users-table-title">Existing Users</h3>
             <table border="1">
                 <thead>
                     <tr>

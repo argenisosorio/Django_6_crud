@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.as_p }}
+        </div>
+        <button type="submit">Registrarse</button>
+        <br />
+        <br />
+        <a href="{% url 'users:login' %}">¿Ya tienes cuenta? Inicia sesión aquí</a>
+        </div>
+    </form>
+    <p>
+        <a href="{% url 'users:user_list' %}">Volver a la lista de usuarios</a>
+    </p>
+</body>
+</html>

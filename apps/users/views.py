@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model, login, logout
-from django.contrib.auth.decorators import login_required
+from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -12,8 +13,6 @@ from django.views.generic import (
     UpdateView,
     View,
 )
-from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 """
@@ -49,6 +48,21 @@ class LogoutView(View):
     def post(self, request):
         logout(request)
         return redirect("users:login")
+
+
+class SignUpView(CreateView):
+    """
+    Vista para registrar nuevos usuarios.
+    """
+    model = get_user_model()
+    template_name = "users/signup.html"
+    form_class = CustomUserCreationForm
+    success_url = reverse_lazy("users:user_list")
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        login(self.request, self.object)
+        return response
 
 
 # ==================== VISTAS CRUD DE USUARIOS ====================
