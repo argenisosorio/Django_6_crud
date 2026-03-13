@@ -32,8 +32,8 @@ def create_person(request):
     Returns:
         HttpResponse: Rendered form template (GET) or redirect to home (POST)
     """
-    if request.method == 'POST':
-        form = PersonForm(request.POST)
+    if request.method == 'POST' and request.FILES['dni_file']:
+        form = PersonForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('person:home')
@@ -73,8 +73,8 @@ def update_person(request, pk):
         HttpResponse: Rendered form template (GET) or redirect to detail view (POST)
     """
     person = get_object_or_404(Person, pk=pk)
-    if request.method == 'POST':
-        form = PersonForm(request.POST, instance=person)
+    if request.method == 'POST' and request.FILES['dni_file']:
+        form = PersonForm(request.POST, request.FILES, instance=person)
         if form.is_valid():
             form.save()
             return redirect('person:detail', pk=person.pk)

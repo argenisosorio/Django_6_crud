@@ -27,5 +27,6 @@ class PersonForm(forms.ModelForm):
         fields = [
             'name',
             'email',
-            'age'
+            'age',
+            'dni_file'
         ]

@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
+
 
 class Person(models.Model):
     """
@@ -12,6 +14,22 @@ class Person(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     age = models.PositiveIntegerField()
+
+    # Campo Documento DNI.
+    dni_file = models.FileField(
+        upload_to='',
+        blank=True,
+        null=True,
+        default="",
+        validators=[
+            FileExtensionValidator(allowed_extensions=[
+                'pdf',
+                'odt'
+            ])
+        ],
+        help_text="Solo se permiten archivos PDF, ODT."
+    )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

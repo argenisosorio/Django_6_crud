@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,3 +125,18 @@ STATIC_ROOT = BASE_DIR / "staticfiles"    # For production environment (collects
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media files (PDF, ODT, DOCX, XLS, etc)
+MEDIA_URL = 'storage/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'storage')
+
+"""
+-MEDIA_URL: Ruta absoluta en el sistema de archivos donde se guardarán los
+archivos
+-MEDIA_ROOT:  URL pública para acceder a esos archivos desde el navegador
+
+Un archvivo subido desde el formulario se guardará en la carpeta 'storage'
+dentro del directorio base del proyecto, para descargarlo desde la url será
+/storage/nombre_del_archivo.extensión esto se debe a la configuración de
+MEDIA_URL y MEDIA_ROOT.
+"""
