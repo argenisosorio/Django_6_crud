@@ -29,3 +29,30 @@ class PersonForm(forms.ModelForm):
             'email',
             'age'
         ]
+
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Nombre de la persona',
+                'pattern': '[a-zA-Z ]+',
+                'title': 'Solo se permiten letras y espacios.',
+            }),
+        }
+            
+
+        error_messages = {
+            'name': {
+                'required': 'Este campo es requerido.',
+                'max_length': 'Máximo 100 caracteres.',
+                'blank': 'Este campo es requerido.',
+            },
+            'email': {
+                'required': 'Este campo es requerido.',
+                'invalid': 'Formato de correo inválido.',
+                'blank': 'Este campo es requerido.',
+            },
+            'age': {
+                'required': 'Este campo es requerido.',
+                'min_value': 'No se permiten números negativos.',
+                'blank': 'Este campo es requerido.',
+            },
+        }
