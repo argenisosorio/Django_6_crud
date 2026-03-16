@@ -2,9 +2,27 @@
 
 {% block content %}
 <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Person</h1>
+<!-- create.html -->
 <form method="post">
     {% csrf_token %}
+
+    <!-- SECCIÓN ÚNICA PARA TODOS LOS ERRORES -->
+    {% if form.errors %}
+    <div class="error-section">
+        <h3>Por favor corrige los siguientes errores:</h3>
+        <ul class="error-list">
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Resto del formulario -->
     {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Save</button>
+
+    <button type="submit">Guardar</button>
 </form>
 {% endblock %}
