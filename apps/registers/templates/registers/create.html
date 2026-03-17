@@ -1,10 +1,339 @@
 {% extends 'registers/base.html' %}
 
 {% block content %}
-<h1>Registro de Datos</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Save</button>
-</form>
+<div class="container mt-4 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white py-3">
+                    <h2 class="card-title mb-0">
+                        <i class="fas fa-clipboard-list me-2"></i>
+                        Registro de Datos
+                    </h2>
+                </div>
+                
+                <div class="card-body p-4">
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        
+                        <!-- SECCIÓN DE ERRORES GENERALES -->
+                        {% if form.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong><i class="fas fa-exclamation-triangle me-2"></i>Por favor corrige los siguientes errores:</strong>
+                            <ul class="mb-0 mt-2">
+                                {% for field, errors in form.errors.items %}
+                                    {% for error in errors %}
+                                        <li>{{ field|title }}: {{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="row g-4">
+                            <!-- DATOS PERSONALES -->
+                            <div class="col-12">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-user me-2"></i>Datos Personales
+                                </h5>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="{{ form.nombres.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.nombres.label }} <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.nombres.name }}" 
+                                    id="{{ form.nombres.id_for_label }}"
+                                    class="form-control {% if form.nombres.errors %}is-invalid{% endif %}"
+                                    value="{{ form.nombres.value|default:'' }}"
+                                    placeholder="Ingrese los nombres"
+                                    required
+                                >
+                                {% if form.nombres.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.nombres.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="{{ form.apellidos.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.apellidos.label }} <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.apellidos.name }}" 
+                                    id="{{ form.apellidos.id_for_label }}"
+                                    class="form-control {% if form.apellidos.errors %}is-invalid{% endif %}"
+                                    value="{{ form.apellidos.value|default:'' }}"
+                                    placeholder="Ingrese los apellidos"
+                                    required
+                                >
+                                {% if form.apellidos.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.apellidos.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label for="{{ form.cedula.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.cedula.label }} <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.cedula.name }}" 
+                                    id="{{ form.cedula.id_for_label }}"
+                                    class="form-control {% if form.cedula.errors %}is-invalid{% endif %}"
+                                    value="{{ form.cedula.value|default:'' }}"
+                                    placeholder="V-12345678"
+                                >
+                                {% if form.cedula.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.cedula.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label for="{{ form.telefono.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.telefono.label }} <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="tel" 
+                                    name="{{ form.telefono.name }}" 
+                                    id="{{ form.telefono.id_for_label }}"
+                                    class="form-control {% if form.telefono.errors %}is-invalid{% endif %}"
+                                    value="{{ form.telefono.value|default:'' }}"
+                                    placeholder="0412-1234567"
+                                >
+                                {% if form.telefono.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.telefono.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label for="{{ form.parroquia.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.parroquia.label }} <span class="text-danger">*</span>
+                                </label>
+                                <select name="{{ form.parroquia.name }}" 
+                                        id="{{ form.parroquia.id_for_label }}"
+                                        class="form-select {% if form.parroquia.errors %}is-invalid{% endif %}"
+                                        required>
+                                    <option value="">Seleccione una parroquia...</option>
+                                    {% for value, label in form.parroquia.field.choices %}
+                                        <option value="{{ value }}" {% if form.parroquia.value == value %}selected{% endif %}>
+                                            {{ label }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.parroquia.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.parroquia.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="{{ form.direccion.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.direccion.label }} <span class="text-danger">*</span>
+                                </label>
+                                <textarea
+                                    name="{{ form.direccion.name }}" 
+                                    id="{{ form.direccion.id_for_label }}"
+                                    class="form-control {% if form.direccion.errors %}is-invalid{% endif %}"
+                                    rows="2"
+                                    placeholder="Dirección completa"
+                                    required>{{ form.direccion.value|default:'' }}</textarea>
+                                {% if form.direccion.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.direccion.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- DATOS DEL CILINDRO -->
+                            <div class="col-12 mt-3">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-gas-pump me-2"></i>Datos del Cilindro
+                                </h5>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="{{ form.cantidad.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.cantidad.label }} <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="number" 
+                                    name="{{ form.cantidad.name }}" 
+                                    id="{{ form.cantidad.id_for_label }}"
+                                    class="form-control {% if form.cantidad.errors %}is-invalid{% endif %}"
+                                    value="{{ form.cantidad.value|default:'1' }}"
+                                    min="1"
+                                    required
+                                >
+                                {% if form.cantidad.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.cantidad.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="{{ form.tamano_cilindro.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.tamano_cilindro.label }} <span class="text-danger">*</span>
+                                </label>
+                                <select name="{{ form.tamano_cilindro.name }}" 
+                                        id="{{ form.tamano_cilindro.id_for_label }}"
+                                        class="form-select {% if form.tamano_cilindro.errors %}is-invalid{% endif %}"
+                                        required>
+                                    <option value="">Seleccione tamaño...</option>
+                                    {% for value, label in form.tamano_cilindro.field.choices %}
+                                        <option value="{{ value }}" {% if form.tamano_cilindro.value == value %}selected{% endif %}>
+                                            {{ label }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.tamano_cilindro.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.tamano_cilindro.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- FECHAS (con calendario HTML5) -->
+                            <div class="col-12 mt-3">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-calendar-alt me-2"></i>Fechas
+                                </h5>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="{{ form.fecha_registro.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.fecha_registro.label }} <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="date" 
+                                    name="{{ form.fecha_registro.name }}" 
+                                    id="{{ form.fecha_registro.id_for_label }}"
+                                    class="form-control {% if form.fecha_registro.errors %}is-invalid{% endif %}"
+                                    value="{{ form.fecha_registro.value|date:'Y-m-d'|default:'' }}"
+                                    required
+                                >
+                                {% if form.fecha_registro.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.fecha_registro.errors.0 }}
+                                    </div>
+                                {% endif %}
+                                <div class="form-text">Fecha de registro inicial</div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="{{ form.fecha_despacho.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.fecha_despacho.label }}
+                                </label>
+                                <input
+                                    type="date" 
+                                    name="{{ form.fecha_despacho.name }}" 
+                                    id="{{ form.fecha_despacho.id_for_label }}"
+                                    class="form-control {% if form.fecha_despacho.errors %}is-invalid{% endif %}"
+                                    value="{{ form.fecha_despacho.value|date:'Y-m-d'|default:'' }}"
+                                >
+                                {% if form.fecha_despacho.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.fecha_despacho.errors.0 }}
+                                    </div>
+                                {% endif %}
+                                <div class="form-text">Dejar vacío si no ha sido despachado</div>
+                            </div>
+                            
+                            <!-- CAMPOS BOOLEANOS Y OTROS -->
+                            <div class="col-12 mt-3">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-check-circle me-2"></i>Estado y Verificaciones
+                                </h5>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="form-check form-switch mt-3">
+                                    <input
+                                        type="checkbox" 
+                                        name="{{ form.visitado.name }}" 
+                                        id="{{ form.visitado.id_for_label }}"
+                                        class="form-check-input {% if form.visitado.errors %}is-invalid{% endif %}"
+                                        {% if form.visitado.value %}checked{% endif %}
+                                    >
+                                    <label for="{{ form.visitado.id_for_label }}" class="form-check-label fw-bold">
+                                        {{ form.visitado.label }}
+                                    </label>
+                                    {% if form.visitado.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.visitado.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="form-check form-switch mt-3">
+                                    <input
+                                        type="checkbox" 
+                                        name="{{ form.documentos_completos.name }}" 
+                                        id="{{ form.documentos_completos.id_for_label }}"
+                                        class="form-check-input {% if form.documentos_completos.errors %}is-invalid{% endif %}"
+                                        {% if form.documentos_completos.value %}checked{% endif %}
+                                    >
+                                    <label for="{{ form.documentos_completos.id_for_label }}" class="form-check-label fw-bold">
+                                        {{ form.documentos_completos.label }}
+                                    </label>
+                                    {% if form.documentos_completos.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.documentos_completos.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label for="{{ form.retirado_por.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.retirado_por.label }}
+                                </label>
+                                <input type="text" 
+                                    name="{{ form.retirado_por.name }}" 
+                                    id="{{ form.retirado_por.id_for_label }}"
+                                    class="form-control {% if form.retirado_por.errors %}is-invalid{% endif %}"
+                                    value="{{ form.retirado_por.value|default:'' }}"
+                                    placeholder="Nombre de quien retira"
+                                >
+                                {% if form.retirado_por.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.retirado_por.errors.0 }}
+                                    </div>
+                                {% endif %}
+                                <div class="form-text">Opcional - quién retiró el cilindro</div>
+                            </div>
+                        </div>
+                        
+                        <!-- BOTONES -->
+                        <div class="row mt-5">
+                            <div class="col-12 d-flex justify-content-end gap-2">
+                                <a href="{% url 'registers:home' %}" class="btn btn-secondary">
+                                    <i class="fas fa-times"></i> Cancelar
+                                </a>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Guardar Registro
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
