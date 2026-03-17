@@ -1,7 +1,7 @@
 {% extends 'registers/base.html' %}
 
 {% block content %}
-<h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Register</h1>
+<h1>Registro de Datos</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

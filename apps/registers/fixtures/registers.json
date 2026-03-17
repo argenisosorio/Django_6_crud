@@ -1,0 +1,44 @@
+[
+    {
+        "model": "registers.register",
+        "pk": 1,
+        "fields": {
+            "nombres": "Argenis",
+            "apellidos": "Osorio",
+            "cedula": "19592165",
+            "telefono": "04165233897",
+            "direccion": "asdasd asd ads asd asd asda as das asd ads",
+            "parroquia": "Milla",
+            "fecha_registro": "2026-03-17",
+            "fecha_despacho": "2026-03-17",
+            "retirado_por": "Hide Osniel",
+            "cantidad": 1,
+            "tamano_cilindro": "Pequeña",
+            "visitado": true,
+            "documentos_completos": true,
+            "created_at": "2026-03-17T17:27:45.160Z",
+            "updated_at": "2026-03-17T17:27:45.160Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 2,
+        "fields": {
+            "nombres": "Jose",
+            "apellidos": "Pérez",
+            "cedula": "18902230",
+            "telefono": "04165246897",
+            "direccion": "xxxx  x xx  x   x  x",
+            "parroquia": "Milla",
+            "fecha_registro": "2026-03-14",
+            "fecha_despacho": "2026-03-14",
+            "retirado_por": "Carlos Gómez",
+            "cantidad": 1,
+            "tamano_cilindro": "Pequeña",
+            "visitado": false,
+            "documentos_completos": false,
+            "created_at": "2026-03-14T17:27:45.160Z",
+            "updated_at": "2026-03-14T17:27:45.160Z"
+        }
+    }
+]

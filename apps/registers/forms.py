@@ -9,8 +9,4 @@ class RegisterForm(forms.ModelForm):
     class Meta:
         model = Register
 
-        fields = [
-            'name',
-            'email',
-            'age'
-        ]
+        fields = '__all__'
