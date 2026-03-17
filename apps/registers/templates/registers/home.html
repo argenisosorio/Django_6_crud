@@ -1,0 +1,31 @@
+{% extends 'registers/base.html' %}
+
+{% block content %}
+<h1>Lista de registros</h1>
+<a href="{% url 'registers:create' %}" class="btn btn-primary mb-3">Add Registers</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for register in registers %}
+        <tr>
+            <td>{{ register.name }}</td>
+            <td>{{ register.email }}</td>
+            <td>{{ register.age }}</td>
+            <td>
+                <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info">View</a>
+                <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'registers:delete' register.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

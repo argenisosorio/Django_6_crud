@@ -34,7 +34,7 @@ class LoginView(AuthLoginView):
 
     def get_success_url(self):
         """Redirigir a la lista de usuarios después del login"""
-        return reverse_lazy("users:user_list")
+        return reverse_lazy("registers:home")
 
 
 class LogoutView(View):

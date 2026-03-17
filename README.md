@@ -40,11 +40,18 @@ $ pip install -r requirements.txt
 
 $ cp Django_6_crud/settings.py_example Django_6_crud/settings.py
 
-$ python manage.py makemigrations person product users
+$ python manage.py makemigrations registers users
 
 $ python manage.py migrate
 
+$ python manage.py createsuperuser
+
 $ python manage.py runserver
+```
+
+For dev
+```bash
+$ rm -rf apps/users/migrations && rm -rf apps/registers/migrations && rm -rf db.sqlite3 && python manage.py makemigrations registers users && python manage.py migrate && python manage.py createsuperuser && python manage.py runserver
 ```
 
 ## Test the project:

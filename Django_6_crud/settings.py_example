@@ -37,9 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.person',
-    'apps.product',
     'apps.users',
+    'apps.registers',
 ]
 
 MIDDLEWARE = [
@@ -139,5 +138,9 @@ AUTH_USER_MODEL = "users.User"
 
 # Configuración de autenticación
 LOGIN_URL = 'users:login'
-LOGIN_REDIRECT_URL = 'users:user_list'
+
+# Destino por defecto del usuario justo después de iniciar sesión correctamente
+LOGIN_REDIRECT_URL = 'registers:home'
+
+# Determina a dónde debe ser enviado el usuario inmediatamente después de cerrar su sesión.
 LOGOUT_REDIRECT_URL = 'users:login'

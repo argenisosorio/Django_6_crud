@@ -1,0 +1,23 @@
+{% extends 'registers/base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h2>Detalle de Register</h2>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Nombre:</strong> {{ register.name }}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{ register.email }}</li>
+            <li class="list-group-item"><strong>Edad:</strong> {{ register.age }}</li>
+            <li class="list-group-item"><strong>Creado:</strong> {{ register.created_at|date:"d/m/Y H:i" }}</li>
+            <li class="list-group-item"><strong>Actualizado:</strong> {{ register.updated_at|date:"d/m/Y H:i" }}</li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning">Editar</a>
+        <a href="{% url 'registers:delete' register.pk %}" class="btn btn-danger">Eliminar</a>
+        <a href="{% url 'registers:home' %}" class="btn btn-secondary">Volver al listado</a>
+    </div>
+</div>
+{% endblock %}
