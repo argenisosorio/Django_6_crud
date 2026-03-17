@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator, MaxValueValidator
 
 class Person(models.Model):
     """
@@ -9,19 +9,34 @@ class Person(models.Model):
     email, age, and timestamps for record creation and updates.
     """
 
-    # Personal Information Fields
     name = models.CharField(
         max_length=5,
-        validators=[RegexValidator(r'\d', inverse_match=True, message='No se permiten números.')],
+        validators=[RegexValidator(r'\d', inverse_match=True, message='El campo nombre no permite números.')],
         error_messages={
-            'max_length': 'Máximo 5 caracteres.',
-            'blank': 'Este campo es requerido.',
-            'required': 'Este campo es requerido.',
+            'max_length': 'El campo nombre no puede tener más de 5 caracteres.',
+            'blank': 'El campo nombre es requerido.',
+            'required': 'El campo nombre es requerido.',
         }
     )
 
-    email = models.EmailField()
-    age = models.PositiveIntegerField()
+    email = models.EmailField(
+        max_length=254,
+        error_messages={
+            'invalid': 'El campo email no es una dirección de correo electrónico válida.',
+            'blank': 'El campo email es requerido.',
+            'required': 'El campo email es requerido.',
+        }
+    )
+
+    age = models.PositiveIntegerField(
+        validators=[MaxValueValidator(120, message='El campo edad no permite más de 120 años.')],
+        error_messages={
+            'invalid': 'El campo edad solo permite números enteros válidos .',
+            'blank': 'El campo edad es requerido.',
+            'required': 'El campo edad es requerido.',
+        }
+    )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
