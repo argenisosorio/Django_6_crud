@@ -9,9 +9,9 @@
 </div>
 
 <div class="table-responsive">
-    <table class="table table-hover table-striped">
+    <table class="table table-hover table-striped table-bordered align-middle">
         <thead class="table-dark">
-            <tr>
+            <tr class="text-center">
                 <th>Nombres</th>
                 <th>Apellidos</th>
                 <th>Cédula</th>
@@ -25,8 +25,8 @@
                 <th>Tamaño</th>
                 <th>Visitado</th>
                 <th>Documentos completos</th>
-                <th>Fecha de registro en BD</th>
-                <th>Última actualización en BD</th>
+                <th>Registro en BD</th>
+                <th>Última actualización</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -37,12 +37,18 @@
                 <td>{{ register.apellidos }}</td>
                 <td>{{ register.cedula }}</td>
                 <td>{{ register.telefono }}</td>
-                <td>{{ register.direccion }}</td>
+                <td class="small">{{ register.direccion }}</td>
                 <td>{{ register.parroquia }}</td>
-                <td>{{ register.fecha_registro }}</td>
-                <td>{{ register.fecha_despacho }}</td>
-                <td>{{ register.retirado_por }}</td>
-                <td>{{ register.cantidad }}</td>
+                <td class="text-center">{{ register.fecha_registro|date:"d/m/Y" }}</td>
+                <td class="text-center">
+                    {% if register.fecha_despacho %}
+                        {{ register.fecha_despacho|date:"d/m/Y" }}
+                    {% else %}
+                        <span class="text-muted italic">Pendiente</span>
+                    {% endif %}
+                </td>
+                <td>{{ register.retirado_por|default:"-" }}</td>
+                <td class="text-center">{{ register.cantidad }}</td>
                 <td>{{ register.tamano_cilindro }}</td>
                 <td class="text-center">
                     {% if register.visitado %}
@@ -53,13 +59,13 @@
                 </td>
                 <td class="text-center">
                     {% if register.documentos_completos %}
-                        <span class="badge bg-success">Si</span>
+                        <span class="badge bg-success">Sí</span>
                     {% else %}
                         <span class="badge bg-secondary">No</span>
                     {% endif %}
                 </td>
-                <td>{{ register.created_at }}</td>
-                <td>{{ register.updated_at }}</td>
+                <td class="small text-muted">{{ register.created_at|date:"d/m/Y" }}</td>
+                <td class="small text-muted">{{ register.updated_at|date:"d/m/Y" }}</td>
                 <td>
                     <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info">Detalles</a>
                     <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning">Editar</a>
@@ -68,7 +74,9 @@
             </tr>
             {% empty %}
             <tr>
-                <td colspan="8" class="text-center text-muted">No hay registros disponibles.</td>
+                <td colspan="16" class="text-center py-4 text-muted">
+                    <i class="fas fa-info-circle"></i> No hay registros disponibles en este momento.
+                </td>
             </tr>
             {% endfor %}
         </tbody>
