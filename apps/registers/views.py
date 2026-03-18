@@ -5,25 +5,31 @@ from .forms import RegisterForm
 
 @login_required
 def home(request):
-    # Capturamos ambos parámetros de búsqueda
     query_cedula = request.GET.get('q', '')
     query_parroquia = request.GET.get('p', '')
 
-    # Empezamos con todos los registros
     registers = Register.objects.all().order_by('-created_at')
 
-    # Filtro por Cédula (si existe)
     if query_cedula:
         registers = registers.filter(cedula__icontains=query_cedula)
-
-    # Filtro por Parroquia (si existe)
+    
     if query_parroquia:
-        registers = registers.filter(parroquia__icontains=query_parroquia)
+        # Aquí usamos coincidencia exacta porque viene de un select
+        registers = registers.filter(parroquia=query_parroquia)
+
+    # Definimos la lista aquí o impórtala de tu modelo
+    parroquias_list = [
+        "Antonio Spinetti Dini", "Arias", "Caracciolo Parra Pérez",
+        "Domingo Peña", "El Llano", "El Sagrario", "Gonzalo Picón Febres",
+        "Jacinto Plaza", "Lasso de la Vega", "Juan Rodríguez Suárez",
+        "Mariano Picón Salas", "Milla", "Osuna Rodríguez"
+    ]
 
     context = {
         'registers': registers,
         'query_cedula': query_cedula,
         'query_parroquia': query_parroquia,
+        'parroquias_list': parroquias_list,
     }
     return render(request, 'registers/home.html', context)
 

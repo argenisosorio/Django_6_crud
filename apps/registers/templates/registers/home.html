@@ -11,6 +11,7 @@
 <div class="card mb-4 shadow-sm">
     <div class="card-body">
         <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
+            
             <div class="col-md-4">
                 <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
                 <input
@@ -23,14 +24,15 @@
             </div>
 
             <div class="col-md-4">
-                <label for="p" class="form-label fw-bold">Buscar por Parroquia</label>
-                <input
-                    type="text"
-                    name="p"
-                    id="p"
-                    class="form-control"
-                    value="{{ query_parroquia }}"
-                >
+                <label for="p" class="form-label fw-bold">Filtrar por Parroquia</label>
+                <select name="p" id="p" class="form-select">
+                    <option value="">Todas las parroquias</option>
+                    {% for parroquia in parroquias_list %}
+                        <option value="{{ parroquia }}" {% if query_parroquia == parroquia %}selected{% endif %}>
+                            {{ parroquia }}
+                        </option>
+                    {% endfor %}
+                </select>
             </div>
 
             <div class="col-md-4 d-flex align-items-end gap-2">
