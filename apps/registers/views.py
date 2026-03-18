@@ -5,20 +5,25 @@ from .forms import RegisterForm
 
 @login_required
 def home(request):
-    # Capturamos el valor del input llamado 'q' (de query)
-    query = request.GET.get('q', '')
+    # Capturamos ambos parámetros de búsqueda
+    query_cedula = request.GET.get('q', '')
+    query_parroquia = request.GET.get('p', '')
 
     # Empezamos con todos los registros
     registers = Register.objects.all().order_by('-created_at')
 
-    # Si el usuario escribió algo, filtramos por el campo 'cedula'
-    if query:
-        # 'icontains' busca coincidencias parciales e ignora mayúsculas/minúsculas
-        registers = registers.filter(cedula__icontains=query)
+    # Filtro por Cédula (si existe)
+    if query_cedula:
+        registers = registers.filter(cedula__icontains=query_cedula)
+
+    # Filtro por Parroquia (si existe)
+    if query_parroquia:
+        registers = registers.filter(parroquia__icontains=query_parroquia)
 
     context = {
         'registers': registers,
-        'query': query, # Devolvemos el valor para que permanezca en el input
+        'query_cedula': query_cedula,
+        'query_parroquia': query_parroquia,
     }
     return render(request, 'registers/home.html', context)
 

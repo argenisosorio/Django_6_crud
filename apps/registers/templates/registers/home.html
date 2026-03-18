@@ -13,22 +13,34 @@
         <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
             <div class="col-md-4">
                 <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
-                <div class="input-group">
-                    <input
-                        type="text"
-                        name="q"
-                        id="q" class="form-control"
-                        value="{{ query }}"
-                    >
-                    <button class="btn btn-outline-secondary" type="submit">
-                        Buscar
-                    </button>
-                </div>
+                <input
+                    type="text"
+                    name="q"
+                    id="q"
+                    class="form-control"
+                    value="{{ query_cedula }}"
+                >
             </div>
-            <div class="col-md-4 d-flex align-items-end">
-                {% if query %}
-                    <a href="{% url 'registers:home' %}" class="btn btn-link text-decoration-none text-danger">
-                        <i class="fas fa-times"></i> Limpiar búsqueda
+
+            <div class="col-md-4">
+                <label for="p" class="form-label fw-bold">Buscar por Parroquia</label>
+                <input
+                    type="text"
+                    name="p"
+                    id="p"
+                    class="form-control"
+                    value="{{ query_parroquia }}"
+                >
+            </div>
+
+            <div class="col-md-4 d-flex align-items-end gap-2">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-filter"></i> Filtrar
+                </button>
+
+                {% if query_cedula or query_parroquia %}
+                    <a href="{% url 'registers:home' %}" class="btn btn-outline-danger">
+                        <i class="fas fa-eraser"></i> Limpiar
                     </a>
                 {% endif %}
             </div>
