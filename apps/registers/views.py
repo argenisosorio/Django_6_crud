@@ -5,9 +5,20 @@ from .forms import RegisterForm
 
 @login_required
 def home(request):
-    registers = Register.objects.all()
+    # Capturamos el valor del input llamado 'q' (de query)
+    query = request.GET.get('q', '')
+
+    # Empezamos con todos los registros
+    registers = Register.objects.all().order_by('-created_at')
+
+    # Si el usuario escribió algo, filtramos por el campo 'cedula'
+    if query:
+        # 'icontains' busca coincidencias parciales e ignora mayúsculas/minúsculas
+        registers = registers.filter(cedula__icontains=query)
+
     context = {
         'registers': registers,
+        'query': query, # Devolvemos el valor para que permanezca en el input
     }
     return render(request, 'registers/home.html', context)
 
