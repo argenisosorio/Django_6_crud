@@ -3,9 +3,6 @@
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Lista de Registros</h1>
-    <a href="{% url 'registers:create' %}" class="btn btn-primary">
-        <i class="fas fa-plus"></i> Agregar Registro
-    </a>
 </div>
 
 <div class="card mb-4 shadow-sm">
@@ -50,6 +47,10 @@
 
 <br>
 
+<a href="{% url 'registers:create' %}" class="btn btn-primary mb-4">
+    <i class="fas fa-plus"></i> Agregar Registro
+</a>
+
 <div class="table-responsive">
     <table class="table table-hover table-striped table-bordered align-middle">
         <thead class="table-dark">
@@ -69,52 +70,52 @@
                 <th>Visitado</th>
                 <th>Documentos completos</th>
                 <th>Registro en BD</th>
-                <th>Última actualización</th>
+                <th>Última actualización en BD</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             {% for register in registers %}
             <tr>
-                <td class="text-center fw-bold">{{ forloop.counter }}</td>
-                <td>{{ register.nombres }}</td>
-                <td>{{ register.apellidos }}</td>
-                <td>{{ register.cedula }}</td>
-                <td>{{ register.telefono }}</td>
-                <td class="small">{{ register.direccion }}</td>
-                <td>{{ register.parroquia }}</td>
-                <td class="text-center">{{ register.fecha_registro|date:"d/m/Y" }}</td>
-                <td class="text-center">
+                <td class="text-center">{{ forloop.counter }}</td>
+                <td class="small text-muted">{{ register.nombres }}</td>
+                <td class="small text-muted">{{ register.apellidos }}</td>
+                <td class="small text-muted">{{ register.cedula }}</td>
+                <td class="small text-muted">{{ register.telefono }}</td>
+                <td class="small text-muted">{{ register.direccion }}</td>
+                <td class="small text-muted">{{ register.parroquia }}</td>
+                <td class="small text-muted text-center">{{ register.fecha_registro|date:"d/m/Y" }}</td>
+                <td class="small text-muted text-center">
                     {% if register.fecha_despacho %}
                         {{ register.fecha_despacho|date:"d/m/Y" }}
                     {% else %}
                         <span class="text-muted italic">Pendiente</span>
                     {% endif %}
                 </td>
-                <td>{{ register.retirado_por|default:"-" }}</td>
-                <td class="text-center">{{ register.cantidad }}</td>
-                <td>{{ register.tamano_cilindro }}</td>
-                <td class="text-center">
+                <td class="small text-muted">{{ register.retirado_por }} - {{ register.retirado_por_ci }}</td>
+                <td class="small text-muted text-center">{{ register.cantidad }}</td>
+                <td class="small text-muted">{{ register.tamano_cilindro }}</td>
+                <td class="small text-muted text-center">
                     {% if register.visitado %}
                         <span class="badge bg-success">Sí</span>
                     {% else %}
                         <span class="badge bg-secondary">No</span>
                     {% endif %}
                 </td>
-                <td class="text-center">
+                <td class="small text-muted text-center">
                     {% if register.documentos_completos %}
                         <span class="badge bg-success">Sí</span>
                     {% else %}
                         <span class="badge bg-secondary">No</span>
                     {% endif %}
                 </td>
-                <td class="small text-muted">{{ register.created_at|date:"d/m/Y" }}</td>
-                <td class="small text-muted">{{ register.updated_at|date:"d/m/Y" }}</td>
+                <td class="small text-muted text-center">{{ register.created_at|date:"d/m/Y" }}</td>
+                <td class="small text-muted text-center">{{ register.updated_at|date:"d/m/Y" }}</td>
                 <td>
                     <div class="btn-group btn-group-sm">
-                        <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info">Detalles</a>
-                        <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning">Editar</a>
-                        <a href="{% url 'registers:delete' register.pk %}" class="btn btn-danger">Borrar</a>
+                        <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info small">Detalles</a>
+                        <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning small">Editar</a>
+                        <a href="{% url 'registers:delete' register.pk %}" class="btn btn-danger small">Borrar</a>
                     </div>
                 </td>
             </tr>

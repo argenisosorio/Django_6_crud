@@ -16,6 +16,8 @@ class Register(models.Model):
         ("Mariano Picón Salas", "Mariano Picón Salas"),
         ("Milla", "Milla"),
         ("Osuna Rodríguez", "Osuna Rodríguez"),
+        ("El Morro", "El Morro"),
+        ("Los Nevados", "Los Nevados"),
     ]
 
     TAMANOS = [
@@ -27,7 +29,7 @@ class Register(models.Model):
     # Campos de Identificación y Contacto
     nombres = models.CharField(max_length=150)
     apellidos = models.CharField(max_length=150)
-    cedula = models.CharField(max_length=20, unique=True)
+    cedula = models.CharField(max_length=20)
     telefono = models.CharField(max_length=20)
     direccion = models.TextField()
     parroquia = models.CharField(max_length=100, choices=PARROQUIAS)
@@ -35,7 +37,8 @@ class Register(models.Model):
     # Campos de Logística y Trámite
     fecha_registro = models.DateField()
     fecha_despacho = models.DateField(null=True, blank=True)
-    retirado_por = models.CharField(max_length=255, null=True, blank=True)
+    retirado_por = models.CharField(max_length=255)
+    retirado_por_ci = models.CharField(max_length=20)
     cantidad = models.PositiveIntegerField(default=1)
     tamano_cilindro = models.CharField(
         max_length=20,

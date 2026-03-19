@@ -22,7 +22,8 @@ def home(request):
         "Antonio Spinetti Dini", "Arias", "Caracciolo Parra Pérez",
         "Domingo Peña", "El Llano", "El Sagrario", "Gonzalo Picón Febres",
         "Jacinto Plaza", "Lasso de la Vega", "Juan Rodríguez Suárez",
-        "Mariano Picón Salas", "Milla", "Osuna Rodríguez"
+        "Mariano Picón Salas", "Milla", "Osuna Rodríguez", "El Morro",
+        "Los Nevados"
     ]
 
     context = {
@@ -31,6 +32,7 @@ def home(request):
         'query_parroquia': query_parroquia,
         'parroquias_list': parroquias_list,
     }
+
     return render(request, 'registers/home.html', context)
 
 @login_required

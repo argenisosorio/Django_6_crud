@@ -315,10 +315,29 @@
                                         {{ form.retirado_por.errors.0 }}
                                     </div>
                                 {% endif %}
-                                <div class="form-text">Opcional - quién retiró el cilindro</div>
+                                <div class="form-text">Quién retiró el cilindro</div>
                             </div>
                         </div>
-                        
+
+                        <div class="col-md-4">
+                            <label for="{{ form.retirado_por_ci.id_for_label }}" class="form-label fw-bold">
+                                {{ form.retirado_por_ci.label }} <span class="text-danger">*</span>
+                            </label>
+                            <input type="text"
+                                name="{{ form.retirado_por_ci.name }}"
+                                id="{{ form.retirado_por_ci.id_for_label }}"
+                                class="form-control {% if form.retirado_por_ci.errors %}is-invalid{% endif %}"
+                                value="{{ form.retirado_por_ci.value|default:'' }}"
+                                placeholder="Cédula de quien retira"
+                            >
+                            {% if form.retirado_por.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.retirado_por_ci.errors.0 }}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">Cédula de quien retiró el cilindro</div>
+                        </div>
+
                         <!-- BOTONES -->
                         <div class="row mt-5">
                             <div class="col-12 d-flex justify-content-end gap-2">
