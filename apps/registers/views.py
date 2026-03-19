@@ -2,43 +2,19 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Register
 from .forms import RegisterForm
-#import openpyxl
+import openpyxl
 from django.http import HttpResponse
 
 
 @login_required
 def home(request):
-    # 1. Capturamos los parámetros de filtrado
-    query_cedula = request.GET.get('q', '')
-    query_parroquia = request.GET.get('p', '')
-
-    # 2. QuerySet base
     registers = Register.objects.all().order_by('-created_at')
 
-    # 3. Aplicamos filtros encadenados
-    if query_cedula:
-        registers = registers.filter(cedula__icontains=query_cedula)
-    
-    if query_parroquia:
-        registers = registers.filter(parroquia=query_parroquia)
-
-    # 4. Manejo de Exportación Excel (Detectamos si se pide el archivo)
     if 'export' in request.GET:
         return export_registers_excel(registers)
 
-    parroquias_list = [
-        "Antonio Spinetti Dini", "Arias", "Caracciolo Parra Pérez",
-        "Domingo Peña", "El Llano", "El Sagrario", "Gonzalo Picón Febres",
-        "Jacinto Plaza", "Lasso de la Vega", "Juan Rodríguez Suárez",
-        "Mariano Picón Salas", "Milla", "Osuna Rodríguez", "El Morro",
-        "Los Nevados"
-    ]
-
     context = {
         'registers': registers,
-        'query_cedula': query_cedula,
-        'query_parroquia': query_parroquia,
-        'parroquias_list': parroquias_list,
     }
 
     return render(request, 'registers/home.html', context)
@@ -96,9 +72,13 @@ def export_registers_excel(queryset):
 
     # Definir encabezados
     headers = [
-        'Nombres', 'Apellidos', 'Cédula', 'Teléfono', 'Parroquia', 
-        'Fecha de Registro', 'Fecha de Despacho', 'Cantidad', 'Tamaño', 
-        'Visitado', 'Documentos completos'
+        'Nombres y Apellidos', 'Puesto de trabajo', 'N de Bien CPU',
+        'Capacidad DD', 'Serial DD', 'Modelo DD', 'Tipo DD', 'Procesador',
+        'Cantidad de memorias', 'Capacidad de memorias', 'Modelo de memorias',
+        'RAM máxima', 'Cantidad de zócalos de memoria', 'NB Monitor',
+        'Modelo Monitor', 'Serial Monitor', 'NB Mouse', 'Serial Mouse',
+        'NB Teclado', 'Marca Teclado', 'Modelo Teclado', 'Serial Teclado',
+        'UPS', 'Marca UPS', 'Modelo UPS', 'Serial UPS'
     ]
     ws.append(headers)
 
@@ -109,17 +89,32 @@ def export_registers_excel(queryset):
     # Agregar los datos del QuerySet filtrado
     for reg in queryset:
         ws.append([
-            reg.nombres,
-            reg.apellidos,
-            reg.cedula,
-            reg.telefono,
-            reg.parroquia,
-            reg.fecha_registro.strftime('%d/%m/%Y') if reg.fecha_registro else '',
-            reg.fecha_despacho.strftime('%d/%m/%Y') if reg.fecha_despacho else 'Pendiente',
-            reg.cantidad,
-            reg.tamano_cilindro,
-            "Sí" if reg.visitado else "No",
-            "Sí" if reg.documentos_completos else "No"
+            reg.nombres_apellidos,
+            reg.puesto_trabajo,
+            reg.n_bien_cpu,
+            reg.cap_dd,
+            reg.serial_dd,
+            reg.modelo_dd,
+            reg.tipo_dd,
+            reg.procesador,
+            reg.cant_memorias,
+            reg.cap_memorias,
+            reg.modelo_memorias,
+            reg.max_ram,
+            reg.cant_zoc_mem,
+            reg.nb_monitor,
+            reg.mod_monitor,
+            reg.serial_monitor,
+            reg.nb_mouse,
+            reg.serial_mouse,
+            reg.nb_teclado,
+            reg.marca_teclado,
+            reg.mod_teclado,
+            reg.serial_teclado,
+            reg.ups,
+            reg.marca_ups,
+            reg.mod_ups,
+            reg.serial_ups
         ])
 
     # Ajustar ancho de columnas automáticamente

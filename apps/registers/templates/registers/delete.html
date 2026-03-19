@@ -3,7 +3,7 @@
 {% block content %}
 <div class="alert alert-danger" role="alert">
     <h4 class="alert-heading">¿Eliminar Registro?</h4>
-    <p>Estás a punto de eliminar permanentemente a <strong>{{ register.nombres }}</strong>.</p>
+    <p>Estás a punto de eliminar permanentemente a <strong>{{ register.nombres_apellidos }}</strong>.</p>
     <hr>
     <form method="post">
         {% csrf_token %}

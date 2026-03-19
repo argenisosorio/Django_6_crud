@@ -9,65 +9,144 @@
         <dl class="row">
             <!-- Columna izquierda -->
             <div class="col-md-6">
-                <dt class="mt-2">Nombres:</dt>
-                <dd>{{ register.nombres }}</dd>
+                <dt class="mt-2">Nombres y Apellidos</dt>
+                <dd>{{ register.nombres_apellidos }}</dd>
 
-                <dt class="mt-2">Apellidos:</dt>
-                <dd>{{ register.apellidos }}</dd>
+                <hr>
 
-                <dt class="mt-2">Cédula:</dt>
-                <dd>{{ register.cedula }}</dd>
+                <dt class="mt-2">Puesto de trabajo</dt>
+                <dd>{{ register.puesto_trabajo }}</dd>
 
-                <dt class="mt-2">Teléfono:</dt>
-                <dd>{{ register.telefono }}</dd>
+                <hr>
 
-                <dt class="mt-2">Dirección:</dt>
-                <dd>{{ register.direccion }}</dd>
+                <dt class="mt-2">N de Bien CPU</dt>
+                <dd>{{ register.n_bien_cpu }}</dd>
 
-                <dt class="mt-2">Parroquia:</dt>
-                <dd>{{ register.parroquia }}</dd>
+                <hr>
 
-                <dt class="mt-2">Fecha de Registro:</dt>
-                <dd>{{ register.fecha_registro|date:"d/m/Y" }}</dd>
+                <dt class="mt-2">Capacidad DD</dt>
+                <dd>{{ register.cap_dd }}</dd>
 
-                <dt class="mt-2">Fecha de Despacho:</dt>
-                <dd>{{ register.fecha_despacho|date:"d/m/Y"|default:"Pendiente" }}</dd>
+                <hr>
+
+                <dt class="mt-2">Serial DD</dt>
+                <dd>{{ register.serial_dd }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Modelo DD</dt>
+                <dd>{{ register.modelo_dd }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Tipo DD</dt>
+                <dd>{{ register.tipo_dd }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Procesador</dt>
+                <dd>{{ register.procesador }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Cantidad de memorias</dt>
+                <dd>{{ register.cant_memorias }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Capacidad de memorias</dt>
+                <dd>{{ register.cap_memorias }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Modelo de memorias</dt>
+                <dd>{{ register.modelo_memorias }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">RAM máxima</dt>
+                <dd>{{ register.max_ram }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Cantidad de zócalos de memoria</dt>
+                <dd>{{ register.cant_zoc_mem }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">NB Monitor</dt>
+                <dd>{{ register.nb_monitor }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Modelo Monitor</dt>
+                <dd>{{ register.mod_monitor }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Serial Monitor</dt>
+                <dd>{{ register.serial_monitor }}</dd>
             </div>
 
             <!-- Columna derecha -->
             <div class="col-md-6">
-                <dt class="mt-2">Retirado por:</dt>
-                <dd>{{ register.retirado_por }} - {{ register.retirado_por_ci }}</dd>
+                <dt class="mt-2">NB Mouse</dt>
+                <dd>{{ register.nb_mouse }}</dd>
 
-                <dt class="mt-2">Cantidad:</dt>
-                <dd>{{ register.cantidad }}</dd>
+                <hr>
 
-                <dt class="mt-2">Tamaño del Cilindro:</dt>
-                <dd>{{ register.tamano_cilindro }}</dd>
+                <dt class="mt-2">Serial Mouse</dt>
+                <dd>{{ register.serial_mouse }}</dd>
 
-                <dt class="mt-2">Visitado:</dt>
-                <dd>
-                    {% if register.visitado %}
-                        <span class="badge bg-success">Sí</span>
-                    {% else %}
-                        <span class="badge bg-secondary">No</span>
-                    {% endif %}
-                </dd>
+                <hr>
 
-                <dt class="mt-2">Documentos completos:</dt>
-                <dd>
-                    {% if register.documentos_completos %}
-                        <span class="badge bg-success">Sí</span>
-                    {% else %}
-                        <span class="badge bg-secondary">No</span>
-                    {% endif %}
-                </dd>
+                <dt class="mt-2">NB Teclado</dt>
+                <dd>{{ register.nb_teclado }}</dd>
 
-                <dt class="mt-2">Fecha de registro en BD:</dt>
-                <dd>{{ register.created_at|date:"d/m/Y H:i" }}</dd>
+                <hr>
 
-                <dt class="mt-2">Última actualización en BD:</dt>
-                <dd>{{ register.updated_at|date:"d/m/Y H:i"|default:"—" }}</dd>
+                <dt class="mt-2">Marca Teclado</dt>
+                <dd>{{ register.marca_teclado }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Modelo Teclado</dt>
+                <dd>{{ register.mod_teclado }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Serial Teclado</dt>
+                <dd>{{ register.serial_teclado }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">UPS</dt>
+                <dd>{{ register.ups }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Marca UPS</dt>
+                <dd>{{ register.marca_ups }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Modelo UPS</dt>
+                <dd>{{ register.mod_ups }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Serial UPS</dt>
+                <dd>{{ register.serial_ups }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Registro en BD</dt>
+                <dd>{{ register.created_at }}</dd>
+
+                <hr>
+
+                <dt class="mt-2">Última actualización en BD</dt>
+                <dd>{{ register.updated_at }}</dd>
             </div>
         </dl>
     </div>

@@ -34,7 +34,7 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label for="{{ form.nombres_apellidos.id_for_label }}" class="form-label fw-bold">
-                                    Nombres y Apellidos <span class="text-danger">*</span>
+                                    Nombres y Apellidos
                                 </label>
                                 <input
                                     type="text" 
@@ -42,7 +42,6 @@
                                     id="{{ form.nombres_apellidos.id_for_label }}"
                                     class="form-control {% if form.nombres_apellidos.errors %}is-invalid{% endif %}"
                                     value="{{ form.nombres_apellidos.value|default:'' }}"
-                                    required
                                 >
                                 {% if form.nombres_apellidos.errors %}
                                     <div class="invalid-feedback">
@@ -53,7 +52,7 @@
                             
                             <div class="col-md-6">
                                 <label for="{{ form.puesto_trabajo.id_for_label }}" class="form-label fw-bold">
-                                    Puesto de trabajo <span class="text-danger">*</span>
+                                    Puesto de trabajo
                                 </label>
                                 <input
                                     type="text" 
@@ -61,7 +60,6 @@
                                     id="{{ form.puesto_trabajo.id_for_label }}"
                                     class="form-control {% if form.puesto_trabajo.errors %}is-invalid{% endif %}"
                                     value="{{ form.puesto_trabajo.value|default:'' }}"
-                                    required
                                 >
                                 {% if form.puesto_trabajo.errors %}
                                     <div class="invalid-feedback">
@@ -73,7 +71,7 @@
                             <!-- Número de Bien CPU-->
                             <div class="col-md-6">
                                 <label for="{{ form.n_bien_cpu.id_for_label }}" class="form-label fw-bold">
-                                    N° de Bien CPU <span class="text-danger">*</span>
+                                    N° de Bien CPU
                                 </label>
                                 <input
                                     type="text" 
@@ -81,7 +79,6 @@
                                     id="{{ form.n_bien_cpu.id_for_label }}"
                                     class="form-control {% if form.n_bien_cpu.errors %}is-invalid{% endif %}"
                                     value="{{ form.n_bien_cpu.value|default:'' }}"
-                                    required
                                 >
                                 {% if form.n_bien_cpu.errors %}
                                     <div class="invalid-feedback">
@@ -100,7 +97,7 @@
                             <!-- Capacidad del Disco Duro -->
                             <div class="col-md-6">
                                 <label for="{{ form.cap_dd.id_for_label }}" class="form-label fw-bold">
-                                    Capacidad del Disco Duro <span class="text-danger">*</span>
+                                    Capacidad del Disco Duro
                                 </label>
                                 <input
                                     type="text" 
@@ -108,7 +105,6 @@
                                     id="{{ form.cap_dd.id_for_label }}"
                                     class="form-control {% if form.cap_dd.errors %}is-invalid{% endif %}"
                                     value="{{ form.cap_dd.value|default:'' }}"
-                                    required
                                 >
                                 {% if form.cap_dd.errors %}
                                     <div class="invalid-feedback">
@@ -158,7 +154,7 @@
                             <!-- Tipo de Disco Duro -->
                             <div class="col-md-6">
                                 <label for="{{ form.tipo_dd.id_for_label }}" class="form-label fw-bold">
-                                    Tipo de Disco Duro <span class="text-danger">*</span>
+                                    Tipo de Disco Duro
                                 </label>
                                 <input
                                     type="text" 
@@ -177,7 +173,7 @@
                             <!-- Procesador -->
                             <div class="col-md-6">
                                 <label for="{{ form.procesador.id_for_label }}" class="form-label fw-bold">
-                                    Procesador <span class="text-danger">*</span>
+                                    Procesador
                                 </label>
                                 <input
                                     type="text" 
@@ -185,7 +181,6 @@
                                     id="{{ form.procesador.id_for_label }}"
                                     class="form-control {% if form.procesador.errors %}is-invalid{% endif %}"
                                     value="{{ form.procesador.value|default:'' }}"
-                                    required
                                 >
                                 {% if form.procesador.errors %}
                                     <div class="invalid-feedback">
@@ -204,16 +199,14 @@
                             <!-- Cantidad de Memorias -->
                             <div class="col-md-6">
                                 <label for="{{ form.cant_memorias.id_for_label }}" class="form-label fw-bold">
-                                    Cantidad <span class="text-danger">*</span>
+                                    Cantidad
                                 </label>
                                 <input
                                     type="text" 
                                     name="{{ form.cant_memorias.name }}" 
                                     id="{{ form.cant_memorias.id_for_label }}"
                                     class="form-control {% if form.cant_memorias.errors %}is-invalid{% endif %}"
-                                    value="{{ form.cant_memorias.value|default:'1' }}"
-                                    min="1"
-                                    required
+                                    value="{{ form.cant_memorias.value|default:'' }}"
                                 >
                                 {% if form.cant_memorias.errors %}
                                     <div class="invalid-feedback">
@@ -225,7 +218,7 @@
                             <!-- Capacidad de Memorias -->
                             <div class="col-md-6">
                                 <label for="{{ form.cap_memorias.id_for_label }}" class="form-label fw-bold">
-                                    Capacidad <span class="text-danger">*</span>
+                                    Capacidad
                                 </label>
                                 <input
                                     type="text" 
@@ -233,7 +226,6 @@
                                     id="{{ form.cap_memorias.id_for_label }}"
                                     class="form-control {% if form.cap_memorias.errors %}is-invalid{% endif %}"
                                     value="{{ form.cap_memorias.value|default:'' }}"
-                                    required
                                 >
                                 {% if form.cap_memorias.errors %}
                                     <div class="invalid-feedback">
@@ -583,7 +575,7 @@
                                     <i class="fas fa-times"></i> Cancelar
                                 </a>
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-save"></i> Actualziar Registro
+                                    <i class="fas fa-save"></i> Actualizar Registro
                                 </button>
                             </div>
                         </div>

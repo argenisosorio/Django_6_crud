@@ -5,44 +5,6 @@
     <h1>Lista de Registros</h1>
 </div>
 
-<div class="card mb-4 shadow-sm">
-    <div class="card-body">
-        <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
-            <div class="col-md-4">
-                <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
-                <input
-                    type="text"
-                    name="q"
-                    id="q"
-                    class="form-control"
-                    value="{{ query_cedula }}"
-                >
-            </div>
-            <div class="col-md-4">
-                <label for="p" class="form-label fw-bold">Filtrar por Parroquia</label>
-                <select name="p" id="p" class="form-select">
-                    <option value="">Todas las parroquias</option>
-                    {% for parroquia in parroquias_list %}
-                        <option value="{{ parroquia }}" {% if query_parroquia == parroquia %}selected{% endif %}>
-                            {{ parroquia }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-md-4 d-flex align-items-end gap-2">
-                <button class="btn btn-primary" type="submit">
-                    <i class="fas fa-filter"></i> Filtrar
-                </button>
-                {% if query_cedula or query_parroquia %}
-                    <a href="{% url 'registers:home' %}" class="btn btn-outline-danger">
-                        <i class="fas fa-eraser"></i> Limpiar
-                    </a>
-                {% endif %}
-            </div>
-        </form>
-    </div>
-</div>
-
 <h4>Total de registros: {{ registers|length }}</h4>
 
 <br>
@@ -70,7 +32,7 @@
                 <th>Cantidad de memorias</th>
                 <th>Capacidad de memorias</th>
                 <th>Modelo de memorias</th>
-                <th>Ram máxima</th>
+                <th>RAM máxima</th>
                 <th>Cantidad de zócalos de memoria</th>
                 <th>NB Monitor</th>
                 <th>Modelo Monitor</th>
@@ -132,7 +94,7 @@
             </tr>
             {% empty %}
             <tr>
-                <td colspan="17" class="text-center py-4 text-muted">
+                <td colspan="30" class="text-center py-4 text-muted">
                     <i class="fas fa-info-circle"></i> No hay registros disponibles en este momento.
                 </td>
             </tr>
