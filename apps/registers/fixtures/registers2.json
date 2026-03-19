@@ -1,0 +1,134 @@
+[
+    {
+        "model": "registers.register",
+        "pk": 1,
+        "fields": {
+            "nombres": "Francisco",
+            "apellidos": "Palencia",
+            "cedula": "V-15940185",
+            "telefono": "04126784433",
+            "direccion": "Av. Las Américas",
+            "parroquia": "Mariano Picón Salas",
+            "fecha_registro": "2026-03-15",
+            "fecha_despacho": "2026-03-16",
+            "retirado_por": "José Peña",
+            "retirado_por_ci": "V-18902230",
+            "cantidad": 2,
+            "tamano_cilindro": "Mediana",
+            "visitado": true,
+            "documentos_completos": true,
+            "created_at": "2026-03-15T10:00:00.000Z",
+            "updated_at": "2026-03-16T08:30:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 2,
+        "fields": {
+            "nombres": "Luis",
+            "apellidos": "Contreras",
+            "cedula": "E-12385425",
+            "telefono": "04265551212",
+            "direccion": "Calle principal de Los Cerezos",
+            "parroquia": "Mariano Picón Salas",
+            "fecha_registro": "2026-03-15",
+            "fecha_despacho": "2026-03-18",
+            "retirado_por": "Pedro Marquez",
+            "retirado_por_ci": "V-18902230",
+            "cantidad": 1,
+            "tamano_cilindro": "Grande",
+            "visitado": true,
+            "documentos_completos": true,
+            "created_at": "2026-03-15T11:20:00.000Z",
+            "updated_at": "2026-03-15T11:20:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 3,
+        "fields": {
+            "nombres": "María Elena",
+            "apellidos": "Castillo",
+            "cedula": "V-15432876",
+            "telefono": "04126784433",
+            "direccion": "Av. Las Américas, Res. El Viaducto",
+            "parroquia": "Mariano Picón Salas",
+            "fecha_registro": "2026-03-15",
+            "fecha_despacho": "2026-03-16",
+            "retirado_por": "José Peña",
+            "retirado_por_ci": "V-18902230",
+            "cantidad": 2,
+            "tamano_cilindro": "Mediana",
+            "visitado": true,
+            "documentos_completos": true,
+            "created_at": "2026-03-15T10:00:00.000Z",
+            "updated_at": "2026-03-16T08:30:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 4,
+        "fields": {
+            "nombres": "Luis Alberto",
+            "apellidos": "Rondon",
+            "cedula": "E-12987345",
+            "telefono": "04265551212",
+            "direccion": "Calle principal de Los Cerezos",
+            "parroquia": "Juan Rodríguez Suárez",
+            "fecha_registro": "2026-03-15",
+            "fecha_despacho": "2026-03-18",
+            "retirado_por": "Pedro Rondon",
+            "retirado_por_ci": "V-18902230",
+            "cantidad": 1,
+            "tamano_cilindro": "Grande",
+            "visitado": true,
+            "documentos_completos": true,
+            "created_at": "2026-03-15T11:20:00.000Z",
+            "updated_at": "2026-03-15T11:20:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 5,
+        "fields": {
+            "nombres": "Luis Alberto",
+            "apellidos": "Rondon",
+            "cedula": "E-12987345",
+            "telefono": "04265551212",
+            "direccion": "Calle principal de Los Cerezos",
+            "parroquia": "Osuna Rodríguez",
+            "fecha_registro": "2026-03-15",
+            "fecha_despacho": "2026-03-18",
+            "retirado_por": "Pedro Rondon",
+            "retirado_por_ci": "V-18902230",
+            "cantidad": 1,
+            "tamano_cilindro": "Grande",
+            "visitado": true,
+            "documentos_completos": true,
+            "created_at": "2026-03-15T11:20:00.000Z",
+            "updated_at": "2026-03-15T11:20:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 6,
+        "fields": {
+            "nombres": "Luis Alberto",
+            "apellidos": "Rondon",
+            "cedula": "E-12987345",
+            "telefono": "04265551212",
+            "direccion": "Calle principal de Los Cerezos",
+            "parroquia": "Antonio Spinetti Dini",
+            "fecha_registro": "2026-03-15",
+            "fecha_despacho": "2026-03-18",
+            "retirado_por": "Pedro Rondon",
+            "retirado_por_ci": "V-18902230",
+            "cantidad": 1,
+            "tamano_cilindro": "Grande",
+            "visitado": true,
+            "documentos_completos": true,
+            "created_at": "2026-03-15T11:20:00.000Z",
+            "updated_at": "2026-03-15T11:20:00.000Z"
+        }
+    }
+]

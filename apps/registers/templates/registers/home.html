@@ -132,4 +132,65 @@
         </tbody>
     </table>
 </div>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Gráficos</h1>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6 mx-auto">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h5 class="card-title mb-0 text-center">Distribución por Parroquia</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="parroquiaChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function renderizarGrafico() {
+        const contenedor = document.getElementById('parroquiaChart').parentElement;
+
+        // 1. Eliminamos el canvas actual y creamos uno nuevo de cero
+        // Esto fuerza al navegador a olvidar cualquier dibujo anterior
+        document.getElementById('parroquiaChart').remove();
+        const nuevoCanvas = document.createElement('canvas');
+        nuevoCanvas.id = 'parroquiaChart';
+        nuevoCanvas.width = 400;
+        nuevoCanvas.height = 400;
+        contenedor.appendChild(nuevoCanvas);
+
+        const ctx = nuevoCanvas.getContext('2d');
+
+        // 2. Cargamos los datos (asegúrate de que las variables de Django lleguen bien)
+        const labels = {{ chart_labels|safe }};
+        const data = {{ chart_data|safe }};
+
+        // 3. Creamos el gráfico
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Ayuda a que quepa bien en el card
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    }
+
+    // Ejecutamos la función al cargar la página
+    document.addEventListener('DOMContentLoaded', renderizarGrafico);
+</script>
 {% endblock %}
