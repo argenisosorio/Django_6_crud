@@ -50,6 +50,9 @@
 <a href="{% url 'registers:create' %}" class="btn btn-primary mb-4">
     <i class="fas fa-plus"></i> Agregar Registro
 </a>
+<a href="?q={{ query_cedula }}&p={{ query_parroquia }}&export=1" class="btn btn-success mb-4">
+    <i class="fas fa-file-excel"></i> Exportar Excel
+</a>
 
 <div class="table-responsive">
     <table class="table table-hover table-striped table-bordered align-middle">
