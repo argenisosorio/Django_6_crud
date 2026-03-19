@@ -18,7 +18,7 @@ def home(request):
     people = Person.objects.all()
 
     if 'export' in request.GET:
-        return export_registers_xlsx(registers)
+        return export_registers_xlsx(people)
 
     context = {
         'people': people,
