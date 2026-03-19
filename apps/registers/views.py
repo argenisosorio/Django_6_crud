@@ -76,9 +76,10 @@ def export_registers_excel(queryset):
         'Capacidad DD', 'Serial DD', 'Modelo DD', 'Tipo DD', 'Procesador',
         'Cantidad de memorias', 'Capacidad de memorias', 'Modelo de memorias',
         'RAM máxima', 'Cantidad de zócalos de memoria', 'NB Monitor',
-        'Modelo Monitor', 'Serial Monitor', 'NB Mouse', 'Serial Mouse',
-        'NB Teclado', 'Marca Teclado', 'Modelo Teclado', 'Serial Teclado',
-        'UPS', 'Marca UPS', 'Modelo UPS', 'Serial UPS'
+        'Marca Monitor', 'Modelo Monitor', 'Serial Monitor', 'NB Mouse',
+        'Marca Mouse', 'Modelo Mouse', 'Serial Mouse', 'NB Teclado',
+        'Marca Teclado', 'Modelo Teclado', 'Serial Teclado', 'NB UPS',
+        'Marca UPS', 'Modelo UPS', 'Serial UPS'
     ]
     ws.append(headers)
 
@@ -103,15 +104,18 @@ def export_registers_excel(queryset):
             reg.max_ram,
             reg.cant_zoc_mem,
             reg.nb_monitor,
+            reg.marca_monitor,
             reg.mod_monitor,
             reg.serial_monitor,
             reg.nb_mouse,
+            reg.marca_mouse,
+            reg.mod_mouse,
             reg.serial_mouse,
             reg.nb_teclado,
             reg.marca_teclado,
             reg.mod_teclado,
             reg.serial_teclado,
-            reg.ups,
+            reg.nb_ups,
             reg.marca_ups,
             reg.mod_ups,
             reg.serial_ups
@@ -129,7 +133,7 @@ def export_registers_excel(queryset):
     response = HttpResponse(
         content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     )
-    response['Content-Disposition'] = 'attachment; filename="reporte_oxigeno.xlsx"'
+    response['Content-Disposition'] = 'attachment; filename="reporte.xlsx"'
     wb.save(response)
 
     return response

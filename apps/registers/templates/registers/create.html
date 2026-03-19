@@ -87,10 +87,9 @@
                                 {% endif %}
                             </div>
 
-                            <!-- DATOS GENERALES DEL EQUIPO -->
                             <div class="col-12 mt-3">
                                 <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-computer me-2"></i>Disco Duro
+                                    <i class="fas fa-computer me-2"></i>Disco Duro y Procesador
                                 </h5>
                             </div>
 
@@ -199,7 +198,7 @@
                             <!-- Cantidad de Memorias -->
                             <div class="col-md-6">
                                 <label for="{{ form.cant_memorias.id_for_label }}" class="form-label fw-bold">
-                                    Cantidad
+                                    Cantidad de memorias
                                 </label>
                                 <input
                                     type="text" 
@@ -218,7 +217,7 @@
                             <!-- Capacidad de Memorias -->
                             <div class="col-md-6">
                                 <label for="{{ form.cap_memorias.id_for_label }}" class="form-label fw-bold">
-                                    Capacidad
+                                    Capacidad de memorias
                                 </label>
                                 <input
                                     type="text" 
@@ -237,7 +236,7 @@
                             <!-- Modelo de Memorias -->
                             <div class="col-md-6">
                                 <label for="{{ form.modelo_memorias.id_for_label }}" class="form-label fw-bold">
-                                    Modelo
+                                    Modelo de memorias
                                 </label>
                                 <input
                                     type="text" 
@@ -256,7 +255,7 @@
                             <!-- Máximo de RAM soportado -->
                             <div class="col-md-6">
                                 <label for="{{ form.max_ram.id_for_label }}" class="form-label fw-bold">
-                                    Máx. RAM Soportada
+                                    Máx RAM soportada
                                 </label>
                                 <input
                                     type="text" 
@@ -275,7 +274,7 @@
                             <!-- Cantidad de Zócalos de Memoria -->
                             <div class="col-md-6">
                                 <label for="{{ form.cant_zoc_mem.id_for_label }}" class="form-label fw-bold">
-                                    Cantidad de Zócalos de Memoria
+                                    Cantidad de zócalos de memoria
                                 </label>
                                 <input
                                     type="text" 
@@ -299,10 +298,10 @@
                                 </h5>
                             </div>
 
-                            <!-- Marca/Nombre del Monitor -->
+                            <!-- NB del Monitor -->
                             <div class="col-md-6">
                                 <label for="{{ form.nb_monitor.id_for_label }}" class="form-label fw-bold">
-                                    Marca del Monitor
+                                    N° de Bien del Monitor
                                 </label>
                                 <input
                                     type="text" 
@@ -314,6 +313,25 @@
                                 {% if form.nb_monitor.errors %}
                                     <div class="invalid-feedback">
                                         {{ form.nb_monitor.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Marca del Monitor -->
+                            <div class="col-md-6">
+                                <label for="{{ form.marca_monitor.id_for_label }}" class="form-label fw-bold">
+                                    Marca del Monitor
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.marca_monitor.name }}" 
+                                    id="{{ form.marca_monitor.id_for_label }}"
+                                    class="form-control {% if form.marca_monitor.errors %}is-invalid{% endif %}"
+                                    value="{{ form.marca_monitor.value|default:'' }}"
+                                >
+                                {% if form.marca_monitor.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.marca_monitor.errors.0 }}
                                     </div>
                                 {% endif %}
                             </div>
@@ -363,10 +381,10 @@
                                 </h5>
                             </div>
 
-                            <!-- Marca/Nombre del Mouse -->
+                            <!-- NB del Mouse -->
                             <div class="col-md-6">
                                 <label for="{{ form.nb_mouse.id_for_label }}" class="form-label fw-bold">
-                                    Marca del Mouse
+                                    N° de Bien Mouse
                                 </label>
                                 <input
                                     type="text" 
@@ -382,7 +400,45 @@
                                 {% endif %}
                             </div>
 
-                            <!-- Serial del Mouse -->
+                            <!-- Marca del Mouse -->
+                            <div class="col-md-6">
+                                <label for="{{ form.marca_mouse.id_for_label }}" class="form-label fw-bold">
+                                    Marca del Mouse
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.marca_mouse.name }}" 
+                                    id="{{ form.marca_mouse.id_for_label }}"
+                                    class="form-control {% if form.marca_mouse.errors %}is-invalid{% endif %}"
+                                    value="{{ form.marca_mouse.value|default:'' }}"
+                                >
+                                {% if form.marca_mouse.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.marca_mouse.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Modelo del Mouse -->
+                            <div class="col-md-6">
+                                <label for="{{ form.mod_mouse.id_for_label }}" class="form-label fw-bold">
+                                    Modelo del Mouse
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.mod_mouse.name }}" 
+                                    id="{{ form.mod_mouse.id_for_label }}"
+                                    class="form-control {% if form.mod_mouse.errors %}is-invalid{% endif %}"
+                                    value="{{ form.mod_mouse.value|default:'' }}"
+                                >
+                                {% if form.mod_mouse.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.mod_mouse.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Serial de Mouse -->
                             <div class="col-md-6">
                                 <label for="{{ form.serial_mouse.id_for_label }}" class="form-label fw-bold">
                                     Serial del Mouse
@@ -408,10 +464,10 @@
                                 </h5>
                             </div>
 
-                            <!-- Marca/Nombre del Teclado -->
+                            <!-- NB del Teclado -->
                             <div class="col-md-6">
                                 <label for="{{ form.nb_teclado.id_for_label }}" class="form-label fw-bold">
-                                    Marca del Teclado
+                                    N° de Bien del Teclado
                                 </label>
                                 <input
                                     type="text" 
@@ -430,7 +486,7 @@
                             <!-- Marca del Teclado (específica) -->
                             <div class="col-md-6">
                                 <label for="{{ form.marca_teclado.id_for_label }}" class="form-label fw-bold">
-                                    Marca (detalle)
+                                    Marca del Teclado
                                 </label>
                                 <input
                                     type="text" 
@@ -493,19 +549,19 @@
 
                             <!-- Marca del UPS -->
                             <div class="col-md-6">
-                                <label for="{{ form.ups.id_for_label }}" class="form-label fw-bold">
-                                    UPS
+                                <label for="{{ form.nb_ups.id_for_label }}" class="form-label fw-bold">
+                                    N° de Bien del UPS
                                 </label>
                                 <input
                                     type="text" 
-                                    name="{{ form.ups.name }}" 
-                                    id="{{ form.ups.id_for_label }}"
-                                    class="form-control {% if form.ups.errors %}is-invalid{% endif %}"
-                                    value="{{ form.ups.value|default:'' }}"
+                                    name="{{ form.nb_ups.name }}" 
+                                    id="{{ form.nb_ups.id_for_label }}"
+                                    class="form-control {% if form.nb_ups.errors %}is-invalid{% endif %}"
+                                    value="{{ form.nb_ups.value|default:'' }}"
                                 >
-                                {% if form.ups.errors %}
+                                {% if form.nb_ups.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.ups.errors.0 }}
+                                        {{ form.nb_ups.errors.0 }}
                                     </div>
                                 {% endif %}
                             </div>
@@ -567,7 +623,7 @@
                                 {% endif %}
                             </div>
                         </div>
-                        
+
                         <!-- BOTONES -->
                         <div class="row mt-5">
                             <div class="col-12 d-flex justify-content-end gap-2">

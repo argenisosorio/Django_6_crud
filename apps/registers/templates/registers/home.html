@@ -13,7 +13,7 @@
     <i class="fas fa-plus"></i> Agregar Registro
 </a>
 <a href="?q={{ query_cedula }}&p={{ query_parroquia }}&export=1" class="btn btn-success mb-4">
-    <i class="fas fa-file-excel"></i> Exportar Excel
+    <i class="fas fa-file-excel"></i> Exportar .xlsx
 </a>
 
 <div class="table-responsive">
@@ -23,27 +23,30 @@
                 <th>#</th>
                 <th>Nombres y Apellidos</th>
                 <th>Puesto de trabajo</th>
-                <th>N de Bien CPU</th>
-                <th>Capacidad DD</th>
+                <th>NB CPU</th>
+                <th>Cap. DD</th>
                 <th>Serial DD</th>
                 <th>Modelo DD</th>
                 <th>Tipo DD</th>
                 <th>Procesador</th>
-                <th>Cantidad de memorias</th>
-                <th>Capacidad de memorias</th>
+                <th>Can. de memorias</th>
+                <th>Cap. de memorias</th>
                 <th>Modelo de memorias</th>
                 <th>RAM máxima</th>
-                <th>Cantidad de zócalos de memoria</th>
+                <th>Can. zócalos de memoria</th>
                 <th>NB Monitor</th>
+                <th>Marca Monitor</th>
                 <th>Modelo Monitor</th>
                 <th>Serial Monitor</th>
                 <th>NB Mouse</th>
                 <th>Serial Mouse</th>
+                <th>Marca Mouse</th>
+                <th>Modelo Mouse</th>
                 <th>NB Teclado</th>
                 <th>Marca Teclado</th>
                 <th>Modelo Teclado</th>
                 <th>Serial Teclado</th>
-                <th>UPS</th>
+                <th>NB UPS</th>
                 <th>Marca UPS</th>
                 <th>Modelo UPS</th>
                 <th>Serial UPS</th>
@@ -70,15 +73,18 @@
                 <td class="small text-muted">{{ register.max_ram }}</td>
                 <td class="small text-muted">{{ register.cant_zoc_mem }}</td>
                 <td class="small text-muted">{{ register.nb_monitor }}</td>
+                <td class="small text-muted">{{ register.marca_monitor }}</td>
                 <td class="small text-muted">{{ register.mod_monitor }}</td>
                 <td class="small text-muted">{{ register.serial_monitor }}</td>
                 <td class="small text-muted">{{ register.nb_mouse }}</td>
                 <td class="small text-muted">{{ register.serial_mouse }}</td>
+                <td class="small text-muted">{{ register.marca_mouse }}</td>
+                <td class="small text-muted">{{ register.mod_mouse }}</td>
                 <td class="small text-muted">{{ register.nb_teclado }}</td>
                 <td class="small text-muted">{{ register.marca_teclado }}</td>
                 <td class="small text-muted">{{ register.mod_teclado }}</td>
                 <td class="small text-muted">{{ register.serial_teclado }}</td>
-                <td class="small text-muted">{{ register.ups }}</td>
+                <td class="small text-muted">{{ register.nb_ups }}</td>
                 <td class="small text-muted">{{ register.marca_ups }}</td>
                 <td class="small text-muted">{{ register.mod_ups }}</td>
                 <td class="small text-muted">{{ register.serial_ups }}</td>
