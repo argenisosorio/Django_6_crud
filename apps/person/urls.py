@@ -32,4 +32,7 @@ urlpatterns = [
     # URL: /<pk>/delete/ (e.g., /1/delete/)
     # View: delete_person - Handles deletion confirmation
     path('<int:pk>/delete/', views.delete_person, name='delete'),
+
+    # url que permite exportar la data de la tabla en .xlsx
+    path('exportar/xlsx/', views.export_registers_xlsx, name='export_xlsx'),
 ]

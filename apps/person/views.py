@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
 from .forms import PersonForm
+import openpyxl
+from django.http import HttpResponse
+
 
 def home(request):
     """
@@ -13,9 +16,12 @@ def home(request):
         HttpResponse: Rendered template with all Person objects
     """
     people = Person.objects.all()
+
+    if 'export' in request.GET:
+        return export_registers_xlsx(registers)
+
     context = {
         'people': people,
-        'message': '¡Hello Django 6 Person CRUD!',
     }
     return render(request, 'person/home.html', context)
 
@@ -105,3 +111,47 @@ def delete_person(request, pk):
     
     context = {'person': person}
     return render(request, 'person/delete.html', context)
+
+
+def export_registers_xlsx(queryset):
+    """Función auxiliar para generar el archivo .xlsx"""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Reporte de Registros"
+
+    # Definir encabezados
+    headers = [
+        'Nombre',
+        'Email',
+        'Edad'
+    ]
+    ws.append(headers)
+
+    # Estilo básico para la cabecera (Opcional pero recomendado)
+    for cell in ws[1]:
+        cell.font = openpyxl.styles.Font(bold=True)
+
+    # Agregar los datos del QuerySet filtrado
+    for reg in queryset:
+        ws.append([
+            reg.name,
+            reg.email,
+            reg.age,
+        ])
+
+    # Ajustar ancho de columnas automáticamente
+    for col in ws.columns:
+        max_length = 0
+        column = col[0].column_letter
+        for cell in col:
+            if cell.value:
+                max_length = max(max_length, len(str(cell.value)))
+        ws.column_dimensions[column].width = max_length + 2
+
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    )
+    response['Content-Disposition'] = 'attachment; filename="report.xlsx"'
+    wb.save(response)
+
+    return response
