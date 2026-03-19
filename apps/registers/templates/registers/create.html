@@ -32,309 +32,547 @@
                         {% endif %}
                         
                         <div class="row g-4">
-                            <!-- DATOS PERSONALES -->
-                            <div class="col-12">
-                                <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-user me-2"></i>Datos Personales
-                                </h5>
-                            </div>
-                            
                             <div class="col-md-6">
-                                <label for="{{ form.nombres.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.nombres.label }} <span class="text-danger">*</span>
+                                <label for="{{ form.nombres_apellidos.id_for_label }}" class="form-label fw-bold">
+                                    Nombres y Apellidos <span class="text-danger">*</span>
                                 </label>
                                 <input
                                     type="text" 
-                                    name="{{ form.nombres.name }}" 
-                                    id="{{ form.nombres.id_for_label }}"
-                                    class="form-control {% if form.nombres.errors %}is-invalid{% endif %}"
-                                    value="{{ form.nombres.value|default:'' }}"
-                                    placeholder="Ingrese los nombres"
+                                    name="{{ form.nombres_apellidos.name }}" 
+                                    id="{{ form.nombres_apellidos.id_for_label }}"
+                                    class="form-control {% if form.nombres_apellidos.errors %}is-invalid{% endif %}"
+                                    value="{{ form.nombres_apellidos.value|default:'' }}"
                                     required
                                 >
-                                {% if form.nombres.errors %}
+                                {% if form.nombres_apellidos.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.nombres.errors.0 }}
+                                        {{ form.nombres_apellidos.errors.0 }}
                                     </div>
                                 {% endif %}
                             </div>
                             
                             <div class="col-md-6">
-                                <label for="{{ form.apellidos.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.apellidos.label }} <span class="text-danger">*</span>
+                                <label for="{{ form.puesto_trabajo.id_for_label }}" class="form-label fw-bold">
+                                    Puesto de trabajo <span class="text-danger">*</span>
                                 </label>
                                 <input
                                     type="text" 
-                                    name="{{ form.apellidos.name }}" 
-                                    id="{{ form.apellidos.id_for_label }}"
-                                    class="form-control {% if form.apellidos.errors %}is-invalid{% endif %}"
-                                    value="{{ form.apellidos.value|default:'' }}"
-                                    placeholder="Ingrese los apellidos"
+                                    name="{{ form.puesto_trabajo.name }}" 
+                                    id="{{ form.puesto_trabajo.id_for_label }}"
+                                    class="form-control {% if form.puesto_trabajo.errors %}is-invalid{% endif %}"
+                                    value="{{ form.puesto_trabajo.value|default:'' }}"
                                     required
                                 >
-                                {% if form.apellidos.errors %}
+                                {% if form.puesto_trabajo.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.apellidos.errors.0 }}
+                                        {{ form.puesto_trabajo.errors.0 }}
                                     </div>
                                 {% endif %}
                             </div>
-                            
-                            <div class="col-md-4">
-                                <label for="{{ form.cedula.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.cedula.label }} <span class="text-danger">*</span>
+
+                            <!-- Número de Bien CPU-->
+                            <div class="col-md-6">
+                                <label for="{{ form.n_bien_cpu.id_for_label }}" class="form-label fw-bold">
+                                    N° de Bien CPU <span class="text-danger">*</span>
                                 </label>
                                 <input
                                     type="text" 
-                                    name="{{ form.cedula.name }}" 
-                                    id="{{ form.cedula.id_for_label }}"
-                                    class="form-control {% if form.cedula.errors %}is-invalid{% endif %}"
-                                    value="{{ form.cedula.value|default:'' }}"
-                                    placeholder="V-12345678"
+                                    name="{{ form.n_bien_cpu.name }}" 
+                                    id="{{ form.n_bien_cpu.id_for_label }}"
+                                    class="form-control {% if form.n_bien_cpu.errors %}is-invalid{% endif %}"
+                                    value="{{ form.n_bien_cpu.value|default:'' }}"
+                                    required
                                 >
-                                {% if form.cedula.errors %}
+                                {% if form.n_bien_cpu.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.cedula.errors.0 }}
+                                        {{ form.n_bien_cpu.errors.0 }}
                                     </div>
                                 {% endif %}
                             </div>
-                            
-                            <div class="col-md-4">
-                                <label for="{{ form.telefono.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.telefono.label }} <span class="text-danger">*</span>
-                                </label>
-                                <input
-                                    type="tel" 
-                                    name="{{ form.telefono.name }}" 
-                                    id="{{ form.telefono.id_for_label }}"
-                                    class="form-control {% if form.telefono.errors %}is-invalid{% endif %}"
-                                    value="{{ form.telefono.value|default:'' }}"
-                                    placeholder="0412-1234567"
-                                >
-                                {% if form.telefono.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.telefono.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
-                            
-                            <div class="col-md-4">
-                                <label for="{{ form.parroquia.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.parroquia.label }} <span class="text-danger">*</span>
-                                </label>
-                                <select name="{{ form.parroquia.name }}" 
-                                        id="{{ form.parroquia.id_for_label }}"
-                                        class="form-select {% if form.parroquia.errors %}is-invalid{% endif %}"
-                                        required>
-                                    <option value="">Seleccione una parroquia...</option>
-                                    {% for value, label in form.parroquia.field.choices %}
-                                        <option value="{{ value }}" {% if form.parroquia.value == value %}selected{% endif %}>
-                                            {{ label }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.parroquia.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.parroquia.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
-                            
-                            <div class="col-12">
-                                <label for="{{ form.direccion.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.direccion.label }} <span class="text-danger">*</span>
-                                </label>
-                                <textarea
-                                    name="{{ form.direccion.name }}" 
-                                    id="{{ form.direccion.id_for_label }}"
-                                    class="form-control {% if form.direccion.errors %}is-invalid{% endif %}"
-                                    rows="2"
-                                    placeholder="Dirección completa"
-                                    required>{{ form.direccion.value|default:'' }}</textarea>
-                                {% if form.direccion.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.direccion.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
-                            
-                            <!-- DATOS DEL CILINDRO -->
+
+                            <!-- DATOS GENERALES DEL EQUIPO -->
                             <div class="col-12 mt-3">
                                 <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-gas-pump me-2"></i>Datos del Cilindro
+                                    <i class="fas fa-computer me-2"></i>Disco Duro
                                 </h5>
                             </div>
-                            
+
+                            <!-- Capacidad del Disco Duro -->
                             <div class="col-md-6">
-                                <label for="{{ form.cantidad.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.cantidad.label }} <span class="text-danger">*</span>
+                                <label for="{{ form.cap_dd.id_for_label }}" class="form-label fw-bold">
+                                    Capacidad del Disco Duro <span class="text-danger">*</span>
                                 </label>
                                 <input
-                                    type="number" 
-                                    name="{{ form.cantidad.name }}" 
-                                    id="{{ form.cantidad.id_for_label }}"
-                                    class="form-control {% if form.cantidad.errors %}is-invalid{% endif %}"
-                                    value="{{ form.cantidad.value|default:'1' }}"
+                                    type="text" 
+                                    name="{{ form.cap_dd.name }}" 
+                                    id="{{ form.cap_dd.id_for_label }}"
+                                    class="form-control {% if form.cap_dd.errors %}is-invalid{% endif %}"
+                                    value="{{ form.cap_dd.value|default:'' }}"
+                                    required
+                                >
+                                {% if form.cap_dd.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.cap_dd.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Serial del Disco Duro -->
+                            <div class="col-md-6">
+                                <label for="{{ form.serial_dd.id_for_label }}" class="form-label fw-bold">
+                                    Serial del Disco Duro
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.serial_dd.name }}" 
+                                    id="{{ form.serial_dd.id_for_label }}"
+                                    class="form-control {% if form.serial_dd.errors %}is-invalid{% endif %}"
+                                    value="{{ form.serial_dd.value|default:'' }}"
+                                >
+                                {% if form.serial_dd.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.serial_dd.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Modelo del Disco Duro -->
+                            <div class="col-md-6">
+                                <label for="{{ form.modelo_dd.id_for_label }}" class="form-label fw-bold">
+                                    Modelo del Disco Duro
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.modelo_dd.name }}" 
+                                    id="{{ form.modelo_dd.id_for_label }}"
+                                    class="form-control {% if form.modelo_dd.errors %}is-invalid{% endif %}"
+                                    value="{{ form.modelo_dd.value|default:'' }}"
+                                >
+                                {% if form.modelo_dd.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.modelo_dd.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Tipo de Disco Duro -->
+                            <div class="col-md-6">
+                                <label for="{{ form.tipo_dd.id_for_label }}" class="form-label fw-bold">
+                                    Tipo de Disco Duro <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.tipo_dd.name }}" 
+                                    id="{{ form.tipo_dd.id_for_label }}"
+                                    class="form-control {% if form.tipo_dd.errors %}is-invalid{% endif %}"
+                                    value="{{ form.tipo_dd.value|default:'' }}"
+                                >
+                                {% if form.tipo_dd.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.tipo_dd.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Procesador -->
+                            <div class="col-md-6">
+                                <label for="{{ form.procesador.id_for_label }}" class="form-label fw-bold">
+                                    Procesador <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.procesador.name }}" 
+                                    id="{{ form.procesador.id_for_label }}"
+                                    class="form-control {% if form.procesador.errors %}is-invalid{% endif %}"
+                                    value="{{ form.procesador.value|default:'' }}"
+                                    required
+                                >
+                                {% if form.procesador.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.procesador.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- DATOS DE MEMORIA RAM -->
+                            <div class="col-12 mt-4">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-memory me-2"></i>Memoria RAM
+                                </h5>
+                            </div>
+
+                            <!-- Cantidad de Memorias -->
+                            <div class="col-md-6">
+                                <label for="{{ form.cant_memorias.id_for_label }}" class="form-label fw-bold">
+                                    Cantidad <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.cant_memorias.name }}" 
+                                    id="{{ form.cant_memorias.id_for_label }}"
+                                    class="form-control {% if form.cant_memorias.errors %}is-invalid{% endif %}"
+                                    value="{{ form.cant_memorias.value|default:'1' }}"
                                     min="1"
                                     required
                                 >
-                                {% if form.cantidad.errors %}
+                                {% if form.cant_memorias.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.cantidad.errors.0 }}
+                                        {{ form.cant_memorias.errors.0 }}
                                     </div>
                                 {% endif %}
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <label for="{{ form.tamano_cilindro.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.tamano_cilindro.label }} <span class="text-danger">*</span>
-                                </label>
-                                <select name="{{ form.tamano_cilindro.name }}" 
-                                        id="{{ form.tamano_cilindro.id_for_label }}"
-                                        class="form-select {% if form.tamano_cilindro.errors %}is-invalid{% endif %}"
-                                        required>
-                                    <option value="">Seleccione tamaño...</option>
-                                    {% for value, label in form.tamano_cilindro.field.choices %}
-                                        <option value="{{ value }}" {% if form.tamano_cilindro.value == value %}selected{% endif %}>
-                                            {{ label }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.tamano_cilindro.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.tamano_cilindro.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
-                            
-                            <!-- FECHAS (con calendario HTML5) -->
-                            <div class="col-12 mt-3">
-                                <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-calendar-alt me-2"></i>Fechas
-                                </h5>
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <label for="{{ form.fecha_registro.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.fecha_registro.label }} <span class="text-danger">*</span>
-                                </label>
-                                <input
-                                    type="date" 
-                                    name="{{ form.fecha_registro.name }}" 
-                                    id="{{ form.fecha_registro.id_for_label }}"
-                                    class="form-control {% if form.fecha_registro.errors %}is-invalid{% endif %}"
-                                    value="{{ form.fecha_registro.value|date:'Y-m-d'|default:'' }}"
-                                    required
-                                >
-                                {% if form.fecha_registro.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.fecha_registro.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">Fecha de registro inicial</div>
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <label for="{{ form.fecha_despacho.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.fecha_despacho.label }}
-                                </label>
-                                <input
-                                    type="date" 
-                                    name="{{ form.fecha_despacho.name }}" 
-                                    id="{{ form.fecha_despacho.id_for_label }}"
-                                    class="form-control {% if form.fecha_despacho.errors %}is-invalid{% endif %}"
-                                    value="{{ form.fecha_despacho.value|date:'Y-m-d'|default:'' }}"
-                                >
-                                {% if form.fecha_despacho.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.fecha_despacho.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">Dejar vacío si no ha sido despachado</div>
-                            </div>
-                            
-                            <!-- CAMPOS BOOLEANOS Y OTROS -->
-                            <div class="col-12 mt-3">
-                                <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-check-circle me-2"></i>Estado y Verificaciones
-                                </h5>
-                            </div>
-                            
-                            <div class="col-md-4">
-                                <div class="form-check form-switch mt-3">
-                                    <input
-                                        type="checkbox" 
-                                        name="{{ form.visitado.name }}" 
-                                        id="{{ form.visitado.id_for_label }}"
-                                        class="form-check-input {% if form.visitado.errors %}is-invalid{% endif %}"
-                                        {% if form.visitado.value %}checked{% endif %}
-                                    >
-                                    <label for="{{ form.visitado.id_for_label }}" class="form-check-label fw-bold">
-                                        {{ form.visitado.label }}
-                                    </label>
-                                    {% if form.visitado.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.visitado.errors.0 }}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-4">
-                                <div class="form-check form-switch mt-3">
-                                    <input
-                                        type="checkbox" 
-                                        name="{{ form.documentos_completos.name }}" 
-                                        id="{{ form.documentos_completos.id_for_label }}"
-                                        class="form-check-input {% if form.documentos_completos.errors %}is-invalid{% endif %}"
-                                        {% if form.documentos_completos.value %}checked{% endif %}
-                                    >
-                                    <label for="{{ form.documentos_completos.id_for_label }}" class="form-check-label fw-bold">
-                                        {{ form.documentos_completos.label }}
-                                    </label>
-                                    {% if form.documentos_completos.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.documentos_completos.errors.0 }}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-4">
-                                <label for="{{ form.retirado_por.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.retirado_por.label }} <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" 
-                                    name="{{ form.retirado_por.name }}" 
-                                    id="{{ form.retirado_por.id_for_label }}"
-                                    class="form-control {% if form.retirado_por.errors %}is-invalid{% endif %}"
-                                    value="{{ form.retirado_por.value|default:'' }}"
-                                    placeholder="Nombre de quien retira"
-                                >
-                                {% if form.retirado_por.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.retirado_por.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">Quién retiró el cilindro</div>
                             </div>
 
-                            <div class="col-md-4">
-                                <label for="{{ form.retirado_por_ci.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.retirado_por_ci.label }} <span class="text-danger">*</span>
+                            <!-- Capacidad de Memorias -->
+                            <div class="col-md-6">
+                                <label for="{{ form.cap_memorias.id_for_label }}" class="form-label fw-bold">
+                                    Capacidad <span class="text-danger">*</span>
                                 </label>
-                                <input type="text"
-                                    name="{{ form.retirado_por_ci.name }}"
-                                    id="{{ form.retirado_por_ci.id_for_label }}"
-                                    class="form-control {% if form.retirado_por_ci.errors %}is-invalid{% endif %}"
-                                    value="{{ form.retirado_por_ci.value|default:'' }}"
-                                    placeholder="Cédula de quien retira"
+                                <input
+                                    type="text" 
+                                    name="{{ form.cap_memorias.name }}" 
+                                    id="{{ form.cap_memorias.id_for_label }}"
+                                    class="form-control {% if form.cap_memorias.errors %}is-invalid{% endif %}"
+                                    value="{{ form.cap_memorias.value|default:'' }}"
+                                    required
                                 >
-                                {% if form.retirado_por.errors %}
+                                {% if form.cap_memorias.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.retirado_por_ci.errors.0 }}
+                                        {{ form.cap_memorias.errors.0 }}
                                     </div>
                                 {% endif %}
-                                <div class="form-text">Cédula de quien retiró el cilindro</div>
+                            </div>
+
+                            <!-- Modelo de Memorias -->
+                            <div class="col-md-6">
+                                <label for="{{ form.modelo_memorias.id_for_label }}" class="form-label fw-bold">
+                                    Modelo
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.modelo_memorias.name }}" 
+                                    id="{{ form.modelo_memorias.id_for_label }}"
+                                    class="form-control {% if form.modelo_memorias.errors %}is-invalid{% endif %}"
+                                    value="{{ form.modelo_memorias.value|default:'' }}"
+                                >
+                                {% if form.modelo_memorias.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.modelo_memorias.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Máximo de RAM soportado -->
+                            <div class="col-md-6">
+                                <label for="{{ form.max_ram.id_for_label }}" class="form-label fw-bold">
+                                    Máx. RAM Soportada
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.max_ram.name }}" 
+                                    id="{{ form.max_ram.id_for_label }}"
+                                    class="form-control {% if form.max_ram.errors %}is-invalid{% endif %}"
+                                    value="{{ form.max_ram.value|default:'' }}"
+                                >
+                                {% if form.max_ram.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.max_ram.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Cantidad de Zócalos de Memoria -->
+                            <div class="col-md-6">
+                                <label for="{{ form.cant_zoc_mem.id_for_label }}" class="form-label fw-bold">
+                                    Cantidad de Zócalos de Memoria
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.cant_zoc_mem.name }}" 
+                                    id="{{ form.cant_zoc_mem.id_for_label }}"
+                                    class="form-control {% if form.cant_zoc_mem.errors %}is-invalid{% endif %}"
+                                    value="{{ form.cant_zoc_mem.value|default:'' }}"
+                                    min="1"
+                                >
+                                {% if form.cant_zoc_mem.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.cant_zoc_mem.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- DATOS DEL MONITOR -->
+                            <div class="col-12 mt-4">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-tv me-2"></i>Monitor
+                                </h5>
+                            </div>
+
+                            <!-- Marca/Nombre del Monitor -->
+                            <div class="col-md-6">
+                                <label for="{{ form.nb_monitor.id_for_label }}" class="form-label fw-bold">
+                                    Marca del Monitor
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.nb_monitor.name }}" 
+                                    id="{{ form.nb_monitor.id_for_label }}"
+                                    class="form-control {% if form.nb_monitor.errors %}is-invalid{% endif %}"
+                                    value="{{ form.nb_monitor.value|default:'' }}"
+                                >
+                                {% if form.nb_monitor.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.nb_monitor.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Modelo del Monitor -->
+                            <div class="col-md-6">
+                                <label for="{{ form.mod_monitor.id_for_label }}" class="form-label fw-bold">
+                                    Modelo del Monitor
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.mod_monitor.name }}" 
+                                    id="{{ form.mod_monitor.id_for_label }}"
+                                    class="form-control {% if form.mod_monitor.errors %}is-invalid{% endif %}"
+                                    value="{{ form.mod_monitor.value|default:'' }}"
+                                >
+                                {% if form.mod_monitor.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.mod_monitor.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Serial del Monitor -->
+                            <div class="col-md-6">
+                                <label for="{{ form.serial_monitor.id_for_label }}" class="form-label fw-bold">
+                                    Serial del Monitor
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.serial_monitor.name }}" 
+                                    id="{{ form.serial_monitor.id_for_label }}"
+                                    class="form-control {% if form.serial_monitor.errors %}is-invalid{% endif %}"
+                                    value="{{ form.serial_monitor.value|default:'' }}"
+                                >
+                                {% if form.serial_monitor.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.serial_monitor.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- DATOS DEL MOUSE -->
+                            <div class="col-12 mt-4">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-computer-mouse me-2"></i>Mouse
+                                </h5>
+                            </div>
+
+                            <!-- Marca/Nombre del Mouse -->
+                            <div class="col-md-6">
+                                <label for="{{ form.nb_mouse.id_for_label }}" class="form-label fw-bold">
+                                    Marca del Mouse
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.nb_mouse.name }}" 
+                                    id="{{ form.nb_mouse.id_for_label }}"
+                                    class="form-control {% if form.nb_mouse.errors %}is-invalid{% endif %}"
+                                    value="{{ form.nb_mouse.value|default:'' }}"
+                                >
+                                {% if form.nb_mouse.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.nb_mouse.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Serial del Mouse -->
+                            <div class="col-md-6">
+                                <label for="{{ form.serial_mouse.id_for_label }}" class="form-label fw-bold">
+                                    Serial del Mouse
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.serial_mouse.name }}" 
+                                    id="{{ form.serial_mouse.id_for_label }}"
+                                    class="form-control {% if form.serial_mouse.errors %}is-invalid{% endif %}"
+                                    value="{{ form.serial_mouse.value|default:'' }}"
+                                >
+                                {% if form.serial_mouse.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.serial_mouse.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- DATOS DEL TECLADO -->
+                            <div class="col-12 mt-4">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-keyboard me-2"></i>Teclado
+                                </h5>
+                            </div>
+
+                            <!-- Marca/Nombre del Teclado -->
+                            <div class="col-md-6">
+                                <label for="{{ form.nb_teclado.id_for_label }}" class="form-label fw-bold">
+                                    Marca del Teclado
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.nb_teclado.name }}" 
+                                    id="{{ form.nb_teclado.id_for_label }}"
+                                    class="form-control {% if form.nb_teclado.errors %}is-invalid{% endif %}"
+                                    value="{{ form.nb_teclado.value|default:'' }}"
+                                >
+                                {% if form.nb_teclado.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.nb_teclado.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Marca del Teclado (específica) -->
+                            <div class="col-md-6">
+                                <label for="{{ form.marca_teclado.id_for_label }}" class="form-label fw-bold">
+                                    Marca (detalle)
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.marca_teclado.name }}" 
+                                    id="{{ form.marca_teclado.id_for_label }}"
+                                    class="form-control {% if form.marca_teclado.errors %}is-invalid{% endif %}"
+                                    value="{{ form.marca_teclado.value|default:'' }}"
+                                >
+                                {% if form.marca_teclado.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.marca_teclado.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Modelo del Teclado -->
+                            <div class="col-md-6">
+                                <label for="{{ form.mod_teclado.id_for_label }}" class="form-label fw-bold">
+                                    Modelo del Teclado
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.mod_teclado.name }}" 
+                                    id="{{ form.mod_teclado.id_for_label }}"
+                                    class="form-control {% if form.mod_teclado.errors %}is-invalid{% endif %}"
+                                    value="{{ form.mod_teclado.value|default:'' }}"
+                                >
+                                {% if form.mod_teclado.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.mod_teclado.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Serial del Teclado -->
+                            <div class="col-md-6">
+                                <label for="{{ form.serial_teclado.id_for_label }}" class="form-label fw-bold">
+                                    Serial del Teclado
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.serial_teclado.name }}" 
+                                    id="{{ form.serial_teclado.id_for_label }}"
+                                    class="form-control {% if form.serial_teclado.errors %}is-invalid{% endif %}"
+                                    value="{{ form.serial_teclado.value|default:'' }}"
+                                >
+                                {% if form.serial_teclado.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.serial_teclado.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- DATOS DEL UPS -->
+                            <div class="col-12 mt-4">
+                                <h5 class="text-primary border-bottom pb-2">
+                                    <i class="fas fa-battery-full me-2"></i>UPS
+                                </h5>
+                            </div>
+
+                            <!-- Marca del UPS -->
+                            <div class="col-md-6">
+                                <label for="{{ form.ups.id_for_label }}" class="form-label fw-bold">
+                                    UPS
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.ups.name }}" 
+                                    id="{{ form.ups.id_for_label }}"
+                                    class="form-control {% if form.ups.errors %}is-invalid{% endif %}"
+                                    value="{{ form.ups.value|default:'' }}"
+                                >
+                                {% if form.ups.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.ups.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Marca del UPS -->
+                            <div class="col-md-6">
+                                <label for="{{ form.marca_ups.id_for_label }}" class="form-label fw-bold">
+                                    Marca del UPS
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.marca_ups.name }}" 
+                                    id="{{ form.marca_ups.id_for_label }}"
+                                    class="form-control {% if form.marca_ups.errors %}is-invalid{% endif %}"
+                                    value="{{ form.marca_ups.value|default:'' }}"
+                                >
+                                {% if form.marca_ups.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.marca_ups.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Modelo del UPS -->
+                            <div class="col-md-6">
+                                <label for="{{ form.mod_ups.id_for_label }}" class="form-label fw-bold">
+                                    Modelo del UPS
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.mod_ups.name }}" 
+                                    id="{{ form.mod_ups.id_for_label }}"
+                                    class="form-control {% if form.mod_ups.errors %}is-invalid{% endif %}"
+                                    value="{{ form.mod_ups.value|default:'' }}"
+                                >
+                                {% if form.mod_ups.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.mod_ups.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Serial del UPS -->
+                            <div class="col-md-6">
+                                <label for="{{ form.serial_ups.id_for_label }}" class="form-label fw-bold">
+                                    Serial del UPS
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.serial_ups.name }}" 
+                                    id="{{ form.serial_ups.id_for_label }}"
+                                    class="form-control {% if form.serial_ups.errors %}is-invalid{% endif %}"
+                                    value="{{ form.serial_ups.value|default:'' }}"
+                                >
+                                {% if form.serial_ups.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.serial_ups.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         

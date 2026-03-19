@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Register
 from .forms import RegisterForm
-import openpyxl
+#import openpyxl
 from django.http import HttpResponse
 
 

@@ -59,19 +59,32 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th>#</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Cédula</th>
-                <th>Teléfono</th>
-                <th>Dirección</th>
-                <th>Parroquia</th>
-                <th>Fecha de Registro</th>
-                <th>Fecha de Despacho</th>
-                <th>Retirado por</th>
-                <th>Cantidad</th>
-                <th>Tamaño</th>
-                <th>Visitado</th>
-                <th>Documentos completos</th>
+                <th>Nombres y Apellidos</th>
+                <th>Puesto de trabajo</th>
+                <th>N de Bien CPU</th>
+                <th>Capacidad DD</th>
+                <th>Serial DD</th>
+                <th>Modelo DD</th>
+                <th>Tipo DD</th>
+                <th>Procesador</th>
+                <th>Cantidad de memorias</th>
+                <th>Capacidad de memorias</th>
+                <th>Modelo de memorias</th>
+                <th>Ram máxima</th>
+                <th>Cantidad de zócalos de memoria</th>
+                <th>NB Monitor</th>
+                <th>Modelo Monitor</th>
+                <th>Serial Monitor</th>
+                <th>NB Mouse</th>
+                <th>Serial Mouse</th>
+                <th>NB Teclado</th>
+                <th>Marca Teclado</th>
+                <th>Modelo Teclado</th>
+                <th>Serial Teclado</th>
+                <th>UPS</th>
+                <th>Marca UPS</th>
+                <th>Modelo UPS</th>
+                <th>Serial UPS</th>
                 <th>Registro en BD</th>
                 <th>Última actualización en BD</th>
                 <th>Acciones</th>
@@ -81,37 +94,32 @@
             {% for register in registers %}
             <tr>
                 <td class="text-center">{{ forloop.counter }}</td>
-                <td class="small text-muted">{{ register.nombres }}</td>
-                <td class="small text-muted">{{ register.apellidos }}</td>
-                <td class="small text-muted">{{ register.cedula }}</td>
-                <td class="small text-muted">{{ register.telefono }}</td>
-                <td class="small text-muted">{{ register.direccion }}</td>
-                <td class="small text-muted">{{ register.parroquia }}</td>
-                <td class="small text-muted text-center">{{ register.fecha_registro|date:"d/m/Y" }}</td>
-                <td class="small text-muted text-center">
-                    {% if register.fecha_despacho %}
-                        {{ register.fecha_despacho|date:"d/m/Y" }}
-                    {% else %}
-                        <span class="text-muted italic">Pendiente</span>
-                    {% endif %}
-                </td>
-                <td class="small text-muted">{{ register.retirado_por }} - {{ register.retirado_por_ci }}</td>
-                <td class="small text-muted text-center">{{ register.cantidad }}</td>
-                <td class="small text-muted">{{ register.tamano_cilindro }}</td>
-                <td class="small text-muted text-center">
-                    {% if register.visitado %}
-                        <span class="badge bg-success">Sí</span>
-                    {% else %}
-                        <span class="badge bg-secondary">No</span>
-                    {% endif %}
-                </td>
-                <td class="small text-muted text-center">
-                    {% if register.documentos_completos %}
-                        <span class="badge bg-success">Sí</span>
-                    {% else %}
-                        <span class="badge bg-secondary">No</span>
-                    {% endif %}
-                </td>
+                <td class="small text-muted">{{ register.nombres_apellidos }}</td>
+                <td class="small text-muted">{{ register.puesto_trabajo }}</td>
+                <td class="small text-muted">{{ register.n_bien_cpu }}</td>
+                <td class="small text-muted">{{ register.cap_dd }}</td>
+                <td class="small text-muted">{{ register.serial_dd }}</td>
+                <td class="small text-muted">{{ register.modelo_dd }}</td>
+                <td class="small text-muted">{{ register.tipo_dd }}</td>
+                <td class="small text-muted">{{ register.procesador }}</td>
+                <td class="small text-muted">{{ register.cant_memorias }}</td>
+                <td class="small text-muted">{{ register.cap_memorias }}</td>
+                <td class="small text-muted">{{ register.modelo_memorias }}</td>
+                <td class="small text-muted">{{ register.max_ram }}</td>
+                <td class="small text-muted">{{ register.cant_zoc_mem }}</td>
+                <td class="small text-muted">{{ register.nb_monitor }}</td>
+                <td class="small text-muted">{{ register.mod_monitor }}</td>
+                <td class="small text-muted">{{ register.serial_monitor }}</td>
+                <td class="small text-muted">{{ register.nb_mouse }}</td>
+                <td class="small text-muted">{{ register.serial_mouse }}</td>
+                <td class="small text-muted">{{ register.nb_teclado }}</td>
+                <td class="small text-muted">{{ register.marca_teclado }}</td>
+                <td class="small text-muted">{{ register.mod_teclado }}</td>
+                <td class="small text-muted">{{ register.serial_teclado }}</td>
+                <td class="small text-muted">{{ register.ups }}</td>
+                <td class="small text-muted">{{ register.marca_ups }}</td>
+                <td class="small text-muted">{{ register.mod_ups }}</td>
+                <td class="small text-muted">{{ register.serial_ups }}</td>
                 <td class="small text-muted text-center">{{ register.created_at|date:"d/m/Y" }}</td>
                 <td class="small text-muted text-center">{{ register.updated_at|date:"d/m/Y" }}</td>
                 <td>
