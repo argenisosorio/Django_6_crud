@@ -24,8 +24,7 @@ class PersonForm(forms.ModelForm):
         """
         model = Person
 
-        fields = [
-            'name',
-            'email',
-            'age'
-        ]
+        #fields = '__all__'
+
+        # Excluimos el campo de usuario para que no aparezca en el HTML
+        exclude = ['user']

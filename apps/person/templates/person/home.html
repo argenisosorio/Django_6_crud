@@ -1,7 +1,12 @@
 {% extends 'person/base.html' %}
 
 {% block content %}
-<h1>{{ message }}</h1>
+<h1>Add Person</h1>
+{% if user.is_authenticated %}
+    ¡Hola! {{ user.username }}
+{% endif %}
+<br>
+<br>
 <a href="{% url 'person:create' %}" class="btn btn-primary mb-3">Add Person</a>
 
 <table class="table">
@@ -10,6 +15,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Age</th>
+            <th>Registered by</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -19,6 +25,7 @@
             <td>{{ person.name }}</td>
             <td>{{ person.email }}</td>
             <td>{{ person.age }}</td>
+            <td>{{ person.user }}</td>
             <td>
                 <a href="{% url 'person:detail' person.pk %}" class="btn btn-info">View</a>
                 <a href="{% url 'person:update' person.pk %}" class="btn btn-warning">Edit</a>

@@ -2,46 +2,37 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
 from .forms import PersonForm
 
+
 def home(request):
-    """
-    Display the home page listing all Person records.
-    
-    Args:
-        request (HttpRequest): The incoming HTTP request
-        
-    Returns:
-        HttpResponse: Rendered template with all Person objects
-    """
     people = Person.objects.all()
+
     context = {
         'people': people,
-        'message': '¡Hello Django 6 Person CRUD!',
     }
+
     return render(request, 'person/home.html', context)
 
+
 def create_person(request):
-    """
-    Handle Person creation through a form.
-    
-    GET: Displays an empty form for creating a new Person
-    POST: Processes the submitted form and creates a new Person
-    
-    Args:
-        request (HttpRequest): The incoming HTTP request
-        
-    Returns:
-        HttpResponse: Rendered form template (GET) or redirect to home (POST)
-    """
     if request.method == 'POST':
         form = PersonForm(request.POST)
         if form.is_valid():
-            form.save()
+            # 1. Creamos la instancia en memoria, NO en la base de datos aún
+            nuevo_registro = form.save(commit=False)
+
+            # 2. Asignamos el usuario que está logueado actualmente
+            nuevo_registro.user = request.user
+
+            # 3. Ahora sí, guardamos definitivamente en la BD
+            nuevo_registro.save()
+
             return redirect('person:home')
     else:
         form = PersonForm()
     
     context = {'form': form}
     return render(request, 'person/create.html', context)
+
 
 def detail_person(request, pk):
     """

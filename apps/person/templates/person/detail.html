@@ -10,6 +10,7 @@
             <li class="list-group-item"><strong>Nombre:</strong> {{ person.name }}</li>
             <li class="list-group-item"><strong>Email:</strong> {{ person.email }}</li>
             <li class="list-group-item"><strong>Edad:</strong> {{ person.age }}</li>
+            <li class="list-group-item"><strong>Registrado por:</strong> {{ person.user }}</li>
             <li class="list-group-item"><strong>Creado:</strong> {{ person.created_at|date:"d/m/Y H:i" }}</li>
             <li class="list-group-item"><strong>Actualizado:</strong> {{ person.updated_at|date:"d/m/Y H:i" }}</li>
         </ul>

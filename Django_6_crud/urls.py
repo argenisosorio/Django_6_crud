@@ -10,7 +10,7 @@ urlpatterns = [
     path('', lambda request: redirect('users:login'), name='root'),
 
     # Include the URLs from person app.
-    path('', include('apps.person.urls')),
+    path('person/', include('apps.person.urls')),
 
     # Include the URLs from product app.
     path('products/', include('apps.product.urls')),
