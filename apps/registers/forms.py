@@ -9,4 +9,7 @@ class RegisterForm(forms.ModelForm):
     class Meta:
         model = Register
 
-        fields = '__all__'
+        #fields = '__all__'
+
+        # Excluimos el campo de usuario para que no aparezca en el HTML
+        exclude = ['usuario_registro']

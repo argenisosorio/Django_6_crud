@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings # Importante para referenciar el User model
+
 
 class Register(models.Model):
     # Opciones para los campos Select
@@ -53,6 +55,14 @@ class Register(models.Model):
     # Auditoría (Automáticos)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # Nuevo campo para almacenar quién hizo el registro
+    usuario_registro = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE, # Si se borra el usuario, se borran sus registros (o usa SET_NULL si prefieres conservarlos)
+        related_name='registros_realizados',
+        verbose_name="Registrado por:"
+    )
 
     def __str__(self):
         return f"{self.nombres} {self.apellidos} - {self.cedula}"

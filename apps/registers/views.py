@@ -66,7 +66,15 @@ def create_register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
+            # Creamos la instancia en memoria sin guardar en la BD aún
+            nuevo_registro = form.save(commit=False)
+
+            # Asignamos el usuario autenticado (tu modelo User personalizado)
+            nuevo_registro.usuario_registro = request.user
+
+            # Guardamos definitivamente
+            nuevo_registro.save()
+
             return redirect('registers:home')
     else:
         form = RegisterForm()

@@ -68,6 +68,9 @@
 
                 <dt class="mt-2">Última actualización en BD:</dt>
                 <dd>{{ register.updated_at|date:"d/m/Y H:i"|default:"—" }}</dd>
+
+                <dt class="mt-2">Usuario creador:</dt>
+                <dd>{{ register.usuario_registro }}</dd>
             </div>
         </dl>
     </div>

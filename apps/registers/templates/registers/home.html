@@ -74,6 +74,7 @@
                 <th>Documentos completos</th>
                 <th>Registro en BD</th>
                 <th>Última actualización en BD</th>
+                <th>Usuario creador</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -114,6 +115,7 @@
                 </td>
                 <td class="small text-muted text-center">{{ register.created_at|date:"d/m/Y" }}</td>
                 <td class="small text-muted text-center">{{ register.updated_at|date:"d/m/Y" }}</td>
+                <td class="small text-muted">{{ register.usuario_registro }}</td>
                 <td>
                     <div class="btn-group btn-group-sm">
                         <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info small">Detalles</a>
