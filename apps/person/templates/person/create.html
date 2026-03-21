@@ -1,10 +1,75 @@
 {% extends 'person/base.html' %}
 
 {% block content %}
-<h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Person</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Save</button>
-</form>
+<div class="container mt-4">
+    <h2>{% if form.instance.pk %}Editar Persona{% else %}Agregar Persona{% endif %}</h2>
+
+    {% if form.errors %}
+    <div class="alert alert-danger shadow-sm">
+        <h5 class="alert-heading"><i class="fas fa-exclamation-triangle"></i>
+            Por favor corrige los siguientes errores:
+        </h5>
+        <ul class="mb-0">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="id_name" class="form-label fw-bold">Nombre</label>
+            <input
+                type="text"
+                name="name"
+                id="id_name"
+                class="form-control"
+                value="{{ form.name.value|default_if_none:'' }}"
+                required
+            >
+        </div>
+
+        <div class="mb-3">
+            <label for="id_email" class="form-label fw-bold">Correo Electrónico</label>
+            <input
+                type="email"
+                name="email"
+                id="id_email"
+                class="form-control"
+                value="{{ form.email.value|default_if_none:'' }}"
+                required
+            >
+        </div>
+
+        <div class="mb-3">
+            <label for="id_age" class="form-label fw-bold">Edad</label>
+            <input
+                type="number"
+                name="age"
+                id="id_age"
+                class="form-control"
+                value="{{ form.age.value|default_if_none:'' }}"
+                min="0"
+                max="120"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                required
+            >
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-save"></i> Guardar
+            </button>
+            <a href="{% url 'person:home' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
 {% endblock %}
