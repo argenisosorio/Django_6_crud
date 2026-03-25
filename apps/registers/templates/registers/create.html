@@ -87,6 +87,63 @@
                                 {% endif %}
                             </div>
 
+                            <!-- Marca CPU-->
+                            <div class="col-md-6">
+                                <label for="{{ form.marca_cpu.id_for_label }}" class="form-label fw-bold">
+                                    Marca del CPU
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.marca_cpu.name }}" 
+                                    id="{{ form.marca_cpu.id_for_label }}"
+                                    class="form-control {% if form.marca_cpu.errors %}is-invalid{% endif %}"
+                                    value="{{ form.marca_cpu.value|default:'' }}"
+                                >
+                                {% if form.marca_cpu.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.marca_cpu.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Modelo CPU-->
+                            <div class="col-md-6">
+                                <label for="{{ form.mod_cpu.id_for_label }}" class="form-label fw-bold">
+                                    Modelo del CPU
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.mod_cpu.name }}" 
+                                    id="{{ form.mod_cpu.id_for_label }}"
+                                    class="form-control {% if form.mod_cpu.errors %}is-invalid{% endif %}"
+                                    value="{{ form.mod_cpu.value|default:'' }}"
+                                >
+                                {% if form.mod_cpu.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.mod_cpu.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Serial CPU-->
+                            <div class="col-md-6">
+                                <label for="{{ form.serial_cpu.id_for_label }}" class="form-label fw-bold">
+                                    Serial del CPU
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.serial_cpu.name }}" 
+                                    id="{{ form.serial_cpu.id_for_label }}"
+                                    class="form-control {% if form.serial_cpu.errors %}is-invalid{% endif %}"
+                                    value="{{ form.serial_cpu.value|default:'' }}"
+                                >
+                                {% if form.serial_cpu.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.serial_cpu.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
                             <div class="col-12 mt-3">
                                 <h5 class="text-primary border-bottom pb-2">
                                     <i class="fas fa-computer me-2"></i>Disco Duro y Procesador
