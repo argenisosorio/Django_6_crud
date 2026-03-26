@@ -21,6 +21,7 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th>#</th>
+                <th>Acciones</th>
                 <th>Nombres y Apellidos</th>
                 <th>Puesto de trabajo</th>
                 <th>NB CPU</th>
@@ -62,6 +63,13 @@
             {% for register in registers %}
             <tr>
                 <td class="text-center">{{ forloop.counter }}</td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info small">Detalles</a>
+                        <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning small">Editar</a>
+                        <a href="{% url 'registers:delete' register.pk %}" class="btn btn-danger small">Borrar</a>
+                    </div>
+                </td>
                 <td class="small text-muted">{{ register.nombres_apellidos }}</td>
                 <td class="small text-muted">{{ register.puesto_trabajo }}</td>
                 <td class="small text-muted">{{ register.n_bien_cpu }}</td>
