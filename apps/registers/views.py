@@ -51,9 +51,14 @@ def detail_register(request, pk):
     context = {'register': register}
     return render(request, 'registers/detail.html', context)
 
+
 @login_required
 def update_register(request, pk):
     register = get_object_or_404(Register, pk=pk)
+
+    # Obtén todos los municipios para el select
+    municipios = Municipio.objects.all()
+
     if request.method == 'POST':
         form = RegisterForm(request.POST, instance=register)
         if form.is_valid():
@@ -61,9 +66,14 @@ def update_register(request, pk):
             return redirect('registers:detail', pk=register.pk)
     else:
         form = RegisterForm(instance=register)
-    
-    context = {'form': form, 'register': register}
+
+    context = {
+        'form': form,
+        'register': register,
+        'municipios': municipios,
+    }
     return render(request, 'registers/update.html', context)
+
 
 @login_required
 def delete_register(request, pk):

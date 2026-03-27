@@ -56,9 +56,7 @@ $ python manage.py runserver
 
 For dev:
 ```bash
-$ rm -rf apps/users/migrations && rm -rf apps/registers/migrations && rm -rf db.sqlite3 && python manage.py makemigrations registers users && python manage.py migrate && python manage.py createsuperuser && python manage.py runserver
-
-$ rm -rf apps/users/migrations && rm -rf apps/registers/migrations && rm -rf db.sqlite3 && python manage.py makemigrations registers users && python manage.py migrate && python manage.py loaddata apps/users/fixtures/users.json && python manage.py loaddata apps/registers/fixtures/registers.json && python manage.py runserver
+$ rm -rf apps/users/migrations && rm -rf apps/registers/migrations && rm db.sqlite3 && python manage.py makemigrations registers users && python manage.py migrate && python manage.py loaddata apps/registers/fixtures/municipios.json && python manage.py loaddata apps/registers/fixtures/users.json && python manage.py runserver
 ```
 
 ## Test the project:
