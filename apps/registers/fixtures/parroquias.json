@@ -1,0 +1,776 @@
+[
+  {
+    "model": "registers.Parroquia",
+    "pk": 1,
+    "fields": {
+      "codigo": "140101",
+      "nombre": "Presidente Betancourt",
+      "municipio": 1
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 2,
+    "fields": {
+      "codigo": "140102",
+      "nombre": "Presidente Páez",
+      "municipio": 1
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 3,
+    "fields": {
+      "codigo": "140103",
+      "nombre": "Presidente Rómulo Gallegos",
+      "municipio": 1
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 4,
+    "fields": {
+      "codigo": "140104",
+      "nombre": "Gabriel Picón González",
+      "municipio": 1
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 5,
+    "fields": {
+      "codigo": "140105",
+      "nombre": "Héctor Amable Mora",
+      "municipio": 1
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 6,
+    "fields": {
+      "codigo": "140106",
+      "nombre": "José Nucete Sardi",
+      "municipio": 1
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 7,
+    "fields": {
+      "codigo": "140107",
+      "nombre": "Pulido Méndez",
+      "municipio": 1
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 8,
+    "fields": {
+      "codigo": "140201",
+      "nombre": "Capital Andrés Bello",
+      "municipio": 2
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 9,
+    "fields": {
+      "codigo": "140301",
+      "nombre": "Capital Antonio Pinto Salinas",
+      "municipio": 3
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 10,
+    "fields": {
+      "codigo": "140302",
+      "nombre": "Mesa Bolívar",
+      "municipio": 3
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 11,
+    "fields": {
+      "codigo": "140303",
+      "nombre": "Mesa de Las Palmas",
+      "municipio": 3
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 12,
+    "fields": {
+      "codigo": "140401",
+      "nombre": "Capital Aricagua",
+      "municipio": 4
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 13,
+    "fields": {
+      "codigo": "140402",
+      "nombre": "San Antonio",
+      "municipio": 4
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 14,
+    "fields": {
+      "codigo": "140501",
+      "nombre": "Capital Arzobispo Chacón",
+      "municipio": 5
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 15,
+    "fields": {
+      "codigo": "140502",
+      "nombre": "Capurí",
+      "municipio": 5
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 16,
+    "fields": {
+      "codigo": "140503",
+      "nombre": "Chacantá",
+      "municipio": 5
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 17,
+    "fields": {
+      "codigo": "140504",
+      "nombre": "El Molino",
+      "municipio": 5
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 18,
+    "fields": {
+      "codigo": "140505",
+      "nombre": "Guaimaral",
+      "municipio": 5
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 19,
+    "fields": {
+      "codigo": "140506",
+      "nombre": "Mucutuy",
+      "municipio": 5
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 20,
+    "fields": {
+      "codigo": "140507",
+      "nombre": "Mucuchachí",
+      "municipio": 5
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 21,
+    "fields": {
+      "codigo": "140601",
+      "nombre": "Fernández Peña",
+      "municipio": 6
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 22,
+    "fields": {
+      "codigo": "140602",
+      "nombre": "Matriz",
+      "municipio": 6
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 23,
+    "fields": {
+      "codigo": "140603",
+      "nombre": "Montalbán",
+      "municipio": 6
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 24,
+    "fields": {
+      "codigo": "140604",
+      "nombre": "Acequias",
+      "municipio": 6
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 25,
+    "fields": {
+      "codigo": "140605",
+      "nombre": "Jají",
+      "municipio": 6
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 26,
+    "fields": {
+      "codigo": "140606",
+      "nombre": "La Mesa",
+      "municipio": 6
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 27,
+    "fields": {
+      "codigo": "140607",
+      "nombre": "San José del Sur",
+      "municipio": 6
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 28,
+    "fields": {
+      "codigo": "140701",
+      "nombre": "Capital Caracciolo Parra Olmedo",
+      "municipio": 7
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 29,
+    "fields": {
+      "codigo": "140702",
+      "nombre": "Florencio Ramírez",
+      "municipio": 7
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 30,
+    "fields": {
+      "codigo": "140801",
+      "nombre": "Capital Cardenal Quintero",
+      "municipio": 8
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 31,
+    "fields": {
+      "codigo": "140802",
+      "nombre": "Las Piedras",
+      "municipio": 8
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 32,
+    "fields": {
+      "codigo": "140901",
+      "nombre": "Capital Guaraque",
+      "municipio": 9
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 33,
+    "fields": {
+      "codigo": "140902",
+      "nombre": "Mesa de Quintero",
+      "municipio": 9
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 34,
+    "fields": {
+      "codigo": "140903",
+      "nombre": "Río Negro",
+      "municipio": 9
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 35,
+    "fields": {
+      "codigo": "141001",
+      "nombre": "Capital Julio César Salas",
+      "municipio": 10
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 36,
+    "fields": {
+      "codigo": "141002",
+      "nombre": "Palmira",
+      "municipio": 10
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 37,
+    "fields": {
+      "codigo": "141101",
+      "nombre": "Capital Justo Briceño",
+      "municipio": 11
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 38,
+    "fields": {
+      "codigo": "141102",
+      "nombre": "San Cristóbal de Torondoy",
+      "municipio": 11
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 39,
+    "fields": {
+      "codigo": "141201",
+      "nombre": "Antonio Spinetti Dini",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 40,
+    "fields": {
+      "codigo": "141202",
+      "nombre": "Arias",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 41,
+    "fields": {
+      "codigo": "141203",
+      "nombre": "Caracciolo Parra Pérez",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 42,
+    "fields": {
+      "codigo": "141204",
+      "nombre": "Domingo Peña",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 43,
+    "fields": {
+      "codigo": "141205",
+      "nombre": "El Llano",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 44,
+    "fields": {
+      "codigo": "141206",
+      "nombre": "Gonzalo Picón Febres",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 45,
+    "fields": {
+      "codigo": "141207",
+      "nombre": "Jacinto Plaza",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 46,
+    "fields": {
+      "codigo": "141208",
+      "nombre": "Juan Rodríguez Suárez",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 47,
+    "fields": {
+      "codigo": "141209",
+      "nombre": "Lasso de la Vega",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 48,
+    "fields": {
+      "codigo": "141210",
+      "nombre": "Mariano Picón Salas",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 49,
+    "fields": {
+      "codigo": "141211",
+      "nombre": "Milla",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 50,
+    "fields": {
+      "codigo": "141212",
+      "nombre": "Osuna Rodríguez",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 51,
+    "fields": {
+      "codigo": "141213",
+      "nombre": "Sagrario",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 52,
+    "fields": {
+      "codigo": "141214",
+      "nombre": "El Morro",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 53,
+    "fields": {
+      "codigo": "141215",
+      "nombre": "Los Nevados",
+      "municipio": 12
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 54,
+    "fields": {
+      "codigo": "141301",
+      "nombre": "Capital Miranda",
+      "municipio": 13
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 55,
+    "fields": {
+      "codigo": "141302",
+      "nombre": "Andrés Eloy Blanco",
+      "municipio": 13
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 56,
+    "fields": {
+      "codigo": "141303",
+      "nombre": "La Venta",
+      "municipio": 13
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 57,
+    "fields": {
+      "codigo": "141304",
+      "nombre": "Piñango",
+      "municipio": 13
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 58,
+    "fields": {
+      "codigo": "141401",
+      "nombre": "Capital Obispo Ramos de Lora",
+      "municipio": 14
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 59,
+    "fields": {
+      "codigo": "141402",
+      "nombre": "Eloy Paredes",
+      "municipio": 14
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 60,
+    "fields": {
+      "codigo": "141403",
+      "nombre": "San Rafael de Alcázar",
+      "municipio": 14
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 61,
+    "fields": {
+      "codigo": "141501",
+      "nombre": "Capital Padre Noguera",
+      "municipio": 15
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 62,
+    "fields": {
+      "codigo": "141601",
+      "nombre": "Capital Pueblo Llano",
+      "municipio": 16
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 63,
+    "fields": {
+      "codigo": "141701",
+      "nombre": "Capital Rangel",
+      "municipio": 17
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 64,
+    "fields": {
+      "codigo": "141702",
+      "nombre": "Cacute",
+      "municipio": 17
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 65,
+    "fields": {
+      "codigo": "141703",
+      "nombre": "La Toma",
+      "municipio": 17
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 66,
+    "fields": {
+      "codigo": "141704",
+      "nombre": "Mucurubá",
+      "municipio": 17
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 67,
+    "fields": {
+      "codigo": "141705",
+      "nombre": "San Rafael",
+      "municipio": 17
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 68,
+    "fields": {
+      "codigo": "141801",
+      "nombre": "Capital Rivas Dávila",
+      "municipio": 18
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 69,
+    "fields": {
+      "codigo": "141802",
+      "nombre": "Gerónimo Maldonado",
+      "municipio": 18
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 70,
+    "fields": {
+      "codigo": "141901",
+      "nombre": "Capital Santos Marquina",
+      "municipio": 19
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 71,
+    "fields": {
+      "codigo": "142001",
+      "nombre": "Capital Sucre",
+      "municipio": 20
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 72,
+    "fields": {
+      "codigo": "142002",
+      "nombre": "Chiguará",
+      "municipio": 20
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 73,
+    "fields": {
+      "codigo": "142003",
+      "nombre": "Estánquez",
+      "municipio": 20
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 74,
+    "fields": {
+      "codigo": "142004",
+      "nombre": "La Trampa",
+      "municipio": 20
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 75,
+    "fields": {
+      "codigo": "142005",
+      "nombre": "Pueblo Nuevo del Sur",
+      "municipio": 20
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 76,
+    "fields": {
+      "codigo": "142006",
+      "nombre": "San Juan",
+      "municipio": 20
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 77,
+    "fields": {
+      "codigo": "142101",
+      "nombre": "El Amparo",
+      "municipio": 21
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 78,
+    "fields": {
+      "codigo": "142102",
+      "nombre": "El Llano",
+      "municipio": 21
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 79,
+    "fields": {
+      "codigo": "142103",
+      "nombre": "San Francisco",
+      "municipio": 21
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 80,
+    "fields": {
+      "codigo": "142104",
+      "nombre": "Tovar",
+      "municipio": 21
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 81,
+    "fields": {
+      "codigo": "142201",
+      "nombre": "Capital Tulio Febres Cordero",
+      "municipio": 22
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 82,
+    "fields": {
+      "codigo": "142202",
+      "nombre": "Independencia",
+      "municipio": 22
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 83,
+    "fields": {
+      "codigo": "142203",
+      "nombre": "María de la Concepción Palacios Blanco",
+      "municipio": 22
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 84,
+    "fields": {
+      "codigo": "142204",
+      "nombre": "Santa Apolonia",
+      "municipio": 22
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 85,
+    "fields": {
+      "codigo": "142301",
+      "nombre": "Capital Zea",
+      "municipio": 23
+    }
+  },
+  {
+    "model": "registers.Parroquia",
+    "pk": 86,
+    "fields": {
+      "codigo": "142302",
+      "nombre": "Caño El Tigre",
+      "municipio": 23
+    }
+  }
+]

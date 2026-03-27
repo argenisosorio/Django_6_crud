@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Register, Municipio
+from .models import Register, Municipio, Parroquia
 from .forms import RegisterForm
 import openpyxl
 from django.http import HttpResponse
@@ -41,7 +41,8 @@ def create_register(request):
     
     context = {
         'form': form,
-        'municipios': Municipio.objects.all().order_by('nombre')
+        'municipios': Municipio.objects.all().order_by('nombre'),
+        'parroquias': Parroquia.objects.all().order_by('nombre')
     }
     return render(request, 'registers/create.html', context)
 
@@ -58,6 +59,7 @@ def update_register(request, pk):
 
     # Obtén todos los municipios para el select
     municipios = Municipio.objects.all()
+    parroquias = Parroquia.objects.all()
 
     if request.method == 'POST':
         form = RegisterForm(request.POST, instance=register)
@@ -71,6 +73,7 @@ def update_register(request, pk):
         'form': form,
         'register': register,
         'municipios': municipios,
+        'parroquias': parroquias,
     }
     return render(request, 'registers/update.html', context)
 

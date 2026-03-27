@@ -48,7 +48,7 @@
                                     name="{{ form.nombres.name }}" 
                                     id="{{ form.nombres.id_for_label }}"
                                     class="form-control {% if form.nombres.errors %}is-invalid{% endif %}"
-                                    value="{{ form.nombres.value|default:'Argenis' }}"
+                                    value="{{ form.nombres.value|default:'' }}"
                                     placeholder="Ingrese los nombres"
                                     required
                                 >
@@ -68,7 +68,7 @@
                                     name="{{ form.apellidos.name }}" 
                                     id="{{ form.apellidos.id_for_label }}"
                                     class="form-control {% if form.apellidos.errors %}is-invalid{% endif %}"
-                                    value="{{ form.apellidos.value|default:'Osorio' }}"
+                                    value="{{ form.apellidos.value|default:'' }}"
                                     placeholder="Ingrese los apellidos"
                                     required
                                 >
@@ -88,7 +88,7 @@
                                     name="{{ form.cedula.name }}" 
                                     id="{{ form.cedula.id_for_label }}"
                                     class="form-control {% if form.cedula.errors %}is-invalid{% endif %}"
-                                    value="{{ form.cedula.value|default:'19592165' }}"
+                                    value="{{ form.cedula.value|default:'' }}"
                                     placeholder="V-12345678"
                                 >
                                 {% if form.cedula.errors %}
@@ -107,7 +107,7 @@
                                     name="{{ form.telefono.name }}" 
                                     id="{{ form.telefono.id_for_label }}"
                                     class="form-control {% if form.telefono.errors %}is-invalid{% endif %}"
-                                    value="{{ form.telefono.value|default:'04247713032' }}"
+                                    value="{{ form.telefono.value|default:'' }}"
                                     placeholder="0412-1234567"
                                 >
                                 {% if form.telefono.errors %}
@@ -139,6 +139,28 @@
                                 {% endif %}
                             </div>
 
+                            <div class="col-md-4">
+                                <label for="{{ form.parroquia.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.parroquia.label }} <span class="text-danger">*</span>
+                                </label>
+                                <select name="{{ form.parroquia.name }}" 
+                                        id="{{ form.parroquia.id_for_label }}"
+                                        class="form-select {% if form.parroquia.errors %}is-invalid{% endif %}"
+                                        required>
+                                    <option value="">Seleccione un parroquia...</option>
+                                    {% for parroquia in parroquias %}
+                                        <option value="{{ parroquia.id }}" {% if form.parroquia.value == parroquia.id|stringformat:"i" %}selected{% endif %}>
+                                            {{ parroquia.nombre }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.parroquia.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.parroquia.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
                             <div class="col-12">
                                 <label for="{{ form.direccion.id_for_label }}" class="form-label fw-bold">
                                     {{ form.direccion.label }} <span class="text-danger">*</span>
@@ -149,7 +171,7 @@
                                     class="form-control {% if form.direccion.errors %}is-invalid{% endif %}"
                                     rows="2"
                                     placeholder="Dirección completa"
-                                    required>{{ form.direccion.value|default:'Mérida' }}</textarea>
+                                    required>{{ form.direccion.value|default:'' }}</textarea>
                                 {% if form.direccion.errors %}
                                     <div class="invalid-feedback">
                                         {{ form.direccion.errors.0 }}
@@ -307,7 +329,7 @@
                                     name="{{ form.retirado_por.name }}" 
                                     id="{{ form.retirado_por.id_for_label }}"
                                     class="form-control {% if form.retirado_por.errors %}is-invalid{% endif %}"
-                                    value="{{ form.retirado_por.value|default:'Mario' }}"
+                                    value="{{ form.retirado_por.value|default:'' }}"
                                     placeholder="Nombre de quien retira"
                                 >
                                 {% if form.retirado_por.errors %}
@@ -326,7 +348,7 @@
                                     name="{{ form.retirado_por_ci.name }}"
                                     id="{{ form.retirado_por_ci.id_for_label }}"
                                     class="form-control {% if form.retirado_por_ci.errors %}is-invalid{% endif %}"
-                                    value="{{ form.retirado_por_ci.value|default:'18902230' }}"
+                                    value="{{ form.retirado_por_ci.value|default:'' }}"
                                     placeholder="Cédula de quien retira"
                                 >
                                 {% if form.retirado_por.errors %}

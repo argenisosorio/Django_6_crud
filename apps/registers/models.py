@@ -12,14 +12,42 @@ class Municipio(models.Model):
         max_length=100,
         verbose_name="Nombre del municipio"
     )
-    
+
     class Meta:
         verbose_name = "Municipio"
         verbose_name_plural = "Municipios"
         ordering = ['nombre']
-    
+
     def __str__(self):
         return self.nombre
+
+
+class Parroquia(models.Model):
+    codigo = models.CharField(
+        max_length=10,
+        unique=True,
+        verbose_name="Código de la parroquia"
+    )
+    nombre = models.CharField(
+        max_length=100,
+        verbose_name="Nombre de la parroquia"
+    )
+    municipio = models.ForeignKey(
+        Municipio,
+        on_delete=models.CASCADE,  # Si se elimina un municipio, se eliminan sus parroquias
+        related_name='parroquias',  # Permite acceder a todas las parroquias de un municipio: municipio.parroquias.all()
+        verbose_name="Municipio"
+    )
+
+    class Meta:
+        verbose_name = "Parroquia"
+        verbose_name_plural = "Parroquias"
+        ordering = ['municipio__nombre', 'nombre']  # Ordena primero por municipio, luego por nombre
+        unique_together = ['codigo', 'municipio']  # El código es único dentro de cada municipio
+
+    def __str__(self):
+        #return f"{self.nombre} - {self.municipio.nombre}"
+        return f"{self.nombre}"
 
 
 class Register(models.Model):
@@ -37,11 +65,21 @@ class Register(models.Model):
     direccion = models.TextField()
     municipio = models.ForeignKey(
         Municipio,
-        on_delete=models.SET_NULL,  # Si se elimina un municipio, se pone NULL en lugar de borrar los registros
-        null=True,                   # Permite valores NULL (por si hay registros antiguos sin municipio)
-        blank=True,                  # Permite dejar el campo vacío en formularios
-        related_name='registros',    # Permite acceder a todos los registros de un municipio: municipio.registros.all()
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='registros',
         verbose_name="Municipio"
+    )
+
+    # Nuevo campo parroquia
+    parroquia = models.ForeignKey(
+        Parroquia,
+        on_delete=models.SET_NULL,  # Si se elimina una parroquia, se pone NULL
+        null=True,
+        blank=True,
+        related_name='registros',  # Permite acceder a todos los registros de una parroquia: parroquia.registros.all()
+        verbose_name="Parroquia"
     )
 
     # Campos de Logística y Trámite
@@ -67,7 +105,7 @@ class Register(models.Model):
     # Nuevo campo para almacenar quién hizo el registro
     usuario_registro = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE, # Si se borra el usuario, se borran sus registros (o usa SET_NULL si prefieres conservarlos)
+        on_delete=models.CASCADE,
         related_name='registros_realizados',
         verbose_name="Registrado por:"
     )

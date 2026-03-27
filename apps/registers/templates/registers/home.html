@@ -27,6 +27,7 @@
                 <th>Teléfono</th>
                 <th>Dirección</th>
                 <th>Municipio</th>
+                <th>Parroquia</th>
                 <th>Fecha de Registro</th>
                 <th>Fecha de Despacho</th>
                 <th>Retirado por</th>
@@ -50,6 +51,7 @@
                 <td class="small text-muted">{{ register.telefono }}</td>
                 <td class="small text-muted">{{ register.direccion }}</td>
                 <td class="small text-muted">{{ register.municipio }}</td>
+                <td class="small text-muted">{{ register.parroquia }}</td>
                 <td class="small text-muted text-center">{{ register.fecha_registro|date:"d/m/Y" }}</td>
                 <td class="small text-muted text-center">
                     {% if register.fecha_despacho %}
