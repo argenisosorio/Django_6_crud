@@ -5,46 +5,6 @@
     <h1>Lista de Registros</h1>
 </div>
 
-{% if registers %}
-    <div class="card mb-4 shadow-sm">
-        <div class="card-body">
-            <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
-                <div class="col-md-4">
-                    <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
-                    <input
-                        type="text"
-                        name="q"
-                        id="q"
-                        class="form-control"
-                        value="{{ query_cedula }}"
-                    >
-                </div>
-                <div class="col-md-4">
-                    <label for="p" class="form-label fw-bold">Filtrar por Parroquia</label>
-                    <select name="p" id="p" class="form-select">
-                        <option value="">Todas las parroquias</option>
-                        {% for parroquia in parroquias_list %}
-                            <option value="{{ parroquia }}" {% if query_parroquia == parroquia %}selected{% endif %}>
-                                {{ parroquia }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-md-4 d-flex align-items-end gap-2">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fas fa-filter"></i> Filtrar
-                    </button>
-                    {% if query_cedula or query_parroquia %}
-                        <a href="{% url 'registers:home' %}" class="btn btn-outline-danger">
-                            <i class="fas fa-eraser"></i> Limpiar
-                        </a>
-                    {% endif %}
-                </div>
-            </form>
-        </div>
-    </div>
-{% endif %}
-
 <h4>Total de registros: {{ registers|length }}</h4>
 
 <br>
@@ -52,7 +12,7 @@
 <a href="{% url 'registers:create' %}" class="btn btn-primary mb-4">
     <i class="fas fa-plus"></i> Agregar Registro
 </a>
-<a href="?q={{ query_cedula }}&p={{ query_parroquia }}&export=1" class="btn btn-success mb-4">
+<a href="?q={{ query_cedula }}&export=1" class="btn btn-success mb-4">
     <i class="fas fa-file-excel"></i> Exportar Excel
 </a>
 
@@ -66,7 +26,7 @@
                 <th>Cédula</th>
                 <th>Teléfono</th>
                 <th>Dirección</th>
-                <th>Parroquia</th>
+                <th>Municipio</th>
                 <th>Fecha de Registro</th>
                 <th>Fecha de Despacho</th>
                 <th>Retirado por</th>
@@ -89,7 +49,7 @@
                 <td class="small text-muted">{{ register.cedula }}</td>
                 <td class="small text-muted">{{ register.telefono }}</td>
                 <td class="small text-muted">{{ register.direccion }}</td>
-                <td class="small text-muted">{{ register.parroquia }}</td>
+                <td class="small text-muted">{{ register.municipio }}</td>
                 <td class="small text-muted text-center">{{ register.fecha_registro|date:"d/m/Y" }}</td>
                 <td class="small text-muted text-center">
                     {% if register.fecha_despacho %}
@@ -136,76 +96,4 @@
         </tbody>
     </table>
 </div>
-
-{% if registers %}
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Gráficos</h1>
-    </div>
-
-    <div class="row mb-4">
-        <div class="col-md-6 mx-auto">
-            <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white">
-                    <h5 class="card-title mb-0 text-center">Distribución por Parroquia</h5>
-                </div>
-                <div class="card-body">
-                    <canvas id="parroquiaChart" width="400" height="400"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endif %}
-
-<script>
-    function renderizarGrafico() {
-        const contenedor = document.getElementById('parroquiaChart').parentElement;
-        document.getElementById('parroquiaChart').remove();
-        const nuevoCanvas = document.createElement('canvas');
-        nuevoCanvas.id = 'parroquiaChart';
-        nuevoCanvas.width = 400;
-        nuevoCanvas.height = 400;
-        contenedor.appendChild(nuevoCanvas);
-
-        const ctx = nuevoCanvas.getContext('2d');
-        const labels = {{ chart_labels|safe }};
-        const data = {{ chart_data|safe }};
-
-        // Paleta extendida de 20 colores
-        const coloresVibrantes = [
-            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', 
-            '#FF9F40', '#C9CBCF', '#7BC225', '#B3DEE2', '#F7464A',
-            '#46BFBD', '#FDB45C', '#949FB1', '#4D5360', '#AC64AD',
-            '#5175AE', '#E2EAE9', '#2D3436', '#D63031', '#00B894'
-        ];
-
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: labels,
-                datasets: [{
-                    data: data,
-                    // Usamos la paleta extendida
-                    backgroundColor: coloresVibrantes,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { 
-                        position: 'bottom',
-                        labels: {
-                            boxWidth: 12,
-                            padding: 15,
-                            font: { size: 11 }
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', renderizarGrafico);
-</script>
 {% endblock %}

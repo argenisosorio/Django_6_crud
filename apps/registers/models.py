@@ -2,26 +2,27 @@ from django.db import models
 from django.conf import settings # Importante para referenciar el User model
 
 
-class Register(models.Model):
-    # Opciones para los campos Select
-    PARROQUIAS = [
-        ("Antonio Spinetti Dini", "Antonio Spinetti Dini"),
-        ("Arias", "Arias"),
-        ("Caracciolo Parra Pérez", "Caracciolo Parra Pérez"),
-        ("Domingo Peña", "Domingo Peña"),
-        ("El Llano", "El Llano"),
-        ("El Sagrario", "El Sagrario"),
-        ("Gonzalo Picón Febres", "Gonzalo Picón Febres"),
-        ("Jacinto Plaza", "Jacinto Plaza"),
-        ("Lasso de la Vega", "Lasso de la Vega"),
-        ("Juan Rodríguez Suárez", "Juan Rodríguez Suárez"),
-        ("Mariano Picón Salas", "Mariano Picón Salas"),
-        ("Milla", "Milla"),
-        ("Osuna Rodríguez", "Osuna Rodríguez"),
-        ("El Morro", "El Morro"),
-        ("Los Nevados", "Los Nevados"),
-    ]
+class Municipio(models.Model):
+    codigo = models.CharField(
+        max_length=10,
+        unique=True,
+        verbose_name="Código del municipio"
+    )
+    nombre = models.CharField(
+        max_length=100,
+        verbose_name="Nombre del municipio"
+    )
+    
+    class Meta:
+        verbose_name = "Municipio"
+        verbose_name_plural = "Municipios"
+        ordering = ['nombre']
+    
+    def __str__(self):
+        return self.nombre
 
+
+class Register(models.Model):
     TAMANOS = [
         ("Pequeña", "Pequeña"),
         ("Mediana", "Mediana"),
@@ -32,9 +33,16 @@ class Register(models.Model):
     nombres = models.CharField(max_length=150)
     apellidos = models.CharField(max_length=150)
     cedula = models.CharField(max_length=20)
-    telefono = models.CharField(max_length=20)
+    telefono = models.CharField(max_length=20, null=True, blank=True)
     direccion = models.TextField()
-    parroquia = models.CharField(max_length=100, choices=PARROQUIAS)
+    municipio = models.ForeignKey(
+        Municipio,
+        on_delete=models.SET_NULL,  # Si se elimina un municipio, se pone NULL en lugar de borrar los registros
+        null=True,                   # Permite valores NULL (por si hay registros antiguos sin municipio)
+        blank=True,                  # Permite dejar el campo vacío en formularios
+        related_name='registros',    # Permite acceder a todos los registros de un municipio: municipio.registros.all()
+        verbose_name="Municipio"
+    )
 
     # Campos de Logística y Trámite
     fecha_registro = models.DateField()

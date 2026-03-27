@@ -1,61 +1,21 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Register
+from .models import Register, Municipio
 from .forms import RegisterForm
 import openpyxl
 from django.http import HttpResponse
-from django.db.models import Count # Importante añadir esto
-import json # Para pasar los datos al JS del template
+from django.db.models import Count
+import json
 
 
 @login_required
 def home(request):
-    # 1. Capturamos los parámetros de filtrado desde la URL
-    query_cedula = request.GET.get('q', '')
-    query_parroquia = request.GET.get('p', '')
-
-    # 2. QuerySet para la TABLA (mantiene el orden cronológico)
+    # QuerySet para la TABLA (mantiene el orden cronológico)
     registers = Register.objects.all().order_by('-created_at')
 
-    # Aplicamos filtros a los registros de la tabla
-    if query_cedula:
-        registers = registers.filter(cedula__icontains=query_cedula)
-    
-    if query_parroquia:
-        registers = registers.filter(parroquia=query_parroquia)
-
-    # 3. Manejo de Exportación Excel (Si se solicita)
-    if 'export' in request.GET:
-        return export_registers_excel(registers)
-
-    # 4. Lógica del GRÁFICO (Consulta independiente y limpia)
-    # IMPORTANTE: .order_by() vacío evita que Django agrupe por 'created_at' 
-    # y duplique las etiquetas en el gráfico.
-    stats = registers.values('parroquia').annotate(
-        total=Count('parroquia')
-    ).order_by() 
-    
-    # Preparamos las listas para Chart.js
-    chart_labels = [item['parroquia'] for item in stats]
-    chart_data = [item['total'] for item in stats]
-
-    # 5. Lista estática para el selector (Select) del formulario
-    parroquias_list = [
-        "Antonio Spinetti Dini", "Arias", "Caracciolo Parra Pérez",
-        "Domingo Peña", "El Llano", "El Sagrario", "Gonzalo Picón Febres",
-        "Jacinto Plaza", "Lasso de la Vega", "Juan Rodríguez Suárez",
-        "Mariano Picón Salas", "Milla", "Osuna Rodríguez", "El Morro",
-        "Los Nevados"
-    ]
-
-    # 6. Construcción del contexto
+    # Construcción del contexto
     context = {
-        'registers': registers,          # Datos para la tabla
-        'query_cedula': query_cedula,
-        'query_parroquia': query_parroquia,
-        'parroquias_list': parroquias_list,
-        'chart_labels': json.dumps(chart_labels), # Datos limpios para JS
-        'chart_data': json.dumps(chart_data),     # Datos limpios para JS
+        'registers': registers, # Datos para la tabla
     }
 
     return render(request, 'registers/home.html', context)
@@ -79,7 +39,10 @@ def create_register(request):
     else:
         form = RegisterForm()
     
-    context = {'form': form}
+    context = {
+        'form': form,
+        'municipios': Municipio.objects.all().order_by('nombre')
+    }
     return render(request, 'registers/create.html', context)
 
 @login_required

@@ -1,0 +1,186 @@
+[
+  {
+    "model": "registers.Municipio",
+    "pk": 1,
+    "fields": {
+      "codigo": "1401",
+      "nombre": "Alberto Adriani"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 2,
+    "fields": {
+      "codigo": "1402",
+      "nombre": "Andrés Bello"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 3,
+    "fields": {
+      "codigo": "1403",
+      "nombre": "Antonio Pinto Salinas"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 4,
+    "fields": {
+      "codigo": "1404",
+      "nombre": "Aricagua"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 5,
+    "fields": {
+      "codigo": "1405",
+      "nombre": "Arzobispo Chacón"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 6,
+    "fields": {
+      "codigo": "1406",
+      "nombre": "Campo Elías"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 7,
+    "fields": {
+      "codigo": "1407",
+      "nombre": "Caracciolo Parra Olmedo"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 8,
+    "fields": {
+      "codigo": "1408",
+      "nombre": "Cardenal Quintero"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 9,
+    "fields": {
+      "codigo": "1409",
+      "nombre": "Guaraque"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 10,
+    "fields": {
+      "codigo": "1410",
+      "nombre": "Julio Cesar Salas"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 11,
+    "fields": {
+      "codigo": "1411",
+      "nombre": "Justo Briceño"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 12,
+    "fields": {
+      "codigo": "1412",
+      "nombre": "Libertador"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 13,
+    "fields": {
+      "codigo": "1413",
+      "nombre": "Miranda"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 14,
+    "fields": {
+      "codigo": "1414",
+      "nombre": "Obispo Ramos de Lora"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 15,
+    "fields": {
+      "codigo": "1415",
+      "nombre": "Padre Noguera"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 16,
+    "fields": {
+      "codigo": "1416",
+      "nombre": "Pueblo Llano"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 17,
+    "fields": {
+      "codigo": "1417",
+      "nombre": "Rangel"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 18,
+    "fields": {
+      "codigo": "1418",
+      "nombre": "Rivas Dávila"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 19,
+    "fields": {
+      "codigo": "1419",
+      "nombre": "Santos Marquina"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 20,
+    "fields": {
+      "codigo": "1420",
+      "nombre": "Sucre"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 21,
+    "fields": {
+      "codigo": "1421",
+      "nombre": "Tovar"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 22,
+    "fields": {
+      "codigo": "1422",
+      "nombre": "Tulio Febres Cordero"
+    }
+  },
+  {
+    "model": "registers.Municipio",
+    "pk": 23,
+    "fields": {
+      "codigo": "1423",
+      "nombre": "Zea"
+    }
+  }
+]

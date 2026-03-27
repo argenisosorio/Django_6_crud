@@ -45,6 +45,10 @@ $ python manage.py makemigrations registers users
 
 $ python manage.py migrate
 
+$ python manage.py loaddata apps/registers/fixtures/municipios.json
+
+$ python manage.py loaddata apps/registers/fixtures/users.json
+
 $ python manage.py createsuperuser
 
 $ python manage.py runserver
