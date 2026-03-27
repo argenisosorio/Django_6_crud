@@ -63,22 +63,18 @@ class Register(models.Model):
     cedula = models.CharField(max_length=20)
     telefono = models.CharField(max_length=20, null=True, blank=True)
     direccion = models.TextField()
+
     municipio = models.ForeignKey(
         Municipio,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
+        on_delete=models.PROTECT,
         related_name='registros',
         verbose_name="Municipio"
     )
 
-    # Nuevo campo parroquia
     parroquia = models.ForeignKey(
         Parroquia,
-        on_delete=models.SET_NULL,  # Si se elimina una parroquia, se pone NULL
-        null=True,
-        blank=True,
-        related_name='registros',  # Permite acceder a todos los registros de una parroquia: parroquia.registros.all()
+        on_delete=models.PROTECT,
+        related_name='registros',
         verbose_name="Parroquia"
     )
 
