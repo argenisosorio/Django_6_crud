@@ -147,7 +147,7 @@
                                         id="{{ form.parroquia.id_for_label }}"
                                         class="form-select {% if form.parroquia.errors %}is-invalid{% endif %}"
                                         required>
-                                    <option value="">Seleccione un parroquia...</option>
+                                    <option value="">Seleccione una parroquia...</option>
                                     {% for parroquia in parroquias %}
                                         <option value="{{ parroquia.id }}" {% if form.parroquia.value == parroquia.id|stringformat:"i" %}selected{% endif %}>
                                             {{ parroquia.nombre }}
@@ -377,4 +377,86 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener referencias a los selects
+        const municipioSelect = document.getElementById('{{ form.municipio.id_for_label }}');
+        const parroquiaSelect = document.getElementById('{{ form.parroquia.id_for_label }}');
+
+        // Guardar el valor actual de la parroquia (si existe, para edición)
+        const currentParroquiaId = '{{ form.parroquia.value|default:"" }}';
+
+        // Función para cargar las parroquias según el municipio seleccionado
+        function cargarParroquias(municipioId, parroquiaSeleccionada = null) {
+            // Si no hay municipio seleccionado, limpiar el select de parroquias
+            if (!municipioId) {
+                parroquiaSelect.innerHTML = '<option value="">Primero seleccione un municipio</option>';
+                parroquiaSelect.disabled = true;
+                return;
+            }
+
+            // Mostrar estado de carga
+            parroquiaSelect.innerHTML = '<option value="">Cargando parroquias...</option>';
+            parroquiaSelect.disabled = true;
+
+            // CORREGIDO: Usar la URL con el namespace de registers
+            const url = "{% url 'registers:api_parroquias' %}?municipio_id=" + municipioId;
+
+            // Realizar la petición AJAX
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la petición');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Limpiar y habilitar el select
+                    parroquiaSelect.innerHTML = '<option value="">Seleccione una parroquia...</option>';
+                    parroquiaSelect.disabled = false;
+
+                    // Agregar las opciones de parroquias
+                    if (data.length === 0) {
+                        parroquiaSelect.innerHTML = '<option value="">No hay parroquias disponibles</option>';
+                        parroquiaSelect.disabled = true;
+                    } else {
+                        data.forEach(parroquia => {
+                            const option = document.createElement('option');
+                            option.value = parroquia.id;
+                            option.textContent = parroquia.nombre;
+
+                            // Si hay una parroquia seleccionada (para edición), marcarla
+                            if (parroquiaSeleccionada && parseInt(parroquiaSeleccionada) === parroquia.id) {
+                                option.selected = true;
+                            }
+
+                            parroquiaSelect.appendChild(option);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    parroquiaSelect.innerHTML = '<option value="">Error al cargar parroquias</option>';
+                    parroquiaSelect.disabled = true;
+                });
+        }
+
+        // Evento cuando cambia el municipio
+        municipioSelect.addEventListener('change', function() {
+            const municipioId = this.value;
+            cargarParroquias(municipioId);
+        });
+
+        // Cargar parroquias al inicio si hay un municipio seleccionado (para edición)
+        const municipioInicial = municipioSelect.value;
+        if (municipioInicial) {
+            cargarParroquias(municipioInicial, currentParroquiaId);
+        } else {
+            // Si no hay municipio seleccionado, deshabilitar el select de parroquias
+            parroquiaSelect.innerHTML = '<option value="">Primero seleccione un municipio</option>';
+            parroquiaSelect.disabled = true;
+        }
+    });
+</script>
 {% endblock %}

@@ -6,6 +6,7 @@ import openpyxl
 from django.http import HttpResponse
 from django.db.models import Count
 import json
+from django.http import JsonResponse
 
 
 @login_required
@@ -139,3 +140,12 @@ def export_registers_excel(queryset):
     wb.save(response)
 
     return response
+
+
+def api_parroquias(request):
+    """API para obtener parroquias por municipio"""
+    municipio_id = request.GET.get('municipio_id')
+    if municipio_id:
+        parroquias = Parroquia.objects.filter(municipio_id=municipio_id).values('id', 'nombre')
+        return JsonResponse(list(parroquias), safe=False)
+    return JsonResponse([], safe=False)
