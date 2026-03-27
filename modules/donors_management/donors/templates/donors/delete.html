@@ -1,0 +1,14 @@
+{% extends 'donors/base.html' %}
+
+{% block content %}
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">¿Delete Donor?</h4>
+    <p>You are about to permanently delete <strong>{{ donor.name }}</strong>.</p>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirm delete</button>
+        <a href="{% url 'donors:home' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

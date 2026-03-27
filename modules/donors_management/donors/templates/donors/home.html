@@ -1,0 +1,29 @@
+{% extends 'donors/base.html' %}
+
+{% block content %}
+<h1>{{ message }}</h1>
+<a href="{% url 'donors:create' %}" class="btn btn-primary mb-3">Add Donor</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor.name }}</td>
+            <td>{{ donor.email }}</td>
+            <td>
+                <a href="{% url 'donors:detail' donor.pk %}" class="btn btn-info">View</a>
+                <a href="{% url 'donors:update' donor.pk %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'donors:delete' donor.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

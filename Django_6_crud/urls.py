@@ -9,12 +9,9 @@ urlpatterns = [
     # Redirigir la raíz al login de users
     path('', lambda request: redirect('users:login'), name='root'),
 
-    # Include the URLs from person app.
-    path('', include('apps.person.urls')),
-
-    # Include the URLs from product app.
-    path('products/', include('apps.product.urls')),
-
     # Include the URLs from users app.
-    path('users/', include('apps.users.urls')),
+    path('modules/users_management/users/', include('modules.users_management.users.urls')),
+
+    # Include the URLs from donors app.
+    path('modules/donors_management/donors/', include('modules.donors_management.donors.urls')),
 ]
