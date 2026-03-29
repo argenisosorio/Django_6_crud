@@ -15,32 +15,16 @@ from django.views.generic import (
 )
 
 
-"""
-Vistas basadas en clases para operaciones CRUD de usuarios y autenticación.
-
-Este módulo expone vistas genéricas basadas en clases que operan en el modelo
-de usuario personalizado del proyecto, así como vistas para login y logout.
-"""
-
-
-# ==================== VISTAS DE AUTENTICACIÓN ====================
-
 class LoginView(AuthLoginView):
-    """
-    Vista para iniciar sesión de usuarios.
-    """
     template_name = "users/login.html"
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        """Redirigir a la lista de usuarios después del login"""
-        return reverse_lazy("users:user_list")
+        """Redirigir a Home después de iniciar sesión exitosamente."""
+        return reverse_lazy("registers:home")
 
 
 class LogoutView(View):
-    """
-    Vista para cerrar sesión de usuarios.
-    """
     def get(self, request):
         logout(request)
         return redirect("users:login")
@@ -51,9 +35,6 @@ class LogoutView(View):
 
 
 class SignUpView(CreateView):
-    """
-    Vista para registrar nuevos usuarios.
-    """
     model = get_user_model()
     template_name = "users/signup.html"
     form_class = CustomUserCreationForm
@@ -64,8 +45,6 @@ class SignUpView(CreateView):
         login(self.request, self.object)
         return response
 
-
-# ==================== VISTAS CRUD DE USUARIOS ====================
 
 class UserListView(LoginRequiredMixin, ListView):
     model = get_user_model()

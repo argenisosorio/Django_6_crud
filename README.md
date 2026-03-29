@@ -40,9 +40,11 @@ $ pip install -r requirements.txt
 
 $ cp Django_6_crud/settings.py_example Django_6_crud/settings.py
 
-$ python manage.py makemigrations person product users
+$ python manage.py makemigrations users registers
 
 $ python manage.py migrate
+
+$ python manage.py loaddata apps/users/fixtures/users.json
 
 $ python manage.py runserver
 ```

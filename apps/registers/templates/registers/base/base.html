@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Django 6 CRUD application for managing people records.">
     <meta name="author" content="Ing. Argenis Osorio">
-    <title>Person CRUD</title>
+    <title>
+        {% block title %}Quiniela - Mundial 2026{% endblock %}
+    </title>
     <!-- Load Favicon -->
     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
     <!-- Load Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Load Custom CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-4">
-        <a href="{% url 'users:user_list' %}" class="btn btn-secondary">Users CRUD</a>
-        <a href="{% url 'person:home' %}" class="btn btn-secondary">Persons CRUD</a>
-        <a href="{% url 'product:home' %}" class="btn btn-secondary">Products CRUD</a>
-        <br>
-        <br>
+    {% include 'registers/base/parts/navbar.html' %}
+
+    <div class="container mt-4 mb-4" style="min-height: 400px;">
         {% block content %}{% endblock %}
     </div>
+
+    {% include 'registers/base/parts/footer.html' %}
 
     <!-- Load Bootstrap JS -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>

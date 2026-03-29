@@ -1,0 +1,15 @@
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgb(212, 175, 55) !important;
+}
+
+a {
+    text-decoration: none;
+    color: #d4af37;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d4af37;
+    --bs-btn-border-color: #d4af37;
+}
