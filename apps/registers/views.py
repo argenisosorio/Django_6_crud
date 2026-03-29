@@ -23,6 +23,9 @@ def home(request):
     if query_municipio_id and query_municipio_id.isdigit():
         registers = registers.filter(municipio_id=query_municipio_id)
 
+    if 'export' in request.GET:
+        return export_registers_excel(registers)
+
     # Obtener lista de municipios con ID y nombre para el select
     municipios = Municipio.objects.all().order_by('nombre')
 
@@ -113,7 +116,7 @@ def export_registers_excel(queryset):
 
     # Definir encabezados
     headers = [
-        'Nombres', 'Apellidos', 'Cédula', 'Teléfono', 'Parroquia', 
+        'Nombres', 'Apellidos', 'Cédula', 'Teléfono', 'Municipio', 'Parroquia',
         'Fecha de Registro', 'Fecha de Despacho', 'Cantidad', 'Tamaño', 
         'Visitado', 'Documentos completos'
     ]
@@ -130,7 +133,8 @@ def export_registers_excel(queryset):
             reg.apellidos,
             reg.cedula,
             reg.telefono,
-            reg.parroquia,
+            reg.municipio.nombre if reg.municipio else '',
+            reg.parroquia.nombre if reg.parroquia else '',
             reg.fecha_registro.strftime('%d/%m/%Y') if reg.fecha_registro else '',
             reg.fecha_despacho.strftime('%d/%m/%Y') if reg.fecha_despacho else 'Pendiente',
             reg.cantidad,
