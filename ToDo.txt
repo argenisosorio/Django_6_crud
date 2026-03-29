@@ -1,0 +1,20 @@
+-Desarrollar el autoregistro en el sistema
+    -Debe enviar las credenciales de acceso por correo.
+    -Debe tener recuperación por contraseña.
+
+-Debe haber un perfil en el cual debe poner el apodo y escoger la selección
+favorita.
+
+-Debe haber una lista para el administrador para saber que usaurios ya cargaron
+sus quinieelas completas.
+
+-Debe haber una vista con las reglas como un modal y el botón de reglas debe
+estar visible siempre.
+
+-Desarrollar formulario de la quiniela
+    -Solo debe dejar guardar una vez
+    -No debe dejar actualizar la quiniela.
+    -Debe enviar la quiniela por correo al admin y al usuario.
+
+-Debe haber una lista para todos los usuarios con todos los puntos de cada
+persona.
