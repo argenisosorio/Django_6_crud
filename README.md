@@ -51,6 +51,8 @@ $ python manage.py loaddata apps/registers/fixtures/users.json
 
 $ python manage.py loaddata apps/registers/fixtures/parroquias.json
 
+$ python manage.py loaddata apps/registers/fixtures/registers.json
+
 $ python manage.py createsuperuser
 
 $ python manage.py runserver
