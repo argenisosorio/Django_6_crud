@@ -12,6 +12,7 @@ from django.http import JsonResponse
 @login_required
 def home(request):
     query_cedula = request.GET.get('q', '')
+    query_municipio_id = request.GET.get('m', '')
 
     # QuerySet para la TABLA (mantiene el orden cronológico)
     registers = Register.objects.all().order_by('-created_at')
@@ -19,10 +20,18 @@ def home(request):
     if query_cedula:
         registers = registers.filter(cedula__icontains=query_cedula)
 
+    if query_municipio_id and query_municipio_id.isdigit():
+        registers = registers.filter(municipio_id=query_municipio_id)
+
+    # Obtener lista de municipios con ID y nombre para el select
+    municipios = Municipio.objects.all().order_by('nombre')
+
     # Construcción del contexto
     context = {
-        'registers': registers, # Datos para la tabla
+        'registers': registers,
         'query_cedula': query_cedula,
+        'query_municipio_id': query_municipio_id,  # Cambiar el nombre
+        'municipios': municipios,  # Enviar objetos completos con ID
     }
 
     return render(request, 'registers/home.html', context)

@@ -5,37 +5,49 @@
     <h1>Lista de Registros</h1>
 </div>
 
-{% if registers %}
-    <div class="card mb-4 shadow-sm">
-        <div class="card-body">
-            <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
-                <div class="col-md-4">
-                    <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
-                    <input
-                        type="text"
-                        name="q"
-                        id="q"
-                        class="form-control"
-                        value="{{ query_cedula }}"
-                    >
-                </div>
-                <div class="col-md-4 d-flex align-items-end gap-2">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fas fa-filter"></i> Filtrar
-                    </button>
-                    {% if query_cedula %}
-                        <a
-                            href="{% url 'registers:home' %}"
-                            class="btn btn-outline-danger"
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
+            <div class="col-md-4">
+                <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
+                <input
+                    type="text"
+                    name="q"
+                    id="q"
+                    class="form-control"
+                    value="{{ query_cedula }}"
+                >
+            </div>
+            <div class="col-md-4">
+                <label for="m" class="form-label fw-bold">Filtrar por Municipio</label>
+                <select name="m" id="m" class="form-select">
+                    <option value="">Todas los municipios</option>
+                    {% for municipio in municipios %}
+                        <option
+                            value="{{ municipio.id }}"
+                            {% if query_municipio_id|stringformat:"s" == municipio.id|stringformat:"s" %}selected{% endif %}
                         >
-                            <i class="fas fa-eraser"></i> Limpiar
-                        </a>
-                    {% endif %}
-                </div>
-            </form>
-        </div>
+                            {{ municipio.nombre }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4 d-flex align-items-end gap-2">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-filter"></i> Filtrar
+                </button>
+                {% if query_cedula or query_municipio_id %}
+                    <a
+                        href="{% url 'registers:home' %}"
+                        class="btn btn-outline-danger"
+                    >
+                        <i class="fas fa-eraser"></i> Limpiar
+                    </a>
+                {% endif %}
+            </div>
+        </form>
     </div>
-{% endif %}
+</div>
 
 <h4>Total de registros: {{ registers|length }}</h4>
 
