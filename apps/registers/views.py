@@ -11,12 +11,18 @@ from django.http import JsonResponse
 
 @login_required
 def home(request):
+    query_cedula = request.GET.get('q', '')
+
     # QuerySet para la TABLA (mantiene el orden cronológico)
     registers = Register.objects.all().order_by('-created_at')
+
+    if query_cedula:
+        registers = registers.filter(cedula__icontains=query_cedula)
 
     # Construcción del contexto
     context = {
         'registers': registers, # Datos para la tabla
+        'query_cedula': query_cedula,
     }
 
     return render(request, 'registers/home.html', context)
