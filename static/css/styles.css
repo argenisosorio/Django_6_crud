@@ -13,3 +13,7 @@ a {
     --bs-btn-bg: #d4af37;
     --bs-btn-border-color: #d4af37;
 }
+
+h1 {
+    margin-bottom: 20px;
+}

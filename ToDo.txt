@@ -1,9 +1,7 @@
 -Desarrollar el autoregistro en el sistema
-    -Debe enviar las credenciales de acceso por correo.
-    -Debe tener recuperación por contraseña.
+    -Debe permitir contraseñas débiles
 
--Debe haber un perfil en el cual debe poner el apodo y escoger la selección
-favorita.
+-Debe haber una vista perfil para actualizar sus datos.
 
 -Debe haber una lista para el administrador para saber que usaurios ya cargaron
 sus quinieelas completas.

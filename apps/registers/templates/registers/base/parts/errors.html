@@ -1,0 +1,17 @@
+<!-- SECCIÓN DE ERRORES GENERALES -->
+{% if form.errors %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        Por favor corrige los siguientes errores:
+    </strong>
+    <ul class="mb-0 mt-2">
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                <li>{{ field|title }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endif %}
