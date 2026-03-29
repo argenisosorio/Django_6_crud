@@ -29,3 +29,15 @@ class CustomUserChangeForm(forms.ModelForm):
             "nickname",
             "favorite_country"
         )
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = (
+            "username",
+            "email",
+            "first_name",
+            "last_name",
+            "nickname",
+        )

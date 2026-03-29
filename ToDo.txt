@@ -16,3 +16,8 @@ estar visible siempre.
 
 -Debe haber una lista para todos los usuarios con todos los puntos de cada
 persona.
+
+-Proteger las url para admins y para usuarios regulares.
+
+-Proteger las views para admins y para usuarios regulares y para los dueños de
+cada registro.

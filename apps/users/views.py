@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model, login, logout
-from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm
+from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, ProfileForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
 from django.shortcuts import redirect
@@ -76,3 +76,13 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = get_user_model()
     template_name = "users/user_confirm_delete.html"
     success_url = reverse_lazy("users:user_list")
+
+
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    Vista para que los usuarios puedan actualizar su propio perfil.
+    """
+    model = get_user_model()
+    template_name = "users/profile_form.html"
+    form_class = ProfileForm
+    success_url = reverse_lazy("registers:home")
