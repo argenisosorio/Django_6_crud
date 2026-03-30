@@ -65,6 +65,7 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th>#</th>
+                <th>Acciones</th>
                 <th>Nombres</th>
                 <th>Apellidos</th>
                 <th>Cédula</th>
@@ -80,7 +81,6 @@
                 <th>Visitado</th>
                 <th>Documentos completos</th>
                 <th>Registro en BD</th>
-                <th>Última actualización en BD</th>
                 <th>Usuario creador</th>
                 <th>Acciones</th>
             </tr>
@@ -89,6 +89,13 @@
             {% for register in registers %}
             <tr>
                 <td class="text-center">{{ forloop.counter }}</td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info small">Detalles</a>
+                        <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning small">Editar</a>
+                        <a href="{% url 'registers:delete' register.pk %}" class="btn btn-danger small">Borrar</a>
+                    </div>
+                </td>
                 <td class="small text-muted">{{ register.nombres }}</td>
                 <td class="small text-muted">{{ register.apellidos }}</td>
                 <td class="small text-muted">{{ register.cedula }}</td>
@@ -122,7 +129,6 @@
                     {% endif %}
                 </td>
                 <td class="small text-muted text-center">{{ register.created_at|date:"d/m/Y" }}</td>
-                <td class="small text-muted text-center">{{ register.updated_at|date:"d/m/Y" }}</td>
                 <td class="small text-muted">{{ register.usuario_registro }}</td>
                 <td>
                     <div class="btn-group btn-group-sm">
