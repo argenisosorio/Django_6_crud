@@ -18,6 +18,7 @@
         {% if user.is_authenticated %}
             ¡Hola {{ user.username }}! |
             <a href="{% url 'registers:home' %}">Lista de Registros</a> |
+            <a href="{% url 'registers:graphics' %}">Gráficos</a> |
             <a href="{% url 'users:logout' %}">Cerrar sesión</a>
         {% endif %}
         <br>

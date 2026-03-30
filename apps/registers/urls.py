@@ -15,4 +15,7 @@ urlpatterns = [
 
     # API para parroquias
     path('api/parroquias/', views.api_parroquias, name='api_parroquias'),
+
+    # Gráficos
+    path('graphics/', views.graphics, name='graphics'),
 ]

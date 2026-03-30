@@ -168,3 +168,30 @@ def api_parroquias(request):
         parroquias = Parroquia.objects.filter(municipio_id=municipio_id).values('id', 'nombre')
         return JsonResponse(list(parroquias), safe=False)
     return JsonResponse([], safe=False)
+
+
+@login_required
+def graphics(request):
+    # QuerySet para la TABLA (mantiene el orden cronológico)
+    registers = Register.objects.all().order_by('-created_at')
+
+    # Obtener lista de municipios con ID y nombre para el select
+    municipios = Municipio.objects.all().order_by('nombre')
+
+    # CORREGIDO: Contar registros por municipio (no por parroquia)
+    stats = registers.values('municipio__nombre').annotate(
+        total=Count('id')  # o Count('*') o simplemente Count('id')
+    ).order_by('municipio__nombre')
+
+    chart_labels = [item['municipio__nombre'] for item in stats if item['municipio__nombre']]  # Filtrar None
+    chart_data = [item['total'] for item in stats if item['municipio__nombre']]
+
+    context = {
+        'municipios': municipios,
+        'registers': registers,          # Datos para la tabla
+        'total_registros': registers.count(),  # Total de registros
+        'chart_labels': json.dumps(chart_labels),
+        'chart_data': json.dumps(chart_data),
+    }
+
+    return render(request, 'registers/graphics.html', context)
