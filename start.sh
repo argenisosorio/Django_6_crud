@@ -1,14 +1,7 @@
 #!/bin/bash
 
-# Función para esperar a la base de datos
-# Usamos las variables de entorno que ya tienes definidas en el docker-compose
-echo "----- Esperando a que PostgreSQL esté listo en el host: $DB_HOST..."
-
-until pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER"
-do
-  echo "----- Postgres aún no responde... reintentando en 2 segundos"
-  sleep 2
-done
+echo "----- Esperando a que PostgreSQL esté listo..."
+sleep 5
 
 echo "----- ¡PostgreSQL está listo! Procediendo con las tareas de Django..."
 
