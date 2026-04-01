@@ -47,20 +47,26 @@ class SignUpView(CreateView):
     success_url = reverse_lazy("registers:home")
 
     def form_valid(self, form):
-        # 1. Ejecutamos super().form_valid(form) para guardar el usuario en la DB
-        response = super().form_valid(form)
+        # 1. Extraemos la contraseña limpia del formulario ANTES de guardar
+        # El formulario ya la validó, así que está disponible en cleaned_data
+        raw_password = form.cleaned_data.get('password1')
 
-        # 2. El usuario guardado ahora está en self.object
+        # 2. Guardamos el usuario (aquí Django ya la cifra en la DB)
+        # Ejecutamos super().form_valid(form) para guardar el usuario en la DB
+        response = super().form_valid(form)
         user = self.object
 
-        # 3. Lógica de envío de correo
+        # 3. Lógica de envío de correo con la contraseña en texto plano
         try:
-            subject = "Bienvenido al Sistema - Tus credenciales"
+            subject = " Quiniela - Mundial 2026 | Credenciales de acceso"
             message = (
-                f"Hola {user.username},\n\n"
-                f"Tu registro ha sido exitoso.\n"
-                f"Ya puedes acceder a la plataforma con tu usuario: {user.username}\n"
-                f"Si no recuerdas tu contraseña, contacta al administrador."
+                f"Hola {user.first_name if user.first_name else user.username},\n\n"
+                f"Tu registro en el sistema ha sido exitoso.\n\n"
+                f"Tus credenciales de acceso son:\n\n"
+                f"----------------------------------\n"
+                f"Usuario: {user.username}\n"
+                f"Contraseña: {raw_password}\n"
+                f"----------------------------------\n\n"
             )
 
             # Enviamos el correo al usuario recién registrado
@@ -69,13 +75,14 @@ class SignUpView(CreateView):
                 message=message,
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[user.email],
-                fail_silently=True, # Evita que la app de error 500 si el servidor de correo falla
+                fail_silently=True, # Evita que la app de error 500 si el servidor de correo falla.
             )
         except Exception as e:
-            # Aquí podrías usar un logger para registrar el error sin interrumpir al usuario
-            print(f"Error enviando correo: {e}")
+            # Mensaje de error en consola si el envío de correo falla, pero no
+            # interrumpe el flujo de registro.
+            print(f"Error al enviar correo: {e}")
 
-        # 4. Autenticamos al usuario automáticamente
+        # 4. Autenticamos al usuario automáticamente después de registrarse.
         login(self.request, user)
 
         return response
