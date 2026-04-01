@@ -1,4 +1,6 @@
 from django.contrib.auth import get_user_model, login, logout
+from django.core.mail import send_mail
+from django.conf import settings
 from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, ProfileForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
@@ -34,6 +36,10 @@ class LogoutView(View):
         return redirect("users:login")
 
 
+"""
+Vista para el registro de nuevos usuarios. Después de registrarse, el usuario es
+autenticado automáticamente y redirigido a Home.
+"""
 class SignUpView(CreateView):
     model = get_user_model()
     template_name = "users/signup.html"
@@ -41,8 +47,37 @@ class SignUpView(CreateView):
     success_url = reverse_lazy("registers:home")
 
     def form_valid(self, form):
+        # 1. Ejecutamos super().form_valid(form) para guardar el usuario en la DB
         response = super().form_valid(form)
-        login(self.request, self.object)
+
+        # 2. El usuario guardado ahora está en self.object
+        user = self.object
+
+        # 3. Lógica de envío de correo
+        try:
+            subject = "Bienvenido al Sistema - Tus credenciales"
+            message = (
+                f"Hola {user.username},\n\n"
+                f"Tu registro ha sido exitoso.\n"
+                f"Ya puedes acceder a la plataforma con tu usuario: {user.username}\n"
+                f"Si no recuerdas tu contraseña, contacta al administrador."
+            )
+
+            # Enviamos el correo al usuario recién registrado
+            send_mail(
+                subject=subject,
+                message=message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[user.email],
+                fail_silently=True, # Evita que la app de error 500 si el servidor de correo falla
+            )
+        except Exception as e:
+            # Aquí podrías usar un logger para registrar el error sin interrumpir al usuario
+            print(f"Error enviando correo: {e}")
+
+        # 4. Autenticamos al usuario automáticamente
+        login(self.request, user)
+
         return response
 
 

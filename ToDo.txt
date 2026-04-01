@@ -1,7 +1,4 @@
 -Desarrollar el autoregistro en el sistema
-    -Debe permitir contraseñas débiles
-
--Debe haber una vista perfil para actualizar sus datos.
 
 -Debe haber una lista para el administrador para saber que usaurios ya cargaron
 sus quinieelas completas.
