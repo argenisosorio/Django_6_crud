@@ -7,6 +7,7 @@ from django.contrib.auth.views import LoginView as AuthLoginView
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
+from django.contrib import messages
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -21,8 +22,17 @@ class LoginView(AuthLoginView):
     template_name = "users/login.html"
     redirect_authenticated_user = True
 
+    def form_valid(self, form):
+        # Ejecutamos el login normal
+        response = super().form_valid(form)
+
+        # Mensaje de éxito.
+        messages.success(self.request, f"¡Bienvenido, {self.request.user.username}!")
+
+        return response
+
     def get_success_url(self):
-        """Redirigir a Home después de iniciar sesión exitosamente."""
+        #Redirigir a Home después de iniciar sesión exitosamente.
         return reverse_lazy("registers:home")
 
 

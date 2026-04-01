@@ -19,6 +19,8 @@
 <body>
     {% include 'registers/base/parts/navbar.html' %}
 
+    {% include 'registers/base/parts/messages.html' %}
+
     <div class="container mt-4 mb-4" style="min-height: 400px;">
         {% include 'registers/base/parts/errors.html' %}
 
@@ -29,5 +31,16 @@
 
     <!-- Load Bootstrap JS -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <script>
+    // Método para seleccionar todas las alertas y cerrarlas tras 5 segundos.
+    setTimeout(function() {
+        let alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+            let bsAlert = new bootstrap.Alert(alert);
+            bsAlert.close();
+        });
+    }, 5000);
+    </script>
 </body>
 </html>
