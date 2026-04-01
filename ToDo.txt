@@ -1,3 +1,7 @@
+-Propar el sistema en pa.
+
+-Los usuarios que no estén activos no pueden iniciar sesión.
+
 -Desarrollar formulario de la quiniela
     -Solo debe dejar guardar una vez
     -No debe dejar actualizar la quiniela.
@@ -6,9 +10,6 @@
 -Debe haber una lista para el administrador para saber que usaurios ya cargaron
 sus quinieelas completas.
 
--Debe haber una vista con las reglas como un modal y el botón de reglas debe
-estar visible siempre.
-
 -Debe haber una lista para todos los usuarios con todos los puntos de cada
 persona.
 
@@ -16,3 +17,8 @@ persona.
 
 -Proteger las views para admins y para usuarios regulares y para los dueños de
 cada registro.
+
+-Los usuarios que no estén activos no deben poder iniciar sesión.
+
+-Los botones de guardar o actualizar la quiniela deben poder desactivarse con
+una opción del admin.

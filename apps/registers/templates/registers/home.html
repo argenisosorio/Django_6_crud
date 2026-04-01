@@ -1,5 +1,19 @@
 {% extends 'registers/base/base.html' %}
+{% load static %}
+{% block title %}Inicio - Quiniela Mundial 2026{% endblock %}
 
 {% block content %}
-Hola Quiniela
+    <div class="text-center">
+        <h1>¡Bienvenido a la Quiniela del Mundial 2026!</h1>
+        <h5>
+            Aquí podrás registrar tus predicciones para los partidos y competir con tus
+            amigos. ¡Diviértete y que gane el mejor!
+        </h5>
+        <img
+            src="{% static 'images/main_image.jpg' %}"
+            alt="Imagen principal del Mundial 2026"
+            class="img-fluid mt-4 mb-3"
+            width="35%"
+        >
+    </div>
 {% endblock %}

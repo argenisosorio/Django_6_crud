@@ -12,6 +12,14 @@ a {
     --bs-btn-color: #fff;
     --bs-btn-bg: #d4af37;
     --bs-btn-border-color: #d4af37;
+
+    /* Variables para el Hover */
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #b8962e;
+    --bs-btn-hover-border-color: #b8962e;
+
+    /* Variables para el estado enfocado (Sombra) */
+    --bs-btn-focus-shadow-rgb: 212, 175, 55;
 }
 
 h1 {
