@@ -1,10 +1,38 @@
-{% extends 'person/base.html' %}
+{% extends 'registers/base/base.html' %}
 
 {% block content %}
-<h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Person</h1>
+<h1>Mi Quiniela</h1>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Save</button>
+    <p>
+        <h4>Juego 1</h4>
+        <h5>
+            México
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png"
+                alt="Bandera de México"
+                width="30"
+                height="20"
+            >
+            vs
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png"
+                alt="Bandera de Sudáfrica"
+                width="30"
+                height="20"
+            >
+            Sudáfrica
+        </h5>
+        <label for="id_result_game_1">Resultado :</label>
+        <input
+            type="text"
+            name="result_game_1"
+            maxlength="100"
+            required
+            id="id_result_game_1"
+            class="form-control"
+        >
+    </p>
+    <button type="submit" class="btn btn-success">Guardar</button>
 </form>
 {% endblock %}

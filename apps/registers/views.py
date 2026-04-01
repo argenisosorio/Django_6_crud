@@ -37,8 +37,6 @@ def create_register(request):
     
     context = {
         'form': form,
-        'municipios': Municipio.objects.all().order_by('nombre'),
-        'parroquias': Parroquia.objects.all().order_by('nombre')
     }
     return render(request, 'registers/create.html', context)
 

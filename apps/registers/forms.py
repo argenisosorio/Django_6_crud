@@ -6,6 +6,5 @@ class RegisterForm(forms.ModelForm):
         model = Register
 
         fields = [
-            'name',
-            'email',
+            'result_game_1',
         ]
