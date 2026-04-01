@@ -95,6 +95,8 @@ class SignUpView(CreateView):
         # 4. Autenticamos al usuario automáticamente después de registrarse.
         login(self.request, user)
 
+        messages.success(self.request, f"¡Registro exitoso, {user.username}!")
+
         return response
 
 

@@ -1,15 +1,13 @@
 {% if messages %}
-    <div class="container mt-3">
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
-                {% if message.tags == 'success' %}
-                    <i class="bi bi-check-circle-fill me-2"></i>
-                {% elif message.tags == 'error' %}
-                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                {% endif %}
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% for message in messages %}
+        <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+            <div class="toast-container position-absolute p-3 top-0 end-0" id="toastPlacement">
+                <div class="toast text-white bg-success">
+                    <div class="toast-body">
+                        <b>{{ message }}</b>
+                    </div>
+                </div>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 {% endif %}
