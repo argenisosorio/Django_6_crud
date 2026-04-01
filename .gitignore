@@ -8,5 +8,6 @@
 db.sqlite3
 Django_6_crud/settings.py
 apps/person/migrations
-apps/product/migrations
+apps/product/migration
+apps/registers/migrations
 apps/users/migrations
