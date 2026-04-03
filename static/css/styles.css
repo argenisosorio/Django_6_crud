@@ -32,3 +32,10 @@ h1 {
         width: 80%;
     }
 }
+
+.table_results {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+}

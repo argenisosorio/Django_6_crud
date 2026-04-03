@@ -5,6 +5,6 @@ class RegisterForm(forms.ModelForm):
     class Meta:
         model = Register
 
-        fields = [
-            'result_game_1',
-        ]
+        fields = '__all__'
+        # Excluimos el campo usuario_registro para que no se muestre en el formulario
+        exclude = ['usuario_registro']

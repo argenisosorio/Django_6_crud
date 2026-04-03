@@ -1,4 +1,4 @@
--Habilitar nuevo correo para las pruebas.
+-Quiniela: Devolver notificaciones con las acciones del formulario.
 
 -Los usuarios que no estén activos no pueden iniciar sesión.
 

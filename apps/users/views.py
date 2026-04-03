@@ -8,6 +8,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib import messages
+from django.urls import reverse
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -132,11 +133,29 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("users:user_list")
 
 
+from django.urls import reverse
+
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
-    """
-    Vista para que los usuarios puedan actualizar su propio perfil.
-    """
     model = get_user_model()
     template_name = "users/profile_form.html"
     form_class = ProfileForm
-    success_url = reverse_lazy("registers:home")
+
+    def get_object(self, queryset=None):
+        """
+        Sobrescribimos este método para asegurarnos de que el objeto que se edita
+        sea el usuario actualmente autenticado, independientemente del PK en la URL.
+        Esto evita que un usuario pueda editar el perfil de otro cambiando el PK
+        en la URL.
+        """
+        return self.request.user
+
+    def get_success_url(self):
+        # Le pasamos el PK del usuario actual para que coincida con la URL
+        return reverse("users:profile_update", kwargs={'pk': self.request.user.pk})
+
+    def form_valid(self, form):
+        """
+        Agregamos un mensaje de éxito después de actualizar el perfil.
+        """
+        messages.success(self.request, "Perfil actualizado")
+        return super().form_valid(form)

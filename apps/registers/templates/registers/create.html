@@ -6,35 +6,308 @@
     <h1>Mi Quiniela</h1>
     <form method="post">
         {% csrf_token %}
-        <p>
-            <h4>Juego 1</h4>
-            <h5>
-                México
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png"
-                    alt="Bandera de México"
-                    width="30"
-                    height="20"
-                >
-                vs
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png"
-                    alt="Bandera de Sudáfrica"
-                    width="30"
-                    height="20"
-                >
-                Sudáfrica
-            </h5>
-            <label for="id_result_game_1">Resultado :</label>
-            <input
-                type="text"
-                name="result_game_1"
-                maxlength="100"
-                required
-                id="id_result_game_1"
-                class="form-control"
-            >
-        </p>
+        <!-- Juego 1 -->
+        <div class="text-center">
+            <b>Juego 1</b>
+        </div>
+        <table
+            class="
+                table_results
+                table table-hover table-striped table-bordered align-middle
+            "
+        >
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                        México
+                    </th>
+                    <th>
+                        Sudáfrica
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_local_game_1"
+                            name="marcador_local_game_1"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_visitante_game_1"
+                            name="marcador_visitante_game_1"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Juego 2 -->
+        <div class="text-center">
+            <b>Juego 2</b>
+        </div>
+        <table
+            class="
+                table_results
+                table table-hover table-striped table-bordered align-middle
+            "
+        >
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                        Corea del Sur
+                    </th>
+                    <th>
+                        República Checa
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_local_game_2"
+                            name="marcador_local_game_2"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_visitante_game_2"
+                            name="marcador_visitante_game_2"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Juego 3 -->
+        <div class="text-center">
+            <b>Juego 3</b>
+        </div>
+        <table
+            class="
+                table_results
+                table table-hover table-striped table-bordered align-middle
+            "
+        >
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/20px-Flag_of_Canada.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                        Canadá
+                    </th>
+                    <th>
+                        Bosnia y Herzegovina
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/20px-Flag_of_Bosnia_and_Herzegovina.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_local_game_3"
+                            name="marcador_local_game_3"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_visitante_game_3"
+                            name="marcador_visitante_game_3"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Juego 4 -->
+        <div class="text-center">
+            <b>Juego 4</b>
+        </div>
+        <table
+            class="
+                table_results
+                table table-hover table-striped table-bordered align-middle
+            "
+        >
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/20px-Flag_of_the_United_States.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                        Estados Unidos
+                    </th>
+                    <th>
+                        Paraguay
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/20px-Flag_of_Paraguay.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_local_game_4"
+                            name="marcador_local_game_4"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_visitante_game_4"
+                            name="marcador_visitante_game_4"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Juego 5 -->
+        <div class="text-center">
+            <b>Juego 5</b>
+        </div>
+        <table
+            class="
+                table_results
+                table table-hover table-striped table-bordered align-middle
+            "
+        >
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Haiti.svg/20px-Flag_of_Haiti.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                        Haití
+                    </th>
+                    <th>
+                        Escocia
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/20px-Flag_of_Scotland.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_local_game_5"
+                            name="marcador_local_game_5"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_visitante_game_5"
+                            name="marcador_visitante_game_5"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 {% endblock %}
