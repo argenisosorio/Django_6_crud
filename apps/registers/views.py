@@ -1,44 +1,54 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm
+from .models import Register
 from django.http import HttpResponse
 from django.db.models import Count
 import json
 from django.http import JsonResponse
+from django.contrib import messages
 
 
 @login_required
 def home(request):
-    # people = Person.objects.all()
-    context = {
-        #'people': people,
-        #'message': '¡Hello Django 6 Person CRUD!',
-    }
-    return render(request, 'registers/home.html', context)
+    return render(request, 'registers/home.html')
 
 
 @login_required
-def create_register(request):
+def create_update_register(request):
+    """
+    Vista para crear o actualizar la quiniela del usuario. Si el usuario ya
+    tiene una quiniela, cargamos esa quiniela para mostrarla en el formulario.
+    """
+    # Buscamos la quiniela del usuario, si existe. Si no existe, quiniela será None
+    quiniela = Register.objects.filter(usuario_registro=request.user).first()
+
+    # Si el formulario se envió por POST, procesamos los datos
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        # Si quiniela es None, el formulario permitirá crear una nueva quiniela,
+        # si quiniela no es None, el formulario permitirá actualizar la quiniela
+        # existente
+        form = RegisterForm(request.POST, instance=quiniela)
+        # Si el formulario es válido, guardamos la quiniela y asignando el usuario
         if form.is_valid():
-            # Creamos la instancia en memoria sin guardar en la BD aún
-            nuevo_registro = form.save(commit=False)
-
-            # Asignamos el usuario autenticado (tu modelo User personalizado)
-            nuevo_registro.usuario_registro = request.user
-
-            # Guardamos definitivamente
-            nuevo_registro.save()
-
+            registro = form.save(commit=False)
+            registro.usuario_registro = request.user
+            registro.save()
+            messages.success(request, "¡Quiniela guardada!")
             return redirect('registers:home')
+    # Si no es POST, simplemente mostramos el formulario, cargando la quiniela
+    # si existe
     else:
-        form = RegisterForm()
-    
-    context = {
+        # Si no es POST, simplemente mostramos el formulario, cargando la
+        # quiniela si existe.
+        form = RegisterForm(instance=quiniela)
+
+    return render(request, 'registers/create.html', {
         'form': form,
-    }
-    return render(request, 'registers/create.html', context)
+        'quiniela': quiniela,
+        # Indicador para la plantilla de si estamos creando o actualizando
+        'update': quiniela is not None
+    })
 
 @login_required
 def detail_register(request, pk):

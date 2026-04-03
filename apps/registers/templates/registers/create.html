@@ -7,7 +7,7 @@
     <form method="post">
         {% csrf_token %}
         <!-- Juego 1 -->
-        <div class="text-center">
+        <div class="text-centerr">
             <b>Juego 1</b>
         </div>
         <table
@@ -28,13 +28,16 @@
                         México
                     </th>
                     <th>
-                        Sudáfrica
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png"
                             alt=""
                             width="30"
                             height="20"
                         >
+                        Sudáfrica
+                    </th>
+                    <th>
+                        Puntos
                     </th>
                 </tr>
             </thead>
@@ -49,6 +52,7 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_local_game_1|default:'' }}"
                         >
                     </td>
                     <td class="text-center">
@@ -60,6 +64,20 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_visitante_game_1|default:'' }}"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="puntos_game_1"
+                            name="puntos_game_1"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.puntos_game_1|default:'' }}"
+                            disabled
                         >
                     </td>
                 </tr>
@@ -67,9 +85,7 @@
         </table>
 
         <!-- Juego 2 -->
-        <div class="text-center">
-            <b>Juego 2</b>
-        </div>
+        <b>Juego 2</b>
         <table
             class="
                 table_results
@@ -88,13 +104,16 @@
                         Corea del Sur
                     </th>
                     <th>
-                        República Checa
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png"
                             alt=""
                             width="30"
                             height="20"
                         >
+                        República Checa
+                    </th>
+                    <th>
+                        Puntos
                     </th>
                 </tr>
             </thead>
@@ -109,6 +128,7 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_local_game_2|default:'' }}"
                         >
                     </td>
                     <td class="text-center">
@@ -120,6 +140,20 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_visitante_game_2|default:'' }}"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="puntos_game_2"
+                            name="puntos_game_2"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.puntos_game_2|default:'' }}"
+                            disabled
                         >
                     </td>
                 </tr>
@@ -127,9 +161,7 @@
         </table>
 
         <!-- Juego 3 -->
-        <div class="text-center">
-            <b>Juego 3</b>
-        </div>
+        <b>Juego 3</b>
         <table
             class="
                 table_results
@@ -148,13 +180,16 @@
                         Canadá
                     </th>
                     <th>
-                        Bosnia y Herzegovina
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/20px-Flag_of_Bosnia_and_Herzegovina.svg.png"
                             alt=""
                             width="30"
                             height="20"
                         >
+                        Bosnia y Herzegovina
+                    </th>
+                    <th>
+                        Puntos
                     </th>
                 </tr>
             </thead>
@@ -169,6 +204,7 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_local_game_3|default:'' }}"
                         >
                     </td>
                     <td class="text-center">
@@ -180,6 +216,20 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_visitante_game_3|default:'' }}"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="puntos_game_3"
+                            name="puntos_game_3"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.puntos_game_3|default:'' }}"
+                            disabled
                         >
                     </td>
                 </tr>
@@ -187,9 +237,7 @@
         </table>
 
         <!-- Juego 4 -->
-        <div class="text-center">
-            <b>Juego 4</b>
-        </div>
+        <b>Juego 4</b>
         <table
             class="
                 table_results
@@ -208,13 +256,16 @@
                         Estados Unidos
                     </th>
                     <th>
-                        Paraguay
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/20px-Flag_of_Paraguay.svg.png"
                             alt=""
                             width="30"
                             height="20"
                         >
+                        Paraguay
+                    </th>
+                    <th>
+                        Puntos
                     </th>
                 </tr>
             </thead>
@@ -229,6 +280,7 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_local_game_4|default:'' }}"
                         >
                     </td>
                     <td class="text-center">
@@ -240,6 +292,20 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_visitante_game_4|default:'' }}"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="puntos_game_4"
+                            name="puntos_game_4"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.puntos_game_4|default:'' }}"
+                            disabled
                         >
                     </td>
                 </tr>
@@ -247,9 +313,7 @@
         </table>
 
         <!-- Juego 5 -->
-        <div class="text-center">
-            <b>Juego 5</b>
-        </div>
+        <b>Juego 5</b>
         <table
             class="
                 table_results
@@ -268,13 +332,16 @@
                         Haití
                     </th>
                     <th>
-                        Escocia
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/20px-Flag_of_Scotland.svg.png"
                             alt=""
                             width="30"
                             height="20"
                         >
+                        Escocia
+                    </th>
+                    <th>
+                        Puntos
                     </th>
                 </tr>
             </thead>
@@ -289,6 +356,7 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_local_game_5|default:'' }}"
                         >
                     </td>
                     <td class="text-center">
@@ -300,6 +368,96 @@
                             required
                             class="form-control"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_visitante_game_5|default:'' }}"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="puntos_game_5"
+                            name="puntos_game_5"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.puntos_game_5|default:'' }}"
+                            disabled
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Juego 6 -->
+        <b>Juego 6</b>
+        <table
+            class="
+                table_results
+                table table-hover table-striped table-bordered align-middle
+            "
+        >
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/20px-Flag_of_Australia_%28converted%29.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                        Australia
+                    </th>
+                    <th>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/20px-Flag_of_Turkey.svg.png"
+                            alt=""
+                            width="30"
+                            height="20"
+                        >
+                        Turquía
+                    </th>
+                    <th>
+                        Puntos
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_local_game_6"
+                            name="marcador_local_game_6"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_local_game_6|default:'' }}"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="marcador_visitante_game_6"
+                            name="marcador_visitante_game_6"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.marcador_visitante_game_6|default:'' }}"
+                        >
+                    </td>
+                    <td class="text-center">
+                        <input
+                            type="text"
+                            id="puntos_game_5"
+                            name="puntos_game_5"
+                            maxlength="2"
+                            required
+                            class="form-control"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            value="{{ quiniela.puntos_game_6|default:'' }}"
+                            disabled
                         >
                     </td>
                 </tr>
@@ -308,6 +466,8 @@
 
         <br>
 
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">
+            {% if update %}Actualizar{% else %}Guardar{% endif %}
+        </button>
     </form>
 {% endblock %}
