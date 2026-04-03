@@ -1,4 +1,4 @@
--Propar el sistema en pa.
+-Habilitar nuevo correo para las pruebas.
 
 -Los usuarios que no estén activos no pueden iniciar sesión.
 
