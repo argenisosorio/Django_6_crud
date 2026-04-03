@@ -25,3 +25,10 @@ a {
 h1 {
     margin-bottom: 20px;
 }
+
+/* Móviles */
+@media (max-width: 767px) {
+    .main-image {
+        width: 80%;
+    }
+}
