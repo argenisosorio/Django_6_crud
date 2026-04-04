@@ -13,7 +13,6 @@ class CustomUserCreationForm(UserCreationForm):
             "last_name",
             "role",
             "nickname",
-            "favorite_country"
         )
 
 
@@ -27,7 +26,6 @@ class CustomUserChangeForm(forms.ModelForm):
             "last_name",
             "role",
             "nickname",
-            "favorite_country"
         )
 
 
@@ -41,3 +39,4 @@ class ProfileForm(forms.ModelForm):
             "last_name",
             "nickname",
         )
+

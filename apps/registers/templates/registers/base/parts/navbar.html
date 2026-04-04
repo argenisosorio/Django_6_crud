@@ -50,6 +50,30 @@
                             <li><a class="dropdown-item" href="{% url 'users:logout' %}">Cerrar sesión</a></li>
                         </ul>
                     </li>
+                    {% if request.user.is_superuser %}
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle active"
+                            href="#"
+                            id="navbarDropdown"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            ADMIN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{% url 'registers:list' %}"
+                                >
+                                    Lista de registros
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% endif %}
                 </ul>
             {% endif %}
         </div>

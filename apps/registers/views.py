@@ -56,14 +56,15 @@ def detail_register(request, pk):
     context = {'register': register}
     return render(request, 'registers/detail.html', context)
 
+@login_required
+def list(request):
+    registers = Register.objects.all()
+    context = {'registers': registers}
+    return render(request, 'registers/list.html', context)
 
 @login_required
-def update_register(request, pk):
+def update_points(request, pk):
     register = get_object_or_404(Register, pk=pk)
-
-    # Obtén todos los municipios para el select
-    municipios = Municipio.objects.all()
-    parroquias = Parroquia.objects.all()
 
     if request.method == 'POST':
         form = RegisterForm(request.POST, instance=register)
@@ -76,10 +77,8 @@ def update_register(request, pk):
     context = {
         'form': form,
         'register': register,
-        'municipios': municipios,
-        'parroquias': parroquias,
     }
-    return render(request, 'registers/update.html', context)
+    return render(request, 'registers/update_points.html', context)
 
 
 @login_required

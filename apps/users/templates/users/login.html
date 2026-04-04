@@ -33,8 +33,12 @@
                             id="username"
                             name="username"
                             class="form-control"
-                            66value="{{ form.username.value|default:'' }}"
+                            value="{{ form.username.value|default:'' }}"
                             required
+                            oninput="this.value = this.value.toLowerCase().replace(/[^a-z]/g, '')"
+                            onkeypress="return /[a-z]/i.test(event.key)"
+                            pattern="[a-z]+"
+                            title="Solo letras minúsculas, sin espacios ni números"
                         >
                     </div>
                     <div class="mb-3">

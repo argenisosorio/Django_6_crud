@@ -1,0 +1,40 @@
+{% extends 'registers/base/base.html' %}
+{% load static %}
+{% block title %}Lista de Registros{% endblock %}
+
+{% block content %}
+    <h4>Total de registros: {{ registers|length }}</h4>
+
+    <br>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered align-middle">
+            <thead class="table-dark">
+                <tr class="text-center">
+                    <th>#</th>
+                    <th>Registrada por</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for register in registers %}
+                <tr>
+                    <td class="text-center">{{ forloop.counter }}</td>
+                    <td class="small text-muted">{{ register.usuario_registro.username }}</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <a href="#" class="btn btn-warning small">Actualizar puntos</a>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center py-4 text-muted">
+                        <i class="fas fa-info-circle"></i> No hay registros disponibles en este momento.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
