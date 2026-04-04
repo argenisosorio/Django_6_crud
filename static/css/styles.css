@@ -48,3 +48,7 @@ h1 {
 .border-success {
     border: 1px solid #ced4da !important;
 }
+
+.table-light {
+    --bs-table-bg: #d4af37 !important;
+}

@@ -292,6 +292,85 @@ class Register(models.Model):
     marcador_visitante_game_72 = models.CharField(max_length=10, null=True, blank=True)
     puntos_game_72 = models.CharField(max_length=10, null=True, blank=True)
 
+    def suma_total_puntos(self):
+        # Usamos int() y self. para acceder a los campos.
+        # El 'or 0' evita errores si el campo está vacío.
+        total = (
+            int(self.puntos_game_1 or 0) +
+            int(self.puntos_game_2 or 0) +
+            int(self.puntos_game_3 or 0) +
+            int(self.puntos_game_4 or 0) +
+            int(self.puntos_game_5 or 0) +
+            int(self.puntos_game_6 or 0) +
+            int(self.puntos_game_7 or 0) +
+            int(self.puntos_game_8 or 0) +
+            int(self.puntos_game_9 or 0) +
+            int(self.puntos_game_10 or 0) +
+            int(self.puntos_game_11 or 0) +
+            int(self.puntos_game_12 or 0) +
+            int(self.puntos_game_13 or 0) +
+            int(self.puntos_game_14 or 0) +
+            int(self.puntos_game_15 or 0) +
+            int(self.puntos_game_16 or 0) +
+            int(self.puntos_game_17 or 0) +
+            int(self.puntos_game_18 or 0) +
+            int(self.puntos_game_19 or 0) +
+            int(self.puntos_game_20 or 0) +
+            int(self.puntos_game_21 or 0) +
+            int(self.puntos_game_22 or 0) +
+            int(self.puntos_game_23 or 0) +
+            int(self.puntos_game_24 or 0) +
+            int(self.puntos_game_25 or 0) +
+            int(self.puntos_game_26 or 0) +
+            int(self.puntos_game_27 or 0) +
+            int(self.puntos_game_28 or 0) +
+            int(self.puntos_game_29 or 0) +
+            int(self.puntos_game_30 or 0) +
+            int(self.puntos_game_31 or 0) +
+            int(self.puntos_game_32 or 0) +
+            int(self.puntos_game_33 or 0) +
+            int(self.puntos_game_34 or 0) +
+            int(self.puntos_game_35 or 0) +
+            int(self.puntos_game_36 or 0) +
+            int(self.puntos_game_37 or 0) +
+            int(self.puntos_game_38 or 0) +
+            int(self.puntos_game_39 or 0) +
+            int(self.puntos_game_40 or 0) +
+            int(self.puntos_game_41 or 0) +
+            int(self.puntos_game_42 or 0) +
+            int(self.puntos_game_43 or 0) +
+            int(self.puntos_game_44 or 0) +
+            int(self.puntos_game_45 or 0) +
+            int(self.puntos_game_46 or 0) +
+            int(self.puntos_game_47 or 0) +
+            int(self.puntos_game_48 or 0) +
+            int(self.puntos_game_49 or 0) +
+            int(self.puntos_game_50 or 0) +
+            int(self.puntos_game_51 or 0) +
+            int(self.puntos_game_52 or 0) +
+            int(self.puntos_game_53 or 0) +
+            int(self.puntos_game_54 or 0) +
+            int(self.puntos_game_55 or 0) +
+            int(self.puntos_game_56 or 0) +
+            int(self.puntos_game_57 or 0) +
+            int(self.puntos_game_58 or 0) +
+            int(self.puntos_game_59 or 0) +
+            int(self.puntos_game_60 or 0) +
+            int(self.puntos_game_61 or 0) +
+            int(self.puntos_game_62 or 0) +
+            int(self.puntos_game_63 or 0) +
+            int(self.puntos_game_64 or 0) +
+            int(self.puntos_game_65 or 0) +
+            int(self.puntos_game_66 or 0) +
+            int(self.puntos_game_67 or 0) +
+            int(self.puntos_game_68 or 0) +
+            int(self.puntos_game_69 or 0) +
+            int(self.puntos_game_70 or 0) +
+            int(self.puntos_game_71 or 0) +
+            int(self.puntos_game_72 or 0)
+        )
+        return total
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

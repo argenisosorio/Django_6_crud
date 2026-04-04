@@ -1,6 +1,3 @@
--Debe haber una lista para todos los usuarios con todos los puntos de cada
-persona.
-
 -Desarrollar formulario de la quiniela
     -Debe dejar guardar/actualizar hasta que se desactive.
     -No debe dejar actualizar la quiniela cuando el admin desactive el botón.

@@ -7,7 +7,7 @@
 
     <div class="table-responsive">
         <table class="table table-hover table-striped table-bordered align-middle">
-            <thead class="table-dark">
+            <thead class="table-light">
                 <tr class="text-center">
                     <th>N</th>
                     <th>Apodo</th>
@@ -18,8 +18,10 @@
                 {% for register in registers %}
                 <tr>
                     <td class="text-center">{{ forloop.counter }}</td>
-                    <td class="small text-muted">{{ register.usuario_registro.nickname }}</td>
-                    <td class="small">XXX</td>
+                    <td >{{ register.usuario_registro.nickname }}</td>
+                    <td class="text-center">
+                        {{ register.suma_total_puntos }}
+                    </td>
                 </tr>
                 {% empty %}
                 <tr>

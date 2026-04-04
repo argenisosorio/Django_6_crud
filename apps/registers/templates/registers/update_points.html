@@ -4,7 +4,7 @@
 {% block title %}Actualizar Puntos{% endblock %}
 
 {% block content %}
-    <h1>Actualizar Puntos</h1>
+    <h1>Actualizar Puntos de {{ quiniela.usuario_registro.first_name }} ({{ quiniela.usuario_registro.nickname }})</h1>
     <form method="post">
         {% csrf_token %}
         <h3>Jueves, 11 de junio 2026</h3>

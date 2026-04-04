@@ -7,6 +7,8 @@ from django.db.models import Count
 import json
 from django.http import JsonResponse
 from django.contrib import messages
+from django.db.models import F, Value, IntegerField
+from django.db.models.functions import Coalesce, Cast
 
 
 @login_required
@@ -110,4 +112,17 @@ def config(request):
 
 @login_required
 def ranking(request):
-    return render(request, 'registers/ranking.html')
+    # Convertir cada campo a IntegerField y manejar valores nulos
+    puntos_sum = Cast(Coalesce('puntos_game_1', Value('0')), IntegerField())
+
+    # Bucle del juego 2 al 72: Convierte cada campo de texto a entero, maneja
+    # nulos como '0', y acumula la suma total
+    for i in range(2, 73):
+        puntos_sum += Cast(Coalesce(f'puntos_game_{i}', Value('0')), IntegerField())
+
+    registers = Register.objects.annotate(
+        total_puntos=puntos_sum
+    ).order_by('-total_puntos')
+
+    context = {'registers': registers}
+    return render(request, 'registers/ranking.html', context)
