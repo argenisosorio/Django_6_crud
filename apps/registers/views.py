@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .forms import RegisterForm
+from .forms import RegisterForm, UpdatePointsForm
 from .models import Register
 from django.http import HttpResponse
 from django.db.models import Count
@@ -56,27 +56,36 @@ def detail_register(request, pk):
     context = {'register': register}
     return render(request, 'registers/detail.html', context)
 
+
 @login_required
 def list(request):
+    """
+    Vista para mostrar la lista de quinielas registradas por los usuarios.
+    """
     registers = Register.objects.all()
     context = {'registers': registers}
     return render(request, 'registers/list.html', context)
 
+
 @login_required
 def update_points(request, pk):
-    register = get_object_or_404(Register, pk=pk)
+    """
+    Vista para actualizar los puntos de las quinielas
+    """
+    quiniela = get_object_or_404(Register, pk=pk)
 
     if request.method == 'POST':
-        form = RegisterForm(request.POST, instance=register)
+        form = UpdatePointsForm(request.POST, instance=quiniela)
         if form.is_valid():
             form.save()
-            return redirect('registers:detail', pk=register.pk)
+            messages.success(request, "¡Puntos actualizados!")
+            return redirect('registers:home')
     else:
-        form = RegisterForm(instance=register)
+        form = UpdatePointsForm(instance=quiniela)
 
     context = {
         'form': form,
-        'register': register,
+        'quiniela': quiniela
     }
     return render(request, 'registers/update_points.html', context)
 
@@ -90,3 +99,10 @@ def delete_register(request, pk):
     
     context = {'register': register}
     return render(request, 'registers/delete.html', context)
+
+@login_required
+def config(request):
+    """
+    Vista para mostrar la página de configuraciones general de la aplicación.
+    """
+    return render(request, 'registers/config.html')

@@ -23,7 +23,12 @@
                     <td class="small text-muted">{{ register.usuario_registro.username }}</td>
                     <td>
                         <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-warning small">Actualizar puntos</a>
+                            <a
+                                href="{% url 'registers:update_points' pk=register.pk %}"
+                                class="btn btn-warning small"
+                            >
+                                Actualizar puntos
+                            </a>
                         </div>
                     </td>
                 </tr>
