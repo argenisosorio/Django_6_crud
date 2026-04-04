@@ -1,17 +1,10 @@
--Debe haber un formulario para actualizar los puntos de cada quiniela.
-
--En el registro el username solo deben ser letras minúsculas, sin números ni
-espacios.
-
--Los usuarios que no estén activos no pueden iniciar sesión.
+-Debe haber una lista para todos los usuarios con todos los puntos de cada
+persona.
 
 -Desarrollar formulario de la quiniela
     -Debe dejar guardar/actualizar hasta que se desactive.
     -No debe dejar actualizar la quiniela cuando el admin desactive el botón.
     -Debe enviar la quiniela por correo al admin y al usuario.
-
--Debe haber una lista para todos los usuarios con todos los puntos de cada
-persona.
 
 -Proteger las url para admins y para usuarios regulares.
 
@@ -23,3 +16,6 @@ cada registro.
     una opción del admin.
     -Debe haber una opción para el admin para deshabilitar el registro de usuarios
     cuando comience el mundial.
+
+Pruebas:
+    -Probar el formulario para actualizar los puntos de cada quiniela.

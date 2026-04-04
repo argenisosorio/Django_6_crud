@@ -50,7 +50,10 @@
                             id="marcador_local_game_1"
                             name="marcador_local_game_1"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_1 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_1|default:'' }}"
                         >
@@ -61,7 +64,10 @@
                             id="marcador_visitante_game_1"
                             name="marcador_visitante_game_1"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_1 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_1|default:'' }}"
                         >
@@ -103,7 +109,7 @@
                     </th>
                     <th>
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png"
                             alt=""
                             width="30"
                             height="20"
@@ -123,7 +129,10 @@
                             id="marcador_local_game_2"
                             name="marcador_local_game_2"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_2 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_2|default:'' }}"
                         >
@@ -134,7 +143,10 @@
                             id="marcador_visitante_game_2"
                             name="marcador_visitante_game_2"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_2 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_2|default:'' }}"
                         >
@@ -198,7 +210,10 @@
                             id="marcador_local_game_3"
                             name="marcador_local_game_3"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_3 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_3|default:'' }}"
                         >
@@ -209,7 +224,10 @@
                             id="marcador_visitante_game_3"
                             name="marcador_visitante_game_3"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_3 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_3|default:'' }}"
                         >
@@ -271,7 +289,10 @@
                             id="marcador_local_game_4"
                             name="marcador_local_game_4"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_4 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_4|default:'' }}"
                         >
@@ -282,7 +303,10 @@
                             id="marcador_visitante_game_4"
                             name="marcador_visitante_game_4"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_4 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_4|default:'' }}"
                         >
@@ -346,7 +370,10 @@
                             id="marcador_local_game_5"
                             name="marcador_local_game_5"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_5 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_5|default:'' }}"
                         >
@@ -357,7 +384,10 @@
                             id="marcador_visitante_game_5"
                             name="marcador_visitante_game_5"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_5 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_5|default:'' }}"
                         >
@@ -419,7 +449,10 @@
                             id="marcador_local_game_6"
                             name="marcador_local_game_6"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_6 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_6|default:'' }}"
                         >
@@ -430,7 +463,10 @@
                             id="marcador_visitante_game_6"
                             name="marcador_visitante_game_6"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_6 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_6|default:'' }}"
                         >
@@ -492,7 +528,10 @@
                             id="marcador_local_game_7"
                             name="marcador_local_game_7"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_7 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_7|default:'' }}"
                         >
@@ -503,7 +542,10 @@
                             id="marcador_visitante_game_7"
                             name="marcador_visitante_game_7"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_7 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_7|default:'' }}"
                         >
@@ -565,7 +607,10 @@
                             id="marcador_local_game_8"
                             name="marcador_local_game_8"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_8 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_8|default:'' }}"
                         >
@@ -576,7 +621,10 @@
                             id="marcador_visitante_game_8"
                             name="marcador_visitante_game_8"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_8 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_8|default:'' }}"
                         >
@@ -640,7 +688,10 @@
                             id="marcador_local_game_9"
                             name="marcador_local_game_9"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_9 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_9|default:'' }}"
                         >
@@ -651,7 +702,10 @@
                             id="marcador_visitante_game_9"
                             name="marcador_visitante_game_9"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_9 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_9|default:'' }}"
                         >
@@ -713,7 +767,10 @@
                             id="marcador_local_game_10"
                             name="marcador_local_game_10"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_10 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_10|default:'' }}"
                         >
@@ -724,7 +781,10 @@
                             id="marcador_visitante_game_10"
                             name="marcador_visitante_game_10"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_10 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_10|default:'' }}"
                         >
@@ -786,7 +846,10 @@
                             id="marcador_local_game_11"
                             name="marcador_local_game_11"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_11 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_11|default:'' }}"
                         >
@@ -797,7 +860,10 @@
                             id="marcador_visitante_game_11"
                             name="marcador_visitante_game_11"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_11 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_11|default:'' }}"
                         >
@@ -859,7 +925,10 @@
                             id="marcador_local_game_12"
                             name="marcador_local_game_12"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_12 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_12|default:'' }}"
                         >
@@ -870,7 +939,10 @@
                             id="marcador_visitante_game_12"
                             name="marcador_visitante_game_12"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_12 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_12|default:'' }}"
                         >
@@ -934,7 +1006,10 @@
                             id="marcador_local_game_13"
                             name="marcador_local_game_13"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_13 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_13|default:'' }}"
                         >
@@ -945,7 +1020,10 @@
                             id="marcador_visitante_game_13"
                             name="marcador_visitante_game_13"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_13 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_13|default:'' }}"
                         >
@@ -1007,7 +1085,10 @@
                             id="marcador_local_game_14"
                             name="marcador_local_game_14"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_14 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_14|default:'' }}"
                         >
@@ -1018,7 +1099,10 @@
                             id="marcador_visitante_game_14"
                             name="marcador_visitante_game_14"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_14 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_14|default:'' }}"
                         >
@@ -1080,7 +1164,10 @@
                             id="marcador_local_game_15"
                             name="marcador_local_game_15"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_15 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_15|default:'' }}"
                         >
@@ -1091,7 +1178,10 @@
                             id="marcador_visitante_game_15"
                             name="marcador_visitante_game_15"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_15 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_15|default:'' }}"
                         >
@@ -1153,7 +1243,10 @@
                             id="marcador_local_game_16"
                             name="marcador_local_game_16"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_16 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_16|default:'' }}"
                         >
@@ -1164,7 +1257,10 @@
                             id="marcador_visitante_game_16"
                             name="marcador_visitante_game_16"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_16 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_16|default:'' }}"
                         >
@@ -1228,7 +1324,10 @@
                             id="marcador_local_game_17"
                             name="marcador_local_game_17"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_17 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_17|default:'' }}"
                         >
@@ -1239,7 +1338,10 @@
                             id="marcador_visitante_game_17"
                             name="marcador_visitante_game_17"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_17 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_17|default:'' }}"
                         >
@@ -1301,7 +1403,10 @@
                             id="marcador_local_game_18"
                             name="marcador_local_game_18"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_18 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_18|default:'' }}"
                         >
@@ -1312,7 +1417,10 @@
                             id="marcador_visitante_game_18"
                             name="marcador_visitante_game_18"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_18 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_18|default:'' }}"
                         >
@@ -1374,7 +1482,10 @@
                             id="marcador_local_game_19"
                             name="marcador_local_game_19"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_19 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_19|default:'' }}"
                         >
@@ -1385,7 +1496,10 @@
                             id="marcador_visitante_game_19"
                             name="marcador_visitante_game_19"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_19 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_19|default:'' }}"
                         >
@@ -1447,7 +1561,10 @@
                             id="marcador_local_game_20"
                             name="marcador_local_game_20"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_20 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_20|default:'' }}"
                         >
@@ -1458,7 +1575,10 @@
                             id="marcador_visitante_game_20"
                             name="marcador_visitante_game_20"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_20 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_20|default:'' }}"
                         >
@@ -1522,7 +1642,10 @@
                             id="marcador_local_game_21"
                             name="marcador_local_game_21"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_21 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_21|default:'' }}"
                         >
@@ -1533,7 +1656,10 @@
                             id="marcador_visitante_game_21"
                             name="marcador_visitante_game_21"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_21 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_21|default:'' }}"
                         >
@@ -1595,7 +1721,10 @@
                             id="marcador_local_game_22"
                             name="marcador_local_game_22"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_22 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_22|default:'' }}"
                         >
@@ -1606,7 +1735,10 @@
                             id="marcador_visitante_game_22"
                             name="marcador_visitante_game_22"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_22 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_22|default:'' }}"
                         >
@@ -1668,7 +1800,10 @@
                             id="marcador_local_game_23"
                             name="marcador_local_game_23"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_23 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_23|default:'' }}"
                         >
@@ -1679,7 +1814,10 @@
                             id="marcador_visitante_game_23"
                             name="marcador_visitante_game_23"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_23 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_23|default:'' }}"
                         >
@@ -1741,7 +1879,10 @@
                             id="marcador_local_game_24"
                             name="marcador_local_game_24"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_24 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_24|default:'' }}"
                         >
@@ -1752,7 +1893,10 @@
                             id="marcador_visitante_game_24"
                             name="marcador_visitante_game_24"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_24 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_24|default:'' }}"
                         >
@@ -1787,7 +1931,7 @@
                 <tr class="text-center">
                     <th>
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png"
                             alt=""
                             width="30"
                             height="20"
@@ -1816,7 +1960,10 @@
                             id="marcador_local_game_25"
                             name="marcador_local_game_25"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_25 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_25|default:'' }}"
                         >
@@ -1827,7 +1974,10 @@
                             id="marcador_visitante_game_25"
                             name="marcador_visitante_game_25"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_25 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_25|default:'' }}"
                         >
@@ -1889,7 +2039,10 @@
                             id="marcador_local_game_26"
                             name="marcador_local_game_26"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_26 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_26|default:'' }}"
                         >
@@ -1900,7 +2053,10 @@
                             id="marcador_visitante_game_26"
                             name="marcador_visitante_game_26"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_26 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_26|default:'' }}"
                         >
@@ -1962,7 +2118,10 @@
                             id="marcador_local_game_27"
                             name="marcador_local_game_27"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_27 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_27|default:'' }}"
                         >
@@ -1973,7 +2132,10 @@
                             id="marcador_visitante_game_27"
                             name="marcador_visitante_game_27"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_27 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_27|default:'' }}"
                         >
@@ -2035,7 +2197,10 @@
                             id="marcador_local_game_28"
                             name="marcador_local_game_28"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_28 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_28|default:'' }}"
                         >
@@ -2046,7 +2211,10 @@
                             id="marcador_visitante_game_28"
                             name="marcador_visitante_game_28"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_28 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_28|default:'' }}"
                         >
@@ -2110,7 +2278,10 @@
                             id="marcador_local_game_29"
                             name="marcador_local_game_29"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_29 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_29|default:'' }}"
                         >
@@ -2121,7 +2292,10 @@
                             id="marcador_visitante_game_29"
                             name="marcador_visitante_game_29"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_29 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_29|default:'' }}"
                         >
@@ -2183,7 +2357,10 @@
                             id="marcador_local_game_30"
                             name="marcador_local_game_30"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_30 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_30|default:'' }}"
                         >
@@ -2194,7 +2371,10 @@
                             id="marcador_visitante_game_30"
                             name="marcador_visitante_game_30"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_30 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_30|default:'' }}"
                         >
@@ -2256,7 +2436,10 @@
                             id="marcador_local_game_31"
                             name="marcador_local_game_31"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_31 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_31|default:'' }}"
                         >
@@ -2267,7 +2450,10 @@
                             id="marcador_visitante_game_31"
                             name="marcador_visitante_game_31"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_31 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_31|default:'' }}"
                         >
@@ -2329,7 +2515,10 @@
                             id="marcador_local_game_32"
                             name="marcador_local_game_32"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_32 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_32|default:'' }}"
                         >
@@ -2340,7 +2529,10 @@
                             id="marcador_visitante_game_32"
                             name="marcador_visitante_game_32"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_32 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_32|default:'' }}"
                         >
@@ -2404,7 +2596,10 @@
                             id="marcador_local_game_33"
                             name="marcador_local_game_33"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_33 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_33|default:'' }}"
                         >
@@ -2415,7 +2610,10 @@
                             id="marcador_visitante_game_33"
                             name="marcador_visitante_game_33"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_33 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_33|default:'' }}"
                         >
@@ -2477,7 +2675,10 @@
                             id="marcador_local_game_34"
                             name="marcador_local_game_34"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_34 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_34|default:'' }}"
                         >
@@ -2488,7 +2689,10 @@
                             id="marcador_visitante_game_34"
                             name="marcador_visitante_game_34"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_34 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_34|default:'' }}"
                         >
@@ -2550,7 +2754,10 @@
                             id="marcador_local_game_35"
                             name="marcador_local_game_35"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_35 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_35|default:'' }}"
                         >
@@ -2561,7 +2768,10 @@
                             id="marcador_visitante_game_35"
                             name="marcador_visitante_game_35"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_35 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_35|default:'' }}"
                         >
@@ -2623,7 +2833,10 @@
                             id="marcador_local_game_36"
                             name="marcador_local_game_36"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_36 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_36|default:'' }}"
                         >
@@ -2634,7 +2847,10 @@
                             id="marcador_visitante_game_36"
                             name="marcador_visitante_game_36"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_36 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_36|default:'' }}"
                         >
@@ -2698,7 +2914,10 @@
                             id="marcador_local_game_37"
                             name="marcador_local_game_37"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_37 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_37|default:'' }}"
                         >
@@ -2709,7 +2928,10 @@
                             id="marcador_visitante_game_37"
                             name="marcador_visitante_game_37"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_37 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_37|default:'' }}"
                         >
@@ -2771,7 +2993,10 @@
                             id="marcador_local_game_38"
                             name="marcador_local_game_38"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_38 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_38|default:'' }}"
                         >
@@ -2782,7 +3007,10 @@
                             id="marcador_visitante_game_38"
                             name="marcador_visitante_game_38"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_38 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_38|default:'' }}"
                         >
@@ -2844,7 +3072,10 @@
                             id="marcador_local_game_39"
                             name="marcador_local_game_39"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_39 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_39|default:'' }}"
                         >
@@ -2855,7 +3086,10 @@
                             id="marcador_visitante_game_39"
                             name="marcador_visitante_game_39"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_39 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_39|default:'' }}"
                         >
@@ -2917,7 +3151,10 @@
                             id="marcador_local_game_40"
                             name="marcador_local_game_40"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_40 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_40|default:'' }}"
                         >
@@ -2928,7 +3165,10 @@
                             id="marcador_visitante_game_40"
                             name="marcador_visitante_game_40"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_40 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_40|default:'' }}"
                         >
@@ -2992,7 +3232,10 @@
                             id="marcador_local_game_41"
                             name="marcador_local_game_41"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_41 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_41|default:'' }}"
                         >
@@ -3003,7 +3246,10 @@
                             id="marcador_visitante_game_41"
                             name="marcador_visitante_game_41"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_41 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_41|default:'' }}"
                         >
@@ -3065,7 +3311,10 @@
                             id="marcador_local_game_42"
                             name="marcador_local_game_42"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_42 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_42|default:'' }}"
                         >
@@ -3076,7 +3325,10 @@
                             id="marcador_visitante_game_42"
                             name="marcador_visitante_game_42"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_42 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_42|default:'' }}"
                         >
@@ -3138,7 +3390,10 @@
                             id="marcador_local_game_43"
                             name="marcador_local_game_43"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_43 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_43|default:'' }}"
                         >
@@ -3149,7 +3404,10 @@
                             id="marcador_visitante_game_43"
                             name="marcador_visitante_game_43"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_43 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_43|default:'' }}"
                         >
@@ -3211,7 +3469,10 @@
                             id="marcador_local_game_44"
                             name="marcador_local_game_44"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_44 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_44|default:'' }}"
                         >
@@ -3222,7 +3483,10 @@
                             id="marcador_visitante_game_44"
                             name="marcador_visitante_game_44"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_44 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_44|default:'' }}"
                         >
@@ -3286,7 +3550,10 @@
                             id="marcador_local_game_45"
                             name="marcador_local_game_45"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_45 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_45|default:'' }}"
                         >
@@ -3297,7 +3564,10 @@
                             id="marcador_visitante_game_45"
                             name="marcador_visitante_game_45"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_45 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_45|default:'' }}"
                         >
@@ -3359,7 +3629,10 @@
                             id="marcador_local_game_46"
                             name="marcador_local_game_46"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_46 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_46|default:'' }}"
                         >
@@ -3370,7 +3643,10 @@
                             id="marcador_visitante_game_46"
                             name="marcador_visitante_game_46"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_46 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_46|default:'' }}"
                         >
@@ -3432,7 +3708,10 @@
                             id="marcador_local_game_47"
                             name="marcador_local_game_47"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_47 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_47|default:'' }}"
                         >
@@ -3443,7 +3722,10 @@
                             id="marcador_visitante_game_47"
                             name="marcador_visitante_game_47"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_47 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_47|default:'' }}"
                         >
@@ -3505,7 +3787,10 @@
                             id="marcador_local_game_48"
                             name="marcador_local_game_48"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_48 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_48|default:'' }}"
                         >
@@ -3516,7 +3801,10 @@
                             id="marcador_visitante_game_48"
                             name="marcador_visitante_game_48"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_48 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_48|default:'' }}"
                         >
@@ -3580,7 +3868,10 @@
                             id="marcador_local_game_49"
                             name="marcador_local_game_49"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_49 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_49|default:'' }}"
                         >
@@ -3591,7 +3882,10 @@
                             id="marcador_visitante_game_49"
                             name="marcador_visitante_game_49"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_49 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_49|default:'' }}"
                         >
@@ -3653,7 +3947,10 @@
                             id="marcador_local_game_50"
                             name="marcador_local_game_50"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_50 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_50|default:'' }}"
                         >
@@ -3664,7 +3961,10 @@
                             id="marcador_visitante_game_50"
                             name="marcador_visitante_game_50"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_50 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_50|default:'' }}"
                         >
@@ -3726,7 +4026,10 @@
                             id="marcador_local_game_51"
                             name="marcador_local_game_51"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_51 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_51|default:'' }}"
                         >
@@ -3737,7 +4040,10 @@
                             id="marcador_visitante_game_51"
                             name="marcador_visitante_game_51"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_51 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_51|default:'' }}"
                         >
@@ -3799,7 +4105,10 @@
                             id="marcador_local_game_52"
                             name="marcador_local_game_52"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_52 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_52|default:'' }}"
                         >
@@ -3810,7 +4119,10 @@
                             id="marcador_visitante_game_52"
                             name="marcador_visitante_game_52"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_52 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_52|default:'' }}"
                         >
@@ -3843,7 +4155,7 @@
                 <tr class="text-center">
                     <th>
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png"
                             alt=""
                             width="30"
                             height="20"
@@ -3872,7 +4184,10 @@
                             id="marcador_local_game_53"
                             name="marcador_local_game_53"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_54 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_53|default:'' }}"
                         >
@@ -3883,7 +4198,10 @@
                             id="marcador_visitante_game_53"
                             name="marcador_visitante_game_53"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_53 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_53|default:'' }}"
                         >
@@ -3945,7 +4263,10 @@
                             id="marcador_local_game_54"
                             name="marcador_local_game_54"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_54 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_54|default:'' }}"
                         >
@@ -3956,7 +4277,10 @@
                             id="marcador_visitante_game_54"
                             name="marcador_visitante_game_54"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_54 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_54|default:'' }}"
                         >
@@ -4020,7 +4344,10 @@
                             id="marcador_local_game_55"
                             name="marcador_local_game_55"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_55 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_55|default:'' }}"
                         >
@@ -4031,7 +4358,10 @@
                             id="marcador_visitante_game_55"
                             name="marcador_visitante_game_55"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_55 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_55|default:'' }}"
                         >
@@ -4093,7 +4423,10 @@
                             id="marcador_local_game_56"
                             name="marcador_local_game_56"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_56 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_56|default:'' }}"
                         >
@@ -4104,7 +4437,10 @@
                             id="marcador_visitante_game_56"
                             name="marcador_visitante_game_56"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_56 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_56|default:'' }}"
                         >
@@ -4166,7 +4502,10 @@
                             id="marcador_local_game_57"
                             name="marcador_local_game_57"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_57 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_57|default:'' }}"
                         >
@@ -4177,7 +4516,10 @@
                             id="marcador_visitante_game_57"
                             name="marcador_visitante_game_57"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_57 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_57|default:'' }}"
                         >
@@ -4239,7 +4581,10 @@
                             id="marcador_local_game_58"
                             name="marcador_local_game_58"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_58 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_58|default:'' }}"
                         >
@@ -4250,7 +4595,10 @@
                             id="marcador_visitante_game_58"
                             name="marcador_visitante_game_58"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_58 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_58|default:'' }}"
                         >
@@ -4312,7 +4660,10 @@
                             id="marcador_local_game_59"
                             name="marcador_local_game_59"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_59 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_59|default:'' }}"
                         >
@@ -4323,7 +4674,10 @@
                             id="marcador_visitante_game_59"
                             name="marcador_visitante_game_59"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_59 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_59|default:'' }}"
                         >
@@ -4385,7 +4739,10 @@
                             id="marcador_local_game_60"
                             name="marcador_local_game_60"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_60 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_60|default:'' }}"
                         >
@@ -4396,7 +4753,10 @@
                             id="marcador_visitante_game_60"
                             name="marcador_visitante_game_60"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_60 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_60|default:'' }}"
                         >
@@ -4460,7 +4820,10 @@
                             id="marcador_local_game_61"
                             name="marcador_local_game_61"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_61 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_61|default:'' }}"
                         >
@@ -4471,7 +4834,10 @@
                             id="marcador_visitante_game_61"
                             name="marcador_visitante_game_61"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_62 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_61|default:'' }}"
                         >
@@ -4533,7 +4899,10 @@
                             id="marcador_local_game_62"
                             name="marcador_local_game_62"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_62 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_62|default:'' }}"
                         >
@@ -4544,7 +4913,10 @@
                             id="marcador_visitante_game_62"
                             name="marcador_visitante_game_62"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_62 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_62|default:'' }}"
                         >
@@ -4606,7 +4978,10 @@
                             id="marcador_local_game_63"
                             name="marcador_local_game_63"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_63 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_63|default:'' }}"
                         >
@@ -4617,7 +4992,10 @@
                             id="marcador_visitante_game_63"
                             name="marcador_visitante_game_63"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_63 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_63|default:'' }}"
                         >
@@ -4679,7 +5057,10 @@
                             id="marcador_local_game_64"
                             name="marcador_local_game_64"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_64 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_64|default:'' }}"
                         >
@@ -4690,7 +5071,10 @@
                             id="marcador_visitante_game_64"
                             name="marcador_visitante_game_64"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_64 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_64|default:'' }}"
                         >
@@ -4752,7 +5136,10 @@
                             id="marcador_local_game_65"
                             name="marcador_local_game_65"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_65 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_65|default:'' }}"
                         >
@@ -4763,7 +5150,10 @@
                             id="marcador_visitante_game_65"
                             name="marcador_visitante_game_65"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_65 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_65|default:'' }}"
                         >
@@ -4825,7 +5215,10 @@
                             id="marcador_local_game_66"
                             name="marcador_local_game_66"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_66 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_66|default:'' }}"
                         >
@@ -4836,7 +5229,10 @@
                             id="marcador_visitante_game_66"
                             name="marcador_visitante_game_66"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_66 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_66|default:'' }}"
                         >
@@ -4900,7 +5296,10 @@
                             id="marcador_local_game_67"
                             name="marcador_local_game_67"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_67 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_67|default:'' }}"
                         >
@@ -4911,7 +5310,10 @@
                             id="marcador_visitante_game_67"
                             name="marcador_visitante_game_67"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_67 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_67|default:'' }}"
                         >
@@ -4973,7 +5375,10 @@
                             id="marcador_local_game_68"
                             name="marcador_local_game_68"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_68 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_68|default:'' }}"
                         >
@@ -4984,7 +5389,10 @@
                             id="marcador_visitante_game_68"
                             name="marcador_visitante_game_68"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_68 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_68|default:'' }}"
                         >
@@ -5046,7 +5454,10 @@
                             id="marcador_local_game_69"
                             name="marcador_local_game_69"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_69 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_69|default:'' }}"
                         >
@@ -5057,7 +5468,10 @@
                             id="marcador_visitante_game_69"
                             name="marcador_visitante_game_69"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_69 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_69|default:'' }}"
                         >
@@ -5119,7 +5533,10 @@
                             id="marcador_local_game_70"
                             name="marcador_local_game_70"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_70 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_70|default:'' }}"
                         >
@@ -5130,7 +5547,10 @@
                             id="marcador_visitante_game_70"
                             name="marcador_visitante_game_70"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_70 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_70|default:'' }}"
                         >
@@ -5192,7 +5612,10 @@
                             id="marcador_local_game_71"
                             name="marcador_local_game_71"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_71 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_71|default:'' }}"
                         >
@@ -5203,7 +5626,10 @@
                             id="marcador_visitante_game_71"
                             name="marcador_visitante_game_71"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_71 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_71|default:'' }}"
                         >
@@ -5265,7 +5691,10 @@
                             id="marcador_local_game_72"
                             name="marcador_local_game_72"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_local_game_72 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_local_game_72|default:'' }}"
                         >
@@ -5276,7 +5705,10 @@
                             id="marcador_visitante_game_72"
                             name="marcador_visitante_game_72"
                             maxlength="2"
-                            class="form-control"
+                            class="
+                                form-control
+                                {% if not quiniela.marcador_visitante_game_72 %}border-danger{% endif %}
+                            "
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             value="{{ quiniela.marcador_visitante_game_72|default:'' }}"
                         >

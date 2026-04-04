@@ -39,3 +39,12 @@ h1 {
     margin-right: auto;
     font-size: 12px;
 }
+
+.border-danger {
+    border: 2px solid #dc3545 !important;
+    background-color: #fff8f8 !important;
+}
+
+.border-success {
+    border: 1px solid #ced4da !important;
+}

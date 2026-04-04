@@ -10,5 +10,5 @@ class CustomUserAdmin(UserAdmin):
     model = User
     # Añadimos el campo role a los formularios del admin
     fieldsets = UserAdmin.fieldsets + (
-        ("Información Adicional", {"fields": ("role",)}),
+        ("Información Adicional", {"fields": ("nickname",)}),
     )

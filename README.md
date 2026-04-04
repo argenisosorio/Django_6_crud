@@ -49,7 +49,7 @@ $ python manage.py loaddata apps/users/fixtures/users.json
 $ python manage.py runserver
 ```
 
-$ sudo rm -rf apps/users/migrations && sudo rm -rf apps/registers/migrations && rm -f db.sqlite3 && python manage.py makemigrations registers users && python manage.py migrate && python manage.py loaddata apps/users/fixtures/users.json && python manage.py runserver
+$ sudo rm -rf apps/users/migrations && sudo rm -rf apps/registers/migrations && rm -f db.sqlite3 && python manage.py makemigrations registers users && python manage.py migrate && python manage.py loaddata apps/users/fixtures/users.json && python manage.py loaddata apps/registers/fixtures/registers.json && python manage.py runserver
 
 ## Test the project:
 

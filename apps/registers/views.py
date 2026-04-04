@@ -106,3 +106,8 @@ def config(request):
     Vista para mostrar la página de configuraciones general de la aplicación.
     """
     return render(request, 'registers/config.html')
+
+
+@login_required
+def ranking(request):
+    return render(request, 'registers/ranking.html')
