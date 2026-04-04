@@ -4,6 +4,9 @@ from .models import User
 
 
 class CustomUserCreationForm(UserCreationForm):
+    """
+    Formulario para el registro de usuario en el sistema.
+    """
     class Meta:
         model = User
         fields = (
@@ -11,12 +14,14 @@ class CustomUserCreationForm(UserCreationForm):
             "email",
             "first_name",
             "last_name",
-            "role",
             "nickname",
         )
 
 
 class CustomUserChangeForm(forms.ModelForm):
+    """
+    Formulario para actualizar datos de un usuario registrado.
+    """
     class Meta:
         model = User
         fields = (
@@ -24,12 +29,14 @@ class CustomUserChangeForm(forms.ModelForm):
             "email",
             "first_name",
             "last_name",
-            "role",
             "nickname",
         )
 
 
 class ProfileForm(forms.ModelForm):
+    """
+    Formulario para la actualización de datos del perfil
+    """
     class Meta:
         model = User
         fields = (

@@ -22,7 +22,11 @@
                             class="form-control {% if form.username.errors %}is-invalid{% endif %}"
                             value="{{ form.username.value|default:'' }}"
                             placeholder=""
+                            oninput="this.value = this.value.toLowerCase().replace(/[^a-z]/g, '')"
+                            onkeypress="return /[a-z]/i.test(event.key)"
+                            pattern="[a-z]+"
                             required
+                            maxlength="20"
                         >
                         {% if form.username.errors %}
                             <div class="invalid-feedback">
@@ -63,6 +67,7 @@
                             value="{{ form.first_name.value|default:'' }}"
                             placeholder=""
                             required
+                            maxlength="20"
                         >
                         {% if form.first_name.errors %}
                             <div class="invalid-feedback">
@@ -83,6 +88,7 @@
                             value="{{ form.last_name.value|default:'' }}"
                             placeholder=""
                             required
+                            maxlength="20"
                         >
                         {% if form.last_name.errors %}
                             <div class="invalid-feedback">
@@ -102,6 +108,7 @@
                             class="form-control {% if form.nickname.errors %}is-invalid{% endif %}"
                             value="{{ form.nickname.value|default:'' }}"
                             placeholder=""
+                            maxlength="30"
                             required
                         >
                         {% if form.nickname.errors %}
