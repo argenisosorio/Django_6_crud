@@ -158,7 +158,10 @@
                         {% endif %}
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                    {% if config_instance.disable_registration %}
+                    {% else %}
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    {% endif %}
                 </form>
                 <br>
                 <p>

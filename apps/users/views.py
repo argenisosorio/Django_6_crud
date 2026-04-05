@@ -2,7 +2,8 @@ from django.contrib.auth import get_user_model, login, logout
 from django.core.mail import send_mail
 from django.conf import settings
 from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, ProfileForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from apps.configs.models import Config
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -22,6 +23,15 @@ from django.views.generic import (
 class LoginView(AuthLoginView):
     template_name = "users/login.html"
     redirect_authenticated_user = True
+
+    def get_context_data(self, **kwargs):
+        # 1. Llamamos al contexto base de la CreateView (que trae el formulario)
+        context = super().get_context_data(**kwargs)
+
+        # 2. Agregamos nuestra instancia de configuración
+        context['config_instance'] = Config.objects.first()
+
+        return context
 
     def form_valid(self, form):
         # Ejecutamos el login normal
@@ -56,6 +66,23 @@ class SignUpView(CreateView):
     template_name = "users/signup.html"
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("registers:home")
+
+    def dispatch(self, request, *args, **kwargs):
+        config_instance = Config.objects.first()
+        # Verificamos si el registro está deshabilitado
+        if config_instance.disable_registration:
+            messages.error(request, "Lo sentimos, el periodo de registro ha finalizado")
+            return redirect('registers:home')
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        # 1. Llamamos al contexto base de la CreateView (que trae el formulario)
+        context = super().get_context_data(**kwargs)
+
+        # 2. Agregamos nuestra instancia de configuración
+        context['config_instance'] = Config.objects.first()
+
+        return context
 
     def form_valid(self, form):
         # 1. Extraemos la contraseña limpia del formulario ANTES de guardar
@@ -101,39 +128,132 @@ class SignUpView(CreateView):
         return response
 
 
-class UserListView(LoginRequiredMixin, ListView):
+class UserListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     model = get_user_model()
     template_name = "users/user_list.html"
     context_object_name = "users"
 
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
 
-class UserDetailView(LoginRequiredMixin, DetailView):
+    def handle_no_permission(self):
+        """
+        Opcional: Define qué pasa si el usuario NO es superusuario.
+        Por defecto redirige al login, pero aquí puedes mandarlo al home 
+        con un mensaje de error.
+        """
+        from django.contrib import messages
+        from django.shortcuts import redirect
+
+        messages.error(self.request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
+
+
+class UserDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = get_user_model()
     template_name = "users/user_detail.html"
     context_object_name = "user"
 
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
 
-class UserCreateView(LoginRequiredMixin, CreateView):
+    def handle_no_permission(self):
+        """
+        Opcional: Define qué pasa si el usuario NO es superusuario.
+        Por defecto redirige al login, pero aquí puedes mandarlo al home 
+        con un mensaje de error.
+        """
+        from django.contrib import messages
+        from django.shortcuts import redirect
+
+        messages.error(self.request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
+
+
+class UserCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = get_user_model()
     template_name = "users/user_form.html"
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("users:user_list")
 
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
 
-class UserUpdateView(LoginRequiredMixin, UpdateView):
+    def handle_no_permission(self):
+        """
+        Opcional: Define qué pasa si el usuario NO es superusuario.
+        Por defecto redirige al login, pero aquí puedes mandarlo al home 
+        con un mensaje de error.
+        """
+        from django.contrib import messages
+        from django.shortcuts import redirect
+
+        messages.error(self.request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
+
+
+class UserUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = get_user_model()
     template_name = "users/user_form.html"
     form_class = CustomUserChangeForm
     success_url = reverse_lazy("users:user_list")
 
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
 
-class UserDeleteView(LoginRequiredMixin, DeleteView):
+    def handle_no_permission(self):
+        """
+        Opcional: Define qué pasa si el usuario NO es superusuario.
+        Por defecto redirige al login, pero aquí puedes mandarlo al home 
+        con un mensaje de error.
+        """
+        from django.contrib import messages
+        from django.shortcuts import redirect
+
+        messages.error(self.request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
+
+
+class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = get_user_model()
     template_name = "users/user_confirm_delete.html"
     success_url = reverse_lazy("users:user_list")
 
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
 
-from django.urls import reverse
+    def handle_no_permission(self):
+        """
+        Opcional: Define qué pasa si el usuario NO es superusuario.
+        Por defecto redirige al login, pero aquí puedes mandarlo al home 
+        con un mensaje de error.
+        """
+        from django.contrib import messages
+        from django.shortcuts import redirect
+
+        messages.error(self.request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
+
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = get_user_model()

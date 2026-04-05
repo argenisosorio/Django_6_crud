@@ -5731,8 +5731,11 @@
 
         <br>
 
-        <button type="submit" class="btn btn-primary">
-            {% if update %}Actualizar{% else %}Guardar{% endif %}
-        </button>
+        {% if config_instance.disable_update_quiniela %}
+        {% else %}
+            <button type="submit" class="btn btn-primary">
+                {% if update %}Actualizar{% else %}Guardar{% endif %}
+            </button>
+        {% endif %}
     </form>
 {% endblock %}

@@ -14,4 +14,7 @@ urlpatterns = [
 
     # Include the URLs from users app.
     path('users/', include('apps.users.urls')),
+
+    # Include the URLs from configs app.
+    path('configs/', include('apps.configs.urls')),
 ]

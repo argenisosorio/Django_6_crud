@@ -1,0 +1,39 @@
+{% extends 'registers/base/base.html' %}
+{% load static %}
+{% block title %}Configuraciones{% endblock %}
+
+{% block content %}
+    <h1>Configuraciones generales del sistema</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <p>
+            <label for="id_disable_update_quiniela">
+                Deshabilitar actualización de quinielas:
+            </label>
+            <input
+                type="checkbox"
+                name="disable_update_quiniela"
+                id="id_disable_update_quiniela"
+                {% if config.disable_update_quiniela %}checked{% endif %}
+            >
+        </p>
+
+        <p>
+            <label for="id_disable_registration">
+                Deshabilitar nuevos registros en el sistema:
+            </label>
+            <input
+                type="checkbox"
+                name="disable_registration"
+                id="id_disable_registration"
+                {% if config.disable_registration %}checked{% endif %}
+            >
+        </p>
+
+        <button type="submit" class="btn btn-primary">
+            Guardar Configuración
+        </button>
+    </form>
+{% endblock %}

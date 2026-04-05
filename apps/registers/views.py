@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import RegisterForm, UpdatePointsForm
 from .models import Register
+from apps.configs.models import Config
 from django.http import HttpResponse
 from django.db.models import Count
 import json
@@ -9,6 +10,13 @@ from django.http import JsonResponse
 from django.contrib import messages
 from django.db.models import F, Value, IntegerField
 from django.db.models.functions import Coalesce, Cast
+
+
+def solo_superusuario(user):
+    """
+    Método para saber si el usuario es superusuario.
+    """
+    return user.is_superuser
 
 
 @login_required
@@ -24,9 +32,14 @@ def create_update_register(request):
     """
     # Buscamos la quiniela del usuario, si existe. Si no existe, quiniela será None
     quiniela = Register.objects.filter(usuario_registro=request.user).first()
+    config_instance = Config.objects.first()
 
     # Si el formulario se envió por POST, procesamos los datos
     if request.method == 'POST':
+        if config_instance.disable_update_quiniela:
+            messages.error(request, "Lo sentimos, el periodo de modificación ha finalizado.")
+            return redirect('registers:home')
+
         # Si quiniela es None, el formulario permitirá crear una nueva quiniela,
         # si quiniela no es None, el formulario permitirá actualizar la quiniela
         # existente
@@ -49,7 +62,8 @@ def create_update_register(request):
         'form': form,
         'quiniela': quiniela,
         # Indicador para la plantilla de si estamos creando o actualizando
-        'update': quiniela is not None
+        'update': quiniela is not None,
+        'config_instance': config_instance
     })
 
 @login_required
@@ -60,6 +74,7 @@ def detail_register(request, pk):
 
 
 @login_required
+@user_passes_test(solo_superusuario, login_url='registers:home')
 def list(request):
     """
     Vista para mostrar la lista de quinielas registradas por los usuarios.
@@ -70,6 +85,7 @@ def list(request):
 
 
 @login_required
+@user_passes_test(solo_superusuario, login_url='registers:home')
 def update_points(request, pk):
     """
     Vista para actualizar los puntos de las quinielas
@@ -101,13 +117,6 @@ def delete_register(request, pk):
     
     context = {'register': register}
     return render(request, 'registers/delete.html', context)
-
-@login_required
-def config(request):
-    """
-    Vista para mostrar la página de configuraciones general de la aplicación.
-    """
-    return render(request, 'registers/config.html')
 
 
 @login_required

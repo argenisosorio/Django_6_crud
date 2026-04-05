@@ -58,10 +58,13 @@
                     <input type="hidden" name="next" value="{{ next }}">
                 </form>
                 <br>
-                <p>
-                    ¿No tienes una cuenta?
-                    <b><a href="{% url 'users:signup' %}">Regístrate aquí</a></b>
-                </p>
+                {% if config_instance.disable_registration %}
+                {% else %}
+                    <p>
+                        ¿No tienes una cuenta?
+                        <b><a href="{% url 'users:signup' %}">Regístrate aquí</a></b>
+                    </p>
+                {% endif %}
                 <p>
                     <b>
                         <a href="{% url 'users:password_reset' %}">¿Olvidaste tu contraseña?</a>

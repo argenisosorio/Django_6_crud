@@ -1,18 +1,1 @@
--Desarrollar formulario de la quiniela
-    -Debe dejar guardar/actualizar hasta que se desactive.
-    -No debe dejar actualizar la quiniela cuando el admin desactive el botón.
-    -Debe enviar la quiniela por correo al admin y al usuario.
-
--Proteger las url para admins y para usuarios regulares.
-
--Proteger las views para admins y para usuarios regulares y para los dueños de
-cada registro.
-
--Debe haber un modulo de configuraciones generales:
-    -Los botones de guardar o actualizar la quiniela deben poder desactivarse con
-    una opción del admin.
-    -Debe haber una opción para el admin para deshabilitar el registro de usuarios
-    cuando comience el mundial.
-
-Pruebas:
-    -Probar el formulario para actualizar los puntos de cada quiniela.
+Pruebas generales del sistema.
