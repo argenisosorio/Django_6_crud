@@ -13,28 +13,45 @@ from django.http import JsonResponse
 def home(request):
     query_cedula = request.GET.get('q', '')
     query_municipio_id = request.GET.get('m', '')
+    query_tamano = request.GET.get('t', '')  # Nuevo filtro para tamaño
 
     # QuerySet para la TABLA (mantiene el orden cronológico)
     registers = Register.objects.all().order_by('-created_at')
 
+    # Filtro por cédula
     if query_cedula:
         registers = registers.filter(cedula__icontains=query_cedula)
 
+    # Filtro por municipio
     if query_municipio_id and query_municipio_id.isdigit():
         registers = registers.filter(municipio_id=query_municipio_id)
 
+    # Filtro por tamaño
+    if query_tamano and query_tamano in ['Pequeña', 'Mediana', 'Grande']:
+        registers = registers.filter(tamano_cilindro=query_tamano)
+
+    # Exportar a Excel
     if 'export' in request.GET:
         return export_registers_excel(registers)
 
     # Obtener lista de municipios con ID y nombre para el select
     municipios = Municipio.objects.all().order_by('nombre')
 
+    # Lista de tamaños para el select del template
+    TAMANOS = [
+        ("Pequeña", "Pequeña"),
+        ("Mediana", "Mediana"),
+        ("Grande", "Grande"),
+    ]
+
     # Construcción del contexto
     context = {
         'registers': registers,
         'query_cedula': query_cedula,
-        'query_municipio_id': query_municipio_id,  # Cambiar el nombre
-        'municipios': municipios,  # Enviar objetos completos con ID
+        'query_municipio_id': query_municipio_id,
+        'query_tamano': query_tamano,  # Enviar al template para mantener selección
+        'municipios': municipios,
+        'tamanos': TAMANOS,  # Enviar lista de tamaños al template
     }
 
     return render(request, 'registers/home.html', context)

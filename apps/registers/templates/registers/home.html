@@ -8,7 +8,7 @@
 <div class="card mb-4 shadow-sm">
     <div class="card-body">
         <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
                 <input
                     type="text"
@@ -18,10 +18,10 @@
                     value="{{ query_cedula }}"
                 >
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="m" class="form-label fw-bold">Filtrar por Municipio</label>
                 <select name="m" id="m" class="form-select">
-                    <option value="">Todas los municipios</option>
+                    <option value="">Todos los municipios</option>
                     {% for municipio in municipios %}
                         <option
                             value="{{ municipio.id }}"
@@ -32,11 +32,22 @@
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-md-4 d-flex align-items-end gap-2">
+            <div class="col-md-3">
+                <label for="t" class="form-label fw-bold">Filtrar por Tamaño</label>
+                <select name="t" id="t" class="form-select">
+                    <option value="">Todos los tamaños</option>
+                    {% for valor, etiqueta in tamanos %}
+                        <option value="{{ valor }}" {% if query_tamano == valor %}selected{% endif %}>
+                            {{ etiqueta }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3 d-flex align-items-end gap-2">
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-filter"></i> Filtrar
                 </button>
-                {% if query_cedula or query_municipio_id %}
+                {% if query_cedula or query_municipio_id or query_tamano %}
                     <a
                         href="{% url 'registers:home' %}"
                         class="btn btn-outline-danger"
@@ -56,7 +67,7 @@
 <a href="{% url 'registers:create' %}" class="btn btn-primary mb-4">
     <i class="fas fa-plus"></i> Agregar Registro
 </a>
-<a href="?q={{ query_cedula }}&m={{ query_municipio_id }}&export=1" class="btn btn-success mb-4">
+<a href="?q={{ query_cedula }}&m={{ query_municipio_id }}&t={{ query_tamano }}&export=1" class="btn btn-success mb-4">
     <i class="fas fa-file-excel"></i> Exportar Excel
 </a>
 
