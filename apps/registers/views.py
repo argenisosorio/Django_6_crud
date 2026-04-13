@@ -133,9 +133,9 @@ def export_registers_excel(queryset):
 
     # Definir encabezados
     headers = [
-        'Nombres', 'Apellidos', 'Cédula', 'Teléfono', 'Municipio', 'Parroquia',
-        'Fecha de Registro', 'Fecha de Despacho', 'Cantidad', 'Tamaño', 
-        'Visitado', 'Documentos completos'
+        'Nombres', 'Apellidos', 'Cédula', 'Teléfono', 'Dirección', 'Municipio',
+        'Parroquia', 'Fecha de Registro', 'Fecha de Despacho', 'Cantidad',
+        'Tamaño', 'Visitado', 'Documentos completos'
     ]
     ws.append(headers)
 
@@ -150,6 +150,7 @@ def export_registers_excel(queryset):
             reg.apellidos,
             reg.cedula,
             reg.telefono,
+            reg.direccion,
             reg.municipio.nombre if reg.municipio else '',
             reg.parroquia.nombre if reg.parroquia else '',
             reg.fecha_registro.strftime('%d/%m/%Y') if reg.fecha_registro else '',
