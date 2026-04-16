@@ -11,3 +11,4 @@ apps/person/migrations
 apps/product/migrations
 apps/registers/migrations
 apps/users/migrations
+apps/configs/migrations

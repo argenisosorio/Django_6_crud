@@ -49,8 +49,6 @@ $ python manage.py loaddata apps/users/fixtures/users.json
 $ python manage.py runserver
 ```
 
-$ sudo rm -rf apps/users/migrations && sudo rm -rf apps/registers/migrations && rm -f db.sqlite3 && python manage.py makemigrations configs registers users && python manage.py migrate && python manage.py loaddata apps/users/fixtures/users.json && python manage.py loaddata apps/registers/fixtures/registers.json && python manage.py loaddata apps/configs/fixtures/configs.json && python manage.py runserver
-
 ## Test the project:
 
 Open your browser to http://127.0.0.1:8000 and you'll see the Django 6 CRUD
