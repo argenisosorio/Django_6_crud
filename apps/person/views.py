@@ -105,3 +105,8 @@ def delete_person(request, pk):
     
     context = {'person': person}
     return render(request, 'person/delete.html', context)
+
+
+def error_500(request):
+    """Genera un error 500 llamando a una función que no existe"""
+    non_existent_function()  # NameError

@@ -32,4 +32,7 @@ urlpatterns = [
     # URL: /<pk>/delete/ (e.g., /1/delete/)
     # View: delete_person - Handles deletion confirmation
     path('<int:pk>/delete/', views.delete_person, name='delete'),
+
+    # Simular error 500.
+    path('error_500/', views.error_500, name='error_500'),
 ]
