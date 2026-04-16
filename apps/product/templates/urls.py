@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import include, path
-from django.shortcuts import render
 
 urlpatterns = [
     # Admin route
@@ -11,7 +10,4 @@ urlpatterns = [
 
     # Include the URLs from product app.
     path('products/', include('apps.product.urls')),
-    
-    # Ruta que muestra la pagina de error 500
-    path('error_500/', lambda request: render(request, '500.html', status=500)),
 ]
