@@ -115,6 +115,22 @@ class SignUpView(CreateView):
                 recipient_list=[user.email],
                 fail_silently=True, # Evita que la app de error 500 si el servidor de correo falla.
             )
+
+            # Enviamos una copia del correo a NOTIFICATION_EMAIL
+            send_mail(
+                subject=f"Nuevo registro: {user.username}",
+                message=(
+                    f"Se ha registrado un nuevo usuario en el sistema:\n\n"
+                    f"Nombre y Apellido: {user.first_name} {user.last_name}\n"
+                    f"Usuario: {user.username}\n"
+                    f"Email: {user.email}\n"
+                    f"Fecha de registro: {user.date_joined.strftime('%d/%m/%Y')}\n\n"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.NOTIFICATION_EMAIL],
+                fail_silently=True,
+            )
+
         except Exception as e:
             # Mensaje de error en consola si el envío de correo falla, pero no
             # interrumpe el flujo de registro.

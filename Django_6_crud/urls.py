@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     # Admin route
-    path('admin/', admin.site.urls),
+    path('darkmagician/', admin.site.urls),
 
     # Redirigir la raíz al login de users
     path('', lambda request: redirect('users:login'), name='root'),
