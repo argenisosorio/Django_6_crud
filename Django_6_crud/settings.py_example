@@ -137,8 +137,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom user model
 AUTH_USER_MODEL = "users.User"
 
-
 # Configuración de autenticación
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'users:user_list'
 LOGOUT_REDIRECT_URL = 'users:login'
+
+# Correo electrónico para recibir notificaciones de la App.
+NOTIFICATION_EMAIL = 'notificaciones@tudominio.com'
