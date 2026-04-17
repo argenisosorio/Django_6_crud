@@ -150,7 +150,7 @@ Archivo de prueba: `test_external_services_email`
 ```python
     def test_external_services_email(self, client):
         url = reverse('person:create')
-        target_email = "xxmaestroyixx@gmail.com"
+        target_email = "tucorreo@example.com"
         data = { 'name': 'Usuario Correo', 'email': target_email, 'age': 20, 'product': self.product.id }
         
         # Limpiar bandeja de salida simulada
