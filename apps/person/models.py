@@ -12,6 +12,7 @@ class Person(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     age = models.PositiveIntegerField()
+    product = models.ForeignKey('product.Product', on_delete=models.SET_NULL, null=True, blank=True, related_name='persons')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

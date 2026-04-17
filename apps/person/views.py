@@ -19,6 +19,8 @@ def home(request):
     }
     return render(request, 'person/home.html', context)
 
+from django.core.mail import send_mail
+
 def create_person(request):
     """
     Handle Person creation through a form.
@@ -35,7 +37,16 @@ def create_person(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
         if form.is_valid():
-            form.save()
+            person = form.save()
+            
+            # Envío de correo
+            subject = "¡Bienvenido a nuestro sistema!"
+            message = f"Hola {person.name},\nTe damos la bienvenida a nuestro sistema."
+            from_email = "noreply@example.com"
+            recipient_list = [person.email]
+            
+            send_mail(subject, message, from_email, recipient_list, fail_silently=True)
+            
             return redirect('person:home')
     else:
         form = PersonForm()
