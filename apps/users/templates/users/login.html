@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <h1>Inicio de sesión</h1>
-        <form method="post" action="{% url 'users:login' %}">
+        <form method="post" action="{% url 'users:login' %}" style="width: 50%;">
             {% csrf_token %}
             {% if form.errors %}
                 <div>

@@ -3,14 +3,140 @@
         "model": "registers.register",
         "pk": 1,
         "fields": {
-            "nombres": "Argenis Rafael",
-            "apellidos": "Osorio Uzcategui",
+            "nombres": "Carlos Andrés",
+            "apellidos": "Gómez Pérez",
             "cedula": "V-18902230",
-            "fecha_nacimiento": "2026-04-10",
+            "fecha_nacimiento": "1990-01-01",
             "sexo": "M",
             "folio": "32",
             "created_at": "2026-04-10T17:12:32.957Z",
             "updated_at": "2026-04-10T17:12:32.957Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 2,
+        "fields": {
+            "nombres": "María Elena",
+            "apellidos": "Rodríguez Sosa",
+            "cedula": "V-22345678",
+            "fecha_nacimiento": "1995-05-15",
+            "sexo": "F",
+            "folio": "45",
+            "created_at": "2026-04-19T10:00:00.000Z",
+            "updated_at": "2026-04-19T10:00:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 3,
+        "fields": {
+            "nombres": "Luis Alberto",
+            "apellidos": "Mendoza Ruiz",
+            "cedula": "V-15890123",
+            "fecha_nacimiento": "1982-11-20",
+            "sexo": "M",
+            "folio": "12",
+            "created_at": "2026-04-19T10:05:00.000Z",
+            "updated_at": "2026-04-19T10:05:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 4,
+        "fields": {
+            "nombres": "Ana Isabel",
+            "apellidos": "Castillo Blanco",
+            "cedula": "V-27456123",
+            "fecha_nacimiento": "2000-08-05",
+            "sexo": "F",
+            "folio": "88",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 5,
+        "fields": {
+            "nombres": "Pedro José",
+            "apellidos": "Hernández Gil",
+            "cedula": "V-12987654",
+            "fecha_nacimiento": "1975-03-30",
+            "sexo": "M",
+            "folio": "05",
+            "created_at": "2026-04-19T10:15:00.000Z",
+            "updated_at": "2026-04-19T10:15:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 6,
+        "fields": {
+            "nombres": "Carmen Sofía",
+            "apellidos": "Vargas López",
+            "cedula": "V-19543210",
+            "fecha_nacimiento": "1992-12-12",
+            "sexo": "F",
+            "folio": "21",
+            "created_at": "2026-04-19T10:20:00.000Z",
+            "updated_at": "2026-04-19T10:20:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 7,
+        "fields": {
+            "nombres": "Ricardo Eloy",
+            "apellidos": "Díaz Morales",
+            "cedula": "V-25876543",
+            "fecha_nacimiento": "1998-07-22",
+            "sexo": "M",
+            "folio": "67",
+            "created_at": "2026-04-19T10:25:00.000Z",
+            "updated_at": "2026-04-19T10:25:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 8,
+        "fields": {
+            "nombres": "Elena Beatriz",
+            "apellidos": "Torres Méndez",
+            "cedula": "V-14234567",
+            "fecha_nacimiento": "1980-01-25",
+            "sexo": "F",
+            "folio": "104",
+            "created_at": "2026-04-19T10:30:00.000Z",
+            "updated_at": "2026-04-19T10:30:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 9,
+        "fields": {
+            "nombres": "Francisco Javier",
+            "apellidos": "Rivas Ortega",
+            "cedula": "V-30123456",
+            "fecha_nacimiento": "2005-02-14",
+            "sexo": "M",
+            "folio": "19",
+            "created_at": "2026-04-19T10:35:00.000Z",
+            "updated_at": "2026-04-19T10:35:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 10,
+        "fields": {
+            "nombres": "Lucía Valentina",
+            "apellidos": "Campos Guerra",
+            "cedula": "V-20765432",
+            "fecha_nacimiento": "1994-06-18",
+            "sexo": "F",
+            "folio": "53",
+            "created_at": "2026-04-19T10:40:00.000Z",
+            "updated_at": "2026-04-19T10:40:00.000Z"
         }
     }
 ]

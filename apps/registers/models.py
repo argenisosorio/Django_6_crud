@@ -1,5 +1,6 @@
 from django.db import models
-from django.conf import settings # Importante para referenciar el User model
+from django.conf import settings
+from datetime import date
 
 
 class Register(models.Model):
@@ -22,6 +23,14 @@ class Register(models.Model):
     # Auditoría (Automáticos)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def edad(self):
+        if self.fecha_nacimiento:
+            today = date.today()
+            return today.year - self.fecha_nacimiento.year - (
+                (today.month, today.day) < (self.fecha_nacimiento.month, self.fecha_nacimiento.day)
+            )
+        return None
 
     def __str__(self):
         return f"{self.nombres} {self.apellidos} - {self.cedula}"

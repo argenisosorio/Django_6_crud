@@ -8,7 +8,7 @@
                 <div class="card-header bg-primary text-white py-3">
                     <h2 class="card-title mb-0">
                         <i class="fas fa-clipboard-list me-2"></i>
-                        Registro de Datos
+                        Actualización de Datos
                     </h2>
                 </div>
                 <div class="card-body p-4">
@@ -30,13 +30,6 @@
                         {% endif %}
 
                         <div class="row g-4">
-                            <!-- DATOS PERSONALES -->
-                            <div class="col-12">
-                                <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-user me-2"></i>Datos Personales
-                                </h5>
-                            </div>
-
                             <div class="col-md-6">
                                 <label for="{{ form.nombres.id_for_label }}" class="form-label fw-bold">
                                     {{ form.nombres.label }} <span class="text-danger">*</span>
@@ -77,7 +70,7 @@
                                 {% endif %}
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label for="{{ form.cedula.id_for_label }}" class="form-label fw-bold">
                                     {{ form.cedula.label }} <span class="text-danger">*</span>
                                 </label>
@@ -96,176 +89,65 @@
                                 {% endif %}
                             </div>
 
-                            <div class="col-md-4">
-                                <label for="{{ form.telefono.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.telefono.label }}
+                            <div class="col-md-6">
+                                <label for="{{ form.fecha_nacimiento.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.fecha_nacimiento.label }} <span class="text-danger">*</span>
                                 </label>
                                 <input
-                                    type="tel" 
-                                    name="{{ form.telefono.name }}" 
-                                    id="{{ form.telefono.id_for_label }}"
-                                    class="form-control {% if form.telefono.errors %}is-invalid{% endif %}"
-                                    value="{{ form.telefono.value|default:'' }}"
-                                    placeholder=""
+                                    type="date" 
+                                    name="{{ form.fecha_nacimiento.name }}" 
+                                    id="{{ form.fecha_nacimiento.id_for_label }}"
+                                    class="form-control {% if form.fecha_nacimiento.errors %}is-invalid{% endif %}"
+                                    value="{{ form.fecha_nacimiento.value|date:'Y-m-d'|default:'' }}"
+                                    required
                                 >
-                                {% if form.telefono.errors %}
+                                {% if form.fecha_nacimiento.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.telefono.errors.0 }}
+                                        {{ form.fecha_nacimiento.errors.0 }}
                                     </div>
                                 {% endif %}
                             </div>
 
                             <div class="col-md-6">
-                                <label for="{{ form.tamano_cilindro.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.tamano_cilindro.label }} <span class="text-danger">*</span>
+                                <label for="{{ form.sexo.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.sexo.label }} <span class="text-danger">*</span>
                                 </label>
-                                <select name="{{ form.tamano_cilindro.name }}" 
-                                        id="{{ form.tamano_cilindro.id_for_label }}"
-                                        class="form-select {% if form.tamano_cilindro.errors %}is-invalid{% endif %}"
+                                <select name="{{ form.sexo.name }}" 
+                                        id="{{ form.sexo.id_for_label }}"
+                                        class="form-select {% if form.sexo.errors %}is-invalid{% endif %}"
                                         required>
                                     <option value="">Seleccione tamaño...</option>
-                                    {% for value, label in form.tamano_cilindro.field.choices %}
-                                        <option value="{{ value }}" {% if form.tamano_cilindro.value == value %}selected{% endif %}>
+                                    {% for value, label in form.sexo.field.choices %}
+                                        <option value="{{ value }}" {% if form.sexo.value == value %}selected{% endif %}>
                                             {{ label }}
                                         </option>
                                     {% endfor %}
                                 </select>
-                                {% if form.tamano_cilindro.errors %}
+                                {% if form.sexo.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.tamano_cilindro.errors.0 }}
+                                        {{ form.sexo.errors.0 }}
                                     </div>
                                 {% endif %}
                             </div>
 
-                            <!-- FECHAS (con calendario HTML5) -->
-                            <div class="col-12 mt-3">
-                                <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-calendar-alt me-2"></i>Fechas
-                                </h5>
-                            </div>
-
                             <div class="col-md-6">
-                                <label for="{{ form.fecha_registro.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.fecha_registro.label }} <span class="text-danger">*</span>
+                                <label for="{{ form.folio.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.folio.label }} <span class="text-danger">*</span>
                                 </label>
                                 <input
-                                    type="date" 
-                                    name="{{ form.fecha_registro.name }}" 
-                                    id="{{ form.fecha_registro.id_for_label }}"
-                                    class="form-control {% if form.fecha_registro.errors %}is-invalid{% endif %}"
-                                    value="{{ form.fecha_registro.value|date:'Y-m-d'|default:'' }}"
+                                    type="text" 
+                                    name="{{ form.folio.name }}" 
+                                    id="{{ form.folio.id_for_label }}"
+                                    class="form-control {% if form.folio.errors %}is-invalid{% endif %}"
+                                    value="{{ form.folio.value|default:'' }}"
+                                    placeholder=""
                                     required
                                 >
-                                {% if form.fecha_registro.errors %}
+                                {% if form.folio.errors %}
                                     <div class="invalid-feedback">
-                                        {{ form.fecha_registro.errors.0 }}
+                                        {{ form.folio.errors.0 }}
                                     </div>
                                 {% endif %}
-                                <div class="form-text">Fecha de registro inicial</div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="{{ form.fecha_despacho.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.fecha_despacho.label }}
-                                </label>
-                                <input
-                                    type="date" 
-                                    name="{{ form.fecha_despacho.name }}" 
-                                    id="{{ form.fecha_despacho.id_for_label }}"
-                                    class="form-control {% if form.fecha_despacho.errors %}is-invalid{% endif %}"
-                                    value="{{ form.fecha_despacho.value|date:'Y-m-d'|default:'' }}"
-                                >
-                                {% if form.fecha_despacho.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.fecha_despacho.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">Dejar vacío si no ha sido despachado</div>
-                            </div>
-
-                            <!-- CAMPOS BOOLEANOS Y OTROS -->
-                            <div class="col-12 mt-3">
-                                <h5 class="text-primary border-bottom pb-2">
-                                    <i class="fas fa-check-circle me-2"></i>Estado y Verificaciones
-                                </h5>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-check form-switch mt-3">
-                                    <input
-                                        type="checkbox" 
-                                        name="{{ form.visitado.name }}" 
-                                        id="{{ form.visitado.id_for_label }}"
-                                        class="form-check-input {% if form.visitado.errors %}is-invalid{% endif %}"
-                                        {% if form.visitado.value %}checked{% endif %}
-                                    >
-                                    <label for="{{ form.visitado.id_for_label }}" class="form-check-label fw-bold">
-                                        {{ form.visitado.label }}
-                                    </label>
-                                    {% if form.visitado.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.visitado.errors.0 }}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-check form-switch mt-3">
-                                    <input
-                                        type="checkbox" 
-                                        name="{{ form.documentos_completos.name }}" 
-                                        id="{{ form.documentos_completos.id_for_label }}"
-                                        class="form-check-input {% if form.documentos_completos.errors %}is-invalid{% endif %}"
-                                        {% if form.documentos_completos.value %}checked{% endif %}
-                                    >
-                                    <label for="{{ form.documentos_completos.id_for_label }}" class="form-check-label fw-bold">
-                                        {{ form.documentos_completos.label }}
-                                    </label>
-                                    {% if form.documentos_completos.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.documentos_completos.errors.0 }}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="{{ form.retirado_por.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.retirado_por.label }} <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" 
-                                    name="{{ form.retirado_por.name }}" 
-                                    id="{{ form.retirado_por.id_for_label }}"
-                                    class="form-control {% if form.retirado_por.errors %}is-invalid{% endif %}"
-                                    value="{{ form.retirado_por.value|default:'' }}"
-                                    placeholder=""
-                                >
-                                {% if form.retirado_por.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.retirado_por.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">Quién retiró el cilindro</div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="{{ form.retirado_por_ci.id_for_label }}" class="form-label fw-bold">
-                                    {{ form.retirado_por_ci.label }} <span class="text-danger">*</span>
-                                </label>
-                                <input type="text"
-                                    name="{{ form.retirado_por_ci.name }}"
-                                    id="{{ form.retirado_por_ci.id_for_label }}"
-                                    class="form-control {% if form.retirado_por_ci.errors %}is-invalid{% endif %}"
-                                    value="{{ form.retirado_por_ci.value|default:'' }}"
-                                    placeholder=""
-                                >
-                                {% if form.retirado_por.errors %}
-                                    <div class="invalid-feedback">
-                                        {{ form.retirado_por_ci.errors.0 }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">Cédula de quien retiró el cilindro</div>
                             </div>
                         </div>
 
@@ -276,7 +158,7 @@
                                     <i class="fas fa-times"></i> Cancelar
                                 </a>
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-save"></i> Guardar Registro
+                                    <i class="fas fa-save"></i> Actualizar
                                 </button>
                             </div>
                         </div>

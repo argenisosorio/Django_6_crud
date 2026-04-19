@@ -11,8 +11,24 @@ from django.http import JsonResponse
 
 @login_required
 def home(request):
+    query_cedula = request.GET.get('q', '')
+    query_nombres = request.GET.get('n', '')
+    query_apellidos = request.GET.get('a', '')
+
     # QuerySet para la TABLA (mantiene el orden cronológico)
     registers = Register.objects.all().order_by('-created_at')
+
+    # Filtro por cédula
+    if query_cedula:
+        registers = registers.filter(cedula__icontains=query_cedula)
+    
+    # Filtro por nombres
+    if query_nombres:
+        registers = registers.filter(nombres__icontains=query_nombres)
+    
+    # Filtro por apellidos
+    if query_apellidos:
+        registers = registers.filter(apellidos__icontains=query_apellidos)
 
     SEXOS = [
         ("M", "M"),
@@ -23,6 +39,9 @@ def home(request):
     context = {
         'registers': registers,
         'sexos': SEXOS,
+        'query_cedula': query_cedula,
+        'query_nombres': query_nombres,
+        'query_apellidos': query_apellidos,
     }
 
     return render(request, 'registers/home.html', context)

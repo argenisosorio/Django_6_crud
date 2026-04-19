@@ -5,6 +5,56 @@
     <h1>Lista de Registros</h1>
 </div>
 
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
+            <div class="col-md-3">
+                <label for="n" class="form-label fw-bold">Buscar por Nombres</label>
+                <input
+                    type="text"
+                    name="n"
+                    id="n"
+                    class="form-control"
+                    value="{{ query_nombres }}"
+                >
+            </div>
+            <div class="col-md-3">
+                <label for="n" class="form-label fw-bold">Buscar por Apellidos</label>
+                <input
+                    type="text"
+                    name="a"
+                    id="a"
+                    class="form-control"
+                    value="{{ query_apellidos }}"
+                >
+            </div>
+            <div class="col-md-3">
+                <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
+                <input
+                    type="text"
+                    name="q"
+                    id="q"
+                    class="form-control"
+                    value="{{ query_cedula }}"
+                >
+            </div>
+            <div class="col-md-3 d-flex align-items-end gap-2">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-filter"></i> Filtrar
+                </button>
+                {% if query_cedula or query_nombres %}
+                    <a
+                        href="{% url 'registers:home' %}"
+                        class="btn btn-outline-danger"
+                    >
+                        <i class="fas fa-eraser"></i> Limpiar
+                    </a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
 <h4>Total de registros: {{ registers|length }}</h4>
 
 <br>
@@ -25,6 +75,7 @@
                 <th>Apellidos</th>
                 <th>Cédula</th>
                 <th>Fecha de nacimiento</th>
+                <th>Edad</th>
                 <th>Sexo</th>
                 <th>Folio</th>
                 <th>Acciones</th>
@@ -36,12 +87,19 @@
                 <td class="text-center">{{ forloop.counter }}</td>
                 <td class="small text-muted">{{ register.nombres }}</td>
                 <td class="small text-muted">{{ register.apellidos }}</td>
-                <td class="small text-muted">{{ register.cedula }}</td>
+                <td class="small text-muted text-center">{{ register.cedula }}</td>
                 <td class="small text-muted text-center">
                     {% if register.fecha_nacimiento %}
                         {{ register.fecha_nacimiento|date:"d/m/Y" }}
                     {% else %}
                         <span class="text-muted italic"></span>
+                    {% endif %}
+                </td>
+                <td class="small text-muted text-center">
+                    {% if register.edad %}
+                        {{ register.edad }} años
+                    {% else %}
+                        --
                     {% endif %}
                 </td>
                 <td class="small text-muted text-center">{{ register.sexo }}</td>
@@ -66,7 +124,7 @@
             </tr>
             {% empty %}
             <tr>
-                <td colspan="8" class="text-center py-4 text-muted">
+                <td colspan="9" class="text-center py-4 text-muted">
                     <i class="fas fa-info-circle"></i> No hay registros disponibles en este momento.
                 </td>
             </tr>
