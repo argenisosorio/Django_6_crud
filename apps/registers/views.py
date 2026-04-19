@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Register, Municipio, Parroquia
+from .models import Register
 from .forms import RegisterForm
 import openpyxl
 from django.http import HttpResponse
@@ -11,47 +11,18 @@ from django.http import JsonResponse
 
 @login_required
 def home(request):
-    query_cedula = request.GET.get('q', '')
-    query_municipio_id = request.GET.get('m', '')
-    query_tamano = request.GET.get('t', '')  # Nuevo filtro para tamaño
-
     # QuerySet para la TABLA (mantiene el orden cronológico)
     registers = Register.objects.all().order_by('-created_at')
 
-    # Filtro por cédula
-    if query_cedula:
-        registers = registers.filter(cedula__icontains=query_cedula)
-
-    # Filtro por municipio
-    if query_municipio_id and query_municipio_id.isdigit():
-        registers = registers.filter(municipio_id=query_municipio_id)
-
-    # Filtro por tamaño
-    if query_tamano and query_tamano in ['Pequeña', 'Mediana', 'Grande']:
-        registers = registers.filter(tamano_cilindro=query_tamano)
-
-    # Exportar a Excel
-    if 'export' in request.GET:
-        return export_registers_excel(registers)
-
-    # Obtener lista de municipios con ID y nombre para el select
-    municipios = Municipio.objects.all().order_by('nombre')
-
-    # Lista de tamaños para el select del template
-    TAMANOS = [
-        ("Pequeña", "Pequeña"),
-        ("Mediana", "Mediana"),
-        ("Grande", "Grande"),
+    SEXOS = [
+        ("M", "M"),
+        ("F", "F"),
     ]
 
     # Construcción del contexto
     context = {
         'registers': registers,
-        'query_cedula': query_cedula,
-        'query_municipio_id': query_municipio_id,
-        'query_tamano': query_tamano,  # Enviar al template para mantener selección
-        'municipios': municipios,
-        'tamanos': TAMANOS,  # Enviar lista de tamaños al template
+        'sexos': SEXOS,
     }
 
     return render(request, 'registers/home.html', context)
@@ -75,10 +46,14 @@ def create_register(request):
     else:
         form = RegisterForm()
     
+    SEXOS = [
+        ("M", "M"),
+        ("F", "F"),
+    ]
+
     context = {
         'form': form,
-        'municipios': Municipio.objects.all().order_by('nombre'),
-        'parroquias': Parroquia.objects.all().order_by('nombre')
+        'sexos': SEXOS,
     }
     return render(request, 'registers/create.html', context)
 
@@ -93,10 +68,6 @@ def detail_register(request, pk):
 def update_register(request, pk):
     register = get_object_or_404(Register, pk=pk)
 
-    # Obtén todos los municipios para el select
-    municipios = Municipio.objects.all()
-    parroquias = Parroquia.objects.all()
-
     if request.method == 'POST':
         form = RegisterForm(request.POST, instance=register)
         if form.is_valid():
@@ -105,11 +76,15 @@ def update_register(request, pk):
     else:
         form = RegisterForm(instance=register)
 
+    SEXOS = [
+        ("M", "M"),
+        ("F", "F"),
+    ]
+
     context = {
         'form': form,
         'register': register,
-        'municipios': municipios,
-        'parroquias': parroquias,
+        'sexos': SEXOS,
     }
     return render(request, 'registers/update.html', context)
 
