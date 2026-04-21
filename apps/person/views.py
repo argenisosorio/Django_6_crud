@@ -107,6 +107,9 @@ def delete_person(request, pk):
     return render(request, 'person/delete.html', context)
 
 
+def error_404(request, exception):
+    return render(request, 'person/404.html', status=404)
+
+
 def error_500(request):
-    """Genera un error 500 llamando a una función que no existe"""
-    non_existent_function()  # NameError
+    return render(request, 'person/500.html', status=500)

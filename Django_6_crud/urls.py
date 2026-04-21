@@ -1,5 +1,12 @@
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls import handler404
+
+
+# URL para el error 404 y 500 personalizados.
+handler404 = 'apps.person.views.error_404'
+handler500 = 'apps.person.views.error_500'
+
 
 urlpatterns = [
     # Admin route
