@@ -98,7 +98,7 @@
                                     name="{{ form.fecha_nacimiento.name }}" 
                                     id="{{ form.fecha_nacimiento.id_for_label }}"
                                     class="form-control {% if form.fecha_nacimiento.errors %}is-invalid{% endif %}"
-                                    value="{{ form.fecha_nacimiento.value|date:'Y-m-d'|default:'' }}"
+                                    value="{% if form.fecha_nacimiento.value %}{% if form.fecha_nacimiento.value|date:'Y-m-d' %}{{ form.fecha_nacimiento.value|date:'Y-m-d' }}{% else %}{{ form.fecha_nacimiento.value }}{% endif %}{% endif %}"
                                     required
                                 >
                                 {% if form.fecha_nacimiento.errors %}

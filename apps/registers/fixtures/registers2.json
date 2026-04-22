@@ -1,0 +1,818 @@
+[
+    {
+        "model": "registers.register",
+        "pk": 1,
+        "fields": {
+            "nombres": "AGNIELLY SALOME",
+            "apellidos": "MARQUEZ PRATO",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2016-09-02",
+            "sexo": "",
+            "folio": "240",
+            "libro": "12",
+            "numero": "686",
+            "ano": "2008-2016",
+            "created_at": "2026-04-10T17:12:32.957Z",
+            "updated_at": "2026-04-10T17:12:32.957Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 2,
+        "fields": {
+            "nombres": "AINHOA PAULLETTE",
+            "apellidos": "RONDON DUGARTE",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-03-08",
+            "sexo": "",
+            "folio": "165",
+            "libro": "13",
+            "numero": "493",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 3,
+        "fields": {
+            "nombres": "ANDREA NICOLE",
+            "apellidos": "GUILLEN SILVA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2011-05-18",
+            "sexo": "",
+            "folio": "115",
+            "libro": "12",
+            "numero": "340",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 4,
+        "fields": {
+            "nombres": "ANELY NAZARETH",
+            "apellidos": "PAREDES RIVAS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2020-11-24",
+            "sexo": "",
+            "folio": "70",
+            "libro": "13",
+            "numero": "209",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 5,
+        "fields": {
+            "nombres": "ANELY NAZARETH",
+            "apellidos": "PAREDES RIVAS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-11-24",
+            "sexo": "",
+            "folio": "70",
+            "libro": "13",
+            "numero": "209",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 6,
+        "fields": {
+            "nombres": "ANGEL CAMILO",
+            "apellidos": "BALZA VIELMA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-09-18",
+            "sexo": "",
+            "folio": "54",
+            "libro": "13",
+            "numero": "160",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 7,
+        "fields": {
+            "nombres": "ANGELES ISMAR D",
+            "apellidos": "JESUS ARIAS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2016-07-19",
+            "sexo": "",
+            "folio": "260",
+            "libro": "12",
+            "numero": "745",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 8,
+        "fields": {
+            "nombres": "ANTONELLA SOFIA",
+            "apellidos": "AVENDAO VERA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2012-11-28",
+            "sexo": "",
+            "folio": "170",
+            "libro": "12",
+            "numero": "506",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 9,
+        "fields": {
+            "nombres": "ARON GAEL",
+            "apellidos": "TEGUEDOR ADRIAN",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-01-31",
+            "sexo": "",
+            "folio": "66",
+            "libro": "13",
+            "numero": "198",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 10,
+        "fields": {
+            "nombres": "ASIER ESTEBAN",
+            "apellidos": "RIVAS MARQUEZ",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-04-03",
+            "sexo": "",
+            "folio": "169",
+            "libro": "13",
+            "numero": "506",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 11,
+        "fields": {
+            "nombres": "BARBARA MARIHEV",
+            "apellidos": "ORDOEZ CORDOVA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-01-21",
+            "sexo": "",
+            "folio": "43",
+            "libro": "13",
+            "numero": "127",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 12,
+        "fields": {
+            "nombres": "CARLOS EMMANUEL",
+            "apellidos": "ENRIQUE RODRIGUIEZ GUTIERREZ",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-11-26",
+            "sexo": "",
+            "folio": "177",
+            "libro": "13",
+            "numero": "530",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 13,
+        "fields": {
+            "nombres": "CHRISTOPHER FABRICIO",
+            "apellidos": "GARCIA MONSALVE",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-12-21",
+            "sexo": "",
+            "folio": "171",
+            "libro": "13",
+            "numero": "513",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 14,
+        "fields": {
+            "nombres": "DANIEL IGNACIO",
+            "apellidos": "PEA MUOZ",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-07-08",
+            "sexo": "",
+            "folio": "55",
+            "libro": "13",
+            "numero": "165",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 15,
+        "fields": {
+            "nombres": "DANIELA ANDREINA",
+            "apellidos": "RODRGUEZ PEA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-03-22",
+            "sexo": "",
+            "folio": "197",
+            "libro": "11",
+            "numero": "582",
+            "ano": "1198-2008",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 16,
+        "fields": {
+            "nombres": "DIEGO JOSE",
+            "apellidos": "SUAREZ VILLEGAS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2014-11-08",
+            "sexo": "",
+            "folio": "217",
+            "libro": "12",
+            "numero": "613",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 17,
+        "fields": {
+            "nombres": "DUBRASKA VALENTINA",
+            "apellidos": "NUCETTE PEA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2004-05-21",
+            "sexo": "",
+            "folio": "222",
+            "libro": "11",
+            "numero": "657",
+            "ano": "1998-2008",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 18,
+        "fields": {
+            "nombres": "EILEEN ANTONELLA",
+            "apellidos": "DUGARTE MORENO",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-07-20",
+            "sexo": "",
+            "folio": "51",
+            "libro": "13",
+            "numero": "151",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 19,
+        "fields": {
+            "nombres": "GABRIEL EMILIO",
+            "apellidos": "ORDOEZ CORDOVA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-11-16",
+            "sexo": "",
+            "folio": "81",
+            "libro": "13",
+            "numero": "242",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 20,
+        "fields": {
+            "nombres": "GABRIEL SANTIAGO",
+            "apellidos": "MOLINA MONSALVE",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-09-27",
+            "sexo": "",
+            "folio": "72",
+            "libro": "13",
+            "numero": "216",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 21,
+        "fields": {
+            "nombres": "GAEL SEBASTIAN",
+            "apellidos": "CONTRERAS GUILLEN",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-04-20",
+            "sexo": "",
+            "folio": "50",
+            "libro": "13",
+            "numero": "150",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 22,
+        "fields": {
+            "nombres": "INGRID NOHELIA",
+            "apellidos": "PUENTES MERIDA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "1979-10-21",
+            "sexo": "",
+            "folio": "23",
+            "libro": "7",
+            "numero": "1053",
+            "ano": "1977-1982",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 23,
+        "fields": {
+            "nombres": "ISABELLA BETHZAY",
+            "apellidos": "RAMIREZ RONDON",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-06-07",
+            "sexo": "",
+            "folio": "168",
+            "libro": "13",
+            "numero": "804",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 24,
+        "fields": {
+            "nombres": "JAIRIANA VALENTINA",
+            "apellidos": "GUTIERREZ HERNANDEZ",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2013-09-06",
+            "sexo": "",
+            "folio": "177",
+            "libro": "13",
+            "numero": "529",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 25,
+        "fields": {
+            "nombres": "JEAN NEPTALI",
+            "apellidos": "GUILLEN TORRES",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-01-05",
+            "sexo": "",
+            "folio": "50",
+            "libro": "13",
+            "numero": "150",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 26,
+        "fields": {
+            "nombres": "JEREMIAS JOSUE",
+            "apellidos": "RONDON CALDERON",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2014-04-01",
+            "sexo": "",
+            "folio": "204",
+            "libro": "12",
+            "numero": "575",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 27,
+        "fields": {
+            "nombres": "JEREMITH ALEJANDRO",
+            "apellidos": "CALDERON ROJAS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-07-20",
+            "sexo": "",
+            "folio": "205",
+            "libro": "12",
+            "numero": "578",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 28,
+        "fields": {
+            "nombres": "JEREMY MATHIAS",
+            "apellidos": "CASTILLO UZCATEGUI",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2013-02-07",
+            "sexo": "",
+            "folio": "15",
+            "libro": "13",
+            "numero": "43",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 29,
+        "fields": {
+            "nombres": "JHOSUA ARON",
+            "apellidos": "PEROZO GALVIS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2024-10-05",
+            "sexo": "",
+            "folio": "179",
+            "libro": "13",
+            "numero": "535",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 30,
+        "fields": {
+            "nombres": "JUAN PABLO",
+            "apellidos": "PABON PEREIRA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-12-07",
+            "sexo": "",
+            "folio": "69",
+            "libro": "13",
+            "numero": "206",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 31,
+        "fields": {
+            "nombres": "JUAN PABLO",
+            "apellidos": "PAVON PEREIRA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-02-07",
+            "sexo": "",
+            "folio": "69",
+            "libro": "13",
+            "numero": "206",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 32,
+        "fields": {
+            "nombres": "JULIAN AUGUSTO",
+            "apellidos": "MOLINA SANCHEZ",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-06-06",
+            "sexo": "",
+            "folio": "",
+            "libro": "13",
+            "numero": "98",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 33,
+        "fields": {
+            "nombres": "LIAN SEBATHYAN",
+            "apellidos": "PIATE ARAUJO",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2020-09-17",
+            "sexo": "",
+            "folio": "101",
+            "libro": "13",
+            "numero": "302",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 34,
+        "fields": {
+            "nombres": "MACELO NONES",
+            "apellidos": "GUERRERO",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2014-02-13",
+            "sexo": "",
+            "folio": "177",
+            "libro": "13",
+            "numero": "531",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 35,
+        "fields": {
+            "nombres": "MARELYS VERONICA",
+            "apellidos": "FERNANDEZ TORO",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2019-02-26",
+            "sexo": "",
+            "folio": "66",
+            "libro": "13",
+            "numero": "196",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 36,
+        "fields": {
+            "nombres": "MARIA ALEXANDRA",
+            "apellidos": "BROWN BARRIOS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-03-23",
+            "sexo": "",
+            "folio": "23",
+            "libro": "13",
+            "numero": "67",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 37,
+        "fields": {
+            "nombres": "MARA VICTORIA",
+            "apellidos": "TERN NAVA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-04-13",
+            "sexo": "",
+            "folio": "55",
+            "libro": "13",
+            "numero": "164",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 38,
+        "fields": {
+            "nombres": "MARIAELISA ANTHONELLA",
+            "apellidos": "GAMRA VILLALOBOS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2012-04-10",
+            "sexo": "",
+            "folio": "154",
+            "libro": "12",
+            "numero": "458",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 39,
+        "fields": {
+            "nombres": "MIA ISABELLA",
+            "apellidos": "PAREDES BRACHO",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-09-17",
+            "sexo": "",
+            "folio": "40",
+            "libro": "1",
+            "numero": "117",
+            "ano": "HULA",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 40,
+        "fields": {
+            "nombres": "MOISES ANDRES",
+            "apellidos": "GARCIA RIVAS",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-07-05",
+            "sexo": "",
+            "folio": "55",
+            "libro": "13",
+            "numero": "163",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 41,
+        "fields": {
+            "nombres": "NAYLAGISSELLE",
+            "apellidos": "LACRUZ GOMEZ",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2024-08-31",
+            "sexo": "",
+            "folio": "179",
+            "libro": "13",
+            "numero": "596",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 42,
+        "fields": {
+            "nombres": "ORIANA DEL CARMEN",
+            "apellidos": "CONTRERAS GAVIDIA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2012-11-28",
+            "sexo": "",
+            "folio": "226",
+            "libro": "12",
+            "numero": "641",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 43,
+        "fields": {
+            "nombres": "OSNIEL AARON",
+            "apellidos": "UZCATEGUI OLIVARES",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-06-04",
+            "sexo": "",
+            "folio": "172",
+            "libro": "13",
+            "numero": "516",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 44,
+        "fields": {
+            "nombres": "SAMUEL JOSE",
+            "apellidos": "GUERRERO RAMIREZ",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2014-11-03",
+            "sexo": "",
+            "folio": "197",
+            "libro": "12",
+            "numero": "197",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 45,
+        "fields": {
+            "nombres": "SANTIAGO ALEJANDRO",
+            "apellidos": "CONTRERAS LERMA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-06-29",
+            "sexo": "",
+            "folio": "59",
+            "libro": "13",
+            "numero": "175",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 46,
+        "fields": {
+            "nombres": "SANTIAGO DE JESUS",
+            "apellidos": "MARQUEZ BENITES",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2017-09-13",
+            "sexo": "",
+            "folio": "153",
+            "libro": "13",
+            "numero": "457",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 47,
+        "fields": {
+            "nombres": "THIAGO MATEO",
+            "apellidos": "VERA DAVILA",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2018-02-04",
+            "sexo": "",
+            "folio": "48",
+            "libro": "13",
+            "numero": "142",
+            "ano": "2018",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 48,
+        "fields": {
+            "nombres": "YESLANI SOSIRET",
+            "apellidos": "PEREIRA GUILLEN",
+            "cedula": "N/A",
+            "fecha_nacimiento": "2016-03-22",
+            "sexo": "",
+            "folio": "204",
+            "libro": "12",
+            "numero": "575",
+            "ano": "2008-2016",
+            "created_at": "2026-04-19T10:10:00.000Z",
+            "updated_at": "2026-04-19T10:10:00.000Z"
+        }
+    }
+]

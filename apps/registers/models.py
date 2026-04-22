@@ -18,10 +18,10 @@ class Register(models.Model):
         choices=SEXOS,
         verbose_name="Sexo"
     )
-    folio = models.CharField(max_length=10, null=True, blank=True)
-    libro = models.CharField(max_length=10, null=True, blank=True)
-    numero = models.CharField(max_length=10, null=True, blank=True)
-    ano = models.CharField(max_length=4, null=True, blank=True)
+    folio = models.CharField(max_length=15, null=True, blank=True)
+    libro = models.CharField(max_length=15, null=True, blank=True)
+    numero = models.CharField(max_length=15, null=True, blank=True)
+    ano = models.CharField(max_length=15, null=True, blank=True)
 
     # Auditoría (Automáticos)
     created_at = models.DateTimeField(auto_now_add=True)

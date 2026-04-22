@@ -9,6 +9,9 @@
             "fecha_nacimiento": "1990-01-01",
             "sexo": "M",
             "folio": "32",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-10T17:12:32.957Z",
             "updated_at": "2026-04-10T17:12:32.957Z"
         }
@@ -23,6 +26,9 @@
             "fecha_nacimiento": "1995-05-15",
             "sexo": "F",
             "folio": "45",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:00:00.000Z",
             "updated_at": "2026-04-19T10:00:00.000Z"
         }
@@ -37,6 +43,9 @@
             "fecha_nacimiento": "1982-11-20",
             "sexo": "M",
             "folio": "12",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:05:00.000Z",
             "updated_at": "2026-04-19T10:05:00.000Z"
         }
@@ -51,6 +60,9 @@
             "fecha_nacimiento": "2000-08-05",
             "sexo": "F",
             "folio": "88",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:10:00.000Z",
             "updated_at": "2026-04-19T10:10:00.000Z"
         }
@@ -65,6 +77,9 @@
             "fecha_nacimiento": "1975-03-30",
             "sexo": "M",
             "folio": "05",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:15:00.000Z",
             "updated_at": "2026-04-19T10:15:00.000Z"
         }
@@ -79,6 +94,9 @@
             "fecha_nacimiento": "1992-12-12",
             "sexo": "F",
             "folio": "21",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:20:00.000Z",
             "updated_at": "2026-04-19T10:20:00.000Z"
         }
@@ -93,6 +111,9 @@
             "fecha_nacimiento": "1998-07-22",
             "sexo": "M",
             "folio": "67",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:25:00.000Z",
             "updated_at": "2026-04-19T10:25:00.000Z"
         }
@@ -107,6 +128,9 @@
             "fecha_nacimiento": "1980-01-25",
             "sexo": "F",
             "folio": "104",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:30:00.000Z",
             "updated_at": "2026-04-19T10:30:00.000Z"
         }
@@ -121,6 +145,9 @@
             "fecha_nacimiento": "2005-02-14",
             "sexo": "M",
             "folio": "19",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:35:00.000Z",
             "updated_at": "2026-04-19T10:35:00.000Z"
         }
@@ -135,6 +162,9 @@
             "fecha_nacimiento": "1994-06-18",
             "sexo": "F",
             "folio": "53",
+            "libro":"45",
+            "numero": "05",
+            "ano": "2023",
             "created_at": "2026-04-19T10:40:00.000Z",
             "updated_at": "2026-04-19T10:40:00.000Z"
         }
