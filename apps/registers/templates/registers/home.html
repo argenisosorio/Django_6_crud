@@ -79,6 +79,7 @@
                 <th>Sexo</th>
                 <th>Folio</th>
                 <th>Libro</th>
+                <th>Número</th>
                 <th>Año</th>
                 <th>Acciones</th>
             </tr>
@@ -107,6 +108,7 @@
                 <td class="small text-muted text-center">{{ register.sexo }}</td>
                 <td class="small text-muted text-center">{{ register.folio }}</td>
                 <td class="small text-muted text-center">{{ register.libro }}</td>
+                <td class="small text-muted text-center">{{ register.numero }}</td>
                 <td class="small text-muted text-center">{{ register.ano }}</td>
                 <td class="text-center">
                     <div class="btn-group btn-group-sm">
@@ -128,7 +130,7 @@
             </tr>
             {% empty %}
             <tr>
-                <td colspan="11" class="text-center py-4 text-muted">
+                <td colspan="12" class="text-center py-4 text-muted">
                     <i class="fas fa-info-circle"></i> No hay registros disponibles en este momento.
                 </td>
             </tr>

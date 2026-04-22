@@ -9,8 +9,8 @@ class Register(models.Model):
         ("F", "F"),
     ]
 
-    nombres = models.CharField(max_length=150)
-    apellidos = models.CharField(max_length=150)
+    nombres = models.CharField(max_length=150, null=True, blank=True)
+    apellidos = models.CharField(max_length=150, null=True, blank=True)
     cedula = models.CharField(max_length=20, null=True, blank=True)
     fecha_nacimiento = models.DateField(null=True, blank=True)
     sexo = models.CharField(
@@ -20,6 +20,7 @@ class Register(models.Model):
     )
     folio = models.CharField(max_length=10, null=True, blank=True)
     libro = models.CharField(max_length=10, null=True, blank=True)
+    numero = models.CharField(max_length=10, null=True, blank=True)
     ano = models.CharField(max_length=4, null=True, blank=True)
 
     # Auditoría (Automáticos)
