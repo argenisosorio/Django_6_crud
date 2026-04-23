@@ -7,9 +7,10 @@
 
 <div class="card mb-4 shadow-sm">
     <div class="card-body">
+        <h5>Filtros de búsqueda</h5>
         <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
-            <div class="col-md-3">
-                <label for="n" class="form-label fw-bold">Buscar por Nombres</label>
+            <div class="col-md-2">
+                <label for="n" class="form-label fw-bold">Nombres</label>
                 <input
                     type="text"
                     name="n"
@@ -18,8 +19,8 @@
                     value="{{ query_nombres }}"
                 >
             </div>
-            <div class="col-md-3">
-                <label for="n" class="form-label fw-bold">Buscar por Apellidos</label>
+            <div class="col-md-2">
+                <label for="a" class="form-label fw-bold">Apellidos</label>
                 <input
                     type="text"
                     name="a"
@@ -28,8 +29,8 @@
                     value="{{ query_apellidos }}"
                 >
             </div>
-            <div class="col-md-3">
-                <label for="q" class="form-label fw-bold">Buscar por Cédula</label>
+            <div class="col-md-2">
+                <label for="q" class="form-label fw-bold">Cédula</label>
                 <input
                     type="text"
                     name="q"
@@ -38,11 +39,23 @@
                     value="{{ query_cedula }}"
                 >
             </div>
-            <div class="col-md-3 d-flex align-items-end gap-2">
+            <div class="col-md-2">
+                <label for="fecha_nacimiento" class="form-label fw-bold">
+                    Fecha de nacimiento
+                </label>
+                <input
+                    type="date"
+                    name="f"
+                    id="f"
+                    class="form-control"
+                    value="{{ query_fecha_nacimiento|default:'' }}"
+                >
+            </div>
+            <div class="col-md-12 d-flex align-items-end gap-2">
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-filter"></i> Filtrar
                 </button>
-                {% if query_cedula or query_nombres %}
+                {% if query_cedula or query_nombres or query_apellidos or query_fecha_nacimiento %}
                     <a
                         href="{% url 'registers:home' %}"
                         class="btn btn-outline-danger"
@@ -77,8 +90,8 @@
                 <th>Fecha de nacimiento</th>
                 <th>Edad</th>
                 <th>Sexo</th>
-                <th>Folio</th>
                 <th>Libro</th>
+                <th>Folio</th>
                 <th>Número</th>
                 <th>Año</th>
                 <th>Acciones</th>
@@ -95,7 +108,7 @@
                     {% if register.fecha_nacimiento %}
                         {{ register.fecha_nacimiento|date:"d/m/Y" }}
                     {% else %}
-                        <span class="text-muted italic"></span>
+                        <span class="text-muted italic">--</span>
                     {% endif %}
                 </td>
                 <td class="small text-muted text-center">
@@ -106,8 +119,8 @@
                     {% endif %}
                 </td>
                 <td class="small text-muted text-center">{{ register.sexo }}</td>
-                <td class="small text-muted text-center">{{ register.folio }}</td>
                 <td class="small text-muted text-center">{{ register.libro }}</td>
+                <td class="small text-muted text-center">{{ register.folio }}</td>
                 <td class="small text-muted text-center">{{ register.numero }}</td>
                 <td class="small text-muted text-center">{{ register.ano }}</td>
                 <td class="text-center">
