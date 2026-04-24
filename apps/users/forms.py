@@ -46,4 +46,3 @@ class ProfileForm(forms.ModelForm):
             "last_name",
             "nickname",
         )
-
