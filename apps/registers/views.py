@@ -15,9 +15,10 @@ def home(request):
     query_nombres = request.GET.get('n', '')
     query_apellidos = request.GET.get('a', '')
     query_fecha_nacimiento = request.GET.get('f', '')
+    query_libro = request.GET.get('l', '')
 
-    # QuerySet para la TABLA (mantiene el orden cronológico)
-    registers = Register.objects.all().order_by('-created_at')
+    # QuerySet para la TABLA (mantiene el orden alfabético por nombres)
+    registers = Register.objects.all().order_by('nombres')
 
     # Filtro por cédula
     if query_cedula:
@@ -35,6 +36,10 @@ def home(request):
     if query_fecha_nacimiento:
         registers = registers.filter(fecha_nacimiento=query_fecha_nacimiento)
 
+    # Filtro por libro
+    if query_libro:
+        registers = registers.filter(libro__icontains=query_libro)
+
     SEXOS = [
         ("M", "M"),
         ("F", "F"),
@@ -48,6 +53,7 @@ def home(request):
         'query_nombres': query_nombres,
         'query_apellidos': query_apellidos,
         'query_fecha_nacimiento': query_fecha_nacimiento,
+        'query_libro': query_libro,
     }
 
     return render(request, 'registers/home.html', context)

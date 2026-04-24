@@ -51,11 +51,21 @@
                     value="{{ query_fecha_nacimiento|default:'' }}"
                 >
             </div>
+            <div class="col-md-2">
+                <label for="q" class="form-label fw-bold">Libro</label>
+                <input
+                    type="text"
+                    name="l"
+                    id="l"
+                    class="form-control"
+                    value="{{ query_libro }}"
+                >
+            </div>
             <div class="col-md-12 d-flex align-items-end gap-2">
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-filter"></i> Filtrar
                 </button>
-                {% if query_cedula or query_nombres or query_apellidos or query_fecha_nacimiento %}
+                {% if query_cedula or query_nombres or query_apellidos or query_fecha_nacimiento or query_libro %}
                     <a
                         href="{% url 'registers:home' %}"
                         class="btn btn-outline-danger"
