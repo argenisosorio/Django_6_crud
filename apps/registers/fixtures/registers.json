@@ -1,1 +1,146 @@
-[{"model": "registers.register", "pk": 1, "fields": {"marcador_local_game_1": "2", "marcador_visitante_game_1": "1", "puntos_game_1": null, "marcador_local_game_2": "1", "marcador_visitante_game_2": "2", "puntos_game_2": null, "marcador_local_game_3": "1", "marcador_visitante_game_3": "1", "puntos_game_3": null, "marcador_local_game_4": "1", "marcador_visitante_game_4": "3", "puntos_game_4": null, "marcador_local_game_5": "0", "marcador_visitante_game_5": "3", "puntos_game_5": null, "marcador_local_game_6": "2", "marcador_visitante_game_6": "2", "puntos_game_6": null, "marcador_local_game_7": "1", "marcador_visitante_game_7": "3", "puntos_game_7": null, "marcador_local_game_8": "1", "marcador_visitante_game_8": "3", "puntos_game_8": null, "marcador_local_game_9": "5", "marcador_visitante_game_9": "0", "puntos_game_9": null, "marcador_local_game_10": "2", "marcador_visitante_game_10": "2", "puntos_game_10": null, "marcador_local_game_11": "1", "marcador_visitante_game_11": "1", "puntos_game_11": null, "marcador_local_game_12": "1", "marcador_visitante_game_12": "0", "puntos_game_12": null, "marcador_local_game_13": "3", "marcador_visitante_game_13": "0", "puntos_game_13": null, "marcador_local_game_14": "2", "marcador_visitante_game_14": "1", "puntos_game_14": null, "marcador_local_game_15": "0", "marcador_visitante_game_15": "1", "puntos_game_15": null, "marcador_local_game_16": "1", "marcador_visitante_game_16": "2", "puntos_game_16": null, "marcador_local_game_17": "3", "marcador_visitante_game_17": "2", "puntos_game_17": null, "marcador_local_game_18": "1", "marcador_visitante_game_18": "2", "puntos_game_18": null, "marcador_local_game_19": "5", "marcador_visitante_game_19": "0", "puntos_game_19": null, "marcador_local_game_20": "2", "marcador_visitante_game_20": "1", "puntos_game_20": null, "marcador_local_game_21": "4", "marcador_visitante_game_21": "0", "puntos_game_21": null, "marcador_local_game_22": "1", "marcador_visitante_game_22": "0", "puntos_game_22": null, "marcador_local_game_23": "2", "marcador_visitante_game_23": "1", "puntos_game_23": null, "marcador_local_game_24": "1", "marcador_visitante_game_24": "3", "puntos_game_24": null, "marcador_local_game_25": "1", "marcador_visitante_game_25": "0", "puntos_game_25": null, "marcador_local_game_26": "3", "marcador_visitante_game_26": "1", "puntos_game_26": null, "marcador_local_game_27": "2", "marcador_visitante_game_27": "0", "puntos_game_27": null, "marcador_local_game_28": "2", "marcador_visitante_game_28": "1", "puntos_game_28": null, "marcador_local_game_29": "2", "marcador_visitante_game_29": "2", "puntos_game_29": null, "marcador_local_game_30": "0", "marcador_visitante_game_30": "2", "puntos_game_30": null, "marcador_local_game_31": "4", "marcador_visitante_game_31": "0", "puntos_game_31": null, "marcador_local_game_32": "2", "marcador_visitante_game_32": "2", "puntos_game_32": null, "marcador_local_game_33": "2", "marcador_visitante_game_33": "1", "puntos_game_33": null, "marcador_local_game_34": "2", "marcador_visitante_game_34": "1", "puntos_game_34": null, "marcador_local_game_35": "2", "marcador_visitante_game_35": "0", "puntos_game_35": null, "marcador_local_game_36": "0", "marcador_visitante_game_36": "2", "puntos_game_36": null, "marcador_local_game_37": "3", "marcador_visitante_game_37": "0", "puntos_game_37": null, "marcador_local_game_38": "2", "marcador_visitante_game_38": "0", "puntos_game_38": null, "marcador_local_game_39": "2", "marcador_visitante_game_39": "0", "puntos_game_39": null, "marcador_local_game_40": "3", "marcador_visitante_game_40": "1", "puntos_game_40": null, "marcador_local_game_41": "4", "marcador_visitante_game_41": "0", "puntos_game_41": null, "marcador_local_game_42": "4", "marcador_visitante_game_42": "0", "puntos_game_42": null, "marcador_local_game_43": "1", "marcador_visitante_game_43": "2", "puntos_game_43": null, "marcador_local_game_44": "1", "marcador_visitante_game_44": "2", "puntos_game_44": null, "marcador_local_game_45": "5", "marcador_visitante_game_45": "0", "puntos_game_45": null, "marcador_local_game_46": "2", "marcador_visitante_game_46": "1", "puntos_game_46": null, "marcador_local_game_47": "1", "marcador_visitante_game_47": "2", "puntos_game_47": null, "marcador_local_game_48": "3", "marcador_visitante_game_48": "0", "puntos_game_48": null, "marcador_local_game_49": "3", "marcador_visitante_game_49": "2", "puntos_game_49": null, "marcador_local_game_50": "1", "marcador_visitante_game_50": "0", "puntos_game_50": null, "marcador_local_game_51": "1", "marcador_visitante_game_51": "2", "puntos_game_51": null, "marcador_local_game_52": "3", "marcador_visitante_game_52": "0", "puntos_game_52": null, "marcador_local_game_53": "1", "marcador_visitante_game_53": "1", "puntos_game_53": null, "marcador_local_game_54": "2", "marcador_visitante_game_54": "2", "puntos_game_54": null, "marcador_local_game_55": "1", "marcador_visitante_game_55": "3", "puntos_game_55": null, "marcador_local_game_56": "2", "marcador_visitante_game_56": "3", "puntos_game_56": null, "marcador_local_game_57": "2", "marcador_visitante_game_57": "1", "puntos_game_57": null, "marcador_local_game_58": "1", "marcador_visitante_game_58": "3", "puntos_game_58": null, "marcador_local_game_59": "1", "marcador_visitante_game_59": "4", "puntos_game_59": null, "marcador_local_game_60": "1", "marcador_visitante_game_60": "0", "puntos_game_60": null, "marcador_local_game_61": "1", "marcador_visitante_game_61": "3", "puntos_game_61": null, "marcador_local_game_62": "3", "marcador_visitante_game_62": "1", "puntos_game_62": null, "marcador_local_game_63": "1", "marcador_visitante_game_63": "2", "puntos_game_63": null, "marcador_local_game_64": "1", "marcador_visitante_game_64": "2", "puntos_game_64": null, "marcador_local_game_65": "2", "marcador_visitante_game_65": "0", "puntos_game_65": null, "marcador_local_game_66": "1", "marcador_visitante_game_66": "2", "puntos_game_66": null, "marcador_local_game_67": "1", "marcador_visitante_game_67": "3", "puntos_game_67": null, "marcador_local_game_68": "2", "marcador_visitante_game_68": "2", "puntos_game_68": null, "marcador_local_game_69": "1", "marcador_visitante_game_69": "2", "puntos_game_69": null, "marcador_local_game_70": "2", "marcador_visitante_game_70": "2", "puntos_game_70": null, "marcador_local_game_71": "2", "marcador_visitante_game_71": "1", "puntos_game_71": null, "marcador_local_game_72": "1", "marcador_visitante_game_72": "4", "puntos_game_72": null, "created_at": "2026-04-04T13:57:29.190Z", "updated_at": "2026-04-04T16:40:44.475Z", "usuario_registro": 3}}, {"model": "registers.register", "pk": 2, "fields": {"marcador_local_game_1": "2", "marcador_visitante_game_1": "2", "puntos_game_1": null, "marcador_local_game_2": "2", "marcador_visitante_game_2": "1", "puntos_game_2": null, "marcador_local_game_3": "1", "marcador_visitante_game_3": "2", "puntos_game_3": null, "marcador_local_game_4": "4", "marcador_visitante_game_4": "1", "puntos_game_4": null, "marcador_local_game_5": null, "marcador_visitante_game_5": null, "puntos_game_5": null, "marcador_local_game_6": null, "marcador_visitante_game_6": null, "puntos_game_6": null, "marcador_local_game_7": null, "marcador_visitante_game_7": null, "puntos_game_7": null, "marcador_local_game_8": null, "marcador_visitante_game_8": null, "puntos_game_8": null, "marcador_local_game_9": null, "marcador_visitante_game_9": null, "puntos_game_9": null, "marcador_local_game_10": null, "marcador_visitante_game_10": null, "puntos_game_10": null, "marcador_local_game_11": null, "marcador_visitante_game_11": null, "puntos_game_11": null, "marcador_local_game_12": null, "marcador_visitante_game_12": null, "puntos_game_12": null, "marcador_local_game_13": null, "marcador_visitante_game_13": null, "puntos_game_13": null, "marcador_local_game_14": null, "marcador_visitante_game_14": null, "puntos_game_14": null, "marcador_local_game_15": null, "marcador_visitante_game_15": null, "puntos_game_15": null, "marcador_local_game_16": null, "marcador_visitante_game_16": null, "puntos_game_16": null, "marcador_local_game_17": null, "marcador_visitante_game_17": null, "puntos_game_17": null, "marcador_local_game_18": null, "marcador_visitante_game_18": null, "puntos_game_18": null, "marcador_local_game_19": null, "marcador_visitante_game_19": null, "puntos_game_19": null, "marcador_local_game_20": null, "marcador_visitante_game_20": null, "puntos_game_20": null, "marcador_local_game_21": null, "marcador_visitante_game_21": null, "puntos_game_21": null, "marcador_local_game_22": null, "marcador_visitante_game_22": null, "puntos_game_22": null, "marcador_local_game_23": null, "marcador_visitante_game_23": null, "puntos_game_23": null, "marcador_local_game_24": null, "marcador_visitante_game_24": null, "puntos_game_24": null, "marcador_local_game_25": null, "marcador_visitante_game_25": null, "puntos_game_25": null, "marcador_local_game_26": null, "marcador_visitante_game_26": null, "puntos_game_26": null, "marcador_local_game_27": null, "marcador_visitante_game_27": null, "puntos_game_27": null, "marcador_local_game_28": null, "marcador_visitante_game_28": null, "puntos_game_28": null, "marcador_local_game_29": null, "marcador_visitante_game_29": null, "puntos_game_29": null, "marcador_local_game_30": null, "marcador_visitante_game_30": null, "puntos_game_30": null, "marcador_local_game_31": null, "marcador_visitante_game_31": null, "puntos_game_31": null, "marcador_local_game_32": null, "marcador_visitante_game_32": null, "puntos_game_32": null, "marcador_local_game_33": null, "marcador_visitante_game_33": null, "puntos_game_33": null, "marcador_local_game_34": null, "marcador_visitante_game_34": null, "puntos_game_34": null, "marcador_local_game_35": null, "marcador_visitante_game_35": null, "puntos_game_35": null, "marcador_local_game_36": null, "marcador_visitante_game_36": null, "puntos_game_36": null, "marcador_local_game_37": null, "marcador_visitante_game_37": null, "puntos_game_37": null, "marcador_local_game_38": null, "marcador_visitante_game_38": null, "puntos_game_38": null, "marcador_local_game_39": null, "marcador_visitante_game_39": null, "puntos_game_39": null, "marcador_local_game_40": null, "marcador_visitante_game_40": null, "puntos_game_40": null, "marcador_local_game_41": null, "marcador_visitante_game_41": null, "puntos_game_41": null, "marcador_local_game_42": null, "marcador_visitante_game_42": null, "puntos_game_42": null, "marcador_local_game_43": null, "marcador_visitante_game_43": null, "puntos_game_43": null, "marcador_local_game_44": null, "marcador_visitante_game_44": null, "puntos_game_44": null, "marcador_local_game_45": null, "marcador_visitante_game_45": null, "puntos_game_45": null, "marcador_local_game_46": null, "marcador_visitante_game_46": null, "puntos_game_46": null, "marcador_local_game_47": null, "marcador_visitante_game_47": null, "puntos_game_47": null, "marcador_local_game_48": null, "marcador_visitante_game_48": null, "puntos_game_48": null, "marcador_local_game_49": null, "marcador_visitante_game_49": null, "puntos_game_49": null, "marcador_local_game_50": null, "marcador_visitante_game_50": null, "puntos_game_50": null, "marcador_local_game_51": null, "marcador_visitante_game_51": null, "puntos_game_51": null, "marcador_local_game_52": null, "marcador_visitante_game_52": null, "puntos_game_52": null, "marcador_local_game_53": null, "marcador_visitante_game_53": null, "puntos_game_53": null, "marcador_local_game_54": null, "marcador_visitante_game_54": null, "puntos_game_54": null, "marcador_local_game_55": null, "marcador_visitante_game_55": null, "puntos_game_55": null, "marcador_local_game_56": null, "marcador_visitante_game_56": null, "puntos_game_56": null, "marcador_local_game_57": null, "marcador_visitante_game_57": null, "puntos_game_57": null, "marcador_local_game_58": null, "marcador_visitante_game_58": null, "puntos_game_58": null, "marcador_local_game_59": null, "marcador_visitante_game_59": null, "puntos_game_59": null, "marcador_local_game_60": null, "marcador_visitante_game_60": null, "puntos_game_60": null, "marcador_local_game_61": null, "marcador_visitante_game_61": null, "puntos_game_61": null, "marcador_local_game_62": null, "marcador_visitante_game_62": null, "puntos_game_62": null, "marcador_local_game_63": null, "marcador_visitante_game_63": null, "puntos_game_63": null, "marcador_local_game_64": null, "marcador_visitante_game_64": null, "puntos_game_64": null, "marcador_local_game_65": null, "marcador_visitante_game_65": null, "puntos_game_65": null, "marcador_local_game_66": null, "marcador_visitante_game_66": null, "puntos_game_66": null, "marcador_local_game_67": null, "marcador_visitante_game_67": null, "puntos_game_67": null, "marcador_local_game_68": null, "marcador_visitante_game_68": null, "puntos_game_68": null, "marcador_local_game_69": null, "marcador_visitante_game_69": null, "puntos_game_69": null, "marcador_local_game_70": null, "marcador_visitante_game_70": null, "puntos_game_70": null, "marcador_local_game_71": null, "marcador_visitante_game_71": null, "puntos_game_71": null, "marcador_local_game_72": null, "marcador_visitante_game_72": null, "puntos_game_72": null, "created_at": "2026-04-04T18:17:56.709Z", "updated_at": "2026-04-04T18:17:56.709Z", "usuario_registro": 4}}]
+[
+    {
+        "model": "registers.register",
+        "pk": 1,
+        "fields": {
+            "marcador_local_game_1": "2",
+            "marcador_visitante_game_1": "1",
+            "puntos_game_1": null,
+            "marcador_local_game_2": "1",
+            "marcador_visitante_game_2": "2",
+            "puntos_game_2": null,
+            "marcador_local_game_3": "1",
+            "marcador_visitante_game_3": "1",
+            "puntos_game_3": null,
+            "marcador_local_game_4": "1",
+            "marcador_visitante_game_4": "3",
+            "puntos_game_4": null,
+            "marcador_local_game_5": "0",
+            "marcador_visitante_game_5": "3",
+            "puntos_game_5": null,
+            "created_at": "2026-04-04T18:17:56.709Z",
+            "updated_at": "2026-04-04T18:17:56.709Z",
+            "usuario_registro": 1
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 2,
+        "fields": {
+            "marcador_local_game_1": "2",
+            "marcador_visitante_game_1": "1",
+            "puntos_game_1": null,
+            "marcador_local_game_2": "1",
+            "marcador_visitante_game_2": "2",
+            "puntos_game_2": null,
+            "marcador_local_game_3": "1",
+            "marcador_visitante_game_3": "1",
+            "puntos_game_3": null,
+            "marcador_local_game_4": "1",
+            "marcador_visitante_game_4": "3",
+            "puntos_game_4": null,
+            "marcador_local_game_5": "0",
+            "marcador_visitante_game_5": "3",
+            "puntos_game_5": null,
+            "created_at": "2026-04-04T18:17:56.709Z",
+            "updated_at": "2026-04-04T18:17:56.709Z",
+            "usuario_registro": 2
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 3,
+        "fields": {
+            "marcador_local_game_1": "2",
+            "marcador_visitante_game_1": "1",
+            "puntos_game_1": null,
+            "marcador_local_game_2": "1",
+            "marcador_visitante_game_2": "2",
+            "puntos_game_2": null,
+            "marcador_local_game_3": "1",
+            "marcador_visitante_game_3": "1",
+            "puntos_game_3": null,
+            "marcador_local_game_4": "1",
+            "marcador_visitante_game_4": "3",
+            "puntos_game_4": null,
+            "marcador_local_game_5": "0",
+            "marcador_visitante_game_5": "3",
+            "puntos_game_5": null,
+            "created_at": "2026-04-04T18:17:56.709Z",
+            "updated_at": "2026-04-04T18:17:56.709Z",
+            "usuario_registro": 3
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 4,
+        "fields": {
+            "marcador_local_game_1": "2",
+            "marcador_visitante_game_1": "1",
+            "puntos_game_1": null,
+            "marcador_local_game_2": "1",
+            "marcador_visitante_game_2": "2",
+            "puntos_game_2": null,
+            "marcador_local_game_3": "1",
+            "marcador_visitante_game_3": "1",
+            "puntos_game_3": null,
+            "marcador_local_game_4": "1",
+            "marcador_visitante_game_4": "3",
+            "puntos_game_4": null,
+            "marcador_local_game_5": "0",
+            "marcador_visitante_game_5": "3",
+            "puntos_game_5": null,
+            "created_at": "2026-04-04T18:17:56.709Z",
+            "updated_at": "2026-04-04T18:17:56.709Z",
+            "usuario_registro": 4
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 5,
+        "fields": {
+            "marcador_local_game_1": "2",
+            "marcador_visitante_game_1": "1",
+            "puntos_game_1": null,
+            "marcador_local_game_2": "1",
+            "marcador_visitante_game_2": "2",
+            "puntos_game_2": null,
+            "marcador_local_game_3": "1",
+            "marcador_visitante_game_3": "1",
+            "puntos_game_3": null,
+            "marcador_local_game_4": "1",
+            "marcador_visitante_game_4": "3",
+            "puntos_game_4": null,
+            "marcador_local_game_5": "0",
+            "marcador_visitante_game_5": "3",
+            "puntos_game_5": null,
+            "created_at": "2026-04-04T18:17:56.709Z",
+            "updated_at": "2026-04-04T18:17:56.709Z",
+            "usuario_registro": 5
+        }
+    },
+    {
+        "model": "registers.register",
+        "pk": 6,
+        "fields": {
+            "marcador_local_game_1": "2",
+            "marcador_visitante_game_1": "1",
+            "puntos_game_1": null,
+            "marcador_local_game_2": "1",
+            "marcador_visitante_game_2": "2",
+            "puntos_game_2": null,
+            "marcador_local_game_3": "1",
+            "marcador_visitante_game_3": "1",
+            "puntos_game_3": null,
+            "marcador_local_game_4": "1",
+            "marcador_visitante_game_4": "3",
+            "puntos_game_4": null,
+            "marcador_local_game_5": "0",
+            "marcador_visitante_game_5": "3",
+            "puntos_game_5": null,
+            "created_at": "2026-04-04T18:17:56.709Z",
+            "updated_at": "2026-04-04T18:17:56.709Z",
+            "usuario_registro": 6
+        }
+    }
+]

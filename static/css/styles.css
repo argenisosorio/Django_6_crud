@@ -72,3 +72,8 @@ footer {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+.table tr.winners td {
+    background-color: #72f072 !important; /* Un rojo suave para que se lea el texto */
+    color: #000000; /* Opcional: cambia el color del texto para que combine */
+}

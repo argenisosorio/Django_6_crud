@@ -1,1 +1,116 @@
-[{"model": "users.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=", "last_login": "2026-04-04T18:18:08.483Z", "is_superuser": true, "username": "admin", "first_name": "Admin", "last_name": "Admin", "email": "admin@mail.com", "is_staff": true, "is_active": true, "date_joined": "2026-03-17T17:23:38.508Z", "nickname": "Admin", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=", "last_login": "2026-04-04T00:07:18.498Z", "is_superuser": false, "username": "aosorio", "first_name": "Argenis", "last_name": "Osorio", "email": "argenisosorio10@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2026-04-03T13:55:56Z", "nickname": "DarkMagician", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 3, "fields": {"password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=", "last_login": "2026-04-04T13:46:56.374Z", "is_superuser": false, "username": "equero", "first_name": "Emiro", "last_name": "Quero", "email": "equero@mail.com", "is_staff": false, "is_active": true, "date_joined": "2026-04-04T13:46:48.036Z", "nickname": "Trinitotulueno", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 4, "fields": {"password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=", "last_login": "2026-04-04T18:17:33.730Z", "is_superuser": false, "username": "yrangel", "first_name": "Yonder", "last_name": "Rangel", "email": "yrangel@mail.com", "is_staff": false, "is_active": true, "date_joined": "2026-04-04T13:46:48.036Z", "nickname": "YR11", "groups": [], "user_permissions": []}}]
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T18:18:08.483Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "Admin",
+            "last_name": "Admin",
+            "email": "admin@mail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-03-17T17:23:38.508Z",
+            "nickname": "Admin",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "aosorio",
+            "first_name": "Argenis",
+            "last_name": "Osorio",
+            "email": "argenisosorio10@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "DarkMagician",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "yrangel",
+            "first_name": "Yonder",
+            "last_name": "Rangel",
+            "email": "yrangel@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "YR11",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "hquero",
+            "first_name": "Emiro",
+            "last_name": "Quero",
+            "email": "hquero@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "Nesta",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "ggomez",
+            "first_name": "Gaidy",
+            "last_name": "Gómez",
+            "email": "ggomez@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "Nemesis",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "osujorge",
+            "first_name": "Jorge",
+            "last_name": "Osuna",
+            "email": "osujorge@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "BlackStar",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]
