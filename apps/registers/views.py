@@ -181,12 +181,13 @@ def ranking(request):
     # Convertir cada campo a IntegerField y manejar valores nulos
     puntos_sum = Cast(Coalesce('puntos_game_1', Value('0')), IntegerField())
 
-    # Bucle del juego 2 al 72: Convierte cada campo de texto a entero, maneja
-    # nulos como '0', y acumula la suma total
     for i in range(2, 73):
         puntos_sum += Cast(Coalesce(f'puntos_game_{i}', Value('0')), IntegerField())
 
-    registers = Register.objects.annotate(
+    # Agregamos el filtro para usuarios activos
+    registers = Register.objects.filter(
+        usuario_registro__is_active=True
+    ).annotate(
         total_puntos=puntos_sum
     ).order_by('-total_puntos')
 
