@@ -21,18 +21,18 @@
                         table-bordered align-middle
                         table-ranking
                     "
-                    style="font-size: 12px;"
+                    style="font-size: 13px;"
                 >
                     <thead class="table-light">
                         <tr class="text-center">
                             <th>N</th>
-                            <th>Jugador</th>
+                            <th>Jugador (Apodo)</th>
                             <th>Puntos</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for register in registers %}
-                        <tr class="{% if forloop.counter <= 2 %}winners{% endif %}">
+                        <tr class="{% if forloop.counter <= 2 %}winners{% elif forloop.revcounter <= 3 %}death{% endif %}">
                             <td class="text-center">
                                 {{ forloop.counter }}
                             </td>
@@ -42,7 +42,7 @@
                                 ({{ register.usuario_registro.nickname }})
                             </td>
                             <td class="text-center">
-                                {{ register.suma_total_puntos }}
+                                <b>{{ register.suma_total_puntos }}</b>
                             </td>
                         </tr>
                         {% empty %}

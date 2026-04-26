@@ -74,6 +74,11 @@ footer {
 }
 
 .table tr.winners td {
-    background-color: #72f072 !important; /* Un rojo suave para que se lea el texto */
-    color: #000000; /* Opcional: cambia el color del texto para que combine */
+    background-color: #4de64d !important;
+    color: #000000;
+}
+
+.table tr.death td {
+    background-color: rgb(187, 8, 8) !important;
+    color: #FFFFFF;
 }
