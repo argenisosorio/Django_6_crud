@@ -12,7 +12,8 @@
             <thead class="table-dark">
                 <tr class="text-center">
                     <th>#</th>
-                    <th>Registrada por</th>
+                    <th>Jugador</th>
+                    <th>Actualizado</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -20,7 +21,14 @@
                 {% for register in registers %}
                 <tr>
                     <td class="text-center">{{ forloop.counter }}</td>
-                    <td class="small text-muted">{{ register.usuario_registro.username }}</td>
+                    <td class="small text-muted">
+                        {{ register.usuario_registro.first_name }}
+                        {{ register.usuario_registro.last_name }}
+                        ({{ register.usuario_registro.nickname }})
+                    </td>
+                    <td class="text-center">
+                        {{ register.updated_at|date:"d M Y H:i" }}
+                    </td>
                     <td>
                         <div class="btn-group btn-group-sm">
                             <a

@@ -136,7 +136,7 @@ def list(request):
     """
     Vista para mostrar la lista de quinielas registradas por los usuarios.
     """
-    registers = Register.objects.all()
+    registers = Register.objects.all().order_by('-updated_at')
     context = {'registers': registers}
     return render(request, 'registers/list.html', context)
 

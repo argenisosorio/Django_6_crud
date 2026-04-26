@@ -3,30 +3,43 @@
 {% block title %}Ranking{% endblock %}
 
 {% block content %}
-    <h1>Ranking</h1>
+    <h1>
+        <img
+            src="{% static 'images/favicon.png' %}"
+            alt=""
+            width="60"
+            class="d-inline-block align-text-top"
+        />
+        Ranking
+    </h1>
     <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col-8">
+        <div class="col-12">
             <div class="table-responsive">
                 <table
                     class="
                         table table-hover table-striped
                         table-bordered align-middle
                     "
+                    style="font-size: 12px;"
                 >
                     <thead class="table-light">
                         <tr class="text-center">
                             <th>N</th>
-                            <th>Apodo</th>
+                            <th>Jugador</th>
                             <th>Puntos</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for register in registers %}
                         <tr>
-                            <td class="text-center">{{ forloop.counter }}</td>
-                            <td >{{ register.usuario_registro.nickname }}</td>
+                            <td class="text-center">
+                                {{ forloop.counter }}
+                            </td>
+                            <td>
+                                {{ register.usuario_registro.first_name }}
+                                {{ register.usuario_registro.last_name }}
+                                ({{ register.usuario_registro.nickname }})
+                            </td>
                             <td class="text-center">
                                 {{ register.suma_total_puntos }}
                             </td>
@@ -41,8 +54,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class="col-2">
         </div>
     </div>
 {% endblock %}
