@@ -47,6 +47,33 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
+## Para ejecutar la tarea en segundo plano para envío de mail:
+- Instalar los paquetes django_tasks y django_tasks_db (ya agregados en requirements.txt) dentro del entorno virtual
+
+- Ejecutar python manage.py, en la que se han agregado automáticamente comandos para django_tasks_db
+
+    [django_tasks_db]
+    db_worker
+    prune_db_task_results
+
+- Ejecutar migraciones
+
+- Agregar los datos del smtp en el settings.py
+
+- Ejecutar el worker 
+
+```bash
+$ python manage.py db_worker
+
+$ pip install django_tasks django_tasks_db
+
+$ python manage.py migrate
+
+$ vim Django_6_crud/settings.py
+
+$ python manage.py db_worker
+```
+
 ## Test the project:
 
 Open your browser to http://127.0.0.1:8000 and you'll see the Django 6 CRUD
