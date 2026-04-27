@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.person',
     'apps.product',
+    'django_tasks_db',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,18 @@ STATIC_ROOT = BASE_DIR / "staticfiles"    # For production environment (collects
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'                # Replace with your SMTP server
+EMAIL_PORT = 587                             # Common port for TLS
+EMAIL_USE_TLS = True                         # Use TLS security
+EMAIL_HOST_USER = 'your-email@example.com'   # Your email address
+EMAIL_HOST_PASSWORD = 'your-app-password'    # Your SMTP/App password
+DEFAULT_FROM_EMAIL = 'Webmaster <webmaster@example.com>'
+
+TASKS = {
+    "default": {
+        "BACKEND": "django_tasks_db.DatabaseBackend",
+        "QUEUES": ["default"]
+    }
+}
