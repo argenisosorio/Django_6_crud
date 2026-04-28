@@ -13,15 +13,25 @@
                     width: 500,
                 },
                 {
-                    columns:[
+                    columns: [
                         {
                             width: '70%',
-                            text: [
-                                '\nEl Presbítero ',
-                                { text: 'Nelson Arellano', bold: true },
-                                '. Párroco de esta Comunidad Eclesial certifica que según consta en el Acta reseñada al margen, correspondiente al Libro de Bautismos, que reposa en los archivos de esta parroquia: \n\n'
-                            ],
-                            alignment: 'justify'
+                            // Agrupamos varios elementos en la misma columna usando un array []
+                            stack: [
+                                {
+                                    text: [
+                                        '\nEl Presbítero ',
+                                        { text: 'Nelson Arellano.', bold: true },
+                                        ' Párroco de esta Comunidad Eclesial certifica que según consta en el Acta reseñada al margen, correspondiente al Libro de Bautismos, que reposa en los archivos de esta parroquia: \n\n'
+                                    ],
+                                    alignment: 'justify'
+                                },
+                                {
+                                    text: nombres + ' ' + apellidos,
+                                    style: 'bold', // Usa tu estilo definido abajo
+                                    margin: [0, 10, 0, 0] // Margen superior para separarlo un poco del párrafo
+                                }
+                            ]
                         },
                         {
                             width: '*',
@@ -39,11 +49,7 @@
                         }
                     ],
                     columnGap: 10
-                },
-                {
-                    text: nombres + ' ' + apellidos,
-                    style: 'bold',
-                },
+                }
             ],
             styles: {
                 header: {
