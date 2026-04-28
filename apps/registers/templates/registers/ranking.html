@@ -27,6 +27,7 @@
                         <tr class="text-center">
                             <th>N</th>
                             <th>Jugador (Apodo)</th>
+                            <th>País favorito</th>
                             <th>Puntos</th>
                         </tr>
                     </thead>
@@ -42,12 +43,19 @@
                                 ({{ register.usuario_registro.nickname }})
                             </td>
                             <td class="text-center">
+                                {% if register.usuario_registro.favorite_team %}
+                                    {{ register.usuario_registro.favorite_team }}
+                                {% else %}
+                                    <span class="text-muted">Sin país</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">
                                 <b>{{ register.suma_total_puntos }}</b>
                             </td>
                         </tr>
                         {% empty %}
                         <tr>
-                            <td colspan="3" class="text-center py-4 text-muted">
+                            <td colspan="4" class="text-center py-4 text-muted">
                                 <i class="fas fa-info-circle"></i> No hay registros disponibles en este momento.
                             </td>
                         </tr>

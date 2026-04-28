@@ -119,6 +119,32 @@
                     </div>
                     <br>
                     <div>
+                        <label
+                            for="{{ form.favorite_team.id_for_label }}"
+                            class="form-label fw-bold"
+                        >
+                            País favorito <span class="text-danger">*</span>
+                        </label>
+                        <select
+                            name="{{ form.favorite_team.name }}"
+                            id="{{ form.favorite_team.id_for_label }}"
+                            class="form-select {% if form.favorite_team.errors %}is-invalid{% endif %}"
+                            required
+                        >
+                            {% for value, label in form.favorite_team.field.choices %}
+                                <option value="{{ value }}" {% if form.favorite_team.value == value %}selected{% endif %}>
+                                    {{ label }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        {% if form.favorite_team.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.favorite_team.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>
                         <label for="{{ form.password.id_for_label }}" class="form-label fw-bold">
                             Contraseña <span class="text-danger">*</span>
                         </label>

@@ -15,6 +15,7 @@ class CustomUserCreationForm(UserCreationForm):
             "first_name",
             "last_name",
             "nickname",
+            "favorite_team",
         )
 
 
@@ -30,6 +31,7 @@ class CustomUserChangeForm(forms.ModelForm):
             "first_name",
             "last_name",
             "nickname",
+            "favorite_team",
         )
 
 
@@ -45,4 +47,5 @@ class ProfileForm(forms.ModelForm):
             "first_name",
             "last_name",
             "nickname",
+            "favorite_team",
         )
