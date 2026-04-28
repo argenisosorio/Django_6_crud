@@ -38,7 +38,8 @@ def home(request):
 
     # Filtro por libro
     if query_libro:
-        registers = registers.filter(libro__icontains=query_libro)
+        #registers = registers.filter(libro__icontains=query_libro)
+        registers = registers.filter(libro__exact=query_libro)
 
     SEXOS = [
         ("M", "M"),
