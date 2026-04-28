@@ -47,7 +47,7 @@ $ python manage.py migrate
 
 $ python manage.py loaddata apps/registers/fixtures/users.json
 
-$ python manage.py loaddata apps/registers/fixtures/registers2.json
+$ python manage.py loaddata apps/registers/fixtures/registers.json
 
 $ python manage.py runserver
 ```
