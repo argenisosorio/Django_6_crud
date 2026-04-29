@@ -12,6 +12,11 @@ from django.db.models import F, Value, IntegerField
 from django.db.models.functions import Coalesce, Cast
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import (
+    DetailView
+)
+from django.core.exceptions import PermissionDenied
 
 
 def solo_superusuario(user):
@@ -181,7 +186,9 @@ def ranking(request):
     # Convertir cada campo a IntegerField y manejar valores nulos
     puntos_sum = Cast(Coalesce('puntos_game_1', Value('0')), IntegerField())
 
+    # Sumamos los puntos de cada juego del 1 al 72, manejando valores nulos
     for i in range(2, 73):
+        # Convertimos el campo a IntegerField y manejamos valores nulos con Coalesce
         puntos_sum += Cast(Coalesce(f'puntos_game_{i}', Value('0')), IntegerField())
 
     # Agregamos el filtro para usuarios activos
@@ -191,5 +198,37 @@ def ranking(request):
         total_puntos=puntos_sum
     ).order_by('-total_puntos')
 
-    context = {'registers': registers}
+    config_instance = Config.objects.first()
+
+    context = {
+        'registers': registers,
+        'config_instance': config_instance
+    }
     return render(request, 'registers/ranking.html', context)
+
+
+class RegisterDetailView(LoginRequiredMixin, DetailView):
+    model = Register
+    template_name = "registers/register_detail.html"
+    context_object_name = "quiniela"
+
+    def dispatch(self, request, *args, **kwargs):
+        """
+        Verifica si la vista de registros está habilitada antes de mostrar el detalle.
+        """
+        # Obtener la configuración actual (asumiendo que hay un solo registro de Config)
+        config = Config.objects.first()
+
+        # Si disable_view_register es True, no permitir el acceso
+        if config and config.disable_view_register:
+            # Redirigir a otra página (elige la que prefieras)
+            return redirect('registers:ranking')  # Redirige al ranking
+
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        """
+        Filtra los registros para devolver solo aquellos cuyo usuario esté activo.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(usuario_registro__is_active=True)

@@ -28,6 +28,10 @@
                             <th>N</th>
                             <th>Jugador (Apodo)</th>
                             <th>País favorito</th>
+                            {% if config_instance.disable_view_register %}
+                            {% else %}
+                                <th>Quiniela</th>
+                            {% endif %}
                             <th>Puntos</th>
                         </tr>
                     </thead>
@@ -48,7 +52,20 @@
                                 {% else %}
                                     <span class="text-muted">Sin país</span>
                                 {% endif %}
-                            </td>
+                                {% if config_instance.disable_view_register %}
+                                {% else %}
+                                    <td class="text-center">
+                                        <div class="btn-group btn-group-sm">
+                                            <a
+                                                href="{% url 'registers:register_detail' register.usuario_registro.pk %}"
+                                                class="btn btn-primary small"
+                                                style="font-size: 10px;"
+                                            >
+                                                Ver Quiniela
+                                            </a>
+                                        </div>
+                                    </td>
+                                {% endif %}
                             <td class="text-center">
                                 <b>{{ register.suma_total_puntos }}</b>
                             </td>

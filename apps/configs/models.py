@@ -11,7 +11,11 @@ class Config(models.Model):
         default=False, 
         verbose_name="Deshabilitar nuevos registros en el sistema"
     )
-    
+    disable_view_register = models.BooleanField(
+        default=False,
+        verbose_name="Deshabilitar visualización de detalle de un registro"
+    )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

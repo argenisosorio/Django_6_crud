@@ -1,1 +1,13 @@
-[{"model": "configs.config", "pk": 1, "fields": {"disable_update_quiniela": false, "disable_registration": false, "created_at": "2026-04-05T00:21:57.843Z", "updated_at": "2026-04-05T00:23:01.453Z"}}]
+[
+    {
+        "model": "configs.config",
+        "pk": 1,
+        "fields": {
+            "disable_update_quiniela": false,
+            "disable_registration": false,
+            "disable_view_register": false,
+            "created_at": "2026-04-05T00:21:57.843Z",
+            "updated_at": "2026-04-05T00:23:01.453Z"
+        }
+    }
+]

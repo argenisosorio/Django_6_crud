@@ -32,6 +32,18 @@
             >
         </p>
 
+        <p>
+            <label for="id_disable_view_register">
+                Deshabilitar visualización de detalle de un registro:
+            </label>
+            <input
+                type="checkbox"
+                name="disable_view_register"
+                id="id_disable_view_register"
+                {% if config.disable_view_register %}checked{% endif %}
+            >
+        </p>
+
         <button type="submit" class="btn btn-primary">
             Guardar Configuración
         </button>
