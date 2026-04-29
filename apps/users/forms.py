@@ -1,5 +1,6 @@
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django import forms
+from django.core.exceptions import ValidationError
 from .models import User
 
 
@@ -18,6 +19,20 @@ class CustomUserCreationForm(UserCreationForm):
             "favorite_team",
         )
 
+    def clean(self):
+        cleaned_data = super().clean()
+        username = cleaned_data.get("username")
+        nickname = cleaned_data.get("nickname")
+
+        # Validación: username no puede ser igual a nickname
+        if username and nickname and username.lower() == nickname.lower():
+            raise ValidationError({
+                "nickname": "El apodo en la Quiniela no puede ser igual al nombre de usuario.",
+                "username": "El nombre de usuario no puede ser igual al apodo en la Quiniela."
+            })
+
+        return cleaned_data
+
 
 class CustomUserChangeForm(forms.ModelForm):
     """
@@ -34,6 +49,20 @@ class CustomUserChangeForm(forms.ModelForm):
             "favorite_team",
         )
 
+    def clean(self):
+        cleaned_data = super().clean()
+        username = cleaned_data.get("username")
+        nickname = cleaned_data.get("nickname")
+
+        # Validación: username no puede ser igual a nickname
+        if username and nickname and username.lower() == nickname.lower():
+            raise ValidationError({
+                "nickname": "El apodo en la Quiniela no puede ser igual al nombre de usuario.",
+                "username": "El nombre de usuario no puede ser igual al apodo en la Quiniela."
+            })
+
+        return cleaned_data
+
 
 class ProfileForm(forms.ModelForm):
     """
@@ -49,3 +78,17 @@ class ProfileForm(forms.ModelForm):
             "nickname",
             "favorite_team",
         )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        username = cleaned_data.get("username")
+        nickname = cleaned_data.get("nickname")
+
+        # Validación: username no puede ser igual a nickname
+        if username and nickname and username.lower() == nickname.lower():
+            raise ValidationError({
+                "nickname": "El apodo en la Quiniela no puede ser igual al nombre de usuario.",
+                "username": "El nombre de usuario no puede ser igual al apodo en la Quiniela."
+            })
+
+        return cleaned_data
