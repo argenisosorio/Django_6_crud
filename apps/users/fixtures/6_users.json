@@ -14,6 +14,7 @@
             "is_active": true,
             "date_joined": "2026-03-17T17:23:38.508Z",
             "nickname": "Admin",
+            "favorite_team": null,
             "groups": [],
             "user_permissions": []
         }
@@ -33,6 +34,7 @@
             "is_active": true,
             "date_joined": "2026-04-03T13:55:56Z",
             "nickname": "DarkMagician",
+            "favorite_team": "Argentina",
             "groups": [],
             "user_permissions": []
         }
@@ -52,6 +54,7 @@
             "is_active": true,
             "date_joined": "2026-04-03T13:55:56Z",
             "nickname": "YR11",
+            "favorite_team": "Argentina",
             "groups": [],
             "user_permissions": []
         }
@@ -71,6 +74,7 @@
             "is_active": true,
             "date_joined": "2026-04-03T13:55:56Z",
             "nickname": "Nesta",
+            "favorite_team": "Argentina",
             "groups": [],
             "user_permissions": []
         }
@@ -90,6 +94,7 @@
             "is_active": true,
             "date_joined": "2026-04-03T13:55:56Z",
             "nickname": "Nemesis",
+            "favorite_team": "Argentina",
             "groups": [],
             "user_permissions": []
         }
@@ -109,6 +114,27 @@
             "is_active": true,
             "date_joined": "2026-04-03T13:55:56Z",
             "nickname": "BlackStar",
+            "favorite_team": "Argentina",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "dmolima",
+            "first_name": "Deivis",
+            "last_name": "Molina",
+            "email": "dmolima@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "Deivinho",
+            "favorite_team": "Argentina",
             "groups": [],
             "user_permissions": []
         }

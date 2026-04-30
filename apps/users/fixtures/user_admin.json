@@ -14,6 +14,7 @@
             "is_active": true,
             "date_joined": "2026-03-17T17:23:38.508Z",
             "nickname": "Admin",
+            "favorite_team": null,
             "groups": [],
             "user_permissions": []
         }
