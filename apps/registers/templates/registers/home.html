@@ -2,6 +2,19 @@
 
 {% block content %}
 <script type="text/javascript">
+    // Función para obtener la fecha actual en formato dd/mm/yyyy.
+    function getCurrentDate() {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Meses empiezan en 0
+        const year = today.getFullYear();
+        return day + '/' + month + '/' + year;
+    }
+
+    /* Función para generar el PDF utilizando pdfMake. Recibe los datos del
+     * certificado como parámetros y construye el documento PDF con el formato
+     * requerido. Luego, descarga el PDF generado.
+     */
     function export_pdf(nombres, apellidos, libro, folio, numero, ano) {
         var docDefinition = {
             info: {
@@ -26,11 +39,57 @@
                                     ],
                                     alignment: 'justify'
                                 },
+                                // Nombres y apellidos completos del Bautizado
+                                // en negrita y con un margen superior.
                                 {
                                     text: nombres + ' ' + apellidos,
                                     style: 'bold', // Usa tu estilo definido abajo
-                                    margin: [0, 10, 0, 0] // Margen superior para separarlo un poco del párrafo
-                                }
+                                    margin: [50, 10, 0, 0] // Margen superior para separarlo un poco del párrafo
+                                },
+                                {
+                                    text: "Fue bautizado(a) el día: XXXXX",
+                                    margin: [0, 20, 0, 0]
+                                },
+                                {
+                                    text: "Nació en Mérida Edo. Mérida el día: xxxxx",
+                                    margin: [0, 10, 0, 0]
+                                },
+                                {
+                                    text: "Padres: xxxxx",
+                                    style: 'bold', // Usa tu estilo definido abajo
+                                    margin: [0, 10, 0, 0]
+                                },
+                                {
+                                    text: "Padrinos: xxxxx",
+                                    style: 'bold', // Usa tu estilo definido abajo
+                                    margin: [0, 10, 0, 0]
+                                },
+                                {
+                                    text: "Ministro: xxxxx",
+                                    style: 'bold', // Usa tu estilo definido abajo
+                                    margin: [0, 10, 0, 0]
+                                },
+                                {
+                                    text: "Se expide el presente certificado, a solicitud de parte interesada, para fines única y exclusivamente: Catequesis.",
+                                    margin: [0, 20, 0, 0]
+                                },
+                                {
+                                    text: "En Mérida, el " + getCurrentDate() + ".",
+                                    margin: [0, 20, 0, 0]
+                                },
+                                {
+                                    text: "Doy fe",
+                                    margin: [0, 20, 0, 0]
+                                },
+                                {
+                                    text: "___________________________________________",
+                                    margin: [50, 20, 0, 0]
+                                },
+                                {
+                                    text: "Pbro. Nelson Arellano",
+                                    style: 'bold', // Usa tu estilo definido abajo
+                                    margin: [100, 10, 0, 0] // Margen superior para separarlo un poco del párrafo
+                                },
                             ]
                         },
                         {
@@ -44,12 +103,33 @@
                                 { text: 'Libro: ', bold: true }, libro + '\n',
                                 { text: 'Folio: ', bold: true }, folio + '\n',
                                 { text: 'Número: ', bold: true }, numero + '\n',
-                                { text: 'Año: ', bold: true }, ano
+                                { text: 'Año: ', bold: true }, ano + '\n\n',
+                                {
+                                    text: '\nNOTA MARGINAL\n\n',
+                                    style: 'bold',
+                                    decoration: 'underline',
+                                    margin: [0, 10, 0, 0]
+                                },
+                                {
+                                    text: "NUNGUNA",
+                                    margin: [0, 20, 0, 0]
+                                },
                             ],
                         }
                     ],
                     columnGap: 10
-                }
+                },
+                {
+                    text: [
+                        {
+                            text: 'NOTA:',
+                            bold: true
+                        },
+                        ' Si este certificado va a ser utilizado fuera de la Arquidiócesis debe ser autenticado en la Cancillería de la Curia Arzobispal.\n'
+                    ],
+                    alignment: 'justify',
+                    margin: [0, 20, 0, 0]
+                },
             ],
             styles: {
                 header: {
