@@ -12,6 +12,7 @@ class Person(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     age = models.PositiveIntegerField()
+    occupation = models.CharField(max_length=100, default='Desconocida')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
