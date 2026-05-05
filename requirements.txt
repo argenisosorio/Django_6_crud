@@ -1,1 +1,2 @@
 Django==6.0.2
+django-auditlog==3.4.1

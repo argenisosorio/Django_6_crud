@@ -9,6 +9,7 @@ uses class-based views (CBV).
 ```
 Django==6.0.2
 Python>=3.12
+django-auditlog==3.4.1
 ```
 
 ## Run the following commands in sequence to deploy the project to a development environment:
