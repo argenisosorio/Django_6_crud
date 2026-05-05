@@ -105,3 +105,15 @@ def delete_person(request, pk):
     
     context = {'person': person}
     return render(request, 'person/delete.html', context)
+
+from auditlog.models import LogEntry
+
+def person_audit_log(request):
+    """
+    Display audit logs for the Person model.
+    """
+    from django.contrib.contenttypes.models import ContentType
+    person_ct = ContentType.objects.get_for_model(Person)
+    logs = LogEntry.objects.filter(content_type=person_ct).order_by('-timestamp')
+    context = {'logs': logs}
+    return render(request, 'person/audit_log.html', context)

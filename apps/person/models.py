@@ -1,4 +1,5 @@
 from django.db import models
+from auditlog.registry import auditlog
 
 class Person(models.Model):
     """
@@ -23,3 +24,5 @@ class Person(models.Model):
             str: The person's name for easy identification in admin and queries.
         """
         return self.name
+
+auditlog.register(Person)

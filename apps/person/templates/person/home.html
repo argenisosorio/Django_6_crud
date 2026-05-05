@@ -3,6 +3,7 @@
 {% block content %}
 <h1>{{ message }}</h1>
 <a href="{% url 'person:create' %}" class="btn btn-primary mb-3">Add Person</a>
+<a href="{% url 'person:audit_log' %}" class="btn btn-secondary mb-3">View Audit Logs</a>
 
 <table class="table">
     <thead>

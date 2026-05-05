@@ -32,4 +32,8 @@ urlpatterns = [
     # URL: /<pk>/delete/ (e.g., /1/delete/)
     # View: delete_person - Handles deletion confirmation
     path('<int:pk>/delete/', views.delete_person, name='delete'),
+    
+    # Audit log view: Shows audit logs for Person model
+    # URL: /audit/
+    path('audit/', views.person_audit_log, name='audit_log'),
 ]
