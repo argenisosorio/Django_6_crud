@@ -52,12 +52,10 @@ $ python manage.py runserver
 Open your browser to http://127.0.0.1:8000 and you'll see the Django 6 CRUD
 application for managing people records.
 
-## Image
+-----
 
-![1.png](1.png "1.png")
+Ejecutar test de integración:
 
-![2.png](2.png "2.png")
-
-![3.png](3.png "3.png")
-
-![4.png](4.png "4.png")
+```
+$ pytest tests/test_integration.py -v
+```
