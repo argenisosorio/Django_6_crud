@@ -39,7 +39,7 @@
             <!-- Columna derecha -->
             <div class="col-md-6">
                 <dt class="mt-2">Fecha de Bautizo:</dt>
-                <dd>{{ register.fecha_bautizo|date:"d/m/Y" }}</dd>
+                <dd>{{ register.fecha_bautizo|date:"d/m/Y"|default:"---" }}</dd>
 
                 <dt class="mt-2">Padre:</dt>
                 <dd>{{ register.padre|default:"---" }}</dd>
