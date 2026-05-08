@@ -346,6 +346,46 @@
                                     </div>
                                 {% endif %}
                             </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.estado_nacimiento.id_for_label }}" class="form-label fw-bold">
+                                    Estado donde nació
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.estado_nacimiento.name }}" 
+                                    id="{{ form.estado_nacimiento.id_for_label }}"
+                                    class="form-control {% if form.estado_nacimiento.errors %}is-invalid{% endif %}"
+                                    value="{{ form.estado_nacimiento.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.estado_nacimiento.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.estado_nacimiento.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.presbitero.id_for_label }}" class="form-label fw-bold">
+                                    Presbítero
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.presbitero.name }}" 
+                                    id="{{ form.presbitero.id_for_label }}"
+                                    class="form-control {% if form.presbitero.errors %}is-invalid{% endif %}"
+                                    value="{{ form.presbitero.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.presbitero.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.presbitero.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
 
                         <!-- BOTONES -->

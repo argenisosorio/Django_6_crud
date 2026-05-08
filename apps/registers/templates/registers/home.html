@@ -23,7 +23,7 @@
      * certificado como parámetros y construye el documento PDF con el formato
      * requerido. Luego, descarga el PDF generado.
      */
-    function export_pdf(nombres, apellidos, libro, folio, numero, ano, padre, madre, padrino_1, padrino_2, ministro, nota_marginal, fecha_bautizo, fecha_nacimiento) {
+    function export_pdf(nombres, apellidos, libro, folio, numero, ano, padre, madre, padrino_1, padrino_2, ministro, nota_marginal, fecha_bautizo, fecha_nacimiento, estado_nacimiento, presbitero) {
         var docDefinition = {
             info: {
                 title: 'Documento de ' + nombres + ' ' + apellidos,
@@ -51,7 +51,7 @@
                                 // en negrita y con un margen superior.
                                 {
                                     text: nombres + ' ' + apellidos,
-                                    style: 'bold', // Usa tu estilo definido abajo
+                                    style: 'bold',
                                     margin: [50, 10, 0, 0] // Margen superior para separarlo un poco del párrafo
                                 },
                                 {
@@ -59,23 +59,35 @@
                                     margin: [0, 20, 0, 0]
                                 },
                                 {
-                                    text: "Nació en Mérida Edo. Mérida el día: " + formatDate(fecha_nacimiento),
+                                    text: "Nació en " + estado_nacimiento + " el día: " + formatDate(fecha_nacimiento),
                                     margin: [0, 10, 0, 0]
                                 },
                                 {
-                                    text: "Padres: " + padre + ', ' + madre,
-                                    style: 'bold', // Usa tu estilo definido abajo
-                                    margin: [0, 10, 0, 0]
+                                    text: [
+                                        {
+                                            text: '\n Padres: ',
+                                            bold: true
+                                        },
+                                        padre + ', ' + madre + '\n'
+                                    ],
                                 },
                                 {
-                                    text: "Padrinos: " + padrino_1 + ', ' + padrino_2,
-                                    style: 'bold', // Usa tu estilo definido abajo
-                                    margin: [0, 10, 0, 0]
+                                    text: [
+                                        {
+                                            text: '\n Padrinos: ',
+                                            bold: true
+                                        },
+                                        padrino_1 + ', ' + padrino_2 + '\n'
+                                    ],
                                 },
                                 {
-                                    text: "Ministro: " + ministro,
-                                    style: 'bold', // Usa tu estilo definido abajo
-                                    margin: [0, 10, 0, 0]
+                                    text: [
+                                        {
+                                            text: '\n Ministro: ',
+                                            bold: true
+                                        },
+                                        ministro + '\n'
+                                    ],
                                 },
                                 {
                                     text: "Se expide el presente certificado, a solicitud de parte interesada, para fines única y exclusivamente: Catequesis.",
@@ -94,8 +106,8 @@
                                     margin: [50, 20, 0, 0]
                                 },
                                 {
-                                    text: "Pbro. Nelson Arellano",
-                                    style: 'bold', // Usa tu estilo definido abajo
+                                    text: "Pbro. " + presbitero,
+                                    style: 'bold',
                                     margin: [100, 10, 0, 0] // Margen superior para separarlo un poco del párrafo
                                 },
                             ]
@@ -324,6 +336,8 @@
                                 '{{ register.nota_marginal|escapejs }}',
                                 '{{ register.fecha_bautizo|escapejs }}',
                                 '{{ register.fecha_nacimiento|escapejs }}',
+                                '{{ register.estado_nacimiento|escapejs }}',
+                                '{{ register.presbitero|escapejs }}',
                             )"
                             class="btn btn-success small" style="font-size: 10px;"
                         >
