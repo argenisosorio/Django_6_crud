@@ -9,6 +9,7 @@ class Register(models.Model):
         ("F", "F"),
     ]
 
+    # Datos Personales (Obligatorios para un registro)
     nombres = models.CharField(max_length=150, null=True, blank=True)
     apellidos = models.CharField(max_length=150, null=True, blank=True)
     cedula = models.CharField(max_length=20, null=True, blank=True)
@@ -18,10 +19,20 @@ class Register(models.Model):
         choices=SEXOS,
         verbose_name="Sexo"
     )
+
+    # Datos de Localización del Registro (Libro de Actas)
     folio = models.CharField(max_length=15, null=True, blank=True)
     libro = models.CharField(max_length=15, null=True, blank=True)
     numero = models.CharField(max_length=15, null=True, blank=True)
     ano = models.CharField(max_length=15, null=True, blank=True)
+
+    # Datos del Acto
+    fecha_bautizo = models.DateField(null=True, blank=True, verbose_name="Fecha de Bautizo")
+    padre = models.CharField(max_length=150, null=True, blank=True, verbose_name="Padre/Madre")
+    padrino_1 = models.CharField(max_length=150, null=True, blank=True, verbose_name="Padrino 1")
+    padrino_2 = models.CharField(max_length=150, null=True, blank=True, verbose_name="Padrino 2")
+    ministro = models.CharField(max_length=150, null=True, blank=True, verbose_name="Ministro")
+    nota_marginal = models.TextField(max_length=1000, null=True, blank=True, verbose_name="Nota Marginal")
 
     # Auditoría (Automáticos)
     created_at = models.DateTimeField(auto_now_add=True)
