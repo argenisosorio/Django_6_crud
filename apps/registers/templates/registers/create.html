@@ -208,6 +208,144 @@
                                     </div>
                                 {% endif %}
                             </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.fecha_bautizo.id_for_label }}" class="form-label fw-bold">
+                                    Fecha de bautizo
+                                </label>
+                                <input
+                                    type="date" 
+                                    name="{{ form.fecha_bautizo.name }}" 
+                                    id="{{ form.fecha_bautizo.id_for_label }}"
+                                    class="form-control {% if form.fecha_bautizo.errors %}is-invalid{% endif %}"
+                                    value="{{ form.fecha_bautizo.value|date:'Y-m-d'|default:'' }}"
+                                >
+                                {% if form.fecha_bautizo.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.fecha_bautizo.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.padre.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.padre.label }}
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.padre.name }}" 
+                                    id="{{ form.padre.id_for_label }}"
+                                    class="form-control {% if form.padre.errors %}is-invalid{% endif %}"
+                                    value="{{ form.padre.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.padre.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.padre.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.madre.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.madre.label }}
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.madre.name }}" 
+                                    id="{{ form.madre.id_for_label }}"
+                                    class="form-control {% if form.madre.errors %}is-invalid{% endif %}"
+                                    value="{{ form.madre.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.madre.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.madre.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.padrino_1.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.padrino_1.label }}
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.padrino_1.name }}" 
+                                    id="{{ form.padrino_1.id_for_label }}"
+                                    class="form-control {% if form.padrino_1.errors %}is-invalid{% endif %}"
+                                    value="{{ form.padrino_1.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.padrino_1.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.padrino_1.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.padrino_2.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.padrino_2.label }}
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.padrino_2.name }}" 
+                                    id="{{ form.padrino_2.id_for_label }}"
+                                    class="form-control {% if form.padrino_2.errors %}is-invalid{% endif %}"
+                                    value="{{ form.padrino_2.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.padrino_2.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.padrino_2.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.ministro.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.ministro.label }}
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.ministro.name }}" 
+                                    id="{{ form.ministro.id_for_label }}"
+                                    class="form-control {% if form.ministro.errors %}is-invalid{% endif %}"
+                                    value="{{ form.ministro.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.ministro.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.ministro.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="{{ form.nota_marginal.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.nota_marginal.label }}
+                                </label>
+                                <input
+                                    type="text" 
+                                    name="{{ form.nota_marginal.name }}" 
+                                    id="{{ form.nota_marginal.id_for_label }}"
+                                    class="form-control {% if form.nota_marginal.errors %}is-invalid{% endif %}"
+                                    value="{{ form.nota_marginal.value|default:'' }}"
+                                    placeholder=""
+                                    required
+                                >
+                                {% if form.nota_marginal.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.nota_marginal.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
 
                         <!-- BOTONES -->

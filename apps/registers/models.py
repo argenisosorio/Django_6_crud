@@ -28,7 +28,8 @@ class Register(models.Model):
 
     # Datos del Acto
     fecha_bautizo = models.DateField(null=True, blank=True, verbose_name="Fecha de Bautizo")
-    padre = models.CharField(max_length=150, null=True, blank=True, verbose_name="Padre/Madre")
+    padre = models.CharField(max_length=150, null=True, blank=True, verbose_name="Padre")
+    madre = models.CharField(max_length=150, null=True, blank=True, verbose_name="Madre")
     padrino_1 = models.CharField(max_length=150, null=True, blank=True, verbose_name="Padrino 1")
     padrino_2 = models.CharField(max_length=150, null=True, blank=True, verbose_name="Padrino 2")
     ministro = models.CharField(max_length=150, null=True, blank=True, verbose_name="Ministro")

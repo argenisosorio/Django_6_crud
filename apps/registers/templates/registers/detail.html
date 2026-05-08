@@ -36,6 +36,29 @@
                 <dt class="mt-2">Año:</dt>
                 <dd>{{ register.ano }}</dd>
             </div>
+            <!-- Columna derecha -->
+            <div class="col-md-6">
+                <dt class="mt-2">Fecha de Bautizo:</dt>
+                <dd>{{ register.fecha_bautizo|date:"d/m/Y" }}</dd>
+
+                <dt class="mt-2">Padre:</dt>
+                <dd>{{ register.padre|default:"---" }}</dd>
+
+                <dt class="mt-2">Madre:</dt>
+                <dd>{{ register.madre|default:"---" }}</dd>
+
+                <dt class="mt-2">Padrino 1:</dt>
+                <dd>{{ register.padrino_1|default:"---" }}</dd>
+
+                <dt class="mt-2">Padrino 2:</dt>
+                <dd>{{ register.padrino_2|default:"---" }}</dd>
+
+                <dt class="mt-2">Ministro:</dt>
+                <dd>{{ register.ministro|default:"---" }}</dd>
+
+                <dt class="mt-2">Nota Marginal:</dt>
+                <dd>{{ register.nota_marginal|default:"Ninguna" }}</dd>
+            </div>
         </dl>
     </div>
     <div class="card-footer">
