@@ -51,7 +51,7 @@ $ python manage.py loaddata apps/users/fixtures/user_admin.json
 $ python manage.py runserver
 ```
 
-$ python manage.py loaddata apps/users/fixtures/users.json
+$ python manage.py loaddata apps/users/fixtures/7_users.json
 
 $ python manage.py loaddata apps/registers/fixtures/6_registers_with_points.json
 
