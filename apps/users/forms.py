@@ -17,6 +17,7 @@ class CustomUserCreationForm(UserCreationForm):
             "last_name",
             "nickname",
             "favorite_team",
+            "phone",
         )
 
     def clean(self):
@@ -47,6 +48,7 @@ class CustomUserChangeForm(forms.ModelForm):
             "last_name",
             "nickname",
             "favorite_team",
+            "phone",
         )
 
     def clean(self):
@@ -77,6 +79,7 @@ class ProfileForm(forms.ModelForm):
             "last_name",
             "nickname",
             "favorite_team",
+            "phone",
         )
 
     def clean(self):

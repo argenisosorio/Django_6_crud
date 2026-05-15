@@ -13,7 +13,8 @@ class CustomUserAdmin(UserAdmin):
         ("Información Adicional", {
             "fields": (
                 "nickname",
-                "favorite_team"
+                "favorite_team",
+                "phone"
             )
         }),
     )
