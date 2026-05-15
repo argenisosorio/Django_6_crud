@@ -14,6 +14,8 @@ urlpatterns = [
     path('list/', views.list, name='list'),
     path('<int:pk>/update_points/', views.update_points, name='update_points'),
     path('ranking', views.ranking, name='ranking'),
+    path('groups', views.groups, name='groups'),
+    path('results', views.results, name='results'),
     # Detalles de la quiniela de un jugador específico.
     path(
         "<int:pk>/",

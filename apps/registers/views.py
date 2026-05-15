@@ -232,3 +232,13 @@ class RegisterDetailView(LoginRequiredMixin, DetailView):
         """
         queryset = super().get_queryset()
         return queryset.filter(usuario_registro__is_active=True)
+
+
+@login_required
+def groups(request):
+    return render(request, 'registers/groups.html')
+
+
+@login_required
+def results(request):
+    return render(request, 'registers/results.html')

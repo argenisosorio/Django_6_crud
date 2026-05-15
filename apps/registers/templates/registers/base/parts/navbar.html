@@ -43,6 +43,22 @@
                             Ranking
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="{% url 'registers:groups' %}"
+                        >
+                            Grupos del Mundial
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="{% url 'registers:results' %}"
+                        >
+                            Resultados
+                        </a>
+                    </li>
                     {% if request.user.is_superuser %}
                     <li class="nav-item dropdown">
                         <a

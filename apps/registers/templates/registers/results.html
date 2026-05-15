@@ -1,0 +1,21 @@
+{% extends 'registers/base/base.html' %}
+{% load static %}
+{% block title %}Resultados{% endblock %}
+
+{% block content %}
+    <h1>
+        <img
+            src="{% static 'images/favicon.png' %}"
+            alt=""
+            width="60"
+            class="d-inline-block align-text-top"
+        />
+        Resultados
+    </h1>
+    <iframe 
+        src="https://www.flashscore.com.ve/futbol/mundial/copa-del-mundo/resultados/"
+        width="100%" 
+        height="800px" 
+        title="Resultados">
+    </iframe>
+{% endblock %}
