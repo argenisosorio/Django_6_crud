@@ -143,7 +143,7 @@
                     <br>
                     <div>
                         <label for="{{ form.phone.id_for_label }}" class="form-label fw-bold">
-                            Teléfono (Para el grupo de Ws de la Quiniela) <span class="text-danger">*</span>
+                            Código + Teléfono (Para el grupo de Ws de la Quiniela, ej: +58 424-8546789) <span class="text-danger">*</span>
                         </label>
                         <input
                             type="text" 
@@ -151,7 +151,7 @@
                             id="{{ form.phone.id_for_label }}"
                             class="form-control {% if form.phone.errors %}is-invalid{% endif %}"
                             value="{{ form.phone.value|default:'' }}"
-                            placeholder=""
+                            placeholder="+58 424-8546789"
                             maxlength="30"
                             required
                         >
