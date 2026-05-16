@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Quiniela - Mundial 2026</a>
+        <a class="navbar-brand" href="/">
+            <i id="eyeIcon" class="bi bi-house"></i>
+            Quiniela - Mundial 2026
+        </a>
         {% if user.is_authenticated %}
             <button
                 class="navbar-toggler"
@@ -24,6 +27,7 @@
                             data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
                         >
+                            <i id="eyeIcon" class="bi bi-book"></i>
                             Reglas
                         </a>
                     </li>
@@ -32,6 +36,7 @@
                             class="nav-link active"
                             href="{% url 'registers:create_update_register' %}"
                         >
+                            <i id="eyeIcon" class="bi bi-journal-check"></i>
                             Mi Quiniela
                         </a>
                     </li>
@@ -40,6 +45,7 @@
                             class="nav-link active"
                             href="{% url 'registers:ranking' %}"
                         >
+                            <i id="eyeIcon" class="bi-list-ol"></i>
                             Ranking
                         </a>
                     </li>
@@ -48,6 +54,7 @@
                             class="nav-link active"
                             href="{% url 'registers:groups' %}"
                         >
+                            <i id="eyeIcon" class="bi bi-list-nested"></i>
                             Grupos del Mundial
                         </a>
                     </li>
@@ -56,8 +63,33 @@
                             class="nav-link active"
                             href="{% url 'registers:results' %}"
                         >
+                            <i id="eyeIcon" class="bi bi-bookmark-star"></i>
                             Resultados del Mundial
                         </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle active"
+                            href="#"
+                            id="navbarDropdown"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <i id="eyeIcon" class="bi bi-bookmark-star"></i>
+                            Partidos en Vivo
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="https://futbol-libre.su/"
+                                    target="_blank"
+                                >
+                                    Fútbol Libre
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     {% if request.user.is_superuser %}
                     <li class="nav-item dropdown">
@@ -108,6 +140,7 @@
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
+                            <i id="eyeIcon" class="bi bi-file-person"></i>
                             {{ user.username }} ({{ user.nickname }})
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

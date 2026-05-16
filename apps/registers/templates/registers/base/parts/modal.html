@@ -1,3 +1,4 @@
+{% load static %}
 <!-- Modal -->
 <div
     class="modal fade"
@@ -10,6 +11,12 @@
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
+                <img
+                    src="{% static 'images/favicon.png' %}"
+                    alt=""
+                    width="60"
+                    class="d-inline-block align-text-top"
+                />
                 Reglas de la Quiniela - Mundial 2026
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
