@@ -12,7 +12,7 @@ from django.db.models import F, Value, IntegerField
 from django.db.models.functions import Coalesce, Cast
 from django.core.mail import send_mail
 from django.conf import settings
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     DetailView
 )
@@ -242,3 +242,59 @@ def groups(request):
 @login_required
 def results(request):
     return render(request, 'registers/results.html')
+
+
+@login_required
+@user_passes_test(solo_superusuario, login_url='registers:home')
+def ranking_for_admin(request):
+    # Convertir cada campo a IntegerField y manejar valores nulos
+    puntos_sum = Cast(Coalesce('puntos_game_1', Value('0')), IntegerField())
+
+    # Sumamos los puntos de cada juego del 1 al 72, manejando valores nulos
+    for i in range(2, 73):
+        # Convertimos el campo a IntegerField y manejamos valores nulos con Coalesce
+        puntos_sum += Cast(Coalesce(f'puntos_game_{i}', Value('0')), IntegerField())
+
+    # Agregamos el filtro para usuarios activos
+    registers = Register.objects.filter(
+        usuario_registro__is_active=True
+    ).annotate(
+        total_puntos=puntos_sum
+    ).order_by('-total_puntos')
+
+    context = {
+        'registers': registers,
+    }
+    return render(request, 'registers/ranking_for_admin.html', context)
+
+
+class RegisterDetailViewForAdmin(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+    model = Register
+    template_name = "registers/register_detail_for_admin.html"
+    context_object_name = "quiniela"
+
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
+
+    def handle_no_permission(self):
+        """
+        Opcional: Define qué pasa si el usuario NO es superusuario.
+        Por defecto redirige al login, pero aquí puedes mandarlo al home
+        con un mensaje de error.
+        """
+        from django.contrib import messages
+        from django.shortcuts import redirect
+
+        messages.error(self.request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
+
+    def get_queryset(self):
+        """
+        Filtra los registros para devolver solo aquellos cuyo usuario esté activo.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(usuario_registro__is_active=True)
