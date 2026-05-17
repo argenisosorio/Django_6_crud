@@ -1,0 +1,102 @@
+{% extends 'registers_local/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Lista de registros (CENDITEL)</h1>
+</div>
+
+<h4>Total de registros: {{ registers|length }}</h4>
+
+<br>
+
+<a href="{% url 'registers_local:create' %}" class="btn btn-primary mb-4">
+    <i class="fas fa-plus"></i> Agregar registro
+</a>
+
+<div class="table-responsive">
+    <table
+        class="table table-hover table-striped table-bordered align-middle"
+        style="font-size: 14px;"
+    >
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th>N</th>
+                <th>Acciones</th>
+                <th>Fecha de registro</th>
+                <th>Tipo de movimiento</th>
+                <th>Cantidad (Litros)</th>
+                <th>Saldo en tanque (Litros)</th>
+                <th>Autorizado por</th>
+                <th>Observaciones</th>
+                <th>Registrado por</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for register in registers %}
+            <tr>
+                <td class="text-center">{{ forloop.counter }}</td>
+                <td class="text-center">
+                    <div class="btn-group btn-group-sm">
+                        <a
+                            href="{% url 'registers_local:detail' register.pk %}"
+                            class="btn btn-info small"
+                            style="font-size: 10px;"
+                        >
+                            Detalles
+                        </a>
+                        <a
+                            href="{% url 'registers_local:update' register.pk %}"
+                            class="btn btn-warning small"
+                            style="font-size: 10px;"
+                        >
+                            Editar
+                        </a>
+                        <a
+                            href="{% url 'registers_local:delete' register.pk %}"
+                            class="btn btn-danger small"
+                            style="font-size: 10px;"
+                        >
+                            Borrar
+                        </a>
+                    </div>
+                </td>
+                <td class="small text-muted text-center">
+                    {{ register.created_at|date:"d/m/Y" }}
+                </td>
+                <td class="small text-center fw-bold">
+                    {% if register.tipo_movimiento == "Entrada" %}
+                        <span class="text-success">{{ register.tipo_movimiento }}</span>
+                    {% elif register.tipo_movimiento == "Salida" %}
+                        <span class="text-danger">{{ register.tipo_movimiento }}</span>
+                    {% else %}
+                        <span class="text-muted">{{ register.tipo_movimiento }}</span>
+                    {% endif %}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ register.cantidad_litros }}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ register.saldo_tanque }}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ register.autorizado_por }}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ register.observaciones|default:"Sin observaciones" }}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ register.usuario_registro }}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9" class="text-center py-4 text-muted">
+                    <i class="fas fa-info-circle"></i>
+                    No hay registros disponibles en este momento.
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -10,7 +10,7 @@ urlpatterns = [
     path('', lambda request: redirect('users:login'), name='root'),
 
     # Include the URLs from registers app.
-    path('registers/', include('apps.registers.urls')),
+    path('registers_local/', include('apps.registers_local.urls')),
 
     # Include the URLs from users app.
     path('users/', include('apps.users.urls')),

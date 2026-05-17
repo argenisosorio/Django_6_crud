@@ -41,17 +41,11 @@ $ pip install -r requirements.txt
 
 $ cp Django_6_crud/settings.py_example Django_6_crud/settings.py
 
-$ python manage.py makemigrations registers users
+$ python manage.py makemigrations users registers_local
 
 $ python manage.py migrate
 
-$ python manage.py loaddata apps/registers/fixtures/municipios.json
-
-$ python manage.py loaddata apps/registers/fixtures/users.json
-
-$ python manage.py loaddata apps/registers/fixtures/parroquias.json
-
-$ python manage.py loaddata apps/registers/fixtures/registers.json
+$ python manage.py loaddata apps/registers_local/fixtures/users.json
 
 $ python manage.py createsuperuser
 

@@ -1,13 +1,9 @@
 from django import forms
-from .models import Register
+from .models import Register_local
 
-class RegisterForm(forms.ModelForm):
-    """
-    A ModelForm for creating and updating Register instances.
-    """
-
+class Register_localForm(forms.ModelForm):
     class Meta:
-        model = Register
+        model = Register_local
 
         #fields = '__all__'
 
