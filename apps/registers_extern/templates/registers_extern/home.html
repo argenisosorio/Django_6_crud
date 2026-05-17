@@ -1,15 +1,15 @@
-{% extends 'registers_local/base.html' %}
+{% extends 'registers_extern/base.html' %}
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1>Lista de registros (CENDITEL)</h1>
+    <h1>Lista de registros (Externo)</h1>
 </div>
 
 <h4>Total de registros: {{ registers|length }}</h4>
 
 <br>
 
-<a href="{% url 'registers_local:create' %}" class="btn btn-primary mb-4">
+<a href="{% url 'registers_extern:create' %}" class="btn btn-primary mb-4">
     <i class="fas fa-plus"></i> Agregar registro
 </a>
 
@@ -38,7 +38,7 @@
                 <td class="text-center">
                     <div class="btn-group btn-group-sm">
                         <a
-                            href="{% url 'registers_local:detail' register.pk %}"
+                            href="{% url 'registers_extern:detail' register.pk %}"
                             class="btn btn-info small"
                             style="font-size: 10px;"
                         >
@@ -46,14 +46,14 @@
                         </a>
                         {% if request.user.is_superuser %}
                             <a
-                                href="{% url 'registers_local:update' register.pk %}"
+                                href="{% url 'registers_extern:update' register.pk %}"
                                 class="btn btn-warning small"
                                 style="font-size: 10px;"
                             >
                                 Editar
                             </a>
                             <a
-                                href="{% url 'registers_local:delete' register.pk %}"
+                                href="{% url 'registers_extern:delete' register.pk %}"
                                 class="btn btn-danger small"
                                 style="font-size: 10px;"
                             >

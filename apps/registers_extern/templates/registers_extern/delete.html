@@ -1,0 +1,16 @@
+{% extends 'registers_extern/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">¿Eliminar registro?</h4>
+            <p>Estás a punto de eliminar permanentemente el registro</p>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirmar</button>
+            <a href="{% url 'registers_extern:home' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 
 
-class Register_local(models.Model):
+class Register_extern(models.Model):
     TIPOS_MOVIMIENTO = [
         ("Entrada", "Entrada"),
         ("Salida", "Salida"),
@@ -43,7 +43,7 @@ class Register_local(models.Model):
     usuario_registro = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.PROTECT,
-        related_name='registros_locales',
+        related_name='registros_externos',
         verbose_name="Registrado por"
     )
 
