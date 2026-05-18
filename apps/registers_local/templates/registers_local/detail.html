@@ -3,7 +3,7 @@
 {% block content %}
 <div class="card">
     <div class="card-header bg-primary text-white">
-        <h2>Detalle del Registro</h2>
+        <h2>Detalle del registro (CENDITEL)</h2>
     </div>
     <div class="card-body">
         <dl class="row">
@@ -25,7 +25,7 @@
                 <dd>{{ register.autorizado_por }}</dd>
 
                 <dt class="mt-2">Observaciones:</dt>
-                <dd>{{ register.observaciones }}</dd>
+                <dd>{{ register.observaciones|default:"Sin observaciones" }}</dd>
 
                 <dt class="mt-2">Registrado por:</dt>
                 <dd>{{ register.usuario_registro }}</dd>

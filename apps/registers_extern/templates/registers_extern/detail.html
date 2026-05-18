@@ -1,9 +1,9 @@
-{% extends 'registers_extern/base.html' %}
+{% extends 'registers_local/base.html' %}
 
 {% block content %}
 <div class="card">
     <div class="card-header bg-primary text-white">
-        <h2>Detalle del Registro</h2>
+        <h2>Detalle del registro (Externo)</h2>
     </div>
     <div class="card-body">
         <dl class="row">
@@ -12,20 +12,26 @@
                 <dt class="mt-2">Fecha de registro:</dt>
                 <dd>{{ register.created_at|date:"d/m/Y" }}</dd>
 
-                <dt class="mt-2">Tipo de movimiento:</dt>
-                <dd>{{ register.tipo_movimiento }}</dd>
+                <dt class="mt-2">Ente propietario:</dt>
+                <dd>{{ register.ente_propietario }}</dd>
 
-                <dt class="mt-2">Cantidad (Litros):</dt>
-                <dd>{{ register.cantidad_litros }}</dd>
+                <dt class="mt-2">Cantidad de ingreso (Litros):</dt>
+                <dd>{{ register.cantidad_ingreso_litros }}</dd>
 
-                <dt class="mt-2">Saldo en tanque (Litros):</dt>
-                <dd>{{ register.saldo_tanque }}</dd>
+                <dt class="mt-2">Cantidad de salida (Litros):</dt>
+                <dd>{{ register.cantidad_salida_litros }}</dd>
+
+                <dt class="mt-2">Motivo de uso:</dt>
+                <dd>{{ register.motivo_uso }}</dd>
 
                 <dt class="mt-2">Autorizado por:</dt>
                 <dd>{{ register.autorizado_por }}</dd>
 
+                <dt class="mt-2">Recibido/Entregado por:</dt>
+                <dd>{{ register.rec_entr_por }}</dd>
+
                 <dt class="mt-2">Observaciones:</dt>
-                <dd>{{ register.observaciones }}</dd>
+                <dd>{{ register.observaciones|default:"Sin observaciones" }}</dd>
 
                 <dt class="mt-2">Registrado por:</dt>
                 <dd>{{ register.usuario_registro }}</dd>

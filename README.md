@@ -54,7 +54,7 @@ $ python manage.py runserver
 
 For dev:
 ```bash
-$ rm -rf apps/users/migrations && rm -rf apps/registers/migrations && sudo rm -f db.sqlite3 && python manage.py makemigrations registers users && python manage.py migrate && python manage.py loaddata apps/registers/fixtures/municipios.json && python manage.py loaddata apps/registers/fixtures/parroquias.json && python manage.py loaddata apps/registers/fixtures/users.json && python manage.py runserver
+$ python manage.py makemigrations users registers_local registers_extern && python manage.py migrate && python manage.py loaddata apps/registers_local/fixtures/users.json && python manage.py runserver
 ```
 
 ## Test the project:
