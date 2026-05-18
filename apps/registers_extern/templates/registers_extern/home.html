@@ -24,8 +24,8 @@
                 <th>Acciones</th>
                 <th>Fecha de registro</th>
                 <th>Ente propietario</th>
-                <th>Cantidad de ingreso (Litros)</th>
-                <th>Cantidad de salida (Litros)</th>
+                <th>Tipo de Movimiento</th>
+                <th>Cantidad (Litros)</th>
                 <th>Motivo de uso</th>
                 <th>Autorizado por</th>
                 <th>Recibido/Entregado por</th>
@@ -71,10 +71,10 @@
                     {{ register.ente_propietario }}
                 </td>
                 <td class="small text-muted text-center">
-                    {{ register.cantidad_ingreso_litros }}
+                    {{ register.tipo_movimiento }}
                 </td>
                 <td class="small text-muted text-center">
-                    {{ register.cantidad_salida_litros }}
+                    {{ register.cantidad_litros }}
                 </td>
                 <td class="small text-muted">
                     {{ register.motivo_uso }}

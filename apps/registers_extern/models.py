@@ -3,6 +3,11 @@ from django.conf import settings
 
 
 class Register_extern(models.Model):
+    TIPOS_MOVIMIENTO = [
+        ("Entrada", "Entrada"),
+        ("Salida", "Salida"),
+    ]
+
     # Fecha de registro.
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -12,48 +17,37 @@ class Register_extern(models.Model):
     # Ente propietario.
     ente_propietario = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
         verbose_name="Ente propietario"
     )
 
-    # Cantidad de ingreso (Litros)
-    cantidad_ingreso_litros = models.CharField(
-        max_length=100,
-        null=True,
-        blank=True,
-        verbose_name="Cantidad de ingreso (Litros)"
+    # Tipo de Movimiento (Ingreso/Salida)
+    tipo_movimiento = models.CharField(
+        max_length=20,
+        choices=TIPOS_MOVIMIENTO,
+        verbose_name="Tipo de movimiento"
     )
 
-    # Cantidad de salida (Litros)
-    cantidad_salida_litros = models.CharField(
+    # Cantidad (Litros)
+    cantidad_litros = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
-        verbose_name="Cantidad de salida (Litros)"
+        verbose_name="Cantidad (Litros)"
     )
 
     # Motivo de uso
     motivo_uso = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
         verbose_name="Motivo de uso"
     )
 
     # Autorizado por.
     autorizado_por = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
         verbose_name="Autorizado por"
     )
 
     # Recibido/Entregado por.
     rec_entr_por = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
         verbose_name="Recibido/Entregado por"
     )
 

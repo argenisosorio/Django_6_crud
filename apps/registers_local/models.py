@@ -18,32 +18,24 @@ class Register_local(models.Model):
     tipo_movimiento = models.CharField(
         max_length=20,
         choices=TIPOS_MOVIMIENTO,
-        null=True,
-        blank=True,
         verbose_name="Tipo de movimiento"
     )
 
     # Cantidad (Litros)
     cantidad_litros = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
         verbose_name="Cantidad (Litros)"
     )
 
     # Saldo en tanque (Litros)
     saldo_tanque = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
         verbose_name="Saldo en tanque (Litros)"
     )
 
     # Autorizado por.
     autorizado_por = models.CharField(
         max_length=100,
-        null=True,
-        blank=True,
         verbose_name="Autorizado por"
     )
 
