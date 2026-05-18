@@ -8,5 +8,5 @@
 db.sqlite3
 Django_6_crud/settings.py
 apps/registers_local/migrations
-apps/registers_ext/migrations
+apps/registers_extern/migrations
 apps/users/migrations
