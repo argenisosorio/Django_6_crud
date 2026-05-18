@@ -70,8 +70,14 @@
                 <td class="small text-muted text-center">
                     {{ register.ente_propietario }}
                 </td>
-                <td class="small text-muted text-center">
-                    {{ register.tipo_movimiento }}
+                <td class="small text-center fw-bold">
+                    {% if register.tipo_movimiento == "Entrada" %}
+                        <span class="text-success">{{ register.tipo_movimiento }}</span>
+                    {% elif register.tipo_movimiento == "Salida" %}
+                        <span class="text-danger">{{ register.tipo_movimiento }}</span>
+                    {% else %}
+                        <span class="text-muted">{{ register.tipo_movimiento }}</span>
+                    {% endif %}
                 </td>
                 <td class="small text-muted text-center">
                     {{ register.cantidad_litros }}
