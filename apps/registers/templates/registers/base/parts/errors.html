@@ -6,10 +6,20 @@
         Por favor corrige los siguientes errores:
     </strong>
     <ul class="mb-0 mt-2">
-        {% for field, errors in form.errors.items %}
-            {% for error in errors %}
-                <li>{{ field|title }}: {{ error }}</li>
+        <!-- 1. Primero mostramos los errores globales (sin nombres de campos raros) -->
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
             {% endfor %}
+        {% endif %}
+
+        <!-- 2. Luego mostramos los errores específicos de cada campo -->
+        {% for field in form %}
+            {% if field.errors %}
+                {% for error in field.errors %}
+                    <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                {% endfor %}
+            {% endif %}
         {% endfor %}
     </ul>
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
