@@ -54,15 +54,30 @@ class User(AbstractUser):
         ("Uzbekistán", "Uzbekistán"),
     ]
 
-    email = models.EmailField(unique=True)
-    nickname = models.CharField(max_length=50, blank=True, null=True)
+    email = models.EmailField(
+        unique=True,
+        verbose_name="Correo electrónico"
+    )
+    nickname = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        unique=True,
+        verbose_name="Apodo"
+    )
     favorite_team = models.CharField(
         max_length=50,
         choices=NATIONS_CHOICES,
         blank=True,
-        null=True
+        null=True,
+        verbose_name="País favorito"
     )
-    phone = models.CharField(max_length=20, blank=True, null=True)
+    phone = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True,
+        verbose_name="Teléfono"
+    )
 
     def __str__(self) -> str:
         return self.username
