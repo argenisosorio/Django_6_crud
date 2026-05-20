@@ -20,11 +20,55 @@
             <br>
             Por favor lee las Reglas detenidamente.
         </h5>
+        <!-- Se añade el id para JS y se corrige la comilla de cierre en el src inicial -->
         <img
-            src="{% static 'images/main_image.jpg' %}"
+            id="main-world-cup-image"
+            src="{% static 'images/1.jpg' %}"
             alt="Imagen principal del Mundial 2026"
             class="main-image img-fluid mt-4 mb-3"
             width="35%"
         >
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Creamos el array con las rutas reales generadas por Django
+            const images = [
+                "{% static 'images/1.jpg' %}",
+                "{% static 'images/2.webp' %}",
+                "{% static 'images/3.webp' %}",
+                "{% static 'images/4.webp' %}",
+                "{% static 'images/5.webp' %}",
+                "{% static 'images/6.webp' %}",
+                "{% static 'images/7.webp' %}",
+                "{% static 'images/8.webp' %}",
+            ];
+
+            const imgElement = document.getElementById('main-world-cup-image');
+            let lastIndex = -1;
+
+            // Función para obtener un índice aleatorio sin repetir el anterior directamente
+            function getRandomIndex() {
+                let newIndex;
+                do {
+                    newIndex = Math.floor(Math.random() * images.length);
+                } while (newIndex === lastIndex && images.length > 1);
+
+                lastIndex = newIndex;
+                return newIndex;
+            }
+
+            // Función para cambiar la imagen
+            function changeImage() {
+                const randomIndex = getRandomIndex();
+                imgElement.src = images[randomIndex];
+            }
+
+            // 2. Cambiar de manera aleatoria inmediatamente al cargar la página
+            changeImage();
+
+            // 3. Configurar el intervalo para cambiar cada 10 segundos (10000 milisegundos)
+            setInterval(changeImage, 5000);
+        });
+    </script>
 {% endblock %}
