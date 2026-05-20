@@ -31,15 +31,18 @@
                             Reglas
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a
-                            class="nav-link active"
-                            href="{% url 'registers:create_update_register' %}"
-                        >
-                            <i id="eyeIcon" class="bi bi-journal-check"></i>
-                            Mi Quiniela
-                        </a>
-                    </li>
+                    {% if request.user.is_superuser %}
+                    {% else %}
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                href="{% url 'registers:create_update_register' %}"
+                            >
+                                <i id="eyeIcon" class="bi bi-journal-check"></i>
+                                Mi Quiniela
+                            </a>
+                        </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a
                             class="nav-link active"
