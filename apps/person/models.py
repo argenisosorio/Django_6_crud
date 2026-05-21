@@ -25,4 +25,5 @@ class Person(models.Model):
         """
         return self.name
 
+# Register the Person model with auditlog to track changes.
 auditlog.register(Person)

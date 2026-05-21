@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
 from .forms import PersonForm
+from auditlog.models import LogEntry
+from django.contrib.contenttypes.models import ContentType
+
 
 def home(request):
     """
@@ -106,14 +109,27 @@ def delete_person(request, pk):
     context = {'person': person}
     return render(request, 'person/delete.html', context)
 
-from auditlog.models import LogEntry
 
 def person_audit_log(request):
     """
     Display audit logs for the Person model.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request
+
+    Returns:
+        HttpResponse: Rendered template with audit logs
     """
-    from django.contrib.contenttypes.models import ContentType
+    # Get the content type for the Person model.
     person_ct = ContentType.objects.get_for_model(Person)
+
+    # Get all log entries for the Person model, ordered by timestamp (newest first)
     logs = LogEntry.objects.filter(content_type=person_ct).order_by('-timestamp')
-    context = {'logs': logs}
+
+    # Create context with the logs
+    context = {
+        'logs': logs
+    }
+
+    # Render the audit log template
     return render(request, 'person/audit_log.html', context)
