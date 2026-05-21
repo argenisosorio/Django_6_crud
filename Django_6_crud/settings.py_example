@@ -134,6 +134,7 @@ EMAIL_HOST_USER = 'your-email@example.com'   # Your email address
 EMAIL_HOST_PASSWORD = 'your-app-password'    # Your SMTP/App password
 DEFAULT_FROM_EMAIL = 'Webmaster <webmaster@example.com>'
 
+# Configuración de tareas asíncronas.
 TASKS = {
     "default": {
         "BACKEND": "django_tasks_db.DatabaseBackend",
