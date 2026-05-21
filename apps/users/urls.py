@@ -9,6 +9,7 @@ from apps.users.views import (
     UserListView,
     UserUpdateView,
     ProfileUpdateView,
+    UpdateActiveUserView,
 )
 
 app_name = "users"
@@ -120,5 +121,11 @@ urlpatterns = [
         "delete/<int:pk>/",
         UserDeleteView.as_view(template_name="users/user_confirm_delete.html"),
         name="user_delete"
+    ),
+    # URL de Actualización del estado activo de usuarios para el Administrador.
+    path(
+        "update_user_active/<int:pk>/",
+        UpdateActiveUserView.as_view(template_name="users/update_active_user_form.html"),
+        name="update_active_user"
     ),
 ]

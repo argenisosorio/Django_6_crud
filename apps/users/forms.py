@@ -54,6 +54,11 @@ class CustomUserCreationForm(UserCreationForm):
             "phone",
         )
 
+    """
+    La validación de campos duplicados se centraliza en la función auxiliar
+    `validar_campos_perfil` para evitar la repetición de código en los distintos
+    formularios.
+    """
     def clean(self):
         cleaned_data = super().clean()
         validar_campos_perfil(cleaned_data)
@@ -76,6 +81,11 @@ class CustomUserChangeForm(forms.ModelForm):
             "phone",
         )
 
+    """
+    La validación de campos duplicados se centraliza en la función auxiliar
+    `validar_campos_perfil` para evitar la repetición de código en los distintos
+    formularios.
+    """
     def clean(self):
         cleaned_data = super().clean()
         validar_campos_perfil(cleaned_data)
@@ -98,7 +108,23 @@ class ProfileForm(forms.ModelForm):
             "phone",
         )
 
+    """
+    La validación de campos duplicados se centraliza en la función auxiliar
+    `validar_campos_perfil` para evitar la repetición de código en los distintos
+    formularios.
+    """
     def clean(self):
         cleaned_data = super().clean()
         validar_campos_perfil(cleaned_data)
         return cleaned_data
+
+
+class UpdateUserActiveForm(forms.ModelForm):
+    """
+    Formulario para la actualización del campo active del usuario.
+    """
+    class Meta:
+        model = User
+        fields = (
+            "is_active",
+        )

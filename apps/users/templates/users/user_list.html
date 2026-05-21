@@ -7,7 +7,14 @@
         <div class="col-12">
             <h1>Lista de usuarios</h1>
             <section aria-labelledby="users-table-title">
-                <table border="1" class="table table-striped table-hover">
+                <table
+                    class="
+                        table table-hover table-striped
+                        table-bordered align-middle
+                        table-ranking
+                    "
+                    style="font-size: 13px;"
+                >
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -15,13 +22,13 @@
                             <th scope="col">Correo electrónico</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
-                            <th scope="col">Es superuser</th>
-                            <th scope="col">Es Staff</th>
-                            <th scope="col">Es Active</th>
-                            <th scope="col">Último login</th>
+                            <th scope="col">Administrador</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Último acceso</th>
                             <th scope="col">Fecha de creación</th>
                             <th scope="col">Apodo</th>
                             <th scope="col">Teléfono</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,13 +39,49 @@
                             <td>{{ user.email }}</td>
                             <td>{{ user.first_name }}</td>
                             <td>{{ user.last_name }}</td>
-                            <td>{{ user.is_superuser }}</td>
-                            <td>{{ user.is_staff }}</td>
-                            <td>{{ user.is_active }}</td>
+                            <td class="text-center">
+                                {% if user.is_superuser == True %}
+                                    <span class="text-success">
+                                        <b>Sí</b>
+                                    </span>
+                                {% else %}
+                                    <span class="text-secondary">
+                                        <b>No</b>
+                                    </span>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">
+                                {% if user.is_active == True %}
+                                    <span class="text-success">
+                                        <b>Activo</b>
+                                    </span>
+                                {% else %}
+                                    <span class="text-danger">
+                                        <b>Inactivo</b>
+                                    </span>
+                                {% endif %}
+                            </td>
                             <td>{{ user.last_login }}</td>
                             <td>{{ user.date_joined }}</td>
                             <td>{{ user.nickname }}</td>
                             <td>{{ user.phone }}</td>
+                            <td class="text-center">
+                                {% if user.is_active == True %}
+                                    <a
+                                        href="{% url 'users:update_active_user' user.id %}"
+                                        class="btn btn-sm btn-primary"
+                                    >
+                                        Desactivar
+                                    </a>
+                                {% else %}
+                                    <a
+                                        href="{% url 'users:update_active_user' user.id %}"
+                                        class="btn btn-sm btn-primary"
+                                    >
+                                        Activar
+                                    </a>
+                                {% endif %}
+                            </td>
                         </tr>
                         {% empty %}
                         <tr>

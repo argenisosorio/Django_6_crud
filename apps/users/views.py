@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model, login, logout
 from django.core.mail import send_mail
 from django.conf import settings
-from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, ProfileForm
+from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, ProfileForm, UpdateUserActiveForm
 from apps.configs.models import Config
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
@@ -295,3 +295,29 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
         """
         messages.success(self.request, "Perfil actualizado")
         return super().form_valid(form)
+
+
+class UpdateActiveUserView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = get_user_model()
+    template_name = "users/update_active_user_form.html"
+    form_class = UpdateUserActiveForm
+    success_url = reverse_lazy("users:user_list")
+
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
+
+    def handle_no_permission(self):
+        """
+        Opcional: Define qué pasa si el usuario NO es superusuario.
+        Por defecto redirige al login, pero aquí puedes mandarlo al home 
+        con un mensaje de error.
+        """
+        from django.contrib import messages
+        from django.shortcuts import redirect
+
+        messages.error(self.request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
