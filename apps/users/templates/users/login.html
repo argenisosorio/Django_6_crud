@@ -1,5 +1,5 @@
 {% extends 'registers/base/base.html' %}
-
+{% load static %}
 {% block title %}Inicio de sesión{% endblock %}
 
 {% block content %}
@@ -8,7 +8,15 @@
             <div class="col-2">
             </div>
             <div class="col-8">
-                <h1>Inicio de sesión</h1>
+                <h1 class="text-center">
+                    <img
+                        src="{% static 'images/favicon.png' %}"
+                        alt=""
+                        width="60"
+                        class="d-inline-block align-text-top"
+                    />
+                    Inicio de sesión
+                </h1>
                 <form method="post" action="{% url 'users:login' %}">
                     {% csrf_token %}
                     {% if form.errors %}
@@ -68,15 +76,16 @@
                     </button>
                     <input type="hidden" name="next" value="{{ next }}">
                 </form>
-                <br>
                 {% if config_instance.disable_registration %}
                 {% else %}
+                    <hr style="color: #d4af37;">
                     <p>
                         ¿No tienes una cuenta?
                         <b><a href="{% url 'users:signup' %}">Regístrate aquí</a></b>
                     </p>
                 {% endif %}
                 <p>
+                    <hr style="color: #d4af37;">
                     <b>
                         <a href="{% url 'users:password_reset' %}">¿Olvidaste tu contraseña?</a>
                     </b>
