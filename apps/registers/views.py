@@ -139,9 +139,13 @@ def detail_register(request, pk):
 @user_passes_test(solo_superusuario, login_url='registers:home')
 def list(request):
     """
-    Vista para mostrar la lista de quinielas registradas por los usuarios.
+    Vista para mostrar la lista de quinielas registradas por los usuarios inactivos.
     """
-    registers = Register.objects.all().order_by('-updated_at')
+    # Filtramos por usuarios cuyo estado 'is_active' sea True
+    registers = Register.objects.filter(
+        usuario_registro__is_active=True
+    ).order_by('-updated_at')
+
     context = {'registers': registers}
     return render(request, 'registers/list.html', context)
 
@@ -150,10 +154,19 @@ def list(request):
 @user_passes_test(solo_superusuario, login_url='registers:home')
 def update_points(request, pk):
     """
-    Vista para actualizar los puntos de las quinielas
+    Vista para actualizar los puntos de las quinielas.
+    Bloquea el acceso si el usuario dueño de la quiniela está inactivo.
     """
     quiniela = get_object_or_404(Register, pk=pk)
 
+    # Si el usuario dueño de la quiniela no está activo, no permitimos actualizar
+    # los puntos.
+    if not quiniela.usuario_registro.is_active:
+        messages.error(request, "La quiniela no está disponible o el usuario está inactivo.")
+        return redirect('registers:home')
+
+    # Si el formulario se envió por POST, procesamos los datos para actualizar
+    # los puntos.
     if request.method == 'POST':
         form = UpdatePointsForm(request.POST, instance=quiniela)
         if form.is_valid():

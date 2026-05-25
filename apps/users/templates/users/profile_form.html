@@ -151,8 +151,8 @@
                             id="{{ form.phone.id_for_label }}"
                             class="form-control {% if form.phone.errors %}is-invalid{% endif %}"
                             value="{{ form.phone.value|default:'' }}"
-                            placeholder="+58 424-8546789"
-                            maxlength="30"
+                            maxlength="20"
+                            oninput="this.value = this.value.replace(/[^0-9\s+-]/g, '')"
                             required
                         >
                         {% if form.phone.errors %}

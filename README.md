@@ -39,7 +39,12 @@ Now install de Requirements
 $ pip install -r requirements.txt
 
 $ cp Django_6_crud/settings.py_example Django_6_crud/settings.py
+```
 
+Configurar el Correo electrónico para recibir notificaciones de la App
+(Administrador del sistema).
+
+```bash
 $ python manage.py makemigrations users configs registers
 
 $ python manage.py migrate
@@ -55,7 +60,7 @@ $ python manage.py loaddata apps/users/fixtures/7_users.json
 
 $ python manage.py loaddata apps/registers/fixtures/6_registers_with_points.json
 
-dev: sudo rm -rf db.sqlite3 && find . -type d -name "migrations" -exec rm -rf {} +
+dev: sudo rm -rf db.sqlite3 && find . -type d -name "migrations" -exec rm -rf {} + && python manage.py makemigrations users configs registers && python manage.py migrate && python manage.py loaddata apps/configs/fixtures/configs.json && python manage.py loaddata apps/users/fixtures/user_admin.json && python manage.py runserver
 
 ## Test the project:
 

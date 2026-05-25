@@ -1,3 +1,4 @@
+import re
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django import forms
 from django.core.exceptions import ValidationError
@@ -13,6 +14,7 @@ def validar_campos_perfil(cleaned_data):
     first_name = cleaned_data.get("first_name")
     last_name = cleaned_data.get("last_name")
     nickname = cleaned_data.get("nickname")
+    phone = cleaned_data.get("phone")
 
     if nickname:
         nickname_lower = nickname.lower()
@@ -33,6 +35,14 @@ def validar_campos_perfil(cleaned_data):
             errors["last_name"] = "El apellido no puede ser igual al apodo."
             if "nickname" not in errors:
                 errors["nickname"] = "El apodo no puede ser igual a tu apellido."
+
+    if phone:
+        # Expresión regular que permite: números, espacios, guiones (-) y el signo (+)
+        # ^[0-9\s+-]+$ asegura que todo el string cumpla con estos caracteres de inicio a fin
+        formato_valido = re.match(r"^[0-9\s+-]+$", phone)
+
+        if not formato_valido:
+            errors["phone"] = "El número de teléfono solo puede contener números, espacios, guiones y el signo '+'."
 
     if errors:
         raise ValidationError(errors)
