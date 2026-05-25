@@ -33,6 +33,30 @@ class LoginView(AuthLoginView):
 
         return context
 
+    def form_invalid(self, form):
+        username = form.cleaned_data.get('username') or self.request.POST.get('username')
+
+        if username:
+            User = get_user_model()
+            try:
+                # Buscar al usuario en la base de datos.
+                user = User.objects.get(username=username)
+
+                # Verificamos si está activo o no.
+                if user.is_active:
+                    pass
+                else:
+                    messages.error(self.request, "Tu cuenta se encuentra (Inactiva). Contacta al Administrador.")
+                    return redirect('users:login')
+
+            except User.DoesNotExist:
+                pass
+        else:
+            pass
+
+        # Llamamos al comportamiento por defecto
+        return super().form_invalid(form)
+
     def form_valid(self, form):
         # Ejecutamos el login normal
         response = super().form_valid(form)
