@@ -239,12 +239,20 @@ class RegisterDetailView(LoginRequiredMixin, DetailView):
 
         return super().dispatch(request, *args, **kwargs)
 
-    def get_queryset(self):
+    def get(self, request, *args, **kwargs):
         """
-        Filtra los registros para devolver solo aquellos cuyo usuario esté activo.
+        Obtiene el objeto y verifica si el usuario del registro está activo.
         """
-        queryset = super().get_queryset()
-        return queryset.filter(usuario_registro__is_active=True)
+        # Obtenemos el objeto actual (esto maneja el 404 si el ID no existe)
+        self.object = self.get_object()
+
+        # Validamos si el usuario relacionado está inactivo
+        if not self.object.usuario_registro.is_active:
+            messages.error(request, "El usuario de este registro no está activo.")
+            return redirect('registers:ranking')
+
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
 
 
 @login_required
