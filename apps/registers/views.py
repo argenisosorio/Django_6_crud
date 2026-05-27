@@ -183,6 +183,7 @@ def update_points(request, pk):
     return render(request, 'registers/update_points.html', context)
 
 
+"""
 @login_required
 def delete_register(request, pk):
     register = get_object_or_404(Register, pk=pk)
@@ -192,6 +193,7 @@ def delete_register(request, pk):
     
     context = {'register': register}
     return render(request, 'registers/delete.html', context)
+"""
 
 
 @login_required
