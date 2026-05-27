@@ -52,24 +52,6 @@
                             Ranking
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a
-                            class="nav-link active"
-                            href="{% url 'registers:groups' %}"
-                        >
-                            <i id="eyeIcon" class="bi bi-list-nested"></i>
-                            Grupos del Mundial
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            class="nav-link active"
-                            href="{% url 'registers:results' %}"
-                        >
-                            <i id="eyeIcon" class="bi bi-bookmark-star"></i>
-                            Resultados del Mundial
-                        </a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a
                             class="nav-link dropdown-toggle active"
@@ -79,17 +61,36 @@
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
-                            <i id="eyeIcon" class="bi bi-bookmark-star"></i>
-                            Partidos en Vivo
+                            <i class="bi bi-trophy-fill"></i>
+                            Mundial
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{% url 'registers:groups' %}"
+                                >
+                                    <i id="eyeIcon" class="bi bi-list-nested"></i>
+                                    Grupos del Mundial
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="{% url 'registers:results' %}"
+                                >
+                                    <i id="eyeIcon" class="bi bi-bookmark-star"></i>
+                                    Resultados del Mundial
+                                </a>
+                            </li>
                             <li>
                                 <a
                                     class="dropdown-item"
                                     href="https://futbol-libre.su/"
                                     target="_blank"
                                 >
-                                    Fútbol Libre
+                                    <i id="eyeIcon" class="bi bi-tv"></i>
+                                    Partidos en Vivo
                                 </a>
                             </li>
                         </ul>
