@@ -25,6 +25,17 @@
 
     {% include 'registers/base/parts/modal.html' %}
 
+    <!-- Mostramos la imagen como spinner de carga -->
+    <div class="spinner-container" id="spinnerContainer">
+        <!-- Cambiamos el div con la clase "spinner" por una imagen -->
+        <img
+            src="{% static 'images/balon.webp' %}"
+            alt="Spinner"
+            class="spinner-img"
+            width="200"
+        />
+    </div>
+
     <!-- Contenido principal que se expande -->
     <main class="flex-shrink-0">
         <div class="container mt-4 mb-4" style="min-height: 400px;">
@@ -41,5 +52,24 @@
 
     <!-- Load Custom JS -->
     <script src="{% static 'js/scripts.js' %}" type="text/javascript"></script>
+
+    <script>
+        // Función para ocultar el spinner después de 5 segundos
+        window.addEventListener('load', function() {
+            var spinnerContainer = document.getElementById('spinnerContainer');
+            var spinnerImg = document.querySelector('.spinner-img');
+
+            // Retraso de 5 segundos (5000 milisegundos)
+            setTimeout(function() {
+                spinnerImg.classList.add('stop-spin'); // Detiene la animación
+                spinnerContainer.style.opacity = '0';   // Inicia el desvanecimiento
+
+                // Opcional: después de la transición, oculta el spinner completamente
+                setTimeout(function() {
+                spinnerContainer.style.display = 'none';
+                }, 1000); // 1000ms = duración de la transición
+            }, 200);
+        });
+    </script>
 </body>
 </html>
