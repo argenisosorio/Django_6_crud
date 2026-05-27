@@ -140,20 +140,27 @@ class SignUpView(CreateView):
                 fail_silently=True, # Evita que la app de error 500 si el servidor de correo falla.
             )
 
-            # Enviamos una copia del correo a NOTIFICATION_EMAIL
-            send_mail(
-                subject=f"Nuevo registro: {user.username}",
-                message=(
-                    f"Se ha registrado un nuevo usuario en el sistema:\n\n"
-                    f"Nombre y Apellido: {user.first_name} {user.last_name}\n"
-                    f"Usuario: {user.username}\n"
-                    f"Email: {user.email}\n"
-                    f"Fecha de registro: {user.date_joined.strftime('%d/%m/%Y')}\n\n"
-                ),
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.NOTIFICATION_EMAIL],
-                fail_silently=True,
-            )
+            # Lógica para los correos de notificación al Admin.
+            # Validamos si es una lista/tupla, si es un string simple lo convertimos a lista.
+            admins_list = settings.NOTIFICATION_EMAIL
+            if isinstance(admins_list, str):
+                admins_list = [admins_list]
+
+            # Enviamos la notificación (Django enviará un correo a cada integrante de la lista)
+            if admins_list:
+                send_mail(
+                    subject=f"Nuevo registro: {user.username}",
+                    message=(
+                        f"Se ha registrado un nuevo usuario en el sistema:\n\n"
+                        f"Nombre y Apellido: {user.first_name} {user.last_name}\n"
+                        f"Usuario: {user.username}\n"
+                        f"Email: {user.email}\n"
+                        f"Fecha de registro: {user.date_joined.strftime('%d/%m/%Y')}\n\n"
+                    ),
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=admins_list, # <--- Pasamos la lista procesada aquí
+                    fail_silently=True,
+                )
 
         except Exception as e:
             # Mensaje de error en consola si el envío de correo falla, pero no
