@@ -138,5 +138,65 @@
             "groups": [],
             "user_permissions": []
         }
+    },
+    {
+        "model": "users.user",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "ocordoba",
+            "first_name": "Obaldo",
+            "last_name": "Córdoba",
+            "email": "ocordoba@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "Chato",
+            "favorite_team": "Argentina",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 9,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "octavio",
+            "first_name": "Octavio",
+            "last_name": "Borja",
+            "email": "octavio@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "El Clavo",
+            "favorite_team": "Argentina",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 10,
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$rNxEB5Mt7D5fvwCKn6Yq8B$cqCzQcSKMjDsnpo+dGqRtweEnzLsxrS38l39bVemb0g=",
+            "last_login": "2026-04-04T00:07:18.498Z",
+            "is_superuser": false,
+            "username": "liomessi",
+            "first_name": "Lionel",
+            "last_name": "Messi",
+            "email": "liomessi@mail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-04-03T13:55:56Z",
+            "nickname": "La Pulga",
+            "favorite_team": "Argentina",
+            "groups": [],
+            "user_permissions": []
+        }
     }
 ]

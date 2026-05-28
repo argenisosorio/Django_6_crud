@@ -56,9 +56,9 @@ $ python manage.py loaddata apps/users/fixtures/user_admin.json
 $ python manage.py runserver
 ```
 
-$ python manage.py loaddata apps/users/fixtures/7_users.json
+$ python manage.py loaddata apps/users/fixtures/10_users.json
 
-$ python manage.py loaddata apps/registers/fixtures/6_registers_with_points.json
+$ python manage.py loaddata apps/registers/fixtures/9_registers_with_points.json
 
 dev: sudo rm -rf db.sqlite3 && find . -type d -name "migrations" -exec rm -rf {} + && python manage.py makemigrations users configs registers && python manage.py migrate && python manage.py loaddata apps/configs/fixtures/configs.json && python manage.py loaddata apps/users/fixtures/user_admin.json && python manage.py runserver
 
