@@ -17,6 +17,7 @@ from django.views.generic import (
     DetailView
 )
 from django.core.exceptions import PermissionDenied
+import logging
 
 
 def solo_superusuario(user):
@@ -87,6 +88,7 @@ def create_update_register(request):
 def send_quiniela_creation_email(user):
     """
     Función auxiliar para enviar correo de confirmación de creación de quiniela
+    al usuario y notificación a la lista de administradores.
     """
     subject = "Quiniela - Mundial 2026 | Quiniela creada"
 
@@ -99,6 +101,7 @@ def send_quiniela_creation_email(user):
     )
 
     try:
+        # 1. Enviar correo de confirmación al usuario
         send_mail(
             subject=subject,
             message=message,
@@ -107,25 +110,32 @@ def send_quiniela_creation_email(user):
             fail_silently=False,
         )
 
-        # Enviamos correo a NOTIFICATION_EMAIL.
-        send_mail(
-            subject=f"Nuevo quiniela registrada de: {user.username}",
-            message=(
-                f"Se ha registrado una nueva quiniela en el sistema:\n\n"
-                f"Nombre y Apellido: {user.first_name} {user.last_name}\n"
-                f"Usuario: {user.username}\n"
-                f"Email: {user.email}\n"
-                f"Fecha de registro: {user.date_joined.strftime('%d/%m/%Y')}\n\n"
-            ),
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.NOTIFICATION_EMAIL],
-            fail_silently=True,
-        )
+        # 2. Lógica para los correos de notificación al Admin
+        # Validamos si es una lista/tupla, si es un string simple lo convertimos a lista.
+        admins_list = settings.NOTIFICATION_EMAIL
+        if isinstance(admins_list, str):
+            admins_list = [admins_list]
+
+        # Enviamos la notificación (Django enviará un correo a cada integrante de la lista)
+        if admins_list:
+            send_mail(
+                subject=f"Nueva quiniela registrada: {user.username}",
+                message=(
+                    f"Se ha registrado una nueva quiniela en el sistema:\n\n"
+                    f"Nombre y Apellido: {user.first_name} {user.last_name}\n"
+                    f"Usuario: {user.username}\n"
+                    f"Email: {user.email}\n"
+                    f"Fecha de registro: {user.date_joined.strftime('%d/%m/%Y')}\n\n"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=admins_list,  # <--- Pasamos la lista procesada aquí
+                fail_silently=True,
+            )
+
     except Exception as e:
-        # Registrar el error en logs sin detener el flujo
-        import logging
+        # Registrar el error en logs sin detener el flujo principal
         logger = logging.getLogger(__name__)
-        logger.error(f"Error al enviar correo a {user.email}: {str(e)}")
+        logger.error(f"Error al enviar correo relacionado con el usuario {user.email}: {str(e)}")
 
 
 @login_required
