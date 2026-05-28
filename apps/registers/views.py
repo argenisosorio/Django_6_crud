@@ -172,7 +172,7 @@ def update_points(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, "¡Puntos actualizados!")
-            return redirect('registers:home')
+            return redirect('registers:list')
     else:
         form = UpdatePointsForm(instance=quiniela)
 
