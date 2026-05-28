@@ -63,7 +63,7 @@ def create_update_register(request):
             # Enviar correo solo si es la primera vez que crea la quiniela
             if is_creating:
                 send_quiniela_creation_email(request.user)
-                messages.success(request, "¡Quiniela creada exitosamente! Se ha enviado un correo de confirmación.")
+                messages.success(request, "¡Quiniela creada exitosamente!.")
             else:
                 messages.success(request, "¡Quiniela actualizada exitosamente!")
 
