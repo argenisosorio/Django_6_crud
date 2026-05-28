@@ -142,10 +142,6 @@ LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'users:user_list'
 LOGOUT_REDIRECT_URL = 'users:login'
 
-# Correo electrónico para recibir notificaciones de la App (Administrador del sistema).
-NOTIFICATION_EMAIL = 'notificaciones@tudominio.com'
-
-
 # Correos electrónicos para recibir notificaciones de la App (Administradores).
 NOTIFICATION_EMAIL = [
     'admin@mail.com',
