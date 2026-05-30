@@ -23,7 +23,7 @@
         <!-- Se añade el id para JS y se corrige la comilla de cierre en el src inicial -->
         <img
             id="main-world-cup-image"
-            src="{% static 'images/1.jpg' %}"
+            src="{% static 'images/1.webp' %}"
             alt="Imagen principal del Mundial 2026"
             class="main-image img-fluid mt-4 mb-3"
             width="35%"
@@ -34,7 +34,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // 1. Creamos el array con las rutas reales generadas por Django
             const images = [
-                "{% static 'images/1.jpg' %}",
+                "{% static 'images/1.webp' %}",
                 "{% static 'images/2.webp' %}",
                 "{% static 'images/3.webp' %}",
                 "{% static 'images/4.webp' %}",
@@ -42,6 +42,16 @@
                 "{% static 'images/6.webp' %}",
                 "{% static 'images/7.webp' %}",
                 "{% static 'images/8.webp' %}",
+                "{% static 'images/9.webp' %}",
+                "{% static 'images/10.webp' %}",
+                "{% static 'images/11.webp' %}",
+                "{% static 'images/12.webp' %}",
+                "{% static 'images/13.webp' %}",
+                "{% static 'images/14.webp' %}",
+                "{% static 'images/15.webp' %}",
+                "{% static 'images/16.webp' %}",
+                "{% static 'images/17.webp' %}",
+                "{% static 'images/18.webp' %}",
             ];
 
             const imgElement = document.getElementById('main-world-cup-image');
