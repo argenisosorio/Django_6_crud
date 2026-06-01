@@ -362,26 +362,24 @@ def update_user_password(request, pk):
     """
     user = get_object_or_404(User, pk=pk)
 
-    print(f"---- Usuario a actualizar contraseña: {user.username} (ID: {user.pk})")
-
     # Verificamos permisos de superusuario
     if not request.user.is_superuser:
         messages.error(request, "No tienes permisos para acceder a esta sección.")
         return redirect('registers:home')
 
+    # Si el método es POST, procesamos el formulario. Si es GET, mostramos el
+    # formulario vacío.
     if request.method == 'POST':
-        print("---- Entro por POST")
         form = UpdatePasswordForm(request.POST, instance=user)
         if form.is_valid():
-            # Guardamos la nueva contraseña (Django se encarga de cifrarla)
+            # Guardamos la nueva contraseña. El método save() del formulario se
+            # encarga de cifrarla correctamente.
             form.save()
             messages.success(request, f"Contraseña de {user.username} actualizada exitosamente.")
             return redirect('users:user_list')
         else:
-            print("---- Formulario no válido")
             print(form.errors)
     else:
-        print("---- Entro por GET")
         form = UpdatePasswordForm(instance=user)
 
     context = {

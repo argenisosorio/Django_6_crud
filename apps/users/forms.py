@@ -144,8 +144,24 @@ class UpdatePasswordForm(forms.ModelForm):
     """
     Formulario para actualizar la contraseña de un usuario registrado.
     """
+    # Usamos PasswordInput para que no se vea lo que escribe el usuario en el HTML
+    password = forms.CharField(widget=forms.PasswordInput())
+
     class Meta:
         model = User
-        fields = (
-            "password",
-        )
+        fields = ("password",)
+
+    def save(self, commit=True):
+        # Obtenemos la instancia del usuario sin guardar aún en la base de datos
+        user = super().save(commit=False)
+
+        # Obtenemos la contraseña en texto plano del formulario limpio
+        raw_password = self.cleaned_data.get("password")
+
+        if raw_password:
+            # set_password se encarga de encriptarla (hashear) automáticamente
+            user.set_password(raw_password)
+
+        if commit:
+            user.save()
+        return user
