@@ -65,22 +65,33 @@
                             <td>{{ user.date_joined }}</td>
                             <td>{{ user.nickname }}</td>
                             <td>{{ user.phone }}</td>
-                            <td class="text-center">
-                                {% if user.is_active == True %}
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    {% if user.is_active == True %}
+                                        <a
+                                            href="{% url 'users:update_active_user' user.id %}"
+                                            class="btn btn-primary small"
+                                            style="font-size: 10px;"
+                                        >
+                                            Desactivar
+                                        </a>
+                                    {% else %}
+                                        <a
+                                            href="{% url 'users:update_active_user' user.id %}"
+                                            class="btn btn-primary small"
+                                            style="font-size: 10px;"
+                                        >
+                                            Activar
+                                        </a>
+                                    {% endif %}
                                     <a
-                                        href="{% url 'users:update_active_user' user.id %}"
-                                        class="btn btn-sm btn-primary"
+                                        href="{% url 'users:update_user_password' user.id %}"
+                                        class="btn btn-warning small"
+                                        style="font-size: 10px;"
                                     >
-                                        Desactivar
+                                        Actualizar contraseña
                                     </a>
-                                {% else %}
-                                    <a
-                                        href="{% url 'users:update_active_user' user.id %}"
-                                        class="btn btn-sm btn-primary"
-                                    >
-                                        Activar
-                                    </a>
-                                {% endif %}
+                                </div>
                             </td>
                         </tr>
                         {% empty %}

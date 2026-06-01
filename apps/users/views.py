@@ -1,11 +1,12 @@
 from django.contrib.auth import get_user_model, login, logout
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
-from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, ProfileForm, UpdateUserActiveForm
+from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, ProfileForm, UpdateUserActiveForm, UpdatePasswordForm
+from apps.users.models  import User
 from apps.configs.models import Config
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.contrib import messages
@@ -352,3 +353,39 @@ class UpdateActiveUserView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
         messages.error(self.request, "No tienes permisos para acceder a esta sección.")
         return redirect('registers:home')
+
+
+def update_user_password(request, pk):
+    """
+    Vista basada en función para actualizar la contraseña de un usuario
+    específico. Solo accesible para superusuarios.
+    """
+    user = get_object_or_404(User, pk=pk)
+
+    print(f"---- Usuario a actualizar contraseña: {user.username} (ID: {user.pk})")
+
+    # Verificamos permisos de superusuario
+    if not request.user.is_superuser:
+        messages.error(request, "No tienes permisos para acceder a esta sección.")
+        return redirect('registers:home')
+
+    if request.method == 'POST':
+        print("---- Entro por POST")
+        form = UpdatePasswordForm(request.POST, instance=user)
+        if form.is_valid():
+            # Guardamos la nueva contraseña (Django se encarga de cifrarla)
+            form.save()
+            messages.success(request, f"Contraseña de {user.username} actualizada exitosamente.")
+            return redirect('users:user_list')
+        else:
+            print("---- Formulario no válido")
+            print(form.errors)
+    else:
+        print("---- Entro por GET")
+        form = UpdatePasswordForm(instance=user)
+
+    context = {
+        'form': form,
+        'user': user
+    }
+    return render(request, 'users/update_password_user_form.html', context)

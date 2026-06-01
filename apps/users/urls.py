@@ -9,7 +9,7 @@ from apps.users.views import (
     UserListView,
     UserUpdateView,
     ProfileUpdateView,
-    UpdateActiveUserView,
+    UpdateActiveUserView
 )
 
 app_name = "users"
@@ -128,4 +128,6 @@ urlpatterns = [
         UpdateActiveUserView.as_view(template_name="users/update_active_user_form.html"),
         name="update_active_user"
     ),
+    # URL de Actualización de la contraseña de un usuario para el Administrador.
+    path('<int:pk>/update_user_password/', views.update_user_password, name='update_user_password'),
 ]

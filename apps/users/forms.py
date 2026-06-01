@@ -138,3 +138,14 @@ class UpdateUserActiveForm(forms.ModelForm):
         fields = (
             "is_active",
         )
+
+
+class UpdatePasswordForm(forms.ModelForm):
+    """
+    Formulario para actualizar la contraseña de un usuario registrado.
+    """
+    class Meta:
+        model = User
+        fields = (
+            "password",
+        )
