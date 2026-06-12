@@ -22,7 +22,7 @@ from django.views.generic import (
 
 
 class LoginView(AuthLoginView):
-    template_name = "users/login.html"
+    template_name = "registers/login.html"
     redirect_authenticated_user = True
 
     def get_context_data(self, **kwargs):

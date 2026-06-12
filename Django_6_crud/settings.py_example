@@ -138,9 +138,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "users.User"
 
 # Configuración de autenticación
-LOGIN_URL = 'users:login'
-LOGIN_REDIRECT_URL = 'users:user_list'
-LOGOUT_REDIRECT_URL = 'users:login'
+LOGIN_URL = 'registers:ranking_pub'
+LOGIN_REDIRECT_URL = 'registers:ranking_pub'
+LOGOUT_REDIRECT_URL = 'registers:ranking_pub'
 
 # Correos electrónicos para recibir notificaciones de la App (Administradores).
 NOTIFICATION_EMAIL = [

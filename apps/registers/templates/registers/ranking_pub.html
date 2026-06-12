@@ -1,0 +1,127 @@
+{% extends 'registers/base/base.html' %}
+{% load static %}
+{% block title %}Ranking público{% endblock %}
+
+{% block content %}
+    <h1>
+        <img
+            src="{% static 'images/favicon.png' %}"
+            alt=""
+            width="60"
+            class="d-inline-block align-text-top"
+        />
+        Ranking de Jugadores Público
+    </h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table
+                    class="
+                        table table-hover table-striped
+                        table-bordered align-middle
+                        table-ranking
+                    "
+                    style="font-size: 13px;"
+                >
+                    <thead class="table-light">
+                        <tr class="text-center">
+                            <th>N</th>
+                            <th>Jugador (Apodo)</th>
+                            <th>País favorito</th>
+                            {% if config_instance.disable_view_register %}
+                            {% else %}
+                                <th>Quiniela</th>
+                            {% endif %}
+                            <th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for register in registers %}
+                        <tr class="fila-jugador {% if forloop.revcounter <= 3 %}death{% endif %}">
+                            <td class="text-center posicion-celda">
+                                {{ forloop.counter }}
+                            </td>
+                            <td>
+                                {{ register.usuario_registro.first_name }}
+                                {{ register.usuario_registro.last_name }}
+                                ({{ register.usuario_registro.nickname }})
+                            </td>
+                            <td class="text-center">
+                                {% if register.usuario_registro.favorite_team %}
+                                    {{ register.usuario_registro.favorite_team }}
+                                {% else %}
+                                    <span class="text-muted">Sin país</span>
+                                {% endif %}
+                            </td>
+                            {% if config_instance.disable_view_register %}
+                            {% else %}
+                                <td class="text-center">
+                                    <div class="btn-group btn-group-sm">
+                                        <a
+                                            href="
+                                                {% url 'registers:register_detail_pub' register.pk %}
+                                            "
+                                            class="btn btn-primary small"
+                                            style="font-size: 10px;"
+                                        >
+                                            Ver Quiniela
+                                        </a>
+                                    </div>
+                                </td>
+                            {% endif %}
+                            <td class="text-center">
+                                <b>{{ register.suma_total_puntos }}</b>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center py-4 text-muted">
+                                <i class="fas fa-info-circle"></i> No hay registros disponibles en este momento.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1. Obtener todas las filas de los jugadores
+        const filas = document.querySelectorAll(".fila-jugador");
+        if (filas.length === 0) return;
+
+        const registros = [];
+
+        // 2. Extraer los puntos y la celda de posición de cada fila
+        filas.forEach(fila => {
+            const celdaPuntos = fila.querySelector("td:last-child b");
+            if (celdaPuntos) {
+                const puntos = parseInt(celdaPuntos.textContent.trim(), 10) || 0;
+                registros.push({ fila, puntos });
+            }
+        });
+
+        // 3. Obtener los puntajes únicos ordenados de mayor a menor utilizando un Set
+        const puntajesUnicos = [...new Set(registros.map(r => r.puntos))]
+            .sort((a, b) => b - a);
+
+        const primerPuestoPuntos = puntajesUnicos[0];
+        const segundoPuestoPuntos = puntajesUnicos[1]; // Será undefined si todos tienen el mismo puntaje
+
+        // 4. Recorrer los registros y asignar la clase 'winners' y recalcular el número correlativo
+        registros.forEach(reg => {
+            const celdaPosicion = reg.fila.querySelector(".posicion-celda");
+
+            if (reg.puntos === primerPuestoPuntos) {
+                reg.fila.classList.add("winners");
+                if (celdaPosicion) celdaPosicion.textContent = "1";
+            } else if (segundoPuestoPuntos !== undefined && reg.puntos === segundoPuestoPuntos) {
+                reg.fila.classList.add("winners");
+                if (celdaPosicion) celdaPosicion.textContent = "2";
+            }
+        });
+    });
+    </script>
+{% endblock %}

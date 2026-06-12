@@ -17,66 +17,20 @@
                     />
                     Inicio de sesión
                 </h1>
-                <form method="post" action="{% url 'users:login' %}">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="username" class="form-label fw-bold">
-                            Usuario:
-                        </label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            class="form-control"
-                            value="{{ form.username.value|default:'' }}"
-                            required
-                            oninput="this.value = this.value.toLowerCase().replace(/[^a-z]/g, '')"
-                            onkeypress="return /[a-z]/i.test(event.key)"
-                            pattern="[a-z]+"
-                            title="Solo letras minúsculas, sin espacios ni números"
-                        >
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label fw-bold">
-                            Contraseña:
-                        </label>
-                        <div class="input-group">
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                class="form-control"
-                                required
-                            >
-                            <button
-                                type="button"
-                                class="btn btn-outline-secondary"
-                                id="togglePasswordBtn"
-                                onclick="togglePassword()"
-                            >
-                                <i id="eyeIcon" class="bi bi-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        Ingresar
-                    </button>
-                    <input type="hidden" name="next" value="{{ next }}">
-                </form>
                 {% if config_instance.disable_registration %}
                 {% else %}
                     <hr style="color: #d4af37;">
-                    <p>
+                    <!--p>
                         ¿No tienes una cuenta?
                         <b><a href="{% url 'users:signup' %}">Regístrate aquí</a></b>
-                    </p>
+                    </p-->
                 {% endif %}
-                <p>
+                <!--p>
                     <hr style="color: #d4af37;">
                     <b>
                         <a href="{% url 'users:password_reset' %}">¿Olvidaste tu contraseña?</a>
                     </b>
-                </p>
+                </p-->
             </div>
             <div class="col-2">
             </div>

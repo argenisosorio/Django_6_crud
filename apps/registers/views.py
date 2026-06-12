@@ -29,7 +29,8 @@ def solo_superusuario(user):
 
 @login_required
 def home(request):
-    return render(request, 'registers/home.html')
+    return redirect('registers:ranking_pub')
+    #return render(request, 'registers/home.html')
 
 
 @login_required
@@ -232,6 +233,31 @@ def ranking(request):
     return render(request, 'registers/ranking.html', context)
 
 
+def ranking_pub(request):
+    # Convertir cada campo a IntegerField y manejar valores nulos
+    puntos_sum = Cast(Coalesce('puntos_game_1', Value('0')), IntegerField())
+
+    # Sumamos los puntos de cada juego del 1 al 72, manejando valores nulos
+    for i in range(2, 73):
+        # Convertimos el campo a IntegerField y manejamos valores nulos con Coalesce
+        puntos_sum += Cast(Coalesce(f'puntos_game_{i}', Value('0')), IntegerField())
+
+    # Agregamos el filtro para usuarios activos
+    registers = Register.objects.filter(
+        usuario_registro__is_active=True
+    ).annotate(
+        total_puntos=puntos_sum
+    ).order_by('-total_puntos')
+
+    config_instance = Config.objects.first()
+
+    context = {
+        'registers': registers,
+        'config_instance': config_instance
+    }
+    return render(request, 'registers/ranking_pub.html', context)
+
+
 class RegisterDetailView(LoginRequiredMixin, DetailView):
     model = Register
     template_name = "registers/register_detail.html"
@@ -262,6 +288,41 @@ class RegisterDetailView(LoginRequiredMixin, DetailView):
         if not self.object.usuario_registro.is_active:
             messages.error(request, "El usuario de este registro no está activo.")
             return redirect('registers:ranking')
+
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
+
+
+class RegisterDetailPubView(DetailView):
+    model = Register
+    template_name = "registers/register_detail_pub.html"
+    context_object_name = "quiniela"
+
+    def dispatch(self, request, *args, **kwargs):
+        """
+        Verifica si la vista de registros está habilitada antes de mostrar el detalle.
+        """
+        # Obtener la configuración actual (asumiendo que hay un solo registro de Config)
+        config = Config.objects.first()
+
+        # Si disable_view_register es True, no permitir el acceso
+        if config and config.disable_view_register:
+            # Redirigir a otra página (elige la que prefieras)
+            return redirect('registers:ranking_pub')  # Redirige al ranking
+
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        """
+        Obtiene el objeto y verifica si el usuario del registro está activo.
+        """
+        # Obtenemos el objeto actual (esto maneja el 404 si el ID no existe)
+        self.object = self.get_object()
+
+        # Validamos si el usuario relacionado está inactivo
+        if not self.object.usuario_registro.is_active:
+            messages.error(request, "El usuario de este registro no está activo.")
+            return redirect('registers:ranking_[ub]')
 
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)

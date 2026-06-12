@@ -1,0 +1,5449 @@
+{% extends 'registers/base/base.html' %}
+{% load static %}
+{% block title %}Detalle de la Quiniela Pub{% endblock %}
+
+{% block content %}
+    <h1>
+        <img
+            src="{% static 'images/favicon.png' %}"
+            alt=""
+            width="60"
+            class="d-inline-block align-text-top"
+        />
+        Detalle de la Quiniela de {{ quiniela.usuario_registro.first_name }} {{ quiniela.usuario_registro.last_name }} ({{ quiniela.usuario_registro.nickname }})
+    </h1>
+
+    <h3>Jueves, 11 de junio 2026</h3>
+
+    <!-- Juego 1 -->
+    <b>
+        Juego 1 - 
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    México
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Sudáfrica
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_1"
+                        name="marcador_local_game_1"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_1|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_1"
+                        name="marcador_visitante_game_1"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_1|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_1"
+                        name="puntos_game_1"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_1|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 2 -->
+    <b>
+        Juego 2 -
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Corea del Sur
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    República Checa
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_2"
+                        name="marcador_local_game_2"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_2|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_2"
+                        name="marcador_visitante_game_2"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_2|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_2"
+                        name="puntos_game_2"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_2|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Viernes, 12 de junio 2026</h3>
+
+    <!-- Juego 3 -->
+    <b>
+        Juego 3 - 
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/20px-Flag_of_Canada.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Canadá
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/20px-Flag_of_Bosnia_and_Herzegovina.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Bosnia y Herzegovina
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_3"
+                        name="marcador_local_game_3"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_3|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_3"
+                        name="marcador_visitante_game_3"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_3|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_3"
+                        name="puntos_game_3"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_3|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 4 -->
+    <b>
+        Juego 4 -
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/20px-Flag_of_the_United_States.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Estados Unidos
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/20px-Flag_of_Paraguay.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Paraguay
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_4"
+                        name="marcador_local_game_4"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_4|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_4"
+                        name="marcador_visitante_game_4"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_4|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_4"
+                        name="puntos_game_4"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_4|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Sábado, 13 de junio 2026</h3>
+
+    <!-- Juego 5 -->
+    <b>
+        Juego 5 - 
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/20px-Flag_of_Qatar.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Catar
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/20px-Flag_of_Switzerland.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Suiza
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_5"
+                        name="marcador_local_game_5"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_5|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_5"
+                        name="marcador_visitante_game_5"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_5|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_5"
+                        name="puntos_game_5"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_5|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 6 -->
+    <b>
+        Juego 6 -
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/20px-Flag_of_Brazil.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Brasil
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/20px-Flag_of_Morocco.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Marruecos
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_6"
+                        name="marcador_local_game_6"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_6|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_6"
+                        name="marcador_visitante_game_6"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_6|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_6"
+                        name="puntos_game_6"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_6|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 7 -->
+    <b>
+        Juego 7 -
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Haiti.svg/20px-Flag_of_Haiti.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Haití
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/20px-Flag_of_Scotland.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Escocia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_7"
+                        name="marcador_local_game_7"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_7|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_7"
+                        name="marcador_visitante_game_7"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_7|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_7"
+                        name="puntos_game_7"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_7|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Domingo, 14 de junio 2026</h3>
+
+    <!-- Juego 8 -->
+    <b>
+        Juego 8 -
+        <span style="font-size: 11px;">12:00 a.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/20px-Flag_of_Australia_%28converted%29.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Australia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/20px-Flag_of_Turkey.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Turquía
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_8"
+                        name="marcador_local_game_8"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_8|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_8"
+                        name="marcador_visitante_game_8"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_8|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_8"
+                        name="puntos_game_8"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_8|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 9 -->
+    <b>
+        Juego 9 -
+        <span style="font-size: 11px;">1:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Alemania
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Flag_of_Cura%C3%A7ao.svg/20px-Flag_of_Cura%C3%A7ao.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Curazao
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_9"
+                        name="marcador_local_game_9"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_9|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_9"
+                        name="marcador_visitante_game_9"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_9|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_9"
+                        name="puntos_game_9"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_9|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 10 -->
+    <b>
+        Juego 10 -
+        <span style="font-size: 11px;">4:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Paises Bajos
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/20px-Flag_of_Japan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Japón
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_10"
+                        name="marcador_local_game_10"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_10|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_10"
+                        name="marcador_visitante_game_10"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_10|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_10"
+                        name="puntos_game_10"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_10|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 11 -->
+    <b>
+        Juego 11 -
+        <span style="font-size: 11px;">7:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/20px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Costa de Marfil
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/20px-Flag_of_Ecuador.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Ecuador
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_11"
+                        name="marcador_local_game_11"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_11|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_11"
+                        name="marcador_visitante_game_11"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_11|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_11"
+                        name="puntos_game_11"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_11|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 12 -->
+    <b>
+        Juego 12 - 
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/20px-Flag_of_Sweden.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Suecia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/20px-Flag_of_Tunisia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Túnez
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_12"
+                        name="marcador_local_game_12"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_12|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_12"
+                        name="marcador_visitante_game_12"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_12|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_12"
+                        name="puntos_game_12"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_12|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Lunes, 15 de junio 2026</h3>
+
+    <!-- Juego 13 -->
+    <b>
+        Juego 13 -
+        <span style="font-size: 11px;">12:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    España
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Cape_Verde.svg/20px-Flag_of_Cape_Verde.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Cabo Verde
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_13"
+                        name="marcador_local_game_13"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_13|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_13"
+                        name="marcador_visitante_game_13"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_13|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_13"
+                        name="puntos_game_13"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_13|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 14 -->
+    <b>
+        Juego 14 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Bélgica
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/20px-Flag_of_Egypt.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Egipto
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_14"
+                        name="marcador_local_game_14"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_14|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_14"
+                        name="marcador_visitante_game_14"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_14|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_14"
+                        name="puntos_game_14"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_14|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 15 -->
+    <b>
+        Juego 15 -
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/20px-Flag_of_Saudi_Arabia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Arabia Saudí
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/20px-Flag_of_Uruguay.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Uruguay
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_15"
+                        name="marcador_local_game_15"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_15|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_15"
+                        name="marcador_visitante_game_15"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_15|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_15"
+                        name="puntos_game_15"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_15|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 16 -->
+    <b>
+        Juego 16 -
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/20px-Flag_of_Iran.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Irán
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/20px-Flag_of_New_Zealand.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Nueva Zelanda
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_16"
+                        name="marcador_local_game_16"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_16|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_16"
+                        name="marcador_visitante_game_16"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_16|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_16"
+                        name="puntos_game_16"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_16|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Martes, 16 de junio 2026</h3>
+
+    <!-- Juego 17 -->
+    <b>
+        Juego 17 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Francia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/20px-Flag_of_Senegal.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Senegal
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_17"
+                        name="marcador_local_game_17"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_17|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_17"
+                        name="marcador_visitante_game_17"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_17|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_17"
+                        name="puntos_game_17"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_17|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 18 -->
+    <b>
+        Juego 18 -
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/20px-Flag_of_Iraq.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Irak
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/20px-Flag_of_Norway.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Noruega
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_18"
+                        name="marcador_local_game_18"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_18|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_18"
+                        name="marcador_visitante_game_18"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_18|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_18"
+                        name="puntos_game_18"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_18|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 19 -->
+    <b>
+        Juego 19 -
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/20px-Flag_of_Argentina.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Argentina
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/20px-Flag_of_Algeria.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Argelia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_19"
+                        name="marcador_local_game_19"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_19|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_19"
+                        name="marcador_visitante_game_19"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_19|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_19"
+                        name="puntos_game_19"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_19|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Miércoles, 17 de junio 2026</h3>
+
+    <!-- Juego 20 -->
+    <b>
+        Juego 20 -
+        <span style="font-size: 11px;">12:00 a.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/20px-Flag_of_Austria.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Austria
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/20px-Flag_of_Jordan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Jordania
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_20"
+                        name="marcador_local_game_20"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_20|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_20"
+                        name="marcador_visitante_game_20"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_20|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_20"
+                        name="puntos_game_20"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_20|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 21 -->
+    <b>
+        Juego 21 -
+        <span style="font-size: 11px;">1:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Portugal
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/20px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    R.D. del Congo
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_21"
+                        name="marcador_local_game_21"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_21|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_21"
+                        name="marcador_visitante_game_21"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_21|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_21"
+                        name="puntos_game_21"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_21|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 22 -->
+    <b>
+        Juego 22 -
+        <span style="font-size: 11px;">4:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/20px-Flag_of_England.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Inglaterra
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Croacia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_22"
+                        name="marcador_local_game_22"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_22|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_22"
+                        name="marcador_visitante_game_22"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_22|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_22"
+                        name="puntos_game_22"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_22|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 23 -->
+    <b>
+        Juego 23 -
+        <span style="font-size: 11px;">7:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/20px-Flag_of_Ghana.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Ghana
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag_of_Panama.svg/20px-Flag_of_Panama.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Panamá
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_23"
+                        name="marcador_local_game_23"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_23|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_23"
+                        name="marcador_visitante_game_23"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_23|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_23"
+                        name="puntos_game_23"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_23|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 24 -->
+    <b>
+        Juego 24 - 
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/20px-Flag_of_Uzbekistan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Uzbekistán
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Colombia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_24"
+                        name="marcador_local_game_24"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_24|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_24"
+                        name="marcador_visitante_game_24"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_24|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_24"
+                        name="puntos_game_24"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_24|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Jueves, 18 de junio 2026</h3>
+
+    <!-- Juego 25 -->
+    <b>
+        Juego 25 -
+        <span style="font-size: 11px;">12:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    República Checa
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Sudáfrica
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_25"
+                        name="marcador_local_game_25"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_25|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_25"
+                        name="marcador_visitante_game_25"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_25|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_25"
+                        name="puntos_game_25"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_25|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 26 -->
+    <b>
+        Juego 26 - 
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/20px-Flag_of_Switzerland.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Suiza
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/20px-Flag_of_Bosnia_and_Herzegovina.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Bosnia y Herzegovina
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_26"
+                        name="marcador_local_game_26"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_26|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_26"
+                        name="marcador_visitante_game_26"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_26|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_26"
+                        name="puntos_game_26"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_26|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 27 -->
+    <b>
+        Juego 27 - 
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/20px-Flag_of_Canada.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Canadá
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/20px-Flag_of_Qatar.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Catar
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_27"
+                        name="marcador_local_game_27"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_27|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_27"
+                        name="marcador_visitante_game_27"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_27|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_27"
+                        name="puntos_game_27"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_27|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 28 -->
+    <b>
+        Juego 28 - 
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    México
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Corea del Sur
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_28"
+                        name="marcador_local_game_28"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_28|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_28"
+                        name="marcador_visitante_game_28"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_28|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_28"
+                        name="puntos_game_28"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_28|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Viernes, 19 de junio 2026</h3>
+
+    <!-- Juego 29 -->
+    <b>
+        Juego 29 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/20px-Flag_of_the_United_States.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Estados Unidos
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/20px-Flag_of_Australia_%28converted%29.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Australia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_29"
+                        name="marcador_local_game_29"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_29|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_29"
+                        name="marcador_visitante_game_29"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_29|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_29"
+                        name="puntos_game_29"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_29|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 30 -->
+    <b>
+        Juego 30 - 
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/20px-Flag_of_Scotland.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Escocia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/20px-Flag_of_Morocco.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Marruecos
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_30"
+                        name="marcador_local_game_30"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_30|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_30"
+                        name="marcador_visitante_game_30"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_30|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_30"
+                        name="puntos_game_30"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_30|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 31 -->
+    <b>
+        Juego 31 -
+        <span style="font-size: 11px;">8:30 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/20px-Flag_of_Brazil.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Brasil
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Haiti.svg/20px-Flag_of_Haiti.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Haití
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_31"
+                        name="marcador_local_game_31"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_31|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_31"
+                        name="marcador_visitante_game_31"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_31|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_31"
+                        name="puntos_game_31"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_31|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 32 -->
+    <b>
+        Juego 32 -
+        <span style="font-size: 11px;">11:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/20px-Flag_of_Turkey.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Turquía
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/20px-Flag_of_Paraguay.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Paraguay
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_32"
+                        name="marcador_local_game_32"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_32|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_32"
+                        name="marcador_visitante_game_32"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_32|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_32"
+                        name="puntos_game_32"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_32|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Sábado, 20 de junio 2026</h3>
+
+    <!-- Juego 33 -->
+    <b>
+        Juego 33 - 
+        <span style="font-size: 11px;">1:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Países Bajos
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/20px-Flag_of_Sweden.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Suecia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_33"
+                        name="marcador_local_game_33"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_33|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_33"
+                        name="marcador_visitante_game_33"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_33|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_33"
+                        name="puntos_game_33"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_33|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 34 -->
+    <b>
+        Juego 34 -
+        <span style="font-size: 11px;">4:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Alemania
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/20px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Costa de Marfil
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_34"
+                        name="marcador_local_game_34"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_34|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_34"
+                        name="marcador_visitante_game_34"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_34|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_34"
+                        name="puntos_game_34"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_34|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 35 -->
+    <b>
+        Juego 35 -
+        <span style="font-size: 11px;">8:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/20px-Flag_of_Ecuador.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Ecuador
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Flag_of_Cura%C3%A7ao.svg/20px-Flag_of_Cura%C3%A7ao.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Curazao
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_35"
+                        name="marcador_local_game_35"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_35|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_35"
+                        name="marcador_visitante_game_35"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_35|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_35"
+                        name="puntos_game_35"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_35|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Domingo, 21 de junio 2026</h3>
+
+    <!-- Juego 36 -->
+    <b>
+        Juego 36 - 
+        <span style="font-size: 11px;">12:00 a.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/20px-Flag_of_Tunisia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Túnez
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/20px-Flag_of_Japan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Japón
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_36"
+                        name="marcador_local_game_36"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_36|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_36"
+                        name="marcador_visitante_game_36"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_36|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_36"
+                        name="puntos_game_36"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_36|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 37 -->
+    <b>
+        Juego 37 - 
+        <span style="font-size: 11px;">12:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    España
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/20px-Flag_of_Saudi_Arabia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Arabia Saudí
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_37"
+                        name="marcador_local_game_37"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_37|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_37"
+                        name="marcador_visitante_game_37"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_37|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_37"
+                        name="puntos_game_37"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_37|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 38 -->
+    <b>
+        Juego 38 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Bélgica
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/20px-Flag_of_Iran.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Irán
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_38"
+                        name="marcador_local_game_38"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_38|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_38"
+                        name="marcador_visitante_game_38"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_38|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_38"
+                        name="puntos_game_38"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_38|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 39 -->
+    <b>
+        Juego 39 -
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/20px-Flag_of_Uruguay.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Uruguay
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Cape_Verde.svg/20px-Flag_of_Cape_Verde.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Cabo Verde
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_39"
+                        name="marcador_local_game_39"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_39|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_39"
+                        name="marcador_visitante_game_39"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_39|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_39"
+                        name="puntos_game_39"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_39|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 40 -->
+    <b>
+        Juego 40 -
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/20px-Flag_of_New_Zealand.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Nueva Zelanda
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/20px-Flag_of_Egypt.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Egipto
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_40"
+                        name="marcador_local_game_40"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_40|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_40"
+                        name="marcador_visitante_game_40"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_40|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_40"
+                        name="puntos_game_40"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_40|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Lunes, 22 de junio 2026</h3>
+
+    <!-- Juego 41 -->
+    <b>
+        Juego 41 -
+        <span style="font-size: 11px;">1:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/20px-Flag_of_Argentina.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Argentina
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/20px-Flag_of_Austria.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Austria
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_41"
+                        name="marcador_local_game_41"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_41|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_41"
+                        name="marcador_visitante_game_41"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_41|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_41"
+                        name="puntos_game_41"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_41|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 42 -->
+    <b>
+        Juego 42 - 
+        <span style="font-size: 11px;">5:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Francia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/20px-Flag_of_Iraq.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Irak
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_42"
+                        name="marcador_local_game_42"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_42|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_42"
+                        name="marcador_visitante_game_42"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_42|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_42"
+                        name="puntos_game_42"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_42|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 43 -->
+    <b>
+        Juego 43 - 
+        <span style="font-size: 11px;">8:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/20px-Flag_of_Norway.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Noruega
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/20px-Flag_of_Senegal.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Senegal
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_43"
+                        name="marcador_local_game_43"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_43|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_43"
+                        name="marcador_visitante_game_43"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_43|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_43"
+                        name="puntos_game_43"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_43|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 44 -->
+    <b>
+        Juego 44 -
+        <span style="font-size: 11px;">11:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/20px-Flag_of_Jordan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Jordania
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/20px-Flag_of_Algeria.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Argelia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_44"
+                        name="marcador_local_game_44"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_44|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_44"
+                        name="marcador_visitante_game_44"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_44|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_44"
+                        name="puntos_game_44"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_44|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Martes, 23 de junio 2026</h3>
+
+    <!-- Juego 45 -->
+    <b>
+        Juego 45 -
+        <span style="font-size: 11px;">1:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Portugal
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/20px-Flag_of_Uzbekistan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Uzbekistán
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_45"
+                        name="marcador_local_game_45"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_45|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_45"
+                        name="marcador_visitante_game_45"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_45|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_45"
+                        name="puntos_game_45"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_45|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 46 -->
+    <b>
+        Juego 46 -
+        <span style="font-size: 11px;">4:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/20px-Flag_of_England.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Inglaterra
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/20px-Flag_of_Ghana.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Ghana
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_46"
+                        name="marcador_local_game_46"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_46|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_46"
+                        name="marcador_visitante_game_46"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_46|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_46"
+                        name="puntos_game_46"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_46|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 47 -->
+    <b>
+        Juego 47 -
+        <span style="font-size: 11px;">7:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag_of_Panama.svg/20px-Flag_of_Panama.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Panamá
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Croacia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_47"
+                        name="marcador_local_game_47"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_47|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_47"
+                        name="marcador_visitante_game_47"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_47|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_47"
+                        name="puntos_game_47"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_47|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 48 -->
+    <b>
+        Juego 48 -
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Colombia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/20px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    R.D. del Congo
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_48"
+                        name="marcador_local_game_48"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_48|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_48"
+                        name="marcador_visitante_game_48"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_48|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_48"
+                        name="puntos_game_48"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_48|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Miércoles, 24 de junio 2026</h3>
+
+    <!-- Juego 49 -->
+    <b>
+        Juego 49 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/20px-Flag_of_Switzerland.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Suiza
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/20px-Flag_of_Canada.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Canadá
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_49"
+                        name="marcador_local_game_49"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_49|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_49"
+                        name="marcador_visitante_game_49"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_49|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_49"
+                        name="puntos_game_49"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_49|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 50 -->
+    <b>
+        Juego 50 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/20px-Flag_of_Bosnia_and_Herzegovina.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Bosnia y Herzegovina
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/20px-Flag_of_Qatar.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Catar
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_50"
+                        name="marcador_local_game_50"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_50|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_50"
+                        name="marcador_visitante_game_50"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_50|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_50"
+                        name="puntos_game_50"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_50|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 51 -->
+    <b>
+        Juego 51 -
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/20px-Flag_of_Scotland.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Escocia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/20px-Flag_of_Brazil.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Brasil
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_51"
+                        name="marcador_local_game_51"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_51|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_51"
+                        name="marcador_visitante_game_51"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_51|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_51"
+                        name="puntos_game_51"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_51|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 52 -->
+    <b>
+        Juego 52 -
+        <span style="font-size: 11px;">6:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/20px-Flag_of_Morocco.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Marruecos
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Haiti.svg/20px-Flag_of_Haiti.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Haití
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_52"
+                        name="marcador_local_game_52"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_52|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_52"
+                        name="marcador_visitante_game_52"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_52|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_52"
+                        name="puntos_game_52"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_52|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 53 -->
+    <b>
+        Juego 53 -
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    República Checa
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    México
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_53"
+                        name="marcador_local_game_53"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_53|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_53"
+                        name="marcador_visitante_game_53"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_53|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_53"
+                        name="puntos_game_53"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_53|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 54 -->
+    <b>
+        Juego 54 -
+        <span style="font-size: 11px;">9:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Sudáfrica
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Corea del Sur
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_54"
+                        name="marcador_local_game_54"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_54|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_54"
+                        name="marcador_visitante_game_54"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_54|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_54"
+                        name="puntos_game_54"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_54|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Jueves, 25 de junio 2026</h3>
+
+    <!-- Juego 55 -->
+    <b>
+        Juego 55 -
+        <span style="font-size: 11px;">4:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Flag_of_Cura%C3%A7ao.svg/20px-Flag_of_Cura%C3%A7ao.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Curazao
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/20px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Costa de Marfil 
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_55"
+                        name="marcador_local_game_55"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_55|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_55"
+                        name="marcador_visitante_game_55"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_55|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_55"
+                        name="puntos_game_55"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_55|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 56 -->
+    <b>
+        Juego 56 -
+        <span style="font-size: 11px;">4:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/20px-Flag_of_Ecuador.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Ecuador
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Alemania
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_56"
+                        name="marcador_local_game_56"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_56|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_56"
+                        name="marcador_visitante_game_56"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_56|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_56"
+                        name="puntos_game_56"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_56|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 57 -->
+    <b>
+        Juego 57 -
+        <span style="font-size: 11px;">7:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/20px-Flag_of_Japan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Japón
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/20px-Flag_of_Sweden.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Suecia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_57"
+                        name="marcador_local_game_57"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_57|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_57"
+                        name="marcador_visitante_game_57"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_57|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_57"
+                        name="puntos_game_57"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_57|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 58 -->
+    <b>
+        Juego 58 -
+        <span style="font-size: 11px;">7:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/20px-Flag_of_Tunisia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Túnez
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Países Bajos
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_58"
+                        name="marcador_local_game_58"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_58|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_58"
+                        name="marcador_visitante_game_58"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_58|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_58"
+                        name="puntos_game_58"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_58|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 59 -->
+    <b>
+        Juego 59 -
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/20px-Flag_of_Turkey.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Turquía
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/20px-Flag_of_the_United_States.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Estados Unidos
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_59"
+                        name="marcador_local_game_59"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_59|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_59"
+                        name="marcador_visitante_game_59"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_59|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_59"
+                        name="puntos_game_59"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_59|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 60 -->
+    <b>
+        Juego 60 -
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/20px-Flag_of_Paraguay.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Paraguay
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/20px-Flag_of_Australia_%28converted%29.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Australia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_60"
+                        name="marcador_local_game_60"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_60|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_60"
+                        name="marcador_visitante_game_60"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_60|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_60"
+                        name="puntos_game_60"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_60|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Viernes, 26 de junio 2026</h3>
+
+    <!-- Juego 61 -->
+    <b>
+        Juego 61 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/20px-Flag_of_Norway.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Noruega
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Francia
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_61"
+                        name="marcador_local_game_61"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_61|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_61"
+                        name="marcador_visitante_game_61"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_61|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_61"
+                        name="puntos_game_61"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_61|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 62 -->
+    <b>
+        Juego 62 -
+        <span style="font-size: 11px;">3:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/20px-Flag_of_Senegal.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Senegal
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/20px-Flag_of_Iraq.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Irak
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_62"
+                        name="marcador_local_game_62"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_62|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_62"
+                        name="marcador_visitante_game_62"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_62|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_62"
+                        name="puntos_game_62"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_62|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 63 -->
+    <b>
+        Juego 63 -
+        <span style="font-size: 11px;">8:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Cape_Verde.svg/20px-Flag_of_Cape_Verde.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Cabo Verde
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/20px-Flag_of_Saudi_Arabia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Arabia Saudí
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_63"
+                        name="marcador_local_game_63"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_63|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_63"
+                        name="marcador_visitante_game_63"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_63|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_63"
+                        name="puntos_game_63"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_63|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 64 -->
+    <b>
+        Juego 64 -
+        <span style="font-size: 11px;">8:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/20px-Flag_of_Uruguay.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Uruguay
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    España
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_64"
+                        name="marcador_local_game_64"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_64|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_64"
+                        name="marcador_visitante_game_64"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_64|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_64"
+                        name="puntos_game_64"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_64|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 65 -->
+    <b>
+        Juego 65 -
+        <span style="font-size: 11px;">11:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/20px-Flag_of_Egypt.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Egipto
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/20px-Flag_of_Iran.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Irán
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_65"
+                        name="marcador_local_game_65"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_65|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_65"
+                        name="marcador_visitante_game_65"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_65|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_65"
+                        name="puntos_game_65"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_65|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 66 -->
+    <b>
+        Juego 66 -
+        <span style="font-size: 11px;">11:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/20px-Flag_of_New_Zealand.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Nueva Zelanda
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Bélgica
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_66"
+                        name="marcador_local_game_66"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_66|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_66"
+                        name="marcador_visitante_game_66"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_66|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_66"
+                        name="puntos_game_66"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_66|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Sábado, 27 de junio 2026</h3>
+
+    <!-- Juego 67 -->
+    <b>
+        Juego 67 -
+        <span style="font-size: 11px;">5:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag_of_Panama.svg/20px-Flag_of_Panama.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Panamá
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/20px-Flag_of_England.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Inglaterra
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_67"
+                        name="marcador_local_game_67"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_67|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_67"
+                        name="marcador_visitante_game_67"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_67|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_67"
+                        name="puntos_game_67"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_67|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 68 -->
+    <b>
+        Juego 68 -
+        <span style="font-size: 11px;">5:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Croacia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/20px-Flag_of_Ghana.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Ghana
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_68"
+                        name="marcador_local_game_68"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_68|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_68"
+                        name="marcador_visitante_game_68"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_68|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_68"
+                        name="puntos_game_68"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_68|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 69 -->
+    <b>
+        Juego 69 -
+        <span style="font-size: 11px;">7:30 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Colombia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Portugal
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_69"
+                        name="marcador_local_game_69"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_69|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_69"
+                        name="marcador_visitante_game_69"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_69|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_69"
+                        name="puntos_game_69"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_69|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 70 -->
+    <b>
+        Juego 70 -
+        <span style="font-size: 11px;">7:30 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/20px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    R.D. del Congo
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/20px-Flag_of_Uzbekistan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Uzbekistán
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_70"
+                        name="marcador_local_game_70"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_70|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_70"
+                        name="marcador_visitante_game_70"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_70|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_70"
+                        name="puntos_game_70"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_70|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 71 -->
+    <b>
+        Juego 71 -
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/20px-Flag_of_Algeria.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Argelia
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/20px-Flag_of_Austria.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Austria
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_71"
+                        name="marcador_local_game_71"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_71|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_71"
+                        name="marcador_visitante_game_71"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_71|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_71"
+                        name="puntos_game_71"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_71|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Juego 72 -->
+    <b>
+        Juego 72 -
+        <span style="font-size: 11px;">10:00 p.m. VEN</span>
+    </b>
+    <table
+        class="
+            table_results
+            table table-hover table-striped table-bordered align-middle
+        "
+    >
+        <thead>
+            <tr class="text-center">
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/20px-Flag_of_Jordan.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Jordania
+                </th>
+                <th>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/20px-Flag_of_Argentina.svg.png"
+                        alt=""
+                        width="30"
+                        height="20"
+                    >
+                    Argentina
+                </th>
+                <th>
+                    Puntos
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_local_game_72"
+                        name="marcador_local_game_72"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_local_game_72|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="marcador_visitante_game_72"
+                        name="marcador_visitante_game_72"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.marcador_visitante_game_72|default:'' }}"
+                        disabled
+                    >
+                </td>
+                <td class="text-center">
+                    <input
+                        type="text"
+                        id="puntos_game_72"
+                        name="puntos_game_72"
+                        maxlength="2"
+                        class="form-control"
+                        value="{{ quiniela.puntos_game_72|default:'' }}"
+                        disabled
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
