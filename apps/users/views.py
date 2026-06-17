@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model, login, logout
 from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView as AuthLoginView
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -65,25 +66,33 @@ class UserListView(LoginRequiredMixin, ListView):
 
 class UserDetailView(LoginRequiredMixin, DetailView):
     model = get_user_model()
-    template_name = "users/user_detail.html"
+    template_name = "users/detail.html"
     context_object_name = "user"
 
 
 class UserCreateView(LoginRequiredMixin, CreateView):
     model = get_user_model()
-    template_name = "users/user_form.html"
+    template_name = "users/form.html"
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("users:list")
+
+    # Sobrescribimos el método form_valid para guardar el usuario activo.
+    def form_valid(self, form):
+        user = form.save(commit=False)
+        user.is_active = True
+        user.save()
+        self.object = user
+        return redirect(self.success_url)
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = get_user_model()
-    template_name = "users/user_form.html"
+    template_name = "users/update.html"
     form_class = CustomUserChangeForm
     success_url = reverse_lazy("users:list")
 
 
 class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = get_user_model()
-    template_name = "users/user_confirm_delete.html"
+    template_name = "users/confirm_delete.html"
     success_url = reverse_lazy("users:list")

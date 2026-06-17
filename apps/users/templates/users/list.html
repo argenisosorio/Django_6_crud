@@ -5,7 +5,7 @@
     <h1>Lista de Usuarios</h1>
 </div>
 
-<a href="{% url 'registers_local:create' %}" class="btn btn-primary mb-4">
+<a href="{% url 'users:create' %}" class="btn btn-primary mb-4">
     <i class="fas fa-plus"></i> Registrar
 </a>
 
@@ -55,7 +55,7 @@
                 
                 <!-- Columna Activo (Booleano a Español) -->
                 <td class="text-center">
-                    {% if user.is_staff %}
+                    {% if user.is_active %}
                         <span class="badge bg-success">Sí</span>
                     {% else %}
                         <span class="badge bg-secondary">No</span>
@@ -67,13 +67,6 @@
                 </td>
                 <td class="text-center">
                     <div class="btn-group btn-group-sm">
-                        <a
-                            href="{% url 'users:detail' user.pk %}"
-                            class="btn btn-info small"
-                            style="font-size: 10px;"
-                        >
-                            Detalles
-                        </a>
                         <a
                             href="{% url 'users:update' user.pk %}"
                             class="btn btn-warning small"

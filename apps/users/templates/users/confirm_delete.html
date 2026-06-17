@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Delete User</title>
-</head>
-<body>
-    <header>
-        <h2>Confirm Deletion</h2>
-    </header>
+{% extends 'base/base.html' %}
 
-    <main>
-        <p>Are you sure you want to delete the user <strong>"{{ object.username }}"</strong>?</p>
-        
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit" style="color: red;">Yes, Delete</button>
-            <a href="{% url 'users:user_list' %}">Cancel</a>
-        </form>
-    </main>
-</body>
-</html>
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-2">
+    <h1>Eliminar Usuario</h1>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <p>
+        ¿Estás seguro de que quieres eliminar al usuario
+        <strong>"{{ object.username }}"</strong>?
+    </p>
+    <button type="submit" class="btn btn-danger">
+        Sí, Eliminar
+    </button>
+    <a href="{% url 'users:list' %}" class="btn btn-secondary">
+        Cancelar
+    </a>
+</form>
+{% endblock %}

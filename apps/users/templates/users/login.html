@@ -9,24 +9,6 @@
             <h5 class="text-secondary mt-2">Inicio de sesión</h5>
         </div>
 
-        <!-- Alertas de error estilizadas -->
-        {% if form.errors %}
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                <strong>Error:</strong> Revisa los datos ingresados
-                <ul class="mb-0 mt-2 small">
-                    {% for error in form.non_field_errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                    {% for field in form %}
-                        {% for error in field.errors %}
-                            <li>{{ field.label }}: {{ error }}</li>
-                        {% endfor %}
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
         <!-- Formulario -->
         <form method="post" action="{% url 'users:login' %}">
             {% csrf_token %}

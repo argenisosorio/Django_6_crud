@@ -83,8 +83,8 @@ urlpatterns = [
 
     # Urls CRUD de usuarios
     path("", UserListView.as_view(), name="list"),
-    path("<int:pk>/", UserDetailView.as_view(), name="detail"),
     path("create/", UserCreateView.as_view(), name="create"),
+    path("<int:pk>/", UserDetailView.as_view(), name="detail"),
     path("update/<int:pk>/", UserUpdateView.as_view(), name="update"),
     path("delete/<int:pk>/", UserDeleteView.as_view(), name="delete"),
 ]
