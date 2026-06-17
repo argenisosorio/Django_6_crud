@@ -2,10 +2,8 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, reverse_lazy
 from apps.users import views
 from apps.users.views import (
-    SignUpView,
     UserCreateView,
     UserDeleteView,
-    UserDetailView,
     UserListView,
     UserUpdateView,
 )
@@ -23,11 +21,6 @@ urlpatterns = [
         "logout/",
         views.LogoutView.as_view(),
         name="logout"
-    ),
-    path(
-        "signup/",
-        SignUpView.as_view(template_name="users/signup.html"),
-        name="signup"
     ),
 
     # Urls de recuperación de contraseña
@@ -84,7 +77,6 @@ urlpatterns = [
     # Urls CRUD de usuarios
     path("", UserListView.as_view(), name="list"),
     path("create/", UserCreateView.as_view(), name="create"),
-    path("<int:pk>/", UserDetailView.as_view(), name="detail"),
     path("update/<int:pk>/", UserUpdateView.as_view(), name="update"),
     path("delete/<int:pk>/", UserDeleteView.as_view(), name="delete"),
 ]

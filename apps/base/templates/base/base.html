@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Registro de datos">
     <meta name="author" content="Ing. Argenis Osorio">
-    <title>Registro de Combustible - CENDITEL</title>
+    <title>
+        {% block title %}Registro de Combustible - CENDITEL{% endblock %}
+    </title>
     <!-- Load Favicon -->
     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
     <!-- Load Bootstrap CSS -->
@@ -34,6 +36,11 @@
                         </a>
                     </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'requests:home' %}">
+                            Solicitudes
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'registers_local:home' %}">
                             Lista de registros (CENDITEL)
@@ -91,4 +98,5 @@
     <!-- Load Bootstrap JS -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
+
 </html>

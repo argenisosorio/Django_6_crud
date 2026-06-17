@@ -12,6 +12,8 @@ urlpatterns = [
     # Include the URLs from users app.
     path('users/', include('apps.users.urls')),
 
+    path('requests/', include('apps.requests.urls')),
+
     path('registers_local/', include('apps.registers_local.urls')),
 
     path('registers_extern/', include('apps.registers_extern.urls')),
