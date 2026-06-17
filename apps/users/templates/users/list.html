@@ -1,0 +1,105 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-2">
+    <h1>Lista de Usuarios</h1>
+</div>
+
+<a href="{% url 'registers_local:create' %}" class="btn btn-primary mb-4">
+    <i class="fas fa-plus"></i> Registrar
+</a>
+
+<div class="table-responsive">
+    <table
+        class="table table-hover table-striped table-bordered align-middle"
+        style="font-size: 14px;"
+    >
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th>N</th>
+                <th>Nombre de usuario</th>
+                <th>Correo electrónico</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Administrador</th>
+                <th>Activo</th>
+                <th>Fecha de registro</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td class="text-center">{{ forloop.counter }}</td>
+                <td class="small text-muted text-center">
+                    {{ user.username }}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ user.email }}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ user.first_name }}
+                </td>
+                <td class="small text-muted text-center">
+                    {{ user.last_name }}
+                </td>
+                
+                <!-- Columna Administrador (Booleano a Español) -->
+                <td class="text-center">
+                    {% if user.is_superuser %}
+                        <span class="badge bg-success">Sí</span>
+                    {% else %}
+                        <span class="badge bg-secondary">No</span>
+                    {% endif %}
+                </td>
+                
+                <!-- Columna Activo (Booleano a Español) -->
+                <td class="text-center">
+                    {% if user.is_staff %}
+                        <span class="badge bg-success">Sí</span>
+                    {% else %}
+                        <span class="badge bg-secondary">No</span>
+                    {% endif %}
+                </td>
+                
+                <td class="small text-muted text-center">
+                    {{ user.date_joined }}
+                </td>
+                <td class="text-center">
+                    <div class="btn-group btn-group-sm">
+                        <a
+                            href="{% url 'users:detail' user.pk %}"
+                            class="btn btn-info small"
+                            style="font-size: 10px;"
+                        >
+                            Detalles
+                        </a>
+                        <a
+                            href="{% url 'users:update' user.pk %}"
+                            class="btn btn-warning small"
+                            style="font-size: 10px;"
+                        >
+                            Editar
+                        </a>
+                        <a
+                            href="{% url 'users:delete' user.pk %}"
+                            class="btn btn-danger small"
+                            style="font-size: 10px;"
+                        >
+                            Borrar
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9" class="text-center py-4 text-muted">
+                    <i class="fas fa-info-circle"></i>
+                    No hay registros.
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

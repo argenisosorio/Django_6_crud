@@ -45,16 +45,11 @@ $ python manage.py makemigrations users registers_local registers_extern
 
 $ python manage.py migrate
 
-$ python manage.py loaddata apps/registers_local/fixtures/users.json
+$ python manage.py loaddata apps/users/fixtures/user_admin.json
 
 $ python manage.py createsuperuser
 
 $ python manage.py runserver
-```
-
-For dev:
-```bash
-$ python manage.py makemigrations users registers_local registers_extern && python manage.py migrate && python manage.py loaddata apps/registers_local/fixtures/users.json && python manage.py runserver
 ```
 
 ## Test the project:

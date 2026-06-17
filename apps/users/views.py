@@ -15,16 +15,6 @@ from django.views.generic import (
 )
 
 
-"""
-Vistas basadas en clases para operaciones CRUD de usuarios y autenticación.
-
-Este módulo expone vistas genéricas basadas en clases que operan en el modelo
-de usuario personalizado del proyecto, así como vistas para login y logout.
-"""
-
-
-# ==================== VISTAS DE AUTENTICACIÓN ====================
-
 class LoginView(AuthLoginView):
     """
     Vista para iniciar sesión de usuarios.
@@ -57,7 +47,7 @@ class SignUpView(CreateView):
     model = get_user_model()
     template_name = "users/signup.html"
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy("users:user_list")
+    success_url = reverse_lazy("users:list")
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -69,7 +59,7 @@ class SignUpView(CreateView):
 
 class UserListView(LoginRequiredMixin, ListView):
     model = get_user_model()
-    template_name = "users/user_list.html"
+    template_name = "users/list.html"
     context_object_name = "users"
 
 
@@ -83,17 +73,17 @@ class UserCreateView(LoginRequiredMixin, CreateView):
     model = get_user_model()
     template_name = "users/user_form.html"
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy("users:user_list")
+    success_url = reverse_lazy("users:list")
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     template_name = "users/user_form.html"
     form_class = CustomUserChangeForm
-    success_url = reverse_lazy("users:user_list")
+    success_url = reverse_lazy("users:list")
 
 
 class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = get_user_model()
     template_name = "users/user_confirm_delete.html"
-    success_url = reverse_lazy("users:user_list")
+    success_url = reverse_lazy("users:list")

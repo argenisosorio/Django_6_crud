@@ -81,37 +81,10 @@ urlpatterns = [
         name="password_change_done",
     ),
 
-    # --- CRUD DE USUARIOS (GESTIÓN ADMINISTRATIVA) ---
-    path(
-        "",
-        UserListView.as_view(template_name="users/user_list.html"),
-        name="user_list"
-    ),
-    path(
-        "<int:pk>/",
-        UserDetailView.as_view(template_name="users/user_detail.html"),
-        name="user_detail"
-    ),
-    path(
-        "create/",
-        UserCreateView.as_view(template_name="users/user_form.html"),
-        name="user_create"
-    ),
-    path(
-        "update/<int:pk>/",
-        UserUpdateView.as_view(template_name="users/user_form.html"),
-        name="user_update"
-    ),
-    path(
-        "delete/<int:pk>/",
-        UserDeleteView.as_view(template_name="users/user_confirm_delete.html"),
-        name="user_delete"
-    ),
-
     # Urls CRUD de usuarios
-    path("", UserListView.as_view(), name="user_list"),
-    path("<int:pk>/", UserDetailView.as_view(), name="user_detail"),
-    path("create/", UserCreateView.as_view(), name="user_create"),
-    path("update/<int:pk>/", UserUpdateView.as_view(), name="user_update"),
-    path("delete/<int:pk>/", UserDeleteView.as_view(), name="user_delete"),
+    path("", UserListView.as_view(), name="list"),
+    path("<int:pk>/", UserDetailView.as_view(), name="detail"),
+    path("create/", UserCreateView.as_view(), name="create"),
+    path("update/<int:pk>/", UserUpdateView.as_view(), name="update"),
+    path("delete/<int:pk>/", UserDeleteView.as_view(), name="delete"),
 ]

@@ -1,42 +1,66 @@
-{% extends 'registers_local/base.html' %}
+{% extends 'base/base.html' %}
 
 {% block content %}
-    <div class="container">
-        <h1 class="text-center">Registro de Combustible - CENDITEL</h1>
-        <br>
-        <h3 class="text-center">Inicio de sesión</h3>
-        <form method="post" action="{% url 'users:login' %}">
-            {% csrf_token %}
-            {% if form.errors %}
-                <div>
-                    <p>No se pudo iniciar sesión. Revisa los datos ingresados.</p>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 450px; border-radius: 15px;">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-primary">CENDITEL</h2>
+            <p class="text-text-primary">Registro de Combustible</p>
+            <h5 class="text-secondary mt-2">Inicio de sesión</h5>
+        </div>
+
+        <!-- Alertas de error estilizadas -->
+        {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <strong>Error:</strong> Revisa los datos ingresados
+                <ul class="mb-0 mt-2 small">
                     {% for error in form.non_field_errors %}
-                        <p>{{ error }}</p>
+                        <li>{{ error }}</li>
                     {% endfor %}
                     {% for field in form %}
                         {% for error in field.errors %}
-                            <p>{{ field.label }}: {{ error }}</p>
+                            <li>{{ field.label }}: {{ error }}</li>
                         {% endfor %}
                     {% endfor %}
-                </div>
-            {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <!-- Formulario -->
+        <form method="post" action="{% url 'users:login' %}">
+            {% csrf_token %}
+            <!-- Campo Usuario -->
             <div class="mb-3">
-                <label for="username" class="form-label">Usuario:</label>
+                <label Aksfor="username" class="form-label fw-semibold">Usuario</label>
                 <input
                     type="text"
                     id="username"
                     name="username"
-                    class="form-control"
+                    class="form-control form-control-lg"
                     value="{{ form.username.value|default:'' }}"
                     required
                 >
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña:</label>
-                <input type="password" name="password" class="form-control" required>
+            <!-- Campo Contraseña -->
+            <div class="mb-4">
+                <label for="password" class="form-label fw-semibold">Contraseña</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control form-control-lg"
+                    required
+                >
             </div>
-            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+            <!-- Botón de Ingreso -->
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+                    Ingresar
+                </button>
+            </div>
             <input type="hidden" name="next" value="{{ next }}">
         </form>
     </div>
+</div>
 {% endblock %}
