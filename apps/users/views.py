@@ -1,10 +1,10 @@
 from django.contrib.auth import get_user_model, login, logout
-from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm
-# 1. Importamos el mixin para validar condiciones del usuario
+from apps.users.models import User
+from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, UpdateUserPasswordForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.views import LoginView as AuthLoginView
+from django.contrib.auth.views import LoginView as AuthLoginView, PasswordChangeView
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import (
@@ -13,7 +13,7 @@ from django.views.generic import (
     DetailView,
     ListView,
     UpdateView,
-    View,
+    View
 )
 
 # ==================== VISTAS DE AUTHENTICACIÓN ====================
@@ -104,3 +104,32 @@ class UserDeleteView(LoginRequiredMixin, SuperuserRequiredMixin, DeleteView):
     model = get_user_model()
     template_name = "users/confirm_delete.html"
     success_url = reverse_lazy("users:list")
+
+
+def update_user_password(request, pk):
+    """
+    Vista basada en función para actualizar la contraseña de un usuario
+    específico. Solo accesible para superusuarios.
+    """
+    user = get_object_or_404(User, pk=pk)
+
+    if not request.user.is_superuser:
+        return redirect('users:list')
+
+    if request.method == 'POST':
+        # Se pasa 'user' como primer argumento, luego 'request.POST'
+        form = UpdateUserPasswordForm(user, request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('users:list')
+        else:
+            print(form.errors)
+    else:
+        # Se pasa 'user' como primer argumento posicional
+        form = UpdateUserPasswordForm(user)
+
+    context = {
+        'form': form,
+        'user': user
+    }
+    return render(request, 'users/update_user_password.html', context)

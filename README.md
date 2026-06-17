@@ -41,7 +41,7 @@ $ pip install -r requirements.txt
 
 $ cp Django_6_crud/settings.py_example Django_6_crud/settings.py
 
-$ python manage.py makemigrations users registers_local registers_extern
+$ python manage.py makemigrations users requests registers_local registers_extern
 
 $ python manage.py migrate
 

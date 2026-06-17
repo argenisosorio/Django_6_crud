@@ -5,7 +5,7 @@ from apps.users.views import (
     UserCreateView,
     UserDeleteView,
     UserListView,
-    UserUpdateView,
+    UserUpdateView
 )
 
 app_name = "users"
@@ -79,4 +79,7 @@ urlpatterns = [
     path("create/", UserCreateView.as_view(), name="create"),
     path("update/<int:pk>/", UserUpdateView.as_view(), name="update"),
     path("delete/<int:pk>/", UserDeleteView.as_view(), name="delete"),
+
+    # Actualizar contraseña de un usuario específico
+    path('<int:pk>/update-user-password/', views.update_user_password, name='update-user-password'),
 ]
