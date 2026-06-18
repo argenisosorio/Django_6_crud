@@ -1,12 +1,13 @@
 from django.contrib.auth import get_user_model, login, logout
 from apps.users.models import User
-from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, UpdateUserPasswordForm
+from apps.users.forms import CustomUserChangeForm, CustomUserCreationForm, UpdateUserPasswordForm, ActiveForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView as AuthLoginView, PasswordChangeView
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
+from django.shortcuts import redirect
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -133,3 +134,23 @@ def update_user_password(request, pk):
         'user': user
     }
     return render(request, 'users/update_user_password.html', context)
+
+
+class ActivateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = get_user_model()
+    template_name = "users/active_form.html"
+    form_class = ActiveForm
+    success_url = reverse_lazy("users:list")
+
+    def test_func(self):
+        """
+        Esta función debe devolver True para permitir el acceso.
+        Verifica si el usuario actual es un superusuario.
+        """
+        return self.request.user.is_superuser
+
+    def handle_no_permission(self):
+        """
+        Define qué pasa si el usuario NO es superusuario.
+        """
+        return redirect('users:list')

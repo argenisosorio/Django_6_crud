@@ -74,6 +74,10 @@
                             style="font-size: 10px;">
                             Cambiar contraseña
                         </a>
+                        <a href="{% url 'users:activate' user.pk %}" class="btn btn-secondary small"
+                            style="font-size: 10px;">
+                            Activar/Desactivar
+                        </a>
                         <a href="{% url 'users:delete' user.pk %}" class="btn btn-danger small"
                             style="font-size: 10px;">
                             Eliminar

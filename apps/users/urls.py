@@ -5,7 +5,8 @@ from apps.users.views import (
     UserCreateView,
     UserDeleteView,
     UserListView,
-    UserUpdateView
+    UserUpdateView,
+    ActivateView
 )
 
 app_name = "users"
@@ -82,4 +83,11 @@ urlpatterns = [
 
     # Actualizar contraseña de un usuario específico
     path('<int:pk>/update-user-password/', views.update_user_password, name='update-user-password'),
+
+    # Activar/Desactivar usuario específico.
+    path(
+        "activate/<int:pk>/",
+        ActivateView.as_view(template_name="users/activate_form.html"),
+        name="activate"
+    ),
 ]

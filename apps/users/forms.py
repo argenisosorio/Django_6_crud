@@ -43,3 +43,14 @@ class UpdateUserPasswordForm(SetPasswordForm):
     # Si quieres personalizar el widget o etiquetas, puedes redefinirlos aquí,
     # pero no necesitas un 'class Meta'.
     pass
+
+
+class ActiveForm(forms.ModelForm):
+    """
+    Formulario para la actualización del campo active del usuario.
+    """
+    class Meta:
+        model = User
+        fields = (
+            "is_active",
+        )
