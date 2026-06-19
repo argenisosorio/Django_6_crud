@@ -1,0 +1,47 @@
+{% extends 'registers_local/base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h2>Detalle del registro (CENDITEL)</h2>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <!-- Columna izquierda -->
+            <div class="col-md-12">
+                <dt class="mt-2">Fecha de registro:</dt>
+                <dd>{{ register.created_at|date:"d/m/Y" }}</dd>
+
+                <dt class="mt-2">Tipo de movimiento:</dt>
+                <dd>{{ register.tipo_movimiento }}</dd>
+
+                <dt class="mt-2">Cantidad (Litros):</dt>
+                <dd>{{ register.cantidad_litros }}</dd>
+
+                <dt class="mt-2">Saldo en tanque (Litros):</dt>
+                <dd>{{ register.saldo_tanque }}</dd>
+
+                <dt class="mt-2">Autorizado por:</dt>
+                <dd>{{ register.autorizado_por }}</dd>
+
+                <dt class="mt-2">Observaciones:</dt>
+                <dd>{{ register.observaciones|default:"Sin observaciones" }}</dd>
+
+                <dt class="mt-2">Registrado por:</dt>
+                <dd>{{ register.usuario_registro }}</dd>
+            </div>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'registers_local:update' register.pk %}" class="btn btn-warning">
+            <i class="fas fa-edit"></i> Editar
+        </a>
+        <a href="{% url 'registers_local:delete' register.pk %}" class="btn btn-danger">
+            <i class="fas fa-trash"></i> Eliminar
+        </a>
+        <a href="{% url 'registers_local:home' %}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Volver
+        </a>
+    </div>
+</div>
+{% endblock %}

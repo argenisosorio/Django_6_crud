@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     # Admin route
-    path('cen-com/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
     # Redirigir la raíz al login de users
     path('', lambda request: redirect('users:login'), name='root'),
@@ -15,6 +15,8 @@ urlpatterns = [
     path('statistics/', include('apps.statistics.urls')),
 
     path('requests/', include('apps.requests.urls')),
+
+    path('registers/', include('apps.registers.urls')),
 
     path('registers_local/', include('apps.registers_local.urls')),
 

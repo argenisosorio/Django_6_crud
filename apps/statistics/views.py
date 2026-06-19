@@ -4,14 +4,26 @@ from django.http import HttpResponse
 from django.db.models import Count
 import json
 from django.http import JsonResponse
+from apps.registers.models import FuelStorage
 
 
 @login_required
 def home(request):
-    data = "Hola"
+    """
+    Vista principal para la página de inicio.
+    """
+    data = FuelStorage.objects.first()
+
+    # Inicializamos el porcentaje en 0 por seguridad
+    percentage = 0
+
+    if data and data.maximum_capacity > 0:
+        percentage = (data.current_amount / data.maximum_capacity) * 100
+        percentage = round(percentage)  # Redonder a entero.
 
     context = {
         'data': data,
+        'percentage': percentage,
     }
 
     return render(request, 'statistics/home.html', context)
