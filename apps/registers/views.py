@@ -11,20 +11,26 @@ from django.db import transaction
 
 @login_required
 def home(request):
-    query_owner_entity = request.GET.get('query_owner_entity', '')
+    # Obtener y limpiar el parámetro de filtro.
+    query_owner_entity = request.GET.get('query_owner_entity', '').strip()
 
-    registers = RegisterFuel.objects.all().order_by('-created_at')
+    # Traer las opciones directamente desde el Modelo.
+    ENTITIES_OWNERS = RegisterFuel.ENTITIES_OWNERS
 
-    # Filtro por Ente Propietario,
-    if query_owner_entity and query_owner_entity in ['CENDITEL', 'ALCARAVAN']:
+    # Crear un conjunto (set) de los valores válidos.
+    valid_entities = {value for value, _ in ENTITIES_OWNERS}
+
+    # Consultar registros.
+    registers = RegisterFuel.objects.all()
+
+    # Filtro seguro utilizando el set generado desde el modelo.
+    if query_owner_entity in valid_entities:
         registers = registers.filter(owner_entity=query_owner_entity)
+        
+    # Ordenar los registros por fecha de creación de forma descendente.
+    registers = registers.order_by('-created_at')
 
-    ENTITIES_OWNERS = [
-        ("CENDITEL", "CENDITEL"),
-        ("ALCARAVAN", "ALCARAVAN"),
-    ]
-
-    # Construcción del contexto
+    # Construcción del contexto.
     context = {
         'registers': registers,
         'ENTITIES_OWNERS': ENTITIES_OWNERS,
