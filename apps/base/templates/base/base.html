@@ -38,7 +38,12 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'statistics:home' %}">
-                            Inicio
+                            Estadisticas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registers:home' %}">
+                            Movimientos
                         </a>
                     </li>
                     {% if user.is_superuser %}
@@ -48,21 +53,6 @@
                         </a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'requests:home' %}">
-                            Solicitudes
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registers_local:home' %}">
-                            Lista de registros (CENDITEL)
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registers_extern:home' %}">
-                            Lista de registros (Externo)
-                        </a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
