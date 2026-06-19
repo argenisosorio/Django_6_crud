@@ -6,6 +6,7 @@ import json
 from django.http import JsonResponse
 from .forms import RegisterFuelForm
 from .models import RegisterFuel, FuelStorage
+from django.db import transaction
 
 
 @login_required
@@ -25,16 +26,29 @@ def create(request):
     if request.method == 'POST':
         form = RegisterFuelForm(request.POST)
         if form.is_valid():
-            # Creamos la instancia en memoria sin guardar en la BD aún
-            nuevo_registro = form.save(commit=False)
+            with transaction.atomic():
+                # Crear una instancia en memoria sin guardar en la BD aún.
+                new_record = form.save(commit=False)
+                new_record.register_by = request.user
 
-            # Asignamos el usuario autenticado (tu modelo User personalizado)
-            nuevo_registro.register_by = request.user
+                # Obtener el registro único de FuelStorage.
+                storage = FuelStorage.objects.select_for_update().first()
 
-            # Guardamos definitivamente
-            nuevo_registro.save()
+                if storage:
+                    # Validar  el tipo de movimiento y operamos.
+                    if new_record.movement_type == 'Entrada':
+                        storage.current_amount += new_record.quantity
+                    elif new_record.movement_type == 'Salida':
+                        storage.current_amount -= new_record.quantity
 
-            return redirect('registers:home')
+                    # Guardar cambios en la base de datos.
+                    storage.save()
+                    new_record.save()
+
+                    return redirect('registers:home')
+                else:
+                    # Manejo de error si no existe el registro único en FuelStorage
+                    form.add_error(None, "No se encontró el registro de almacenamiento de combustible (FuelStorage).")
     else:
         form = RegisterFuelForm()
 

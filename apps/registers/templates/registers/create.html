@@ -60,18 +60,46 @@
                             </div>
 
                             <div class="col-md-6">
+                                <label for="{{ form.owner_entity.id_for_label }}" class="form-label fw-bold">
+                                    {{ form.owner_entity.label }} <span class="text-danger">*</span>
+                                </label>
+                                    <select
+                                        name="{{ form.owner_entity.name }}"
+                                        id="{{ form.owner_entity.id_for_label }}"
+                                        class="form-select {% if form.owner_entity.errors %}is-invalid{% endif %}"
+                                        required
+                                    >
+                                    <option value="">Seleccione...</option>
+                                    {% for value, label in form.owner_entity.field.choices %}
+                                        <option value="{{ value }}" {% if form.owner_entity.value == value %}selected{% endif %}>
+                                            {{ label }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.owner_entity.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.owner_entity.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-6">
                                 <label for="{{ form.authorized_by.id_for_label }}" class="form-label fw-bold">
                                     {{ form.authorized_by.label }} <span class="text-danger">*</span>
                                 </label>
-                                <input
-                                    type="text" 
-                                    name="{{ form.authorized_by.name }}"
-                                    id="{{ form.authorized_by.id_for_label }}"
-                                    class="form-control {% if form.authorized_by.errors %}is-invalid{% endif %}"
-                                    value="{{ form.authorized_by.value|default:'' }}"
-                                    placeholder=""
-                                    required
-                                >
+                                    <select
+                                        name="{{ form.authorized_by.name }}"
+                                        id="{{ form.authorized_by.id_for_label }}"
+                                        class="form-select {% if form.authorized_by.errors %}is-invalid{% endif %}"
+                                        required
+                                    >
+                                    <option value="">Seleccione...</option>
+                                    {% for value, label in form.authorized_by.field.choices %}
+                                        <option value="{{ value }}" {% if form.authorized_by.value == value %}selected{% endif %}>
+                                            {{ label }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
                                 {% if form.authorized_by.errors %}
                                     <div class="invalid-feedback">
                                         {{ form.authorized_by.errors.0 }}

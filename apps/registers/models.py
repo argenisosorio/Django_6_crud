@@ -34,6 +34,16 @@ class RegisterFuel(models.Model):
         ("Salida", "Salida"),
     ]
 
+    ENTITIES_OWNERS = [
+        ("CENDITEL", "CENDITEL"),
+        ("ALCARAVAN", "ALCARAVAN"),
+    ]
+
+    AUTHORIZED_PERSONS = [
+        ("Juan Villegas", "Juan Villegas"),
+        ("Gleidys Alarcón", "Gleidys Alarcón"),
+    ]
+
     # Fecha de registro del movimiento.
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -52,9 +62,17 @@ class RegisterFuel(models.Model):
         verbose_name="Cantidad (Litros)"
     )
 
+    # Ente_propietario
+    owner_entity = models.CharField(
+        max_length=20,
+        choices=ENTITIES_OWNERS,
+        verbose_name="Ente propietario"
+    )
+
     # Autorizado por.
     authorized_by = models.CharField(
-        max_length=100,
+        max_length=20,
+        choices=AUTHORIZED_PERSONS,
         verbose_name="Autorizado por"
     )
 
