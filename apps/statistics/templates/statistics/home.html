@@ -4,35 +4,26 @@
 {% block title %}Estadísticas del Combustible{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-2">
+<div class="justify-content-between align-items-center mb-3 text-center">
     <h1>Estadísticas del Combustible</h1>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-sm-12">
             <div class="card">
+                <div class="card-header">
+                    <b class="fs-4">Total de Combustible</b>
+                </div>
                 <div class="card-body">
-                    <h3 class="card-title">
-                        <img
-                            src="{% static 'images/favicon.png' %}"
-                            alt="logo"
-                            width="40"
-                        >
-                        Estado del Tanque
-                    </h3>
                     <p class="card-text fs-6">
-                        <b>Capacidad máxima:</b> {{ data.maximum_capacity }} Ltrs
+                        <b>Capacidad máxima:</b> {{ data_FuelStorage.maximum_capacity }} Ltrs
                     </p>
                     <p class="card-text fs-6">
-                        <b>Cantidad actual:</b> {{ data.current_amount }} Ltrs
+                        <b>Total almacenado:</b> {{ total_current_amount }} Ltrs
                     </p>
-                    <p class="card-text fs-6">
-                        <b>Porcentaje actual:</b> {{ percentage }}%
-                    </p>
-                    <div class="progress">
-                        <div
-                            class="progress-bar {% if percentage < 20 %}bg-danger{% elif percentage < 50 %}bg-warning{% else %}bg-success{% endif %}"
+                    <div class="progress" style="height: 35px;"> <div
+                            class="progress-bar {% if percentage < 20 %}bg-danger{% elif percentage < 50 %}bg-warning{% else %}bg-success{% endif %} fw-bold fs-5" 
                             role="progressbar"
                             style="width: {{ percentage }}%;"
                             aria-valuenow="{{ percentage }}"
@@ -42,6 +33,32 @@
                             {{ percentage }}%
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <br>
+            <div class="card text-center">
+                <div class="card-header">
+                    <b class="fs-4">Cantidad actual (CENDITEL)</b>
+                </div>
+                <div class="card-body">
+                    <span class="badge bg-primary fs-1">
+                        {{ data_FuelStorageLocal.current_amount }} Ltrs
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <br>
+            <div class="card text-center">
+                <div class="card-header">
+                    <b class="fs-4">Cantidad actual (Externo)</b>
+                </div>
+                <div class="card-body">
+                    <span class="badge bg-primary fs-1">
+                        {{ data_FuelStorageExtern.current_amount }} Ltrs
+                    </span>
                 </div>
             </div>
         </div>

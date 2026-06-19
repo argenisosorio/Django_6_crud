@@ -25,6 +25,40 @@ class FuelStorage(models.Model):
         return f"Cantidad actual: {self.current_amount}"
 
 
+class FuelStorageLocal(models.Model):
+    """
+    Modelo para gestionar el almacenamiento de combustible local.
+    """
+    # Cantidad actual.
+    current_amount = models.IntegerField(
+        default=0,
+        verbose_name="Cantidad actual"
+    )
+
+    def __str__(self) -> str:
+        """
+        Devuelve la cantidad actual de combustible como una representación de cadena.
+        """
+        return f"Cantidad actual: {self.current_amount}"
+
+
+class FuelStorageExtern(models.Model):
+    """
+    Modelo para gestionar el almacenamiento de combustible externo.
+    """
+    # Cantidad actual.
+    current_amount = models.IntegerField(
+        default=0,
+        verbose_name="Cantidad actual"
+    )
+
+    def __str__(self) -> str:
+        """
+        Devuelve la cantidad actual de combustible como una representación de cadena.
+        """
+        return f"Cantidad actual: {self.current_amount}"
+
+
 class RegisterFuel(models.Model):
     """
     Modelo para gestionar los movimientos de combustible.

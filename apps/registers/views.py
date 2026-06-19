@@ -5,8 +5,8 @@ from django.db.models import Count
 from datetime import datetime
 import json
 from django.http import JsonResponse
-from .forms import RegisterFuelForm
-from .models import RegisterFuel, FuelStorage
+from .forms import RegisterFuelForm, FuelStorageLocalForm, FuelStorageExternForm
+from .models import RegisterFuel, FuelStorage, FuelStorageLocal, FuelStorageExtern
 from django.db import transaction
 
 
@@ -69,28 +69,38 @@ def create(request):
         form = RegisterFuelForm(request.POST)
         if form.is_valid():
             with transaction.atomic():
-                # Crear una instancia en memoria sin guardar en la BD aún.
+                # Crear la instancia en memoria
                 new_record = form.save(commit=False)
                 new_record.register_by = request.user
 
-                # Obtener el registro único de FuelStorage.
-                storage = FuelStorage.objects.select_for_update().first()
+                # Determinar cuál almacenamiento usar según el owner_entity
+                if new_record.owner_entity == 'CENDITEL':
+                    storage = FuelStorageLocal.objects.select_for_update().first()
+                    storage_name = "Local (CENDITEL)"
+                else:
+                    storage = FuelStorageExtern.objects.select_for_update().first()
+                    storage_name = "Externo"
 
+                # Validar que el registro de almacenamiento exista
                 if storage:
-                    # Validar  el tipo de movimiento y operamos.
+                    # 3. Operar según el tipo de movimiento
                     if new_record.movement_type == 'Entrada':
                         storage.current_amount += new_record.quantity
                     elif new_record.movement_type == 'Salida':
+                        # Opcional: Validar que no quede en negativo si lo deseas
                         storage.current_amount -= new_record.quantity
 
-                    # Guardar cambios en la base de datos.
+                    # Guardar los cambios en el almacenamiento correspondiente y el registro
                     storage.save()
                     new_record.save()
 
                     return redirect('registers:home')
                 else:
-                    # Manejo de error si no existe el registro único en FuelStorage
-                    form.add_error(None, "No se encontró el registro de almacenamiento de combustible (FuelStorage).")
+                    # Manejo de error si no existe el registro en la base de datos
+                    form.add_error(
+                        None, 
+                        f"No se encontró el registro de almacenamiento {storage_name}."
+                    )
     else:
         form = RegisterFuelForm()
 
@@ -99,6 +109,7 @@ def create(request):
     }
 
     return render(request, 'registers/create.html', context)
+
 
 @login_required
 def detail(request, pk):
