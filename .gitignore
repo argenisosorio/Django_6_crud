@@ -11,3 +11,4 @@ apps/registers_local/migrations
 apps/registers_extern/migrations
 apps/users/migrations
 apps/requests/migrations
+apps/statistics/migrations
