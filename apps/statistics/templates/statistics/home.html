@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block title %}Estadísticas del Combustible{% endblock %}
 
@@ -13,16 +14,21 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">
+                        <img
+                            src="{% static 'images/favicon.png' %}"
+                            alt="logo"
+                            width="40"
+                        >
                         Estado del Tanque
                     </h3>
-                    <p class="card-text fs-6 fw-bold">
-                        Capacidad máxima: {{ data.maximum_capacity }}
+                    <p class="card-text fs-6">
+                        <b>Capacidad máxima:</b> {{ data.maximum_capacity }} L
                     </p>
-                    <p class="card-text fs-6 fw-bold">
-                        Cantidad actual: {{ data.current_amount }}
+                    <p class="card-text fs-6">
+                        <b>Cantidad actual:</b> {{ data.current_amount }} L
                     </p>
-                    <p class="card-text fs-6 fw-bold">
-                        Porcentaje actual: {{ percentage }}%
+                    <p class="card-text fs-6">
+                        <b>Porcentaje actual:</b> {{ percentage }}%
                     </p>
                     <div class="progress">
                         <div
