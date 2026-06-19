@@ -44,13 +44,15 @@
                                     {{ form.quantity.label }} <span class="text-danger">*</span>
                                 </label>
                                 <input
-                                    type="text" 
+                                    type="number" 
                                     name="{{ form.quantity.name }}"
                                     id="{{ form.quantity.id_for_label }}"
                                     class="form-control {% if form.quantity.errors %}is-invalid{% endif %}"
                                     value="{{ form.quantity.value|default:'' }}"
                                     placeholder=""
                                     required
+                                    min="1"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
                                 >
                                 {% if form.quantity.errors %}
                                     <div class="invalid-feedback">
@@ -131,19 +133,19 @@
                         </div>
 
                         <!-- BOTONES -->
-                        <div class="row mt-5">
+                        <div class="row mt-4">
                             <div class="col-12 d-flex justify-content-end gap-2">
                                 <a
                                     href="{% url 'registers:home' %}"
                                     class="btn btn-secondary"
                                 >
-                                    <i class="fas fa-times"></i> Cancelar
+                                    Cancelar
                                 </a>
                                 <button
                                     type="submit"
                                     class="btn btn-success"
                                 >
-                                    <i class="fas fa-save"></i> Guardar
+                                    Guardar
                                 </button>
                             </div>
                         </div>

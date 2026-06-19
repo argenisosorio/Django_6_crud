@@ -22,7 +22,7 @@ class FuelStorage(models.Model):
         """
         Devuelve la cantidad actual de combustible como una representación de cadena.
         """
-        return f"Current Amount: {self.current_amount}"
+        return f"Cantidad actual: {self.current_amount}"
 
 
 class RegisterFuel(models.Model):

@@ -47,10 +47,18 @@
                         </a>
                     </li>
                     {% if user.is_superuser %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:list' %}">
-                            Gestión de Usuarios
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Administración
                         </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="{% url 'users:list' %}">
+                                    Gestión de Usuarios
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     {% endif %}
                     <li class="nav-item dropdown">

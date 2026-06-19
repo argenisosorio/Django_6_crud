@@ -11,11 +11,24 @@ from django.db import transaction
 
 @login_required
 def home(request):
+    query_owner_entity = request.GET.get('query_owner_entity', '')
+
     registers = RegisterFuel.objects.all().order_by('-created_at')
+
+    # Filtro por Ente Propietario,
+    if query_owner_entity and query_owner_entity in ['CENDITEL', 'ALCARAVAN']:
+        registers = registers.filter(owner_entity=query_owner_entity)
+
+    ENTITIES_OWNERS = [
+        ("CENDITEL", "CENDITEL"),
+        ("ALCARAVAN", "ALCARAVAN"),
+    ]
 
     # Construcción del contexto
     context = {
         'registers': registers,
+        'ENTITIES_OWNERS': ENTITIES_OWNERS,
+        'query_owner_entity': query_owner_entity
     }
 
     return render(request, 'registers/home.html', context)
