@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.statistics',
     'apps.registers',
-    'apps.reguests',
+    'apps.requests',
     'apps.registers_local',
     'apps.registers_extern',
 ]
