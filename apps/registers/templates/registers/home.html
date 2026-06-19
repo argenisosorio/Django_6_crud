@@ -9,7 +9,7 @@
     <div class="card-body">
         <form method="GET" action="{% url 'registers:home' %}" class="row g-3">
             <div class="col-md-3">
-                <label for="e" class="form-label fw-bold">Ente propietario:</label>
+                <label for="query_owner_entity" class="form-label fw-bold">Ente propietario:</label>
                 <select name="query_owner_entity" id="query_owner_entity" class="form-select">
                     <option value="">-----</option>
                     {% for valor, entity in ENTITIES_OWNERS %}
@@ -19,15 +19,23 @@
                     {% endfor %}
                 </select>
             </div>
+
+            <div class="col-md-3">
+                <label for="date_from" class="form-label fw-bold">Fecha desde:</label>
+                <input type="date" name="date_from" id="date_from" class="form-select" value="{{ date_from|default:'' }}">
+            </div>
+
+            <div class="col-md-3">
+                <label for="date_to" class="form-label fw-bold">Fecha hasta:</label>
+                <input type="date" name="date_to" id="date_to" class="form-select" value="{{ date_to|default:'' }}">
+            </div>
+
             <div class="col-md-3 d-flex align-items-end gap-2">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary w-100" type="submit">
                     <i class="fas fa-filter"></i> Filtrar
                 </button>
-                {% if query_owner_entity %}
-                    <a
-                        href="{% url 'registers:home' %}"
-                        class="btn btn-secondary"
-                    >
+                {% if query_owner_entity or date_from or date_to %}
+                    <a href="{% url 'registers:home' %}" class="btn btn-secondary w-100">
                         <i class="fas fa-eraser"></i> Limpiar
                     </a>
                 {% endif %}
@@ -52,7 +60,6 @@
                 <th>Autorizado por</th>
                 <th>Fecha y Hora del movimiento</th>
                 <th>Observaciones</th>
-                <!--th>Acciones</th-->
             </tr>
         </thead>
         <tbody>
@@ -86,24 +93,6 @@
                 <td class="small text-muted">
                     {{ register.observations|default:"Sin observaciones" }}
                 </td>
-                <!--td class="text-center">
-                    <div class="btn-group btn-group-sm">
-                        <a href="{% url 'registers:detail' register.pk %}" class="btn btn-info small"
-                            style="font-size: 10px;">
-                            Detalles
-                        </a>
-                        {% if request.user.is_superuser %}
-                        <a href="{% url 'registers:update' register.pk %}" class="btn btn-warning small"
-                            style="font-size: 10px;">
-                            Editar
-                        </a>
-                        <a href="{% url 'registers:delete' register.pk %}" class="btn btn-danger small"
-                            style="font-size: 10px;">
-                            Borrar
-                        </a>
-                        {% endif %}
-                    </div>
-                </!td-->
             </tr>
             {% empty %}
             <tr>
@@ -115,4 +104,5 @@
             {% endfor %}
         </tbody>
     </table>
-    {% endblock %}
+</div>
+{% endblock %}

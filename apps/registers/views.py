@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.db.models import Count
+from datetime import datetime
 import json
 from django.http import JsonResponse
 from .forms import RegisterFuelForm
@@ -11,8 +12,10 @@ from django.db import transaction
 
 @login_required
 def home(request):
-    # Obtener y limpiar el parámetro de filtro.
+    # Obtener y limpiar los parámetros de filtro.
     query_owner_entity = request.GET.get('query_owner_entity', '').strip()
+    date_from = request.GET.get('date_from', '').strip()
+    date_to = request.GET.get('date_to', '').strip()
 
     # Traer las opciones directamente desde el Modelo.
     ENTITIES_OWNERS = RegisterFuel.ENTITIES_OWNERS
@@ -23,10 +26,28 @@ def home(request):
     # Consultar registros.
     registers = RegisterFuel.objects.all()
 
-    # Filtro seguro utilizando el set generado desde el modelo.
+    # Filtro seguro de ente propietario.
     if query_owner_entity in valid_entities:
         registers = registers.filter(owner_entity=query_owner_entity)
-        
+
+    # Filtro seguro para Fecha Desde (>=)
+    if date_from:
+        try:
+            # Validamos que la cadena sea una fecha válida (YYYY-MM-DD) antes de filtrar
+            datetime.strptime(date_from, '%Y-%m-%d')
+            registers = registers.filter(created_at__date__gte=date_from)
+        except ValueError:
+            date_from = ''  # Si es inválida, la limpiamos para el contexto
+
+    # Filtro seguro para Fecha Hasta (<=)
+    if date_to:
+        try:
+            # Validamos que la cadena sea una fecha válida (YYYY-MM-DD) antes de filtrar
+            datetime.strptime(date_to, '%Y-%m-%d')
+            registers = registers.filter(created_at__date__lte=date_to)
+        except ValueError:
+            date_to = ''  # Si es inválida, la limpiamos para el contexto
+
     # Ordenar los registros por fecha de creación de forma descendente.
     registers = registers.order_by('-created_at')
 
@@ -34,7 +55,9 @@ def home(request):
     context = {
         'registers': registers,
         'ENTITIES_OWNERS': ENTITIES_OWNERS,
-        'query_owner_entity': query_owner_entity
+        'query_owner_entity': query_owner_entity,
+        'date_from': date_from,
+        'date_to': date_to,
     }
 
     return render(request, 'registers/home.html', context)
