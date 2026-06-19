@@ -54,7 +54,9 @@ $ python manage.py createsuperuser
 $ python manage.py runserver
 ```
 
-sudo rm -rf db.sqlite3 && find . -type d -name "migrations" -exec rm -rf {} + && python manage.py makemigrations users registers && python manage.py migrate && python manage.py loaddata apps/users/fixtures/user_admin.json && python manage.py loaddata apps/registers/fixtures/fuel_storage.json && python manage.py runserver
+Local: sudo rm -rf db.sqlite3 && find . -type d -name "migrations" -exec rm -rf {} + && python manage.py makemigrations users registers && python manage.py migrate && python manage.py loaddata apps/users/fixtures/user_admin.json && python manage.py loaddata apps/registers/fixtures/fuel_storage.json && python manage.py runserver
+
+Server: rm -rf db.sqlite3 && find . -type d -name "migrations" -exec rm -rf {} + && python manage.py makemigrations users registers && python manage.py migrate && python manage.py loaddata apps/users/fixtures/user_admin.json && python manage.py loaddata apps/registers/fixtures/fuel_storage.json
 
 ## Test the project:
 
