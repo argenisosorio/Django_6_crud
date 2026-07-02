@@ -9,9 +9,20 @@ class Person(models.Model):
     """
 
     # Personal Information Fields
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    age = models.PositiveIntegerField()
+    name = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True
+    )
+    email = models.CharField(
+        blank=True,
+        null=True
+    )
+    age = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
