@@ -21,7 +21,6 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-
 #5. Copia todo el contenido de tu proyecto actual al directorio de trabajo del
 #contenedor.
 

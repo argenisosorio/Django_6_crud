@@ -1,3 +1,4 @@
+# Variable que define el archivo de configuración de Docker Compose a utilizar
 DEV_COMPOSE_FILE := docker-compose.yml
 
 # Construir la imagen

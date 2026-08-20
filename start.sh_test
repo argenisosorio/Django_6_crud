@@ -1,19 +1,20 @@
 #!/bin/bash
 
 echo "----- Esperando a que PostgreSQL esté listo..."
-sleep 5
+
+# Espera en bucle hasta que PostgreSQL responda en el puerto 5432
+until pg_isready -h "$HOST" -p "$PORT" -U "$DB_USER"; do
+  echo "----- La base de datos no está lista aún, esperando 2 segundos..."
+  sleep 2
+done
 
 echo "----- ¡PostgreSQL está listo! Procediendo con las tareas de Django..."
 
-# Ejecutando migraciones
-# --no-input evita que el script se detenga pidiendo confirmaciones
 echo "----- Revisando cambios en los modelos..."
 python manage.py makemigrations person product --no-input
-# python manage.py makemigrations --no-input
 
 echo "----- Aplicando migraciones a la base de datos..."
 python manage.py migrate --no-input
 
-# Iniciando el servidor de desarrollo
 echo "----- Iniciando servidor Django en http://0.0.0.0:8000"
 python manage.py runserver 0.0.0.0:8000
