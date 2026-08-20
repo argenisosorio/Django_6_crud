@@ -6,7 +6,7 @@ Probando Docker en un proyecto de Django
 Este manual fue probado en en Debian 13.
 
 1. Revisar los requerimientos y configuraciones del SO y la máquina en la
-sección anterior.
+sección anterior > https://github.com/argenisosorio/docker_python_hello_world.
 
 2. Instalar Docker Engine descrito en la sección anteior.
 
