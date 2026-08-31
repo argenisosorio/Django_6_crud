@@ -14,6 +14,13 @@
 </head>
 <body>
     <div class="container mt-4">
+        {% if user.is_authenticated %}
+            <b>¡Hi {{ user.username }}!</b>
+        {% else %}
+            <b>¡Hi anonymous!</b>
+        {% endif %}
+        <br>
+        <br>
         <a href="{% url 'person:home' %}" class="btn btn-secondary">Person CRUD</a>
         <a href="{% url 'product:home' %}" class="btn btn-secondary">Product CRUD</a>
         <br>
