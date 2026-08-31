@@ -14,6 +14,18 @@
 </head>
 <body>
     <div class="container mt-4">
+        {% if user.is_authenticated %}
+            <b>¡Hi {{ user.username }}!</b>
+            <form action="/admin/logout/" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-link p-0 m-0 align-baseline">Logout</button>
+            </form>
+        {% else %}
+            <b>¡Hi anonymous!</b> |
+            <a href=/admin>Login</a>
+        {% endif %}
+        <br>
+        <br>
         <a href="{% url 'person:home' %}" class="btn btn-secondary">Person CRUD</a>
         <a href="{% url 'product:home' %}" class="btn btn-secondary">Product CRUD</a>
         <br>

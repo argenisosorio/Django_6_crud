@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
 from .forms import PersonForm
+from django.contrib.auth.decorators import permission_required
+
 
 def home(request):
     """
@@ -19,6 +21,8 @@ def home(request):
     }
     return render(request, 'person/home.html', context)
 
+
+@permission_required('person.can_add_person', raise_exception=True)
 def create_person(request):
     """
     Handle Person creation through a form.
@@ -43,6 +47,8 @@ def create_person(request):
     context = {'form': form}
     return render(request, 'person/create.html', context)
 
+
+@permission_required('person.can_view_person', raise_exception=True)
 def detail_person(request, pk):
     """
     Display detailed view of a specific Person.
@@ -58,6 +64,8 @@ def detail_person(request, pk):
     context = {'person': person}
     return render(request, 'person/detail.html', context)
 
+
+@permission_required('person.can_change_person', raise_exception=True)
 def update_person(request, pk):
     """
     Handle Person updates through a form.
@@ -84,6 +92,8 @@ def update_person(request, pk):
     context = {'form': form, 'person': person}
     return render(request, 'person/update.html', context)
 
+
+@permission_required('person.can_delete_person', raise_exception=True)
 def delete_person(request, pk):
     """
     Handle Person deletion with confirmation.
