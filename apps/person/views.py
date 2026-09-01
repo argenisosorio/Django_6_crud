@@ -20,6 +20,12 @@ def home(request):
         'people': people,
         'message': '¡Hello Django 6 Person CRUD!',
     }
+
+    if request.user.has_perm('person.list_persons'):
+        print("----- User has the 'person.list_persons' permission. -----")
+    else:
+        print("----- User does NOT have the 'person.list_persons' permission. -----")
+
     return render(request, 'person/home.html', context)
 
 

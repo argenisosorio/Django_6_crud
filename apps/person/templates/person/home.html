@@ -2,6 +2,13 @@
 
 {% block content %}
 <h1>{{ message }}</h1>
+{% if perms.person.list_persons %}
+    Has permission to list persons.
+{% else %}
+    Does NOT have permission to list persons.
+{% endif %}
+<br />
+<br />
 <a href="{% url 'person:create' %}" class="btn btn-primary mb-3">Add Person</a>
 
 <table class="table">
