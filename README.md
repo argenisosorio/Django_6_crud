@@ -142,7 +142,7 @@ from .forms import PersonForm
 from django.contrib.auth.decorators import permission_required
 
 
-@permission_required('person.can_add_person', raise_exception=True)
+@permission_required('person.add_person', raise_exception=True)
 def create_person(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
@@ -156,7 +156,7 @@ def create_person(request):
     return render(request, 'person/create.html', context)
 
 
-@permission_required('person.can_delete_person', raise_exception=True)
+@permission_required('person.delete_person', raise_exception=True)
 def delete_person(request, pk):
     person = get_object_or_404(Person, pk=pk)
     if request.method == 'POST':
@@ -204,6 +204,8 @@ class ProductDeleteView(PermissionRequiredMixin, DeleteView):
 
     # Lanza 403 HTTP Forbidden si no tiene el permiso
     raise_exception = True
+
+-----
 
 Validación práctica de la teoría con ejemplos reales
 ===================================================
@@ -283,6 +285,176 @@ HTTP 403 Forbidden, ya que el usuario no posee los permisos requeridos.
 
 -Intenta interactuar con el modelo Product: El sistema te permitirá realizar
 todas las operaciones.
+
+Fuente
+======
+
+Gemini IA
+
+Permisos Personalizados (Custom Permissions)
+============================================
+
+Si los 4 permisos por defecto no son suficientes, puedes definir permisos
+propios dentro de la clase Meta de tu modelo:
+
+-----
+
+from django.db import models
+
+class Person(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    age = models.PositiveIntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        permissions = [
+            ("list_persons", "Can list persons"),
+        ]
+
+-----
+
+Crear una nueva migración y aplicar la nueva migración:
+
+$ python manage.py makemigrations person
+
+Migrations for 'person':
+  apps/person/migrations/0002_alter_person_options.py
+    ~ Change Meta options on person
+
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, person, product, sessions
+Running migrations:
+  Applying person.0002_alter_person_options... OK
+
+Lo anterior quiere decir que se creó el nuevo permiso para el modelo Persona.
+
+Si intentamos craer un nuevo grupo o editamos alguno de los grupos veremos
+el nuevo permiso "Can list persons".
+
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Person
+from .forms import PersonForm
+from django.contrib.auth.decorators import permission_required
+
+
+@permission_required('person.list_persons', raise_exception=True)
+def home(request):
+    """
+    Display the home page listing all Person records.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request
+
+    Returns:
+        HttpResponse: Rendered template with all Person objects
+    """
+    people = Person.objects.all()
+    context = {
+        'people': people,
+        'message': '¡Hello Django 6 Person CRUD!',
+    }
+    return render(request, 'person/home.html', context)
+
+y en el caso de Product con CBV:
+
+-----
+
+from django.db import models
+
+
+class Product(models.Model):
+    """
+    Represents a product in the system.
+    """
+
+    name = models.CharField(max_length=100)
+    price = models.PositiveIntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        """
+        String representation of the Product model.
+
+        Returns:
+            str: The product's name for easy identification in admin and queries.
+        """
+        return self.name
+
+    class Meta:
+        permissions = [
+            ("list_products", "Can list products"),
+        ]
+
+-----
+
+class ProductListView(PermissionRequiredMixin, ListView):
+    """Displays the product list"""
+    model = Product
+    template_name = 'product/home.html'
+    context_object_name = 'products'
+
+    # Permiso requerido
+    permission_required = 'product.list_products'
+
+    # Lanza 403 HTTP Forbidden si no tiene el permiso
+    raise_exception = True
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['message'] = '¡Hello Django 6 Product CRUD!'
+        return context
+
+-----
+
+Verificación Manual en código Python: Puedes usar el método has_perm() en
+cualquier objeto usuario:
+
+-----
+
+if request.user.has_perm('person.list_persons'):
+    print("----- User has the 'person.list_persons' permission. -----")
+else:
+    print("----- User does NOT have the 'person.list_persons' permission. -----")
+
+-----
+
+En Plantillas (Templates):
+
+Django pasa automáticamente la variable perms al contexto de la plantilla:
+
+-----
+
+{% if perms.mi_app.can_publish %}
+    <a href="{% url 'publicar' articulo.id %}">Publicar Artículo</a>
+{% endif %}
+
+Ejemplo real:
+
+{% if perms.person.list_persons %}
+    Has permission to list persons.
+{% else %}
+    Does NOT have permission to list persons.
+{% endif %}
+
+-----
+
+Resumen
+=======
+
+¿Hay Permisos? Sí, nativos. Se crean 4 automáticamente por cada modelo (add,
+change, delete, view) y puedes crear los tuyos en la clase Meta.
+
+¿Qué son los grupos? Son agrupaciones de permisos.
+
+¿Cómo interactúan? Los Permisos se asignan a los Grupos, y los Usuarios se
+añaden a los Grupos para heredar esos permisos de forma limpia y escalable.
 
 Fuente
 ======
