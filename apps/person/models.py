@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Person(models.Model):
     """
     Represents a person in the system.
@@ -23,3 +24,8 @@ class Person(models.Model):
             str: The person's name for easy identification in admin and queries.
         """
         return self.name
+
+    class Meta:
+        permissions = [
+            ("list_persons", "Can list persons"),
+        ]

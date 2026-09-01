@@ -4,6 +4,7 @@ from .forms import PersonForm
 from django.contrib.auth.decorators import permission_required
 
 
+@permission_required('person.list_persons', raise_exception=True)
 def home(request):
     """
     Display the home page listing all Person records.
@@ -22,7 +23,7 @@ def home(request):
     return render(request, 'person/home.html', context)
 
 
-@permission_required('person.can_add_person', raise_exception=True)
+@permission_required('person.add_person', raise_exception=True)
 def create_person(request):
     """
     Handle Person creation through a form.
@@ -48,7 +49,7 @@ def create_person(request):
     return render(request, 'person/create.html', context)
 
 
-@permission_required('person.can_view_person', raise_exception=True)
+@permission_required('person.view_person', raise_exception=True)
 def detail_person(request, pk):
     """
     Display detailed view of a specific Person.
@@ -65,7 +66,7 @@ def detail_person(request, pk):
     return render(request, 'person/detail.html', context)
 
 
-@permission_required('person.can_change_person', raise_exception=True)
+@permission_required('person.change_person', raise_exception=True)
 def update_person(request, pk):
     """
     Handle Person updates through a form.
@@ -93,7 +94,7 @@ def update_person(request, pk):
     return render(request, 'person/update.html', context)
 
 
-@permission_required('person.can_delete_person', raise_exception=True)
+@permission_required('person.delete_person', raise_exception=True)
 def delete_person(request, pk):
     """
     Handle Person deletion with confirmation.

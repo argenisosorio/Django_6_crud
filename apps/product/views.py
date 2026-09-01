@@ -5,11 +5,17 @@ from .forms import ProductForm
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
-class ProductListView(ListView):
+class ProductListView(PermissionRequiredMixin, ListView):
     """Displays the product list"""
     model = Product
     template_name = 'product/home.html'
     context_object_name = 'products'
+
+    # Permiso requerido
+    permission_required = 'product.list_products'
+
+    # Lanza 403 HTTP Forbidden si no tiene el permiso
+    raise_exception = True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

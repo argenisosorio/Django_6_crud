@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Product(models.Model):
     """
     Represents a product in the system.
@@ -18,3 +19,8 @@ class Product(models.Model):
             str: The product's name for easy identification in admin and queries.
         """
         return self.name
+
+    class Meta:
+        permissions = [
+            ("list_products", "Can list products"),
+        ]
